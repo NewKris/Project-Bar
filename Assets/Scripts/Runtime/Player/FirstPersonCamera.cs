@@ -1,15 +1,16 @@
-﻿using Runtime.Utility.CommonObjects;
+﻿using NaughtyAttributes;
+using Runtime.Utility.CommonObjects;
 using UnityEngine;
 
 namespace Runtime.Player {
     public class FirstPersonCamera : MonoBehaviour {
         public float sensitivity = 1;
-        public Vector2 axisScaling = Vector2.one;
         public float mouseSmoothing = 0;
         
-        [Header("Limits")]
-        public float minPitchAngle = -60;
-        public float maxPitchAngle = 60;
+        [MinMaxSlider(-90, 90)] 
+        public Vector2 pitchAngleLimits = new Vector2(-90, 90);
+        
+        public Vector2 axisScaling = Vector2.one;
 
         private DampedAngle _pitch;
         private DampedAngle _yaw;
@@ -29,7 +30,7 @@ namespace Runtime.Player {
             _yaw.Target %= 360f;
             
             _pitch.Target -= lookVel.y;
-            _pitch.Target = Mathf.Clamp(_pitch.Target, minPitchAngle, maxPitchAngle);
+            _pitch.Target = Mathf.Clamp(_pitch.Target, pitchAngleLimits.x, pitchAngleLimits.y);
 
             _yawPivot.localRotation = Quaternion.Euler(0, _yaw.Tick(mouseSmoothing, dt), 0);
             _pitchPivot.localRotation = Quaternion.Euler(_pitch.Tick(mouseSmoothing, dt), 0, 0);
