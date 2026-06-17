@@ -1,10 +1,13 @@
 using System;
+using Runtime.Player;
 using Runtime.Utility;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Runtime.Interact {
     public class InteractController : MonoBehaviour {
         public float interactDistance;
+        public UnityEvent onRelease;
 
         public void TryGrabInteract() {
             if (TryFindInteraction(out Interaction interaction)) {
@@ -16,6 +19,8 @@ namespace Runtime.Interact {
             if (TryFindInteraction(out Interaction interaction)) {
                 interaction.ReleaseInteract();
             }
+ 
+            onRelease.Invoke();
         }
 
         private bool TryFindInteraction(out Interaction interaction) {

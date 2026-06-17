@@ -7,7 +7,7 @@ namespace Runtime.Interact {
         public UnityEvent onRelease;
         
         public void GrabInteract() {
-            Debug.Log($"$Grab Interact: {gameObject.name}");
+            Debug.Log($"Grab Interact: {gameObject.name}");
             onGrab.Invoke();
         }
 
