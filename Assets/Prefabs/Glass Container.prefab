@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3003070934299214486}
   - component: {fileID: 1595049848062301967}
   - component: {fileID: 4311566946813633840}
+  - component: {fileID: 1891216612381766119}
   m_Layer: 0
   m_Name: Glass Container
   m_TagString: Untagged
@@ -122,3 +123,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 6117614414377132962, guid: fe5702cdd07f96040a4e9c3e45a992d3, type: 3}
+--- !u!114 &1891216612381766119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143385605728237706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e909c1af90844a49b6d0fb29c1fb69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

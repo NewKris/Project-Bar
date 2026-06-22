@@ -3,7 +3,11 @@ using UnityEngine;
 
 namespace Runtime.Items {
     public class ItemPickup : MonoBehaviour {
+        public event Action onPinned;
+        
         public void Pin(Transform pinPoint) {
+            onPinned?.Invoke();
+            
             Rigidbody rb = GetComponent<Rigidbody>();
             
             transform.SetParent(pinPoint);

@@ -25,7 +25,7 @@ namespace Runtime.Player {
                 return;
             }
             
-            if (interaction.TryGetComponent(out ItemDock dock)) {
+            if (interaction.TryGetComponent(out ItemDock dock) && dock.CanPlaceItem()) {
                 dock.PlaceItem(_heldItem);
                 _heldItem = null;
             }
