@@ -20,7 +20,7 @@ namespace Runtime.Player {
         }
         
         public void ReleaseHeldItem(Interaction interaction) {
-            if (interaction == null) {
+            if (interaction == null || _heldItem == null) {
                 DropItem();
                 return;
             }
