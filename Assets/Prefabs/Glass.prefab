@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7830720948801183744}
   - component: {fileID: 7600051914765594478}
   - component: {fileID: 1187338844144072012}
-  - component: {fileID: 9122787402842504300}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -87,29 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &9122787402842504300
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3972965749021934128}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &6117614414377132962
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +98,7 @@ GameObject:
   - component: {fileID: 8627537969367404134}
   - component: {fileID: 8490064085119384536}
   - component: {fileID: 1617774845338879086}
+  - component: {fileID: 151479590192645146}
   m_Layer: 0
   m_Name: Glass
   m_TagString: Untagged
@@ -174,7 +151,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8627537969367404134}
         m_TargetAssemblyTypeName: Runtime.Glass.DrinkGlass, Assembly-CSharp
-        m_MethodName: GrabGlass
+        m_MethodName: PickUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -214,3 +191,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &151479590192645146
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6117614414377132962}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Height: 0.6
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.25, z: 0}
