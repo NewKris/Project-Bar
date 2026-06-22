@@ -7,33 +7,30 @@ using UnityEngine.Events;
 namespace Runtime.Interact {
     public class InteractController : MonoBehaviour {
         public float interactDistance;
-        public UnityEvent onRelease;
+        public UnityEvent<Interaction> onGrab;
+        public UnityEvent<Interaction> onRelease;
 
         public void TryGrabInteract() {
-            if (TryFindInteraction(out Interaction interaction)) {
-                interaction.GrabInteract();
-            }
+            Interaction interact = TryFindInteraction(out Interaction interaction) ? interaction : null;
+            onGrab.Invoke(interact);
         }
 
         public void TryReleaseInteract() {
-            if (TryFindInteraction(out Interaction interaction)) {
-                interaction.ReleaseInteract();
-            }
- 
-            onRelease.Invoke();
+            Interaction interact = TryFindInteraction(out Interaction interaction) ? interaction : null;
+            onRelease.Invoke(interact);
         }
 
-        private bool TryFindInteraction(out Interaction interaction) {
+        private bool TryFindInteraction(out Interaction genericGenericInteraction) {
             Ray ray =  new Ray(transform.position, transform.forward);
             bool hit =  Physics.Raycast(ray, out RaycastHit hitInfo);
 
             if (!hit) {
-                interaction = null;
+                genericGenericInteraction = null;
                 return false;
             }
             
-            hitInfo.collider.TryGetComponent(out interaction);
-            return interaction != null;
+            hitInfo.collider.TryGetComponent(out genericGenericInteraction);
+            return genericGenericInteraction != null;
         }
 
         private void OnDrawGizmos() {

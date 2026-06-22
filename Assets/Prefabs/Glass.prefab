@@ -95,10 +95,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1155542847166034155}
-  - component: {fileID: 8627537969367404134}
-  - component: {fileID: 8490064085119384536}
   - component: {fileID: 1617774845338879086}
   - component: {fileID: 151479590192645146}
+  - component: {fileID: 8092370360988256443}
+  - component: {fileID: 250910469939608800}
   m_Layer: 0
   m_Name: Glass
   m_TagString: Untagged
@@ -122,48 +122,6 @@ Transform:
   - {fileID: 7830720948801183744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8627537969367404134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6117614414377132962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d5cccc193b644f5b2b2ebbfbe1000d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8490064085119384536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6117614414377132962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb51c7dada34d6e823da24383784261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onGrab:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8627537969367404134}
-        m_TargetAssemblyTypeName: Runtime.Glass.DrinkGlass, Assembly-CSharp
-        m_MethodName: PickUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onRelease:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!54 &1617774845338879086
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -214,3 +172,27 @@ CapsuleCollider:
   m_Height: 0.6
   m_Direction: 1
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &8092370360988256443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6117614414377132962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a529bfec7b48c0916b896bce616407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &250910469939608800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6117614414377132962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e909c1af90844a49b6d0fb29c1fb69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

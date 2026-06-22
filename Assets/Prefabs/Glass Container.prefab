@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 7660002777202680730}
   - component: {fileID: 3003070934299214486}
   - component: {fileID: 1595049848062301967}
-  - component: {fileID: 670850328359949660}
-  - component: {fileID: 4607386948046283226}
+  - component: {fileID: 4311566946813633840}
   m_Layer: 0
   m_Name: Glass Container
   m_TagString: Untagged
@@ -110,7 +109,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &670850328359949660
+--- !u!114 &4311566946813633840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,37 +118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5143385605728237706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb51c7dada34d6e823da24383784261, type: 3}
+  m_Script: {fileID: 11500000, guid: b8675449ac524452b3480c3a13c0734e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onGrab:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4607386948046283226}
-        m_TargetAssemblyTypeName: Runtime.Glass.GlassPile, Assembly-CSharp
-        m_MethodName: GrabGlass
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onRelease:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &4607386948046283226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5143385605728237706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0225289778409bb9cdc95c423feacc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  glassPrefab: {fileID: 6117614414377132962, guid: fe5702cdd07f96040a4e9c3e45a992d3, type: 3}
+  itemPrefab: {fileID: 6117614414377132962, guid: fe5702cdd07f96040a4e9c3e45a992d3, type: 3}
