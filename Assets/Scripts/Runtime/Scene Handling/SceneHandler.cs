@@ -27,8 +27,8 @@ namespace Runtime.Scene_Handling
         public void StartGame()
         {
             CurrentLevelIndex = 0;
-            SceneManager.LoadSceneAsync(GameplayScene.Name, LoadSceneMode.Single);
-            SceneManager.LoadSceneAsync(CoreScene.Name, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(CoreScene.Name, LoadSceneMode.Single);
+            SceneManager.LoadSceneAsync(GameplayScene.Name, LoadSceneMode.Additive);
             LoadLevelWithIndex(0);
         }
 
