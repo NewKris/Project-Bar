@@ -15,11 +15,11 @@ namespace Runtime.Items {
         public void PlaceItem(ItemPickup item) {
             item.Pin(itemPivot);
             _heldItem = item;
-            _heldItem.onPinned += RemoveItem;
+            _heldItem.OnPinned += RemoveItem;
         }
 
         private void RemoveItem() {
-            _heldItem.onPinned -= RemoveItem;
+            _heldItem.OnPinned -= RemoveItem;
             _heldItem = null;
         }
 

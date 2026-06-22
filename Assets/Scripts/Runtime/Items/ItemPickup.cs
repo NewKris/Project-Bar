@@ -3,10 +3,14 @@ using UnityEngine;
 
 namespace Runtime.Items {
     public class ItemPickup : MonoBehaviour {
-        public event Action onPinned;
+        public event Action OnPinned;
+
+        public void BreakItem() {
+            Destroy(gameObject);
+        }
         
         public void Pin(Transform pinPoint) {
-            onPinned?.Invoke();
+            OnPinned?.Invoke();
             
             Rigidbody rb = GetComponent<Rigidbody>();
             
