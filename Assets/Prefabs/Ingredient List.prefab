@@ -47,14 +47,14 @@ MonoBehaviour:
   ingredient1: {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
   ingredient2: {fileID: 11400000, guid: a41a6714d1db28d4280a7317372e1a8f, type: 2}
   ingredient3: {fileID: 11400000, guid: 9e48ee67233ee514fa346e8fe67e15f6, type: 2}
-  ingredientQ: {fileID: 0}
-  ingredientW: {fileID: 0}
-  ingredientE: {fileID: 0}
-  ingredientR: {fileID: 0}
-  ingredientA: {fileID: 0}
-  ingredientS: {fileID: 0}
-  ingredientD: {fileID: 0}
-  ingredientF: {fileID: 0}
-  ingredientZ: {fileID: 0}
-  ingredientX: {fileID: 0}
-  ingredientC: {fileID: 0}
+  ingredientQ: {fileID: 11400000, guid: 46f92cdf33d232d45b71292bedc3f93f, type: 2}
+  ingredientW: {fileID: 11400000, guid: 6d7b2b67ce2ab2a43b2bd40ab895e48c, type: 2}
+  ingredientE: {fileID: 11400000, guid: 9e1273cd121876144aa1e058825eeb58, type: 2}
+  ingredientR: {fileID: 11400000, guid: 9fe57544060200947b2f58caf89d1385, type: 2}
+  ingredientA: {fileID: 11400000, guid: 0bed7c78e6483fd4ab4d271e0e3a211f, type: 2}
+  ingredientS: {fileID: 11400000, guid: 646a39d00f0ffb240b97ea6d9ac1ae7a, type: 2}
+  ingredientD: {fileID: 11400000, guid: eb76d2cc202a0c749b2f6c711373583b, type: 2}
+  ingredientF: {fileID: 11400000, guid: 0cc7e2dbb46a6b6418e1013dbe6abc12, type: 2}
+  ingredientZ: {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
+  ingredientX: {fileID: 11400000, guid: d7f6d4154cdce69479f717ceec7eb2a2, type: 2}
+  ingredientC: {fileID: 11400000, guid: afe2b0e5bdb83ff4ebdd269d3547dd5c, type: 2}
