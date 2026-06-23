@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using Runtime.Drink;
@@ -70,8 +71,38 @@ namespace Runtime.Customers
         [Tooltip("The amount of satisfaction that the player will lose if they repeat the customers order")]
         [SerializeField] [Min(0)] private int satisfactionRepeatOrder;
 
+        private bool _hasOrdered;
         private float _patienceTimer;
         private float _dialogueActiveTimer;
 
+        private void Start()
+        {
+            
+        }
+
+        private void Update()
+        {
+            // Update and check timers
+        }
+
+        public void ServeDrink(DrinkContents drink)
+        {
+            // Compare contents with accepted drinks
+            
+        }
+
+        public void Order()
+        {
+            if (!_hasOrdered)
+            {
+                _hasOrdered = true;
+            }
+            
+            // If customer has not ordered:
+            //  Use base dialogue
+            // Else:
+            //  Use repeat order dialogue
+            //  Make player lose satisfaction
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using Runtime.Customers;
+using Runtime.Drink;
 using Runtime.Interact;
 using Runtime.Items;
 using UnityEngine;
@@ -28,6 +30,10 @@ namespace Runtime.Player {
             if (interaction.TryGetComponent(out ItemDock dock) && dock.CanPlaceItem()) {
                 dock.PlaceItem(_heldItem);
                 _heldItem = null;
+            }
+            else if (interaction.TryGetComponent(out Customer customer) && (_heldItem.TryGetComponent(out DrinkObject drink)))
+            {
+                customer.ServeDrink(drink.currentContents);
             }
             else {
                 DropItem();
