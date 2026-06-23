@@ -29,7 +29,6 @@ namespace Runtime.Player {
             
             if (grabbable.TryGetComponent(out ItemDock dock) && dock.CanPlaceItem()) {
                 dock.PlaceItem(_heldItem);
-                _heldItem = null;
             }
             else if (grabbable.TryGetComponent(out Customer customer) && (_heldItem.TryGetComponent(out DrinkObject drink)))
             {
@@ -38,6 +37,8 @@ namespace Runtime.Player {
             else {
                 DropItem();
             }
+            
+            _heldItem = null;
         }
 
         private void Awake() {
