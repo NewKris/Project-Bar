@@ -34,6 +34,18 @@ namespace Runtime.Player {
             }
         }
 
+        private void Awake() {
+            PlayerController.OnAddIngredient += TryAddIngredient;
+        }
+
+        private void OnDestroy() {
+            PlayerController.OnAddIngredient -= TryAddIngredient;
+        }
+
+        private void TryAddIngredient(string ingredientKey) {
+            Debug.Log($"Trying to add ingredient {ingredientKey}");
+        }
+
         private void DropItem() {
             _heldItem?.Unpin();
             _heldItem = null;

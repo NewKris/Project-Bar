@@ -47,6 +47,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b6af223e564462b3874d71ba081209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientKeys:
+  - 1
+  - 2
+  - 3
+  - Q
+  - W
+  - E
+  - R
+  - A
+  - S
+  - D
+  - F
+  - Z
+  - X
+  - C
 --- !u!114 &6830070769615864448
 MonoBehaviour:
   m_ObjectHideFlags: 0
