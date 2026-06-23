@@ -31,7 +31,7 @@ namespace Runtime.Player {
                 dock.PlaceItem(_heldItem);
                 _heldItem = null;
             }
-            else if (interaction.TryGetComponent(out Customer customer) && (_heldItem.TryGetComponent(out DrinkObject drink)))
+            else if (grabbable.TryGetComponent(out Customer customer) && (_heldItem.TryGetComponent(out DrinkObject drink)))
             {
                 customer.ServeDrink(drink.currentContents);
             }
