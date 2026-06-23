@@ -28,23 +28,31 @@ namespace Runtime.Drink {
         }
 
         private Ingredient KeyToIngredient(string key) {
-            return key switch {
-                "1" => ingredient1,
-                "2" => ingredient2,
-                "3" => ingredient3,
-                "Q" => ingredientQ,
-                "W" => ingredientW,
-                "E" => ingredientE,
-                "R" => ingredientR,
-                "A" => ingredientA,
-                "S" => ingredientS,
-                "D" => ingredientD,
-                "F" => ingredientF,
-                "Z" => ingredientZ,
-                "X" => ingredientX,
-                "C" => ingredientC,
-                _ => throw new ArgumentOutOfRangeException(nameof(key), key, null)
-            };
+            try {
+                return key switch {
+                    "1" => ingredient1,
+                    "2" => ingredient2,
+                    "3" => ingredient3,
+                    "Q" => ingredientQ,
+                    "W" => ingredientW,
+                    "E" => ingredientE,
+                    "R" => ingredientR,
+                    "A" => ingredientA,
+                    "S" => ingredientS,
+                    "D" => ingredientD,
+                    "F" => ingredientF,
+                    "Z" => ingredientZ,
+                    "X" => ingredientX,
+                    "C" => ingredientC,
+                    _ => throw new ArgumentOutOfRangeException(nameof(key), key, null)
+                };
+            }
+            catch (Exception e) {
+                Debug.LogError($"Ingredient key [{key}] not found!");
+                Debug.LogException(e);
+                return null;
+            }
+            
         }
 
         private void Start() {

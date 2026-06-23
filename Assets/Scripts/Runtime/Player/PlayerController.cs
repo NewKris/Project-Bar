@@ -24,18 +24,28 @@ namespace Runtime.Player {
             ActionMap["Interact"].performed += _ => OnInteract?.Invoke();
             
             foreach (string ingredientKey in ingredientKeys) {
-                ActionMap[$"Ingredient {ingredientKey}"].performed += _ => OnAddIngredient?.Invoke(ingredientKey);
+                ActionMap[$"Ingredient {ingredientKey}"].performed += AddIngredientPerformed;
             }
             
             ActionMap.Enable();
         }
 
         private void OnDestroy() {
+            foreach (string ingredientKey in ingredientKeys) {
+                ActionMap[$"Ingredient {ingredientKey}"].performed -= AddIngredientPerformed;
+            }
+            
             ActionMap.Dispose();
         }
 
         private void Update() {
             DeltaMouse = _lookAction.ReadValue<Vector2>();
+        }
+        
+        private void AddIngredientPerformed(InputAction.CallbackContext context) {
+            if (context.performed) {
+                OnAddIngredient?.Invoke(context.action.name);
+            }
         }
     }
 }

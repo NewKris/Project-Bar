@@ -49,8 +49,17 @@ namespace Runtime.Player {
             PlayerController.OnAddIngredient -= TryAddIngredient;
         }
 
-        private void TryAddIngredient(string ingredientKey) {
-            Debug.Log($"Trying to add ingredient {ingredientKey}");
+        private void TryAddIngredient(string ingredientAction) {
+            if (!_heldItem) return;
+
+            Ingredient ingredient = IngredientList.GetIngredient(ConvertActionToKey(ingredientAction));
+            if (ingredient != null && _heldItem.TryGetComponent(out DrinkObject drink)) {
+                drink.AddIngredient(ingredient);
+            }
+        }
+
+        private string ConvertActionToKey(string action) {
+            return action[^1].ToString().ToUpper();
         }
 
         private void DropItem() {
