@@ -7,15 +7,18 @@ namespace Runtime.Player {
     public class PlayerCharacter : MonoBehaviour {
         public FirstPersonCamera playerCamera;
         public GrabController grabController;
+        public InteractController interactController;
 
         private void Awake() {
             PlayerController.OnGrab += grabController.TryGrabInteract;
             PlayerController.OnRelease += grabController.TryReleaseInteract;
+            PlayerController.OnInteract += interactController.TryInteract;
         }
 
         private void OnDestroy() {
             PlayerController.OnGrab -= grabController.TryGrabInteract;
             PlayerController.OnRelease -= grabController.TryReleaseInteract;
+            PlayerController.OnInteract -= interactController.TryInteract;
         }
 
         private void Update() {

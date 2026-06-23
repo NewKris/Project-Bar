@@ -6,6 +6,7 @@ namespace Runtime.Player {
     public class PlayerController : MonoBehaviour {
         public static event Action OnGrab;
         public static event Action OnRelease;
+        public static event Action OnInteract;
         public static event Action<string> OnAddIngredient;
         
         public static Vector2 DeltaMouse { get; private set; }
@@ -20,6 +21,7 @@ namespace Runtime.Player {
             _lookAction = ActionMap["Look"];
             ActionMap["Grab"].performed += _ => OnGrab?.Invoke();
             ActionMap["Grab"].canceled += _ => OnRelease?.Invoke();
+            ActionMap["Interact"].performed += _ => OnInteract?.Invoke();
             
             foreach (string ingredientKey in ingredientKeys) {
                 ActionMap[$"Ingredient {ingredientKey}"].performed += _ => OnAddIngredient?.Invoke(ingredientKey);
