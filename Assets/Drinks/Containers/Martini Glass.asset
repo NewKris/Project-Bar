@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 765f618e78934992860ec1650ddb41fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 419447d072d442d6a0c3d5c7d4a734ce, type: 3}
   m_Name: Martini Glass
   m_EditorClassIdentifier: 
