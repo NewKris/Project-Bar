@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 3715910397593774176}
-  interactController: {fileID: 8113213499893530702}
+  grabController: {fileID: 8113213499893530702}
 --- !u!1 &475847460953123893
 GameObject:
   m_ObjectHideFlags: 0

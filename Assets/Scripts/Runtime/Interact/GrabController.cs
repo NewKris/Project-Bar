@@ -5,32 +5,32 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace Runtime.Interact {
-    public class InteractController : MonoBehaviour {
+    public class GrabController : MonoBehaviour {
         public float interactDistance;
-        public UnityEvent<Interaction> onGrab;
-        public UnityEvent<Interaction> onRelease;
+        public UnityEvent<Grabbable> onGrab;
+        public UnityEvent<Grabbable> onRelease;
 
         public void TryGrabInteract() {
-            Interaction interact = TryFindInteraction(out Interaction interaction) ? interaction : null;
+            Grabbable interact = TryFindInteraction(out Grabbable interaction) ? interaction : null;
             onGrab.Invoke(interact);
         }
 
         public void TryReleaseInteract() {
-            Interaction interact = TryFindInteraction(out Interaction interaction) ? interaction : null;
+            Grabbable interact = TryFindInteraction(out Grabbable interaction) ? interaction : null;
             onRelease.Invoke(interact);
         }
 
-        private bool TryFindInteraction(out Interaction genericGenericInteraction) {
+        private bool TryFindInteraction(out Grabbable genericGenericGrabbable) {
             Ray ray =  new Ray(transform.position, transform.forward);
             bool hit =  Physics.Raycast(ray, out RaycastHit hitInfo);
 
             if (!hit) {
-                genericGenericInteraction = null;
+                genericGenericGrabbable = null;
                 return false;
             }
             
-            hitInfo.collider.TryGetComponent(out genericGenericInteraction);
-            return genericGenericInteraction != null;
+            hitInfo.collider.TryGetComponent(out genericGenericGrabbable);
+            return genericGenericGrabbable != null;
         }
 
         private void OnDrawGizmos() {
