@@ -169,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8645739159592134876, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
       propertyPath: m_Name
-      value: Customer
+      value: Karin Kramgo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1006,6 +1006,10 @@ PrefabInstance:
     - target: {fileID: 2165381306993256821, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213556989626037280, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: interactDistance
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

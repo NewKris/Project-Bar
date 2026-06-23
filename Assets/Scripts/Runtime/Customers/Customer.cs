@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
+using Runtime.Dialogue;
 using Runtime.Drink;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace Runtime.Customers
 {
     public class Customer : MonoBehaviour
     {
+        [SerializeField] private DialogueDisplay dialogueDisplay;
+        
         [Tooltip("The name that will be displayed as the customer name")]
         [SerializeField] private string customerName;
         
@@ -95,7 +98,12 @@ namespace Runtime.Customers
         {
             if (!_hasOrdered)
             {
+                dialogueDisplay.ShowDialogue(orderDialogue);
                 _hasOrdered = true;
+            }
+            else
+            {
+                dialogueDisplay.ShowDialogue(repeatOrderDialogue);
             }
             
             // If customer has not ordered:

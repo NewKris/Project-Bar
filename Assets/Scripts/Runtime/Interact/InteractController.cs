@@ -1,3 +1,4 @@
+using Runtime.Utility;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,6 +6,7 @@ namespace Runtime.Interact
 {
     public class InteractController : MonoBehaviour
     {
+        public float interactDistance;
         public UnityEvent<Interactable> OnInteract;
 
         public void TryInteract()
@@ -24,6 +26,10 @@ namespace Runtime.Interact
             
             hitInfo.collider.TryGetComponent(out genericGenericInteractable);
             return genericGenericInteractable != null;
+        }
+        
+        private void OnDrawGizmos() {
+            HandlesProxy.DrawLine(transform.position, transform.position + transform.forward * interactDistance, 3, true, Color.magenta);
         }
     }
 }

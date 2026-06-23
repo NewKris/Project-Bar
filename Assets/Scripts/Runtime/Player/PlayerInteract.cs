@@ -10,10 +10,12 @@ namespace Runtime.Player
         {
             Debug.Log("TRY INTERACT");
             if (interactable == null) return;
+            Debug.Log($"I did find {interactable.name}");
 
             
             if (interactable.TryGetComponent(out Customer customer))
             {
+                Debug.Log("CUSTOMER!");
                 customer.Order();
             }
             
