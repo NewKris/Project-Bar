@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Runtime.Satisfaction
 {
-    [CreateAssetMenu(fileName = "SatisfactionPort", menuName = "ScriptableObjects/SatisfactionPort")]
+    [CreateAssetMenu(fileName = "Satisfaction Port", menuName = "Event Ports/Satisfaction Port")]
     public class SatisfactionPort : ScriptableObject
     {
         public UnityAction<int> OnSatisfactionChange;
