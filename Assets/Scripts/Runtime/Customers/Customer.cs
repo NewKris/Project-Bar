@@ -105,6 +105,7 @@ namespace Runtime.Customers
         private float _patienceTimer;
         private bool _showingDialogue;
         private bool _isLeaving;
+        private bool _patienceTickDialogueHasTriggered;
         
 
         private void Start()
@@ -124,8 +125,16 @@ namespace Runtime.Customers
         {
             _patienceTimer -= Time.deltaTime;
 
+            if (_patienceTimer <= patienceTimer - patienceTickTime && !_patienceTickDialogueHasTriggered)
+            {
+                StartCoroutine(HandleDialogue(patienceTimerTickDialogue));
+                _patienceTickDialogueHasTriggered = true;
+            }
+
             if (_patienceTimer <= 0 && !_isLeaving)
             {
+                StartCoroutine(HandleDialogue(patienceTimeOutDialogue));
+                satisfactionPort.DecreaseSatisfaction(satisfactionMissedOrder);
                 LeaveBar();
             }
         }
@@ -133,6 +142,7 @@ namespace Runtime.Customers
         public void ServeDrink(DrinkContents drink)
         {
             // Compare contents with accepted drinks
+            Debug.Log("Served");
         }
 
         public void Order()
@@ -149,6 +159,7 @@ namespace Runtime.Customers
             {
                 ShowDialogue(repeatOrderDialogue);
                 satisfactionPort.DecreaseSatisfaction(satisfactionRepeatOrder);
+                _patienceTimer -= timePenaltyRepeatOrder;
             }
         }
 
@@ -183,9 +194,7 @@ namespace Runtime.Customers
         private void LeaveBar()
         {
             if (_isLeaving) return;
-            StartCoroutine(HandleDialogue(patienceTimeOutDialogue));
             StartCoroutine(WalkToExit());
-            satisfactionPort.DecreaseSatisfaction(satisfactionMissedOrder);
         }
 
         private IEnumerator WalkToExit()
