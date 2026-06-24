@@ -8,20 +8,22 @@ namespace Runtime.Dialogue
     public class DialogueDisplay : MonoBehaviour
     {
         [SerializeField] private bool hasName;
-        [EnableIf("hasName")] [SerializeField] private TMP_Text nameObject;
-        [SerializeField] private bool alwaysDisplayName;
-        [SerializeField] private TMP_Text dialogueBox;
-        [SerializeField] private float timeToDisplayDialogue = 1;
+        [EnableIf("hasName")] [SerializeField] private DialogueBox nameObject;
+        [EnableIf("hasName")] [SerializeField] private bool alwaysDisplayName;
+        
+        [SerializeField] private DialogueBox dialogueBox;
+        [Tooltip("The time it takes until all text is shown, if 0 or less all dialogue will be shown at once otherwise one letter at a time")]
+        [SerializeField] private float timeUntilDialogueFullyDisplayed = 1;
 
         private string _name;
         private Coroutine _dialogueCoroutine;
         
         public void ShowDialogue(string dialogue)
         {
-            if (hasName)
+            if (hasName && !alwaysDisplayName)
             {
                 nameObject.gameObject.SetActive(true);
-                nameObject.text = _name;
+                nameObject.textComponent.text = _name;
             }
             
             dialogueBox.gameObject.SetActive(true);
@@ -42,15 +44,15 @@ namespace Runtime.Dialogue
             if (alwaysDisplayName)
             {
                 nameObject.gameObject.SetActive(true);
-                nameObject.text = characterName;
+                nameObject.textComponent.text = characterName;
             }
         }
 
         private IEnumerator DisplayDialogue(string dialogue)
         {
-            if (timeToDisplayDialogue <= 0)
+            if (timeUntilDialogueFullyDisplayed <= 0)
             {
-                dialogueBox.text = dialogue;
+                dialogueBox.textComponent.text = dialogue;
                 yield break;
             }
             
@@ -58,17 +60,17 @@ namespace Runtime.Dialogue
             int currentIndex = 0;
             string currentMessage = "";
             
-            float timePerLetter = timeToDisplayDialogue / characterCount;
+            float timePerLetter = timeUntilDialogueFullyDisplayed / characterCount;
 
             while (currentIndex < characterCount)
             {
                 currentMessage += dialogue[currentIndex];
-                dialogueBox.text = currentMessage;
+                dialogueBox.textComponent.text = currentMessage;
                 currentIndex++;
                 yield return new WaitForSeconds(timePerLetter);
             }
             
-            dialogueBox.text = dialogue;
+            dialogueBox.textComponent.text = dialogue;
         }
         
     }

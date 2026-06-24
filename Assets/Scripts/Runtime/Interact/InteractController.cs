@@ -7,12 +7,12 @@ namespace Runtime.Interact
     public class InteractController : MonoBehaviour
     {
         public float interactDistance;
-        public UnityEvent<Interactable> OnInteract;
+        public UnityEvent<Interactable> onInteract;
 
         public void TryInteract()
         {
             Interactable interact = TryFindInteraction(out Interactable interaction) ? interaction : null;
-            OnInteract.Invoke(interact);
+            onInteract.Invoke(interact);
         }
         
         private bool TryFindInteraction(out Interactable genericGenericInteractable) {

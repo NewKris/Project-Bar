@@ -80,7 +80,7 @@ namespace Runtime.Customers
 
         private void Start()
         {
-            
+            dialogueDisplay.SetCharacterName(customerName);
         }
 
         private void Update()

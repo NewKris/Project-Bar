@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2892251356810709376}
   - component: {fileID: 938531690922387485}
   - component: {fileID: 2110987246585525655}
-  - component: {fileID: 6992130136997328300}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -87,29 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6992130136997328300
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563730308128360588}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5675074570171302387
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +235,7 @@ GameObject:
   - component: {fileID: 522424725949214946}
   - component: {fileID: 8430899057960951392}
   - component: {fileID: 4144229842378733223}
+  - component: {fileID: 8101993429517323842}
   m_Layer: 0
   m_Name: Name
   m_TagString: Untagged
@@ -324,6 +301,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8101993429517323842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5859746988273484287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e5a9ae83cc4b56b3938e05a098537e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 5859746988273484287}
+  textComponent: {fileID: 5942139241806481881}
 --- !u!1 &6300413637107554113
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +567,7 @@ GameObject:
   - component: {fileID: 6589294746690712268}
   - component: {fileID: 2373277079980763355}
   - component: {fileID: 5617316810394526208}
+  - component: {fileID: 4664340255917496640}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -641,6 +633,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4664340255917496640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262210676158647364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e5a9ae83cc4b56b3938e05a098537e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 8262210676158647364}
+  textComponent: {fileID: 1375369180382681068}
 --- !u!1 &8645739159592134876
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +751,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 1.9886233
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6347801490466187361
@@ -761,7 +767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasName: 1
-  nameObject: {fileID: 5942139241806481881}
+  nameObject: {fileID: 8101993429517323842}
   alwaysDisplayName: 1
-  dialogueBox: {fileID: 1375369180382681068}
-  timeToDisplayDialogue: 5
+  dialogueBox: {fileID: 4664340255917496640}
+  timeUntilDialogueFullyDisplayed: 1
