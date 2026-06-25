@@ -263,11 +263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
   isTarget: 0
-  drinks:
-  - container: {fileID: 11400000, guid: 2a513089301673a4e96540c64bf1ad5f, type: 2}
-    ingredients:
-    - {fileID: 11400000, guid: 646a39d00f0ffb240b97ea6d9ac1ae7a, type: 2}
-    mixType: 0
+  acceptableDrinks:
+  - {fileID: 11400000, guid: 264d85f0256fa074ebc6135265186336, type: 2}
   patienceTimer: 30
   timePenaltyRepeatOrder: 0.5
   patienceTickTime: 20
@@ -302,7 +299,7 @@ MonoBehaviour:
   barPosition: {x: 0, y: 1, z: 3.6}
   exitPosition: {x: 0, y: 1, z: 11.6}
   movementTime: 1.5
-  timeBeforeExit: 0
+  timeBeforeExit: 2
 --- !u!114 &4985797466994179950
 MonoBehaviour:
   m_ObjectHideFlags: 0
