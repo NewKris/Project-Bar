@@ -1,4 +1,5 @@
 ﻿using System;
+using Runtime.Animations;
 using Runtime.Customers;
 using Runtime.Drink;
 using Runtime.Interact;
@@ -7,8 +8,15 @@ using UnityEngine;
 
 namespace Runtime.Player {
     public class PlayerHand : MonoBehaviour {
+        public Transform itemPivot;
+        public HandShakeAnimation shakeAnimation;
+        
         private ItemPickup _heldItem;
 
+        public bool Shake {
+            set => shakeAnimation.Shake = value;
+        }
+        
         public void TryGrabItem(Grabbable grabbable) {
             if (grabbable == null) {
                 return;
@@ -71,7 +79,7 @@ namespace Runtime.Player {
             if (_heldItem) return;
             
             _heldItem = item;
-            item.Pin(transform);
+            item.Pin(itemPivot);
         }
 
         private void OnDrawGizmos() {

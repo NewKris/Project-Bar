@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: Moscow Mule
   m_EditorClassIdentifier: 
   contents:
-    container: {fileID: 11400000, guid: 79587ed1046b9d6428f85f6dfefe1872, type: 2}
-    prep:
-    - {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
-    liquids:
-    - {fileID: 11400000, guid: 9fe57544060200947b2f58caf89d1385, type: 2}
-    - {fileID: 11400000, guid: eb76d2cc202a0c749b2f6c711373583b, type: 2}
-    garnish:
+    container: {fileID: 11400000, guid: 5b5504ee234550a4188bc5b7645eb9f0, type: 2}
+    ingredients:
     - {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
+    - {fileID: 11400000, guid: eb76d2cc202a0c749b2f6c711373583b, type: 2}
+    - {fileID: 11400000, guid: 9fe57544060200947b2f58caf89d1385, type: 2}
+    - {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
     mixType: 1

@@ -76,6 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 3715910397593774176}
   grabController: {fileID: 8113213499893530702}
+  hand: {fileID: 8579862950282568340}
   interactController: {fileID: 2213556989626037280}
 --- !u!1 &475847460953123893
 GameObject:
@@ -182,7 +183,8 @@ Transform:
   m_LocalPosition: {x: 0.7, y: -0.306, z: 1.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 396228996701598827}
   m_Father: {fileID: 3499851229979202358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8579862950282568340
@@ -197,6 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f64aa7255849d1b66951cce797ece0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemPivot: {fileID: 396228996701598827}
+  shakeAnimation: {fileID: 4008801225481229264}
 --- !u!114 &2956154837243967506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,3 +676,49 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &9088081790362892685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396228996701598827}
+  - component: {fileID: 4008801225481229264}
+  m_Layer: 0
+  m_Name: Shake Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &396228996701598827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088081790362892685}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.4936613, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5365584187497957331}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4008801225481229264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088081790362892685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5e97424e0f4d36add027c0e8ef7c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 50
+  amplitude: 0.5

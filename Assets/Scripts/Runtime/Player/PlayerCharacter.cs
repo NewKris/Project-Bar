@@ -7,6 +7,7 @@ namespace Runtime.Player {
     public class PlayerCharacter : MonoBehaviour {
         public FirstPersonCamera playerCamera;
         public GrabController grabController;
+        public PlayerHand hand;
         public InteractController interactController;
 
         private void Awake() {
@@ -23,6 +24,7 @@ namespace Runtime.Player {
 
         private void Update() {
             playerCamera.Look(PlayerController.DeltaMouse, Time.deltaTime);
+            hand.Shake = PlayerController.HoldingShake;
         }
 
         private void OnDrawGizmos() {
