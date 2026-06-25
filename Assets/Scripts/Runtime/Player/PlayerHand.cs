@@ -12,28 +12,28 @@ namespace Runtime.Player {
         
         private ItemPickup _heldItem;
 
-        public void TryGrabItem(Grabbable grabbable) {
-            if (grabbable == null) {
+        public void TryGrabItem(HandInteraction handInteraction) {
+            if (handInteraction == null) {
                 return;
             }
             
-            if (grabbable.TryGetComponent(out ItemPickup pickup)) {
+            if (handInteraction.TryGetComponent(out ItemPickup pickup)) {
                 PickUpItem(pickup);
-            } else if (grabbable.TryGetComponent(out ItemSource source)) {
+            } else if (handInteraction.TryGetComponent(out ItemSource source)) {
                 PickUpItem(source.SpawnItem());
             }
         }
         
-        public void ReleaseHeldItem(Grabbable grabbable) {
-            if (grabbable == null || _heldItem == null) {
+        public void ReleaseHeldItem(HandInteraction handInteraction) {
+            if (handInteraction == null || _heldItem == null) {
                 DropItem();
                 return;
             }
             
-            if (grabbable.TryGetComponent(out ItemDock dock) && dock.CanPlaceItem()) {
+            if (handInteraction.TryGetComponent(out ItemDock dock) && dock.CanPlaceItem()) {
                 dock.PlaceItem(_heldItem);
             }
-            else if (grabbable.TryGetComponent(out Customer customer) && (_heldItem.TryGetComponent(out DrinkObject drink)))
+            else if (handInteraction.TryGetComponent(out Customer customer) && (_heldItem.TryGetComponent(out DrinkObject drink)))
             {
                 customer.ServeDrink(drink.currentContents);
             }
@@ -42,6 +42,16 @@ namespace Runtime.Player {
             }
             
             _heldItem = null;
+        }
+
+        public void PourDrink(HandInteraction handInteraction) {
+            if (!_heldItem.TryGetComponent(out DrinkObject heldDrink)) return;
+
+            if (handInteraction.TryGetComponent(out DrinkObject targetDrink)) {
+                targetDrink.AddContents(heldDrink.currentContents);
+            }
+            
+            heldDrink.EmptyContents();
         }
 
         private void Awake() {

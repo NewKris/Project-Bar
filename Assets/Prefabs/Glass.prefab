@@ -210,6 +210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentContents:
-    ingredients:
-    - {fileID: 11400000, guid: c0997a91865314a42828a9a32a623d2f, type: 2}
+    container: {fileID: 0}
+    ingredients: []
     mixType: 0

@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 3715910397593774176}
-  grabController: {fileID: 8113213499893530702}
+  handController: {fileID: 8113213499893530702}
   interactController: {fileID: 2213556989626037280}
 --- !u!1 &475847460953123893
 GameObject:
@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 1148863183663653903}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: -0.306, z: 1.35}
+  m_LocalPosition: {x: 0.7, y: -0.306, z: 0.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -198,7 +198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPivot: {fileID: 5365584187497957331}
-  shakeAnimation: {fileID: 0}
 --- !u!114 &2956154837243967506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +277,21 @@ MonoBehaviour:
       - m_Target: {fileID: 8579862950282568340}
         m_TargetAssemblyTypeName: Runtime.Player.PlayerHand, Assembly-CSharp
         m_MethodName: ReleaseHeldItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPour:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8579862950282568340}
+        m_TargetAssemblyTypeName: Runtime.Player.PlayerHand, Assembly-CSharp
+        m_MethodName: PourDrink
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

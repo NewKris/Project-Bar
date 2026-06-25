@@ -6,19 +6,21 @@ using UnityEngine;
 namespace Runtime.Player {
     public class PlayerCharacter : MonoBehaviour {
         public FirstPersonCamera playerCamera;
-        public GrabController grabController;
+        public HandController handController;
         public InteractController interactController;
 
         private void Awake() {
-            PlayerController.OnGrab += grabController.TryGrabInteract;
-            PlayerController.OnRelease += grabController.TryReleaseInteract;
+            PlayerController.OnGrab += handController.TryGrabInteract;
+            PlayerController.OnRelease += handController.TryReleaseInteract;
             PlayerController.OnInteract += interactController.TryInteract;
+            PlayerController.OnPour += handController.TryPourInteract;
         }
 
         private void OnDestroy() {
-            PlayerController.OnGrab -= grabController.TryGrabInteract;
-            PlayerController.OnRelease -= grabController.TryReleaseInteract;
+            PlayerController.OnGrab -= handController.TryGrabInteract;
+            PlayerController.OnRelease -= handController.TryReleaseInteract;
             PlayerController.OnInteract -= interactController.TryInteract;
+            PlayerController.OnPour += handController.TryPourInteract;
         }
 
         private void Update() {
