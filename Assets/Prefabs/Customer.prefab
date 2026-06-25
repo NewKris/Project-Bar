@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 6017954159920606590}
   - component: {fileID: 6948183784522760002}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: PatienceTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,10 +196,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8232452032915344539}
+  - component: {fileID: 6262037150458667967}
   - component: {fileID: 3255688253476523512}
   - component: {fileID: 4818803729512919718}
-  - component: {fileID: 6262037150458667967}
   - component: {fileID: 1565358399578308679}
+  - component: {fileID: 4985797466994179950}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -225,55 +226,6 @@ Transform:
   - {fileID: 1299677984973809517}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3255688253476523512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8645739159592134876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c017e1067494772ac6e4d66fd610013, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueDisplay: {fileID: 4837321216815503876}
-  satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
-  customerName: Karin Kramgo
-  isTarget: 0
-  drinks:
-  - container: {fileID: 11400000, guid: 2a513089301673a4e96540c64bf1ad5f, type: 2}
-    ingredients:
-    - {fileID: 11400000, guid: 646a39d00f0ffb240b97ea6d9ac1ae7a, type: 2}
-    mixType: 0
-  patienceTimer: 30
-  dialoguePopUpTimer: 5
-  timePenaltyRepeatOrder: 0.5
-  patienceTickTime: 20
-  attentionDialogue: Hello!!!
-  orderDialogue: I could really go for some soda! :)
-  successDialogue: Yay! A soda! :)
-  failureDialogue: This is not a soda!!!! :(
-  repeatOrderDialogue: Have you already forgotten such a simple order as a soda?
-    :|
-  patienceTimerTickDialogue: I might as well leave if this is the service I get
-  patienceTimeOutDialogue: Uuuuugh this place sucks!
-  satisfactionSuccess: 10
-  satisfactionFailure: 5
-  satisfactionMissedOrder: 10
-  satisfactionRepeatOrder: 2
---- !u!114 &4818803729512919718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8645739159592134876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717a7ff1475047dc9f71178ad5b3bb28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &6262037150458667967
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -297,6 +249,44 @@ CapsuleCollider:
   m_Height: 1.9886233
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3255688253476523512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645739159592134876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c017e1067494772ac6e4d66fd610013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
+  isTarget: 0
+  drinks:
+  - container: {fileID: 11400000, guid: 2a513089301673a4e96540c64bf1ad5f, type: 2}
+    ingredients:
+    - {fileID: 11400000, guid: 646a39d00f0ffb240b97ea6d9ac1ae7a, type: 2}
+    mixType: 0
+  patienceTimer: 30
+  timePenaltyRepeatOrder: 0.5
+  patienceTickTime: 20
+  satisfactionSuccess: 10
+  satisfactionFailure: 5
+  satisfactionMissedOrder: 10
+  satisfactionRepeatOrder: 2
+--- !u!114 &4818803729512919718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645739159592134876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717a7ff1475047dc9f71178ad5b3bb28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1565358399578308679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +303,29 @@ MonoBehaviour:
   exitPosition: {x: 0, y: 1, z: 11.6}
   movementTime: 1.5
   timeBeforeExit: 0
+--- !u!114 &4985797466994179950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645739159592134876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0090b410109349679c3f0b036f0a9df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerName: Karin Kramgo
+  dialogueDisplay: {fileID: 4837321216815503876}
+  attentionDialogue: Hello! Barkeep!?
+  orderDialogue: I could really go for some soda! :)
+  repeatOrderDialogue: Have you already forgotten such a simple order as a soda?
+    :|
+  successDialogue: Yay!! A soda!!! :D
+  failureDialogue: This is not a soda. :(
+  patienceTimerTickDialogue: I might as well leave if this is the service I get.
+  patienceTimeOutDialogue: Ugh! This place stinks!
+  dialoguePopUpTimer: 5
 --- !u!1001 &8082050499074235439
 PrefabInstance:
   m_ObjectHideFlags: 0

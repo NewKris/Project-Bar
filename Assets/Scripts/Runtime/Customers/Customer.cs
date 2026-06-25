@@ -10,17 +10,11 @@ using UnityEngine.Serialization;
 
 namespace Runtime.Customers
 {
-    [RequireComponent(typeof(CustomerMovement))]
+    [RequireComponent(typeof(CustomerMovement))] [RequireComponent(typeof(CustomerDialogue))]
     public class Customer : MonoBehaviour
     {
-        [Tooltip("The DialogueDisplay component attached to the customers dialogue boxes")]
-        [SerializeField] private DialogueDisplay dialogueDisplay;
-        
         [Tooltip("The scriptable object satisfaction port")]
         [SerializeField] private SatisfactionPort satisfactionPort;
-        
-        [Tooltip("The name that will be displayed as the customer name")]
-        [SerializeField] private string customerName;
         
         [Tooltip("Is used to know whether customer is the target")]
         [SerializeField] private bool isTarget;
@@ -29,14 +23,9 @@ namespace Runtime.Customers
         [SerializeField] private List<DrinkContents> drinks;
         
         
-        
         [Foldout("Timers")]
         [Tooltip("The time it takes before the customer leaves")]
         [SerializeField] private float patienceTimer;
-        
-        [Foldout("Timers")]
-        [Tooltip("The time the dialogue will remain visible upon activation")]
-        [SerializeField] private float dialoguePopUpTimer;
         
         [Foldout("Timers")]
         [Tooltip("The time that will be removed from the patience timer when order is repeated")]
@@ -45,38 +34,6 @@ namespace Runtime.Customers
         [Foldout("Timers")]
         [Tooltip("The time it takes before the customer asks the player to hurry up")]
         [SerializeField] private float patienceTickTime;
-        
-        
-        
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer enters the bar")]
-        [SerializeField] private string attentionDialogue;
-        
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer first orders")]
-        [SerializeField] private string orderDialogue;
-
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer has been served the correct drink")]
-        [SerializeField] private string successDialogue;
-
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer has been served an incorrect drink")]
-        [SerializeField] private string failureDialogue;
-
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer is asked to repeat the order")]
-        [SerializeField] private string repeatOrderDialogue;
-
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer starts to get impatient")]
-        [FormerlySerializedAs("gettingImpatientDialogue")]
-        [SerializeField] private string patienceTimerTickDialogue;
-        
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer's patience has run out")]
-        [SerializeField] private string patienceTimeOutDialogue;
-        
         
         
         [Foldout("Satisfaction settings")]
@@ -96,6 +53,7 @@ namespace Runtime.Customers
         [SerializeField] [Min(0)] private int satisfactionRepeatOrder;
 
         private CustomerMovement _customerMovement;
+        private CustomerDialogue _customerDialogue;
         
         private bool _hasOrdered;
         private float _patienceTimer;
@@ -106,8 +64,9 @@ namespace Runtime.Customers
         private void Start()
         {
             _customerMovement = GetComponent<CustomerMovement>();
+            _customerDialogue = GetComponent<CustomerDialogue>();
             
-            dialogueDisplay.SetCharacterName(customerName);
+            _customerDialogue.SetName();
             _patienceTimer = patienceTimer;
             EnterBar();
         }
@@ -118,13 +77,13 @@ namespace Runtime.Customers
 
             if (_patienceTimer <= patienceTimer - patienceTickTime && !_patienceTickDialogueHasTriggered)
             {
-                ShowDialogue(patienceTimerTickDialogue);
+                _customerDialogue.PatienceTick();
                 _patienceTickDialogueHasTriggered = true;
             }
 
             if (_patienceTimer <= 0 && !_isLeaving)
             {
-                ShowDialogue(patienceTimeOutDialogue);
+                _customerDialogue.PatienceTimeOut();
                 satisfactionPort.DecreaseSatisfaction(satisfactionMissedOrder);
                 LeaveBar();
             }
@@ -138,30 +97,25 @@ namespace Runtime.Customers
 
         public void Order()
         {
-            if (dialogueDisplay.showingDialogue) return;
+            if (_customerDialogue.IsSpeaking) return;
             if (_isLeaving) return;
 
             if (!_hasOrdered)
             {
-                ShowDialogue(orderDialogue);
+                _customerDialogue.Order();
                 _hasOrdered = true;
             }
             else
             {
-                ShowDialogue(repeatOrderDialogue);
+                _customerDialogue.RepeatOrder();
                 satisfactionPort.DecreaseSatisfaction(satisfactionRepeatOrder);
                 _patienceTimer -= timePenaltyRepeatOrder;
             }
         }
 
-        private void ShowDialogue(string dialogue)
-        {
-            dialogueDisplay.ShowDialogueTimed(dialogue, dialoguePopUpTimer);
-        }
-
         private void EnterBar()
         {
-            ShowDialogue(attentionDialogue);
+            _customerDialogue.Attention();
             _customerMovement.EnterBar();
         }
 
