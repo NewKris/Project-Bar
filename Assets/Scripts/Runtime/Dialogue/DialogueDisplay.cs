@@ -14,7 +14,7 @@ namespace Runtime.Dialogue
         
         [SerializeField] private DialogueBox dialogueBox;
         [Tooltip("The time it takes until all text is shown, if 0 or less all dialogue will be shown at once otherwise one letter at a time")]
-        [SerializeField] private float timeUntilDialogueFullyDisplayed = 1;
+        [SerializeField] private float writeTime = 1;
 
         [SerializeField] private Image timeRemainingImage;
 
@@ -34,7 +34,8 @@ namespace Runtime.Dialogue
             
             dialogueBox.gameObject.SetActive(true);
             // dialogueBox.text = dialogue;
-            _dialogueCoroutine = StartCoroutine(DisplayDialogue(dialogue));
+            _dialogueCoroutine =
+                StartCoroutine(TextMethods.DisplayText(dialogueBox.textComponent, dialogue, writeTime));
         }
         
         public void HideDialogue()
@@ -86,31 +87,6 @@ namespace Runtime.Dialogue
         public void HideCharacterName()
         {
             nameObject.gameObject.SetActive(false);
-        }
-
-        private IEnumerator DisplayDialogue(string dialogue)
-        {
-            if (timeUntilDialogueFullyDisplayed <= 0)
-            {
-                dialogueBox.textComponent.text = dialogue;
-                yield break;
-            }
-            
-            int characterCount = dialogue.Length;
-            int currentIndex = 0;
-            string currentMessage = "";
-            
-            float timePerLetter = timeUntilDialogueFullyDisplayed / characterCount;
-
-            while (currentIndex < characterCount)
-            {
-                currentMessage += dialogue[currentIndex];
-                dialogueBox.textComponent.text = currentMessage;
-                currentIndex++;
-                yield return new WaitForSeconds(timePerLetter);
-            }
-            
-            dialogueBox.textComponent.text = dialogue;
         }
         
     }
