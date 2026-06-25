@@ -5,6 +5,12 @@ namespace Runtime.Drink {
     public class DrinkObject : MonoBehaviour {
         public DrinkContents currentContents;
 
+        private float _shakeDuration;
+        
+        public void TickShake() {
+            _shakeDuration += Time.deltaTime;
+        }
+
         public void EmptyContents() {
             currentContents.ingredients.Clear();
             currentContents.mixType = MixType.None;
