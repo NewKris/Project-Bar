@@ -103,7 +103,6 @@ namespace Runtime.Customers
         
         private bool _hasOrdered;
         private float _patienceTimer;
-        private bool _showingDialogue;
         private bool _isLeaving;
         private bool _patienceTickDialogueHasTriggered;
         
@@ -127,13 +126,13 @@ namespace Runtime.Customers
 
             if (_patienceTimer <= patienceTimer - patienceTickTime && !_patienceTickDialogueHasTriggered)
             {
-                StartCoroutine(HandleDialogue(patienceTimerTickDialogue));
+                ShowDialogue(patienceTimerTickDialogue);
                 _patienceTickDialogueHasTriggered = true;
             }
 
             if (_patienceTimer <= 0 && !_isLeaving)
             {
-                StartCoroutine(HandleDialogue(patienceTimeOutDialogue));
+                ShowDialogue(patienceTimeOutDialogue);
                 satisfactionPort.DecreaseSatisfaction(satisfactionMissedOrder);
                 LeaveBar();
             }
@@ -147,7 +146,7 @@ namespace Runtime.Customers
 
         public void Order()
         {
-            if (_showingDialogue) return;
+            if (dialogueDisplay.showingDialogue) return;
             if (_isLeaving) return;
 
             if (!_hasOrdered)
@@ -165,16 +164,7 @@ namespace Runtime.Customers
 
         private void ShowDialogue(string dialogue)
         {
-            StartCoroutine(HandleDialogue(dialogue));
-        }
-
-        private IEnumerator HandleDialogue(string dialogue)
-        {
-            dialogueDisplay.ShowDialogue(dialogue);
-            _showingDialogue = true;
-            yield return new WaitForSeconds(dialoguePopUpTimer);
-            dialogueDisplay.HideDialogue();
-            _showingDialogue = false;
+            dialogueDisplay.ShowDialogueTimed(dialogue, dialoguePopUpTimer);
         }
 
         private IEnumerator WalkToBar()
