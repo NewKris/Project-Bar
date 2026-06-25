@@ -10,12 +10,9 @@ using UnityEngine.Serialization;
 
 namespace Runtime.Customers
 {
+    [RequireComponent(typeof(CustomerMovement))]
     public class Customer : MonoBehaviour
     {
-        public Vector3 barPosition;
-        public Vector3 exitPosition;
-        
-        
         [Tooltip("The DialogueDisplay component attached to the customers dialogue boxes")]
         [SerializeField] private DialogueDisplay dialogueDisplay;
         
@@ -27,9 +24,6 @@ namespace Runtime.Customers
         
         [Tooltip("Is used to know whether customer is the target")]
         [SerializeField] private bool isTarget;
-
-        [Tooltip("The time it takes for the customer to walk")]
-        [SerializeField] [Min(0)] private float movementTime;
         
         [Tooltip("The possible drinks that when served to the customer will result in a successful order")]
         [SerializeField] private List<DrinkContents> drinks;
@@ -100,6 +94,8 @@ namespace Runtime.Customers
         [Foldout("Satisfaction settings")]
         [Tooltip("The amount of satisfaction that the player will lose if they repeat the customers order")]
         [SerializeField] [Min(0)] private int satisfactionRepeatOrder;
+
+        private CustomerMovement _customerMovement;
         
         private bool _hasOrdered;
         private float _patienceTimer;
@@ -109,15 +105,11 @@ namespace Runtime.Customers
 
         private void Start()
         {
+            _customerMovement = GetComponent<CustomerMovement>();
+            
             dialogueDisplay.SetCharacterName(customerName);
             _patienceTimer = patienceTimer;
             EnterBar();
-        }
-
-        private void EnterBar()
-        {
-            ShowDialogue(attentionDialogue);
-            StartCoroutine(WalkToBar());
         }
 
         private void Update()
@@ -167,41 +159,17 @@ namespace Runtime.Customers
             dialogueDisplay.ShowDialogueTimed(dialogue, dialoguePopUpTimer);
         }
 
-        private IEnumerator WalkToBar()
+        private void EnterBar()
         {
-            float elapsedTime = 0;
-            Vector3 startPosition = transform.position;
-
-            while (elapsedTime < movementTime)
-            {
-                elapsedTime += Time.fixedDeltaTime;
-                transform.position = Vector3.Lerp(startPosition, barPosition, elapsedTime/movementTime);
-                
-                yield return new WaitForFixedUpdate();
-            }
+            ShowDialogue(attentionDialogue);
+            _customerMovement.EnterBar();
         }
 
         private void LeaveBar()
         {
             if (_isLeaving) return;
-            StartCoroutine(WalkToExit());
-        }
-
-        private IEnumerator WalkToExit()
-        {
-            float elapsedTime = 0;
-            Vector3 startPosition = transform.position;
+            _customerMovement.ExitBar();
             _isLeaving = true;
-            
-            while (elapsedTime < movementTime)
-            {
-                elapsedTime += Time.fixedDeltaTime;
-                transform.position = Vector3.Lerp(startPosition, exitPosition, elapsedTime/movementTime);
-                
-                yield return new WaitForFixedUpdate();
-            }
-            
-            Destroy(gameObject);
         }
     }
 }
