@@ -1,24 +1,23 @@
 ﻿using System.Collections.Generic;
+using Runtime.Configuration;
 using UnityEngine;
 
 namespace Runtime.Drink {
     public class DrinkObject : MonoBehaviour {
         public DrinkContents currentContents;
-
-        private float _shakeDuration;
         
-        public void TickShake() {
-            _shakeDuration += Time.deltaTime;
-        }
+        protected float shakeDuration;
 
         public void EmptyContents() {
             currentContents.ingredients.Clear();
             currentContents.mixType = MixType.None;
+            shakeDuration = 0f;
         }
 
         public void AddContents(DrinkContents contents) {
             currentContents.ingredients.AddRange(contents.ingredients);
             currentContents.mixType = contents.mixType;
+            shakeDuration = 0f;
         }
         
         public void AddIngredient(Ingredient ingredient) {

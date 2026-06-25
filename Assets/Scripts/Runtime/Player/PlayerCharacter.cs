@@ -24,7 +24,7 @@ namespace Runtime.Player {
 
         private void Update() {
             playerCamera.Look(PlayerController.DeltaMouse, Time.deltaTime);
-            hand.Shake = PlayerController.HoldingShake;
+            hand.ShakeHand = PlayerController.HoldingShake;
         }
 
         private void OnDrawGizmos() {

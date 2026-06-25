@@ -13,9 +13,7 @@ namespace Runtime.Player {
         
         private ItemPickup _heldItem;
 
-        public bool Shake {
-            set => shakeAnimation.Shake = value;
-        }
+        public bool ShakeHand { get; set; }
         
         public void TryGrabItem(Grabbable grabbable) {
             if (grabbable == null) {
@@ -55,6 +53,14 @@ namespace Runtime.Player {
 
         private void OnDestroy() {
             PlayerController.OnAddIngredient -= TryAddIngredient;
+        }
+
+        private void Update() {
+            TryShakeShaker();
+        }
+
+        private void TryShakeShaker() {
+            
         }
 
         private void TryAddIngredient(string ingredientAction) {

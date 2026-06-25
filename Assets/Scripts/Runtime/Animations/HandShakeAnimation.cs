@@ -6,19 +6,19 @@ namespace Runtime.Animations {
         public float frequency;
         public float amplitude;
 
-        private bool _shake;
+        private bool shaking;
 
-        public bool Shake {
-            get => _shake;
+        public bool Shaking {
+            get => shaking;
             set {
-                _shake = value;
+                shaking = value;
                 
-                if (!_shake) transform.localPosition = Vector3.zero;
+                if (!shaking) transform.localPosition = Vector3.zero;
             }
         }
 
         private void Update() {
-            if (Shake) {
+            if (Shaking) {
                 float offset = Mathf.Sin(Time.time * frequency) * amplitude;
                 transform.localPosition = Vector3.up * offset;
             }

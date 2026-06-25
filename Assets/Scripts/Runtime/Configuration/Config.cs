@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Runtime.Configuration {
     [Serializable]
     public class Config {
-        public static Config Instance;
+        public static Config Instance = new Config();
         
         private const string FilePath = "/Config/config";
         
