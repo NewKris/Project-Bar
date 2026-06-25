@@ -8,24 +8,23 @@ namespace Runtime.Player {
         public static event Action OnRelease;
         public static event Action OnInteract;
         public static event Action<string> OnAddIngredient;
+        public static event Action OnPour;
         
         public static Vector2 DeltaMouse { get; private set; }
-        public static bool HoldingShake { get; private set; }
 
         public string[] ingredientKeys;
         
         private InputAction _lookAction;
-        private InputAction _shakeAction;
 
         private InputActionMap ActionMap => InputSystem.actions.actionMaps[0];
         
         private void Awake() {
             _lookAction = ActionMap["Look"];
-            _shakeAction = ActionMap["Shake"];
             
             ActionMap["Grab"].performed += _ => OnGrab?.Invoke();
             ActionMap["Grab"].canceled += _ => OnRelease?.Invoke();
             ActionMap["Interact"].performed += _ => OnInteract?.Invoke();
+            ActionMap["Pour"].performed += _ => OnPour?.Invoke();
             
             // Får problem med att subscribe lambda funktioner i den här loopen
             // där de inte blir disposed och därför skulle få duplicerade anrop.
@@ -47,7 +46,6 @@ namespace Runtime.Player {
 
         private void Update() {
             DeltaMouse = _lookAction.ReadValue<Vector2>();
-            HoldingShake = _shakeAction.ReadValue<float>() != 0;
         }
         
         private void AddIngredientPerformed(InputAction.CallbackContext context) {
