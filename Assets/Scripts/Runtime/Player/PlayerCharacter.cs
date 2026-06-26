@@ -8,18 +8,23 @@ namespace Runtime.Player {
         public FirstPersonCamera playerCamera;
         public HandController handController;
         public InteractController interactController;
+        public StationInteractController stationInteractController;
 
         private void Awake() {
             PlayerController.OnGrab += handController.TryGrabInteract;
             PlayerController.OnRelease += handController.TryReleaseInteract;
-            PlayerController.OnInteract += interactController.TryInteract;
+            PlayerController.OnBeginInteract += interactController.TryBeginInteract;
+            PlayerController.OnBeginInteract += stationInteractController.TryBeginInteract;
+            PlayerController.OnEndInteract += stationInteractController.EndInteract;
             PlayerController.OnPour += handController.TryPourInteract;
         }
 
         private void OnDestroy() {
             PlayerController.OnGrab -= handController.TryGrabInteract;
             PlayerController.OnRelease -= handController.TryReleaseInteract;
-            PlayerController.OnInteract -= interactController.TryInteract;
+            PlayerController.OnBeginInteract -= interactController.TryBeginInteract;
+            PlayerController.OnBeginInteract -= stationInteractController.TryBeginInteract;
+            PlayerController.OnEndInteract -= stationInteractController.EndInteract;
             PlayerController.OnPour -= handController.TryPourInteract;
         }
 

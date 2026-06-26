@@ -6,21 +6,21 @@ namespace Runtime.Items {
     public class ItemDock : MonoBehaviour {
         public Transform itemPivot;
 
-        private ItemPickup _heldItem;
+        public ItemPickup HeldItem { get; private set; }
 
         public bool CanPlaceItem() {
-            return _heldItem == null;
+            return HeldItem == null;
         }
         
         public void PlaceItem(ItemPickup item) {
             item.Pin(itemPivot);
-            _heldItem = item;
-            _heldItem.OnPinned += RemoveItem;
+            HeldItem = item;
+            HeldItem.OnPinned += RemoveItem;
         }
 
         private void RemoveItem() {
-            _heldItem.OnPinned -= RemoveItem;
-            _heldItem = null;
+            HeldItem.OnPinned -= RemoveItem;
+            HeldItem = null;
         }
 
         private void OnDrawGizmos() {

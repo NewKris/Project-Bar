@@ -8,7 +8,7 @@ namespace Runtime.Interact
         public InteractRay interactRay;
         public UnityEvent<Interactable> onInteract;
 
-        public void TryInteract()
+        public void TryBeginInteract()
         {
             Interactable interact = interactRay.TryFindInteraction(out Interactable interaction) ? interaction : null;
             onInteract.Invoke(interact);

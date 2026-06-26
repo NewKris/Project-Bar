@@ -6,7 +6,8 @@ namespace Runtime.Player {
     public class PlayerController : MonoBehaviour {
         public static event Action OnGrab;
         public static event Action OnRelease;
-        public static event Action OnInteract;
+        public static event Action OnBeginInteract;
+        public static event Action OnEndInteract;
         public static event Action<string> OnAddIngredient;
         public static event Action OnPour;
         
@@ -23,7 +24,8 @@ namespace Runtime.Player {
             
             ActionMap["Grab"].performed += _ => OnGrab?.Invoke();
             ActionMap["Grab"].canceled += _ => OnRelease?.Invoke();
-            ActionMap["Interact"].performed += _ => OnInteract?.Invoke();
+            ActionMap["Interact"].performed += _ => OnBeginInteract?.Invoke();
+            ActionMap["Interact"].canceled += _ => OnEndInteract?.Invoke();
             ActionMap["Pour"].performed += _ => OnPour?.Invoke();
             
             // Får problem med att subscribe lambda funktioner i den här loopen
