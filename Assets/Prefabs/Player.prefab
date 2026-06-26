@@ -221,6 +221,8 @@ GameObject:
   - component: {fileID: 8076895666979897690}
   - component: {fileID: 8113213499893530702}
   - component: {fileID: 2213556989626037280}
+  - component: {fileID: 1734011719528629409}
+  - component: {fileID: 4792878758102882743}
   m_Layer: 0
   m_Name: Interact Controller
   m_TagString: Untagged
@@ -255,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e7b764bea44dcd86980ad92b61a8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 2
+  interactRay: {fileID: 4792878758102882743}
   onGrab:
     m_PersistentCalls:
       m_Calls:
@@ -313,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcde3568b606475891dcf73050024be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 2
+  interactRay: {fileID: 4792878758102882743}
   onInteract:
     m_PersistentCalls:
       m_Calls:
@@ -329,6 +331,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1734011719528629409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146837952701064190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db22f50c0a14368bc6f93fb686e53a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRay: {fileID: 4792878758102882743}
+--- !u!114 &4792878758102882743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146837952701064190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bd88f4c2894b6392e63d68ea02b6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactDistance: 2
 --- !u!1 &6067592385918225850
 GameObject:
   m_ObjectHideFlags: 0
