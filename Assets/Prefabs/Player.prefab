@@ -77,6 +77,7 @@ MonoBehaviour:
   playerCamera: {fileID: 3715910397593774176}
   handController: {fileID: 8113213499893530702}
   interactController: {fileID: 2213556989626037280}
+  stationInteractController: {fileID: 1734011719528629409}
 --- !u!1 &475847460953123893
 GameObject:
   m_ObjectHideFlags: 0
