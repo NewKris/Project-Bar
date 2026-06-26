@@ -7,5 +7,6 @@ namespace Runtime.Drink {
         public DrinkContainer container;
         public List<Ingredient> ingredients;
         public MixType mixType;
+        public bool autoFail;
     }
 }
