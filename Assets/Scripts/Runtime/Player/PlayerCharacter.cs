@@ -20,7 +20,7 @@ namespace Runtime.Player {
             PlayerController.OnGrab -= handController.TryGrabInteract;
             PlayerController.OnRelease -= handController.TryReleaseInteract;
             PlayerController.OnInteract -= interactController.TryInteract;
-            PlayerController.OnPour += handController.TryPourInteract;
+            PlayerController.OnPour -= handController.TryPourInteract;
         }
 
         private void Update() {

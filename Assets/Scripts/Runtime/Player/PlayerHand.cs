@@ -47,7 +47,7 @@ namespace Runtime.Player {
         public void PourDrink(HandInteraction handInteraction) {
             if (!_heldItem.TryGetComponent(out DrinkObject heldDrink)) return;
 
-            if (handInteraction.TryGetComponent(out DrinkObject targetDrink)) {
+            if (handInteraction?.TryGetComponent(out DrinkObject targetDrink) ?? false) {
                 targetDrink.AddContents(heldDrink.currentContents);
             }
             
