@@ -113,6 +113,8 @@ namespace Runtime.Customers
         private bool IsDrinkAccepted(DrinkContents drink)
         {
             List<Recipe> possibleRecipes = acceptableDrinks;
+
+            if (drink.autoFail) return false;
             
             possibleRecipes = CheckForMatchingContainer(drink.container, possibleRecipes);
             if (possibleRecipes.Count == 0)
