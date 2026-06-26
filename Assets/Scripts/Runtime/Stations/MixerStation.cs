@@ -1,4 +1,5 @@
 ﻿using System;
+using Runtime.Animations;
 using Runtime.Drink;
 using Runtime.Items;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine;
 namespace Runtime.Stations {
     public class MixerStation : MonoBehaviour {
         public ItemDock itemDock;
+        public RumbleAnimation rumble;
 
         private Shaker _currentShaker;
         
@@ -24,6 +26,14 @@ namespace Runtime.Stations {
 
         private void Awake() {
             enabled = false;
+        }
+
+        private void OnEnable() {
+            rumble.Shaking = true;
+        }
+
+        private void OnDisable() {
+            rumble.Shaking = false;
         }
 
         private void Update() {
