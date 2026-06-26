@@ -10,7 +10,7 @@ using UnityEngine.Serialization;
 
 namespace Runtime.Customers
 {
-    [RequireComponent(typeof(CustomerMovement))] [RequireComponent(typeof(CustomerDialogue))]
+    [RequireComponent(typeof(CustomerMovement))] [RequireComponent(typeof(CustomerDialogue))] [RequireComponent(typeof(CustomerPatience))]
     public class Customer : MonoBehaviour
     {
         [Tooltip("The scriptable object satisfaction port")]
@@ -24,16 +24,8 @@ namespace Runtime.Customers
         
         
         [Foldout("Timers")]
-        [Tooltip("The time it takes before the customer leaves")]
-        [SerializeField] private float patienceTimer;
-        
-        [Foldout("Timers")]
         [Tooltip("The time that will be removed from the patience timer when order is repeated")]
         [SerializeField] [Min(0)] private float timePenaltyRepeatOrder;
-        
-        [Foldout("Timers")]
-        [Tooltip("The time it takes before the customer asks the player to hurry up")]
-        [SerializeField] private float patienceTickTime;
         
         
         [Foldout("Satisfaction settings")]
@@ -54,39 +46,39 @@ namespace Runtime.Customers
 
         private CustomerMovement _customerMovement;
         private CustomerDialogue _customerDialogue;
+        private CustomerPatience _customerPatience;
         
         private bool _hasOrdered;
-        private float _patienceTimer;
         private bool _isLeaving;
-        private bool _patienceTickDialogueHasTriggered;
-        
 
-        private void Start()
+        private void OnEnable()
         {
+            _customerPatience = GetComponent<CustomerPatience>();
             _customerMovement = GetComponent<CustomerMovement>();
             _customerDialogue = GetComponent<CustomerDialogue>();
             
+            _customerPatience.OnPatienceTick += _customerDialogue.PatienceTick;
+            _customerPatience.OnPatienceTimeOut += HandlePatienceTimeOut;
+        }
+
+        private void OnDisable()
+        {
+            _customerPatience.OnPatienceTick -= _customerDialogue.PatienceTick;
+            _customerPatience.OnPatienceTimeOut -= HandlePatienceTimeOut;
+        }
+
+        private void Start()
+        {
+            
             _customerDialogue.SetName();
-            _patienceTimer = patienceTimer;
             EnterBar();
         }
 
-        private void Update()
+        private void HandlePatienceTimeOut()
         {
-            _patienceTimer -= Time.deltaTime;
-
-            if (_patienceTimer <= patienceTimer - patienceTickTime && !_patienceTickDialogueHasTriggered)
-            {
-                _customerDialogue.PatienceTick();
-                _patienceTickDialogueHasTriggered = true;
-            }
-
-            if (_patienceTimer <= 0 && !_isLeaving)
-            {
-                _customerDialogue.PatienceTimeOut();
-                satisfactionPort.DecreaseSatisfaction(satisfactionMissedOrder);
-                LeaveBar();
-            }
+            _customerDialogue.PatienceTimeOut();
+            satisfactionPort.DecreaseSatisfaction(satisfactionMissedOrder);
+            LeaveBar();
         }
 
         public void ServeDrink(DrinkContents drink)
@@ -212,7 +204,7 @@ namespace Runtime.Customers
             {
                 _customerDialogue.RepeatOrder();
                 satisfactionPort.DecreaseSatisfaction(satisfactionRepeatOrder);
-                _patienceTimer -= timePenaltyRepeatOrder;
+                _customerPatience.AddTime(-timePenaltyRepeatOrder);
             }
         }
 
