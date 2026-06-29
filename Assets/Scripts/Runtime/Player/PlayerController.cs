@@ -13,15 +13,18 @@ namespace Runtime.Player {
         public static event Action<float> OnCrouch;
         
         public static Vector2 DeltaMouse { get; private set; }
+        public static bool HoldingShake { get; private set; }
 
         public string[] ingredientKeys;
         
         private InputAction _lookAction;
+        private InputAction _shakeAction;
 
         private InputActionMap ActionMap => InputSystem.actions.actionMaps[0];
         
         private void Awake() {
             _lookAction = ActionMap["Look"];
+            _shakeAction = ActionMap["Shake"];
             
             ActionMap["Grab"].performed += _ => OnGrab?.Invoke();
             ActionMap["Grab"].canceled += _ => OnRelease?.Invoke();
@@ -50,6 +53,7 @@ namespace Runtime.Player {
 
         private void Update() {
             DeltaMouse = _lookAction.ReadValue<Vector2>();
+            HoldingShake = _shakeAction.ReadValue<float>() != 0;
         }
         
         private void AddIngredientPerformed(InputAction.CallbackContext context) {

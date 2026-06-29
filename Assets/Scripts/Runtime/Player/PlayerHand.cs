@@ -9,9 +9,12 @@ using UnityEngine;
 namespace Runtime.Player {
     public class PlayerHand : MonoBehaviour {
         public Transform itemPivot;
+        public HandShakeAnimation  handShake;
         
         private ItemPickup _heldItem;
 
+        public bool ShakeDrink { get; set; }
+        
         public void TryGrabItem(HandInteraction handInteraction) {
             if (handInteraction == null) {
                 return;
@@ -61,7 +64,11 @@ namespace Runtime.Player {
         private void OnDestroy() {
             PlayerController.OnAddIngredient -= TryAddIngredient;
         }
-        
+
+        private void Update() {
+            TryShakeDrink();
+        }
+
         private void TryAddIngredient(string ingredientAction) {
             if (!_heldItem) return;
 
@@ -85,6 +92,16 @@ namespace Runtime.Player {
             
             _heldItem = item;
             item.Pin(itemPivot);
+        }
+
+        private void TryShakeDrink() {
+            if (ShakeDrink && _heldItem && _heldItem.TryGetComponent(out Shaker shaker)) {
+                shaker.TickShake();
+                handShake.Shaking = true;
+            }
+            else {
+                handShake.Shaking = false;
+            }
         }
 
         private void OnDrawGizmos() {

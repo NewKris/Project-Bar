@@ -170,9 +170,9 @@
                 },
                 {
                     "name": "Shake",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "21607974-16b0-40f0-a142-498e0780d896",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true

@@ -6,6 +6,7 @@ using UnityEngine;
 namespace Runtime.Player {
     public class PlayerCharacter : MonoBehaviour {
         public FirstPersonCamera playerCamera;
+        public PlayerHand playerHand;
         public HandController handController;
         public InteractController interactController;
         public StationInteractController stationInteractController;
@@ -32,6 +33,7 @@ namespace Runtime.Player {
 
         private void Update() {
             playerCamera.Look(PlayerController.DeltaMouse, Time.deltaTime);
+            playerHand.ShakeDrink = PlayerController.HoldingShake;
         }
 
         private void OnDrawGizmos() {
