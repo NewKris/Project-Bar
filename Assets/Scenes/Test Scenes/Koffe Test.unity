@@ -966,6 +966,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c79a6e2db87eb0f41a9c1b89e7b4f153, type: 2}
+    - target: {fileID: 4311566946813633840, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 6445954601613954038, guid: 1f1981ec22dbd1140acfeb8c528dbe60, type: 3}
     - target: {fileID: 4858654427577458705, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1123,6 +1127,14 @@ PrefabInstance:
     - target: {fileID: 2165381306993256821, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365584187497957331, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.616
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365584187497957331, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.015
       objectReference: {fileID: 0}
     - target: {fileID: 6830070769615864448, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: stationInteractController
