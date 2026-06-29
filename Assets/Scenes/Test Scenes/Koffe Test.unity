@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &17302906 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1734011719528629409, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-  m_PrefabInstance: {fileID: 3017119465730533065}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2db22f50c0a14368bc6f93fb686e53a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &962684801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,18 +1117,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5365584187497957331, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.616
+    - target: {fileID: 3715910397593774176, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: cameraHeights.x
+      value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5365584187497957331, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.015
+    - target: {fileID: 3715910397593774176, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: cameraHeights.y
+      value: 1.7
       objectReference: {fileID: 0}
-    - target: {fileID: 6830070769615864448, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-      propertyPath: stationInteractController
-      value: 
-      objectReference: {fileID: 17302906}
+    - target: {fileID: 3715910397593774176, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: crouchSmoothing
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

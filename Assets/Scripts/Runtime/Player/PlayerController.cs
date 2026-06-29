@@ -10,6 +10,7 @@ namespace Runtime.Player {
         public static event Action OnEndInteract;
         public static event Action<string> OnAddIngredient;
         public static event Action OnPour;
+        public static event Action<float> OnCrouch;
         
         public static Vector2 DeltaMouse { get; private set; }
 
@@ -27,6 +28,7 @@ namespace Runtime.Player {
             ActionMap["Interact"].performed += _ => OnBeginInteract?.Invoke();
             ActionMap["Interact"].canceled += _ => OnEndInteract?.Invoke();
             ActionMap["Pour"].performed += _ => OnPour?.Invoke();
+            ActionMap["Crouch"].performed += ctx => OnCrouch?.Invoke(ctx.ReadValue<float>());
             
             // Får problem med att subscribe lambda funktioner i den här loopen
             // där de inte blir disposed och därför skulle få duplicerade anrop.

@@ -17,6 +17,7 @@ namespace Runtime.Player {
             PlayerController.OnBeginInteract += stationInteractController.TryBeginInteract;
             PlayerController.OnEndInteract += stationInteractController.EndInteract;
             PlayerController.OnPour += handController.TryPourInteract;
+            PlayerController.OnCrouch += playerCamera.ChangeCameraHeight;
         }
 
         private void OnDestroy() {
@@ -26,6 +27,7 @@ namespace Runtime.Player {
             PlayerController.OnBeginInteract -= stationInteractController.TryBeginInteract;
             PlayerController.OnEndInteract -= stationInteractController.EndInteract;
             PlayerController.OnPour -= handController.TryPourInteract;
+            PlayerController.OnCrouch -= playerCamera.ChangeCameraHeight;
         }
 
         private void Update() {
