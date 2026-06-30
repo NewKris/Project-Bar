@@ -22973,30 +22973,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3715910397593774176, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-      propertyPath: mouseSmoothing
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715910397593774176, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-      propertyPath: cameraHeights.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715910397593774176, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-      propertyPath: pitchAngleLimits.x
-      value: -50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3715910397593774176, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-      propertyPath: pitchAngleLimits.y
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 7351501108472430249, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-      propertyPath: field of view
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 7351501108472430249, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-      propertyPath: near clip plane
-      value: 0.01
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
