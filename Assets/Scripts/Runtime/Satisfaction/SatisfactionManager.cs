@@ -2,15 +2,25 @@ using System;
 using Runtime;
 using Runtime.Scene_Handling;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Runtime.Satisfaction
 {
     public class SatisfactionManager : MonoBehaviour
     {
+        public UnityAction<int> OnCustomerSlotUnlocked;
+        public UnityAction<int> OnCustomerSlotLocked;
+        public UnityAction<bool> OnToggleTarget;
+        public UnityAction OnGameOver;
+        
+        
         public Level currentLevel;
         public SatisfactionPort satisfactionPort;
 
         public int currentSatisfaction;
+        
+        private bool _targetUnlocked = false;
+        private bool[] _availableCustomers;
 
         private void OnEnable()
         {
@@ -26,21 +36,59 @@ namespace Runtime.Satisfaction
 
         private void Start()
         {
-            currentSatisfaction = currentLevel.startSatisfaction;
+            Restart();
         }
 
         private void HandleSatisfactionChange(int value)
         {
             currentSatisfaction = Mathf.Min(currentSatisfaction + value, currentLevel.maximumSatisfaction);
 
-            if (currentSatisfaction >= currentLevel.targetSatisfaction)
-            {
-                // HANDLE ACTIVATE TARGET ALSO MAKE IT SO THAT TARGET IS REMOVED FROM SPAWN POOL WHEN SATISFACTION GOES BELOW TARGET
-            }
+            HandleTargetUnlock();
+
+            HandleCustomerUnlocks();
             
             if (currentSatisfaction <= 0)
             {
-                // HANDLE GAME OVER
+                OnGameOver?.Invoke();
+            }
+        }
+
+        private void HandleTargetUnlock()
+        {
+            if (currentSatisfaction >= currentLevel.targetSatisfaction && !_targetUnlocked)
+            {
+                _targetUnlocked = true;
+                OnToggleTarget?.Invoke(_targetUnlocked);
+            }
+            else if (currentSatisfaction < currentLevel.targetSatisfaction && _targetUnlocked)
+            {
+                _targetUnlocked = false;
+                OnToggleTarget?.Invoke(_targetUnlocked);
+            }
+        }
+
+        private void HandleCustomerUnlocks()
+        {
+            for (int i = 0; i < currentLevel.customerUnlocks.Length; i++)
+            {
+                HandleCustomerUnlock(i);
+            }
+        }
+
+        private void HandleCustomerUnlock(int index)
+        {
+            int unlock = currentLevel.customerUnlocks[index];
+                
+            if (currentSatisfaction >= unlock && !_availableCustomers[index])
+            {
+                _availableCustomers[index] = true;
+                OnCustomerSlotUnlocked?.Invoke(index);
+            }
+
+            if (currentSatisfaction < unlock && _availableCustomers[index])
+            {
+                _availableCustomers[index] = false;
+                OnCustomerSlotLocked?.Invoke(index);
             }
         }
 
@@ -58,6 +106,8 @@ namespace Runtime.Satisfaction
         public void Restart()
         {
             currentSatisfaction = currentLevel.startSatisfaction;
+            _targetUnlocked = false;
+            _availableCustomers = new bool[currentLevel.customerUnlocks.Length];
         }
     }
 }
