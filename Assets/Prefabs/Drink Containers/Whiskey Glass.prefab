@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6212453115234957561}
   - component: {fileID: 8391855904482921312}
   - component: {fileID: 6820766334679408395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: whiskey glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

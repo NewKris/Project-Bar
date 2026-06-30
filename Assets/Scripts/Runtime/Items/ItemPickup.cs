@@ -8,6 +8,13 @@ namespace Runtime.Items {
         public void BreakItem() {
             Destroy(gameObject);
         }
+
+        public void SetFrontRender(bool renderInFront) {
+            int layer = renderInFront ? LayerMask.NameToLayer("Held Item") : LayerMask.NameToLayer("Default");
+            foreach (MeshRenderer renderer in GetComponentsInChildren<MeshRenderer>()) {
+                renderer.gameObject.layer = layer;
+            }
+        }
         
         public void Pin(Transform pinPoint) {
             OnPinned?.Invoke();

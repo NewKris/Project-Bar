@@ -29,7 +29,8 @@ namespace Runtime.Player {
         
         public void ReleaseHeldItem(HandInteraction handInteraction) {
             if (handInteraction == null || _heldItem == null) {
-                DropItem();
+                _heldItem?.Unpin();
+                RemoveItemFromHand();
                 return;
             }
             
@@ -41,14 +42,14 @@ namespace Runtime.Player {
                 customer.ServeDrink(drink.currentContents);
             }
             else {
-                DropItem();
+                _heldItem?.Unpin();
             }
             
-            _heldItem = null;
+            RemoveItemFromHand();
         }
 
         public void PourDrink(HandInteraction handInteraction) {
-            if (!_heldItem.TryGetComponent(out DrinkObject heldDrink)) return;
+            if (!_heldItem || !_heldItem.TryGetComponent(out DrinkObject heldDrink)) return;
 
             if (handInteraction?.TryGetComponent(out DrinkObject targetDrink) ?? false) {
                 targetDrink.AddContents(heldDrink.currentContents);
@@ -82,8 +83,8 @@ namespace Runtime.Player {
             return action[^1].ToString().ToUpper();
         }
 
-        private void DropItem() {
-            _heldItem?.Unpin();
+        private void RemoveItemFromHand() {
+            _heldItem?.SetFrontRender(false);
             _heldItem = null;
         }
 
@@ -91,6 +92,7 @@ namespace Runtime.Player {
             if (_heldItem) return;
             
             _heldItem = item;
+            _heldItem.SetFrontRender(true);
             item.Pin(itemPivot);
         }
 

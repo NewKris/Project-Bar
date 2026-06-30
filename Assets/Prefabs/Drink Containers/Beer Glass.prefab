@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 820499654764765884}
   - component: {fileID: 6827543265730155668}
   - component: {fileID: 3567980638580889522}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: beer glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

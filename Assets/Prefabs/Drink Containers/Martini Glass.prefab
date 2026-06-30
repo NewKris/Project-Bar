@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6776891449516668300}
   - component: {fileID: 4865660853886486296}
   - component: {fileID: 6164295675980372905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: martini glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

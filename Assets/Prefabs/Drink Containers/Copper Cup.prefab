@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6194278371560973105}
   - component: {fileID: 4906204281810856201}
   - component: {fileID: 3619944466995745357}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: copper cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
