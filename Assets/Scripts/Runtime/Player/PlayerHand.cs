@@ -58,6 +58,21 @@ namespace Runtime.Player {
             heldDrink.EmptyContents();
         }
 
+        private void OnGUI() {
+            if (_heldItem?.TryGetComponent(out DrinkObject drink) ?? false) {
+                GUILayout.BeginArea(new Rect(10, 10, 500, 500));
+                
+                GUILayout.Label($"Container: {drink.currentContents.container.name}");
+                GUILayout.Label($"Mix: {drink.currentContents.mixType}");
+                
+                foreach (Ingredient ingredient in drink.currentContents.ingredients) {
+                    GUILayout.Label(ingredient.name);
+                }
+                
+                GUILayout.EndArea();
+            }
+        }
+
         private void Awake() {
             PlayerController.OnAddIngredient += TryAddIngredient;
         }

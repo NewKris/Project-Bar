@@ -105,6 +105,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDock: {fileID: 6619984528798104938}
   rumble: {fileID: 2009701099269720862}
+  minMixDuration: 0.2
+  maxMixDuration: 1
+  conversions:
+  - startState: {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
+    middleState: {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
+    endState: {fileID: 11400000, guid: afe2b0e5bdb83ff4ebdd269d3547dd5c, type: 2}
 --- !u!114 &6619984528798104938
 MonoBehaviour:
   m_ObjectHideFlags: 0

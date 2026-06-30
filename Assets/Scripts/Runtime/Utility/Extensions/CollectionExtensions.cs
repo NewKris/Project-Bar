@@ -8,5 +8,11 @@ namespace Runtime.Utility.Extensions {
                 action(item);
             }
         }
+
+        public static void AddAmount<T>(this List<T> collection, T item, int amount) {
+            for (int i = 0; i < amount; i++) {
+                collection.Add(item);
+            }
+        }
     }
 }

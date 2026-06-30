@@ -15,6 +15,10 @@ namespace Runtime.Items {
                 renderer.gameObject.layer = layer;
             }
         }
+
+        public void SetInteractable(bool interactable) {
+            GetComponentInChildren<Collider>().enabled = interactable;
+        }
         
         public void Pin(Transform pinPoint) {
             OnPinned?.Invoke();
