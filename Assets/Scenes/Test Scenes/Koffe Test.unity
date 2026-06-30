@@ -1060,30 +1060,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8760255224563793390, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
-      propertyPath: maxMixDuration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8760255224563793390, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
-      propertyPath: minMixDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8760255224563793390, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
-      propertyPath: conversions.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8760255224563793390, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
-      propertyPath: conversions.Array.data[0].endState
-      value: 
-      objectReference: {fileID: 11400000, guid: afe2b0e5bdb83ff4ebdd269d3547dd5c, type: 2}
-    - target: {fileID: 8760255224563793390, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
-      propertyPath: conversions.Array.data[0].startState
-      value: 
-      objectReference: {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
-    - target: {fileID: 8760255224563793390, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
-      propertyPath: conversions.Array.data[0].middleState
-      value: 
-      objectReference: {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
