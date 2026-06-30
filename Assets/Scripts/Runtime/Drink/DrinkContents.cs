@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Runtime.Drink {
     [Serializable]
@@ -7,6 +8,6 @@ namespace Runtime.Drink {
         public DrinkContainer container;
         public List<Ingredient> ingredients;
         public MixType mixType;
-        public bool autoFail;
+        [HideInInspector] public bool autoFail;
     }
 }
