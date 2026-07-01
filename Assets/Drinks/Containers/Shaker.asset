@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419447d072d442d6a0c3d5c7d4a734ce, type: 3}
   m_Name: Shaker
   m_EditorClassIdentifier: 
-  type: 3
+  type: 0

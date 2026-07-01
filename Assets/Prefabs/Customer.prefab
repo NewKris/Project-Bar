@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 1565358399578308679}
   - component: {fileID: 4985797466994179950}
   - component: {fileID: 2101066868742215084}
+  - component: {fileID: 8125268833614215940}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -338,6 +339,18 @@ MonoBehaviour:
   patienceImage: {fileID: 1726036077388508993}
   patienceTimer: 20
   patienceTickTime: 10
+--- !u!114 &8125268833614215940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645739159592134876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e909c1af90844a49b6d0fb29c1fb69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8899945735447072317
 GameObject:
   m_ObjectHideFlags: 0

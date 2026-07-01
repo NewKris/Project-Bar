@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Marquisette
   m_EditorClassIdentifier: 
   contents:
-    container: {fileID: 11400000, guid: f57d1ad380521874b9c67df3fcb29b5d, type: 2}
     ingredients:
+    - {fileID: 11400000, guid: f57d1ad380521874b9c67df3fcb29b5d, type: 2}
     - {fileID: 11400000, guid: 9e48ee67233ee514fa346e8fe67e15f6, type: 2}
     - {fileID: 11400000, guid: 6d7b2b67ce2ab2a43b2bd40ab895e48c, type: 2}
     - {fileID: 11400000, guid: 0bed7c78e6483fd4ab4d271e0e3a211f, type: 2}
