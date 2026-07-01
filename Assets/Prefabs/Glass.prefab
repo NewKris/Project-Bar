@@ -185,6 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a529bfec7b48c0916b896bce616407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropPenalty: 10
+  satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
 --- !u!114 &250910469939608800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,3 +215,4 @@ MonoBehaviour:
     container: {fileID: 0}
     ingredients: []
     mixType: 0
+    autoFail: 0
