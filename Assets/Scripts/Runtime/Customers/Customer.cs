@@ -129,7 +129,7 @@ namespace Runtime.Customers
                 return false;
             }
 
-            if (CheckForCorrectOrderOfIngredients(drink.ingredients)) {
+            if (!CheckForCorrectOrderOfIngredients(drink.ingredients)) {
                 Debug.Log("Wrong order of ingredients");
                 return false;
             }
