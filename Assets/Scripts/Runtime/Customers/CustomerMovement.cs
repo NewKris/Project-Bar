@@ -1,4 +1,5 @@
 using System.Collections;
+using Runtime.Utility;
 using UnityEngine;
 
 namespace Runtime.Customers
@@ -54,6 +55,14 @@ namespace Runtime.Customers
             }
             
             Destroy(gameObject);
+        }
+        
+        private void OnDrawGizmos() {
+            HandlesProxy.DrawDisc(transform.position, Vector3.up, 0.25f, false, Color.white);
+            HandlesProxy.DrawDisc(barPosition, Vector3.up, 0.25f, false, Color.white);
+            HandlesProxy.DrawDisc(exitPosition, Vector3.up, 0.25f, false, Color.white);
+            HandlesProxy.DrawLine(transform.position, barPosition, 1, true, Color.red);
+            HandlesProxy.DrawLine(barPosition, exitPosition, 1, true, Color.red);
         }
     }
 }

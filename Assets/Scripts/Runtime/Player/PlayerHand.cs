@@ -40,6 +40,9 @@ namespace Runtime.Player {
             else if (handInteraction.TryGetComponent(out Customer customer) && (_heldItem.TryGetComponent(out DrinkObject drink)))
             {
                 customer.ServeDrink(drink.currentContents);
+                _heldItem.Despawn();
+                _heldItem = null;
+                return;
             }
             else {
                 _heldItem?.Unpin();

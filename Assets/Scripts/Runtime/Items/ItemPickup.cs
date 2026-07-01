@@ -1,11 +1,20 @@
 using System;
+using Runtime.Satisfaction;
 using UnityEngine;
 
 namespace Runtime.Items {
     public class ItemPickup : MonoBehaviour {
+        public int dropPenalty;
+        public SatisfactionPort satisfactionPort;
+        
         public event Action OnPinned;
 
         public void BreakItem() {
+            satisfactionPort.DecreaseSatisfaction(dropPenalty);
+            Despawn();
+        }
+
+        public void Despawn() {
             Destroy(gameObject);
         }
 
