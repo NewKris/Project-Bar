@@ -108,7 +108,7 @@ namespace Runtime.Customers
 
             if (drink.autoFail) return false;
             
-            possibleRecipes = CheckForMatchingContainer(drink.container, possibleRecipes);
+            possibleRecipes = CheckForMatchingContainer(drink.GetContainer(), possibleRecipes);
             if (possibleRecipes.Count == 0)
             {
                 Debug.Log("Drink mismatch: Container");
@@ -138,7 +138,7 @@ namespace Runtime.Customers
 
             foreach (Recipe recipe in recipes)
             {
-                if (recipe.contents.container == container) possibleRecipes.Add(recipe);
+                if (recipe.contents.ingredients.Contains(container)) possibleRecipes.Add(recipe);
             }
 
             return possibleRecipes;

@@ -5,5 +5,6 @@ namespace Runtime.Drink
         prep,
         liquid,
         garnish,
+        container
     }
 }
