@@ -18,7 +18,7 @@ namespace Runtime.Drink {
         }
 
         public void AddContents(DrinkContents contents) {
-            currentContents.ingredients.AddRange(contents.ingredients);
+            currentContents.ingredients.AddRange(contents.ingredients); // Exclude container
             currentContents.mixType = contents.mixType;
             ShakeDuration = 0f;
         }
