@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 419447d072d442d6a0c3d5c7d4a734ce, type: 3}
-  m_Name: Chilled Whiskey Glass
+  m_Name: Whiskey Glass Ing
   m_EditorClassIdentifier: 
-  type: 3
+  type: 0

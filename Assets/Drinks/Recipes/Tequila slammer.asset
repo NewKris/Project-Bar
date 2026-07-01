@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tequila slammer
   m_EditorClassIdentifier: 
   contents:
-    container: {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
     ingredients:
+    - {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
     - {fileID: 11400000, guid: eb76d2cc202a0c749b2f6c711373583b, type: 2}
     - {fileID: 11400000, guid: 9e1273cd121876144aa1e058825eeb58, type: 2}
     mixType: 0

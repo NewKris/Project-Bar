@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 765f618e78934992860ec1650ddb41fb, type: 3}
-  m_Name: Caramelized Sugar
+  m_Name: Lime-Mid
   m_EditorClassIdentifier: 
-  type: 2
+  type: 0

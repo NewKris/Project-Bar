@@ -72,6 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a529bfec7b48c0916b896bce616407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropPenalty: 5
+  satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
 --- !u!114 &3868421222215899668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentContents:
-    container: {fileID: 11400000, guid: 890f66a1b32bbfd4eaca6bbc01cc0e66, type: 2}
-    ingredients: []
+    ingredients:
+    - {fileID: 11400000, guid: 890f66a1b32bbfd4eaca6bbc01cc0e66, type: 2}
     mixType: 0
     autoFail: 0
 --- !u!54 &8680260167358092759

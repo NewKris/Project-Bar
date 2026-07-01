@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cuba Libre
   m_EditorClassIdentifier: 
   contents:
-    container: {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
     ingredients:
+    - {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
     - {fileID: 11400000, guid: 6d7b2b67ce2ab2a43b2bd40ab895e48c, type: 2}
     - {fileID: 11400000, guid: 646a39d00f0ffb240b97ea6d9ac1ae7a, type: 2}
     mixType: 1

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Screwdriver
   m_EditorClassIdentifier: 
   contents:
-    container: {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
     ingredients:
+    - {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
     - {fileID: 11400000, guid: 9fe57544060200947b2f58caf89d1385, type: 2}
     - {fileID: 11400000, guid: 0cc7e2dbb46a6b6418e1013dbe6abc12, type: 2}
     mixType: 1

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Daiquiri
   m_EditorClassIdentifier: 
   contents:
-    container: {fileID: 11400000, guid: f57d1ad380521874b9c67df3fcb29b5d, type: 2}
     ingredients:
-    - {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
-    - {fileID: 11400000, guid: 6d7b2b67ce2ab2a43b2bd40ab895e48c, type: 2}
+    - {fileID: 11400000, guid: f57d1ad380521874b9c67df3fcb29b5d, type: 2}
     - {fileID: 11400000, guid: 9e48ee67233ee514fa346e8fe67e15f6, type: 2}
+    - {fileID: 11400000, guid: 6d7b2b67ce2ab2a43b2bd40ab895e48c, type: 2}
+    - {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
     mixType: 0
     autoFail: 0
