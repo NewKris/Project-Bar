@@ -129,7 +129,11 @@ namespace Runtime.Customers
                 return false;
             }
 
-            return CheckForCorrectOrderOfIngredients(drink.ingredients);
+            bool orderIsCorrect = CheckForCorrectOrderOfIngredients(drink.ingredients);
+
+            if (!orderIsCorrect) Debug.Log("Wrong order of ingredients");
+            
+            return orderIsCorrect;
         }
 
         private List<Recipe> CheckForMatchingContainer(DrinkContainer container, List<Recipe> recipes)
