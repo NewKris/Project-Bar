@@ -22,6 +22,8 @@ namespace Runtime.Dialogue
         private Coroutine _dialogueCoroutine;
         [HideInInspector]
         public bool showingDialogue;
+
+        private bool _breakingActiveDialogue;
         
         
         public void ShowDialogue(string dialogue)
@@ -51,6 +53,15 @@ namespace Runtime.Dialogue
         
         private IEnumerator HandleTimedDialogue(string dialogue, float timer)
         {
+            if (showingDialogue)
+            {
+                _breakingActiveDialogue = true;
+                while (_breakingActiveDialogue)
+                {
+                    yield return new WaitForFixedUpdate();
+                }
+            }
+            
             ShowDialogue(dialogue);
             showingDialogue = true;
             float elapsedTime = timer;
@@ -59,9 +70,13 @@ namespace Runtime.Dialogue
             {
                 timeRemainingImage.fillAmount = elapsedTime / timer;
                 elapsedTime -= Time.fixedDeltaTime;
+                
+                if (_breakingActiveDialogue) break;
+                
                 yield return new WaitForFixedUpdate();
             }
             
+            _breakingActiveDialogue = false;
             HideDialogue();
             showingDialogue = false;
         }
