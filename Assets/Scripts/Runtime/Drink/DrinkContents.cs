@@ -6,30 +6,28 @@ using UnityEngine;
 namespace Runtime.Drink {
     [Serializable]
     public struct DrinkContents {
-        public List<Ingredient> ingredients;
         public MixType mixType;
-        [HideInInspector] public bool autoFail;
-
+        public DrinkContainer drinkContainer;
+        public List<Ingredient> ingredients;
+        
         public bool DrinkIsAccepted(List<Recipe> acceptedRecipes) {
             List<Recipe> possibleRecipes = acceptedRecipes;
 
-            if (autoFail) return false;
-            
-            possibleRecipes = CheckForMatchingContainer(GetContainer(), possibleRecipes);
+            possibleRecipes = GetRecipesWithEligibleContainer(drinkContainer, possibleRecipes);
             if (possibleRecipes.Count == 0)
             {
                 Debug.Log("Drink mismatch: Container");
                 return false;
             }
             
-            possibleRecipes = CheckForMatchingMixType(mixType, possibleRecipes);
+            possibleRecipes = GetRecipesWithEligibleMixType(mixType, possibleRecipes);
             if (possibleRecipes.Count == 0)
             {
                 Debug.Log("Drink mismatch: MixType");
                 return false;
             }
             
-            possibleRecipes = CheckForMatchingIngredients(ingredients, possibleRecipes);
+            possibleRecipes = GetRecipesWithEligibleIngredients(ingredients, possibleRecipes);
             if (possibleRecipes.Count == 0)
             {
                 Debug.Log("Drink mismatch: Ingredients");
@@ -44,63 +42,31 @@ namespace Runtime.Drink {
             return true;
         }
         
-        public DrinkContainer GetContainer() {
-            return ingredients.First(x => x is DrinkContainer) as DrinkContainer;
-        }
-        
-        private List<Recipe> CheckForMatchingContainer(DrinkContainer container, List<Recipe> recipes)
-        {
-            List<Recipe> possibleRecipes = new List<Recipe>();
-
-            foreach (Recipe recipe in recipes)
-            {
-                if (recipe.contents.ingredients.Contains(container)) possibleRecipes.Add(recipe);
-            }
-
-            return possibleRecipes;
+        private List<Recipe> GetRecipesWithEligibleContainer(DrinkContainer container, List<Recipe> recipes) {
+            return recipes
+                .Where(recipe => recipe.contents.drinkContainer == container)
+                .ToList();
         }
 
-        private List<Recipe> CheckForMatchingMixType(MixType mixType, List<Recipe> recipes)
-        {
-            List<Recipe> possibleRecipes = new List<Recipe>();
-
-            foreach (Recipe recipe in recipes)
-            {
-                if (recipe.contents.mixType == mixType) possibleRecipes.Add(recipe);
-            }
-
-            return possibleRecipes;
+        private List<Recipe> GetRecipesWithEligibleMixType(MixType mix, List<Recipe> recipes) {
+            return recipes
+                .Where(recipe => recipe.contents.mixType == mix)
+                .ToList();
         }
 
-        private List<Recipe> CheckForMatchingIngredients(List<Ingredient> ingredients, List<Recipe> recipes)
-        {
-            List<Recipe> possibleRecipes = new List<Recipe>();
-
-            foreach (Recipe recipe in recipes)
-            {
-                bool isPossible = true;
-                foreach (Ingredient ingredient in ingredients)
-                {
-                    if (!recipe.contents.ingredients.Contains(ingredient))
-                    {
-                        isPossible = false;
-                        break;
-                    }
-                }
-                
-                if (isPossible) possibleRecipes.Add(recipe);
-            }
-            
-            return possibleRecipes;
+        private List<Recipe> GetRecipesWithEligibleIngredients(List<Ingredient> currentIngredients, List<Recipe> recipes) {
+            return recipes
+                .Where(recipe => recipe.contents.ingredients.Count == currentIngredients.Count
+                    && recipe.contents.ingredients.All(currentIngredients.Contains)
+                ).ToList();
         }
 
-        private bool CheckForCorrectOrderOfIngredients(List<Ingredient> ingredients)
-        {
-            IngredientType typeOfPreviousIngredient = ingredients[0].type;
+        private bool CheckForCorrectOrderOfIngredients(List<Ingredient> currentIngredients) {
+            IngredientType typeOfPreviousIngredient = currentIngredients[0].type;
 
-            for (int i = 1; i < ingredients.Count; i++)
-            {
-                if (ingredients[i].type < typeOfPreviousIngredient) return false;
+            for (int i = 1; i < currentIngredients.Count; i++) {
+                if (currentIngredients[i].type < typeOfPreviousIngredient) 
+                    return false;
             }
 
             return true;

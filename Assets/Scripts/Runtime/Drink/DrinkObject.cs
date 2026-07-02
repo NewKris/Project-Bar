@@ -8,19 +8,19 @@ namespace Runtime.Drink {
     public class DrinkObject : MonoBehaviour {
         public DrinkContents currentContents;
         
-        public float ShakeDuration { get; protected set; }
-        protected Dictionary<int, float> StationDurations { get; private set; }
+        protected float ShakeDuration { get; set; }
+        private Dictionary<int, float> StationDurations { get; set; }
 
         public void EmptyContents() {
             currentContents.ingredients.Clear();
             currentContents.mixType = MixType.None;
-            ShakeDuration = 0f;
+            ResetDurations();
         }
 
         public void AddContents(DrinkContents contents) {
-            currentContents.ingredients.AddRange(contents.ingredients); // Exclude container
+            currentContents.ingredients.AddRange(contents.ingredients);
             currentContents.mixType = contents.mixType;
-            ShakeDuration = 0f;
+            ResetDurations();
         }
         
         public void AddIngredient(Ingredient ingredient) {
@@ -28,8 +28,13 @@ namespace Runtime.Drink {
             DecreaseStationDurations();
         }
 
+        private void ResetDurations() {
+            ShakeDuration = 0f;
+            StationDurations.Clear();
+        }
+        
         private void Awake() {
-            StationDurations = new  Dictionary<int, float>();
+            StationDurations = new Dictionary<int, float>();
         }
 
         private void DecreaseStationDurations() {
