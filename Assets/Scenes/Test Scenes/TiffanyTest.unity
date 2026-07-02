@@ -127,6 +127,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4985797466994179950, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
+      propertyPath: orderDialogue
+      value: a
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985797466994179950, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
+      propertyPath: failureDialogue
+      value: q
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985797466994179950, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
+      propertyPath: successDialogue
+      value: d
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985797466994179950, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
+      propertyPath: attentionDialogue
+      value: w
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985797466994179950, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
+      propertyPath: repeatOrderDialogue
+      value: s
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985797466994179950, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
+      propertyPath: patienceTimeOutDialogue
+      value: a
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985797466994179950, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
+      propertyPath: patienceTimerTickDialogue
+      value: e
+      objectReference: {fileID: 0}
     - target: {fileID: 8232452032915344539, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

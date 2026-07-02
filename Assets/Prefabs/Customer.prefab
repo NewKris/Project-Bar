@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c017e1067494772ac6e4d66fd610013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: aec0d8e64e8c6724aae8615f555b0ae8, type: 2}
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
   isTarget: 0
   acceptableDrinks:
