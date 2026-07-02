@@ -8,15 +8,16 @@ namespace Runtime.Stations {
         private DrinkObject _drink;
         
         public override void StartStation() {
-            if (itemDock.HeldItem?.TryGetComponent(out _drink) ?? false) {
-                enabled = true;
-                itemDock.HeldItem.SetInteractable(false);
-                
-            }
+            StartStationTimer();
         }
         
         public override void StopStation() {
-            
+            enabled = false;
+            itemDock.HeldItem?.SetInteractable(true);
         }
+
+        protected override void OnReachedEndState() { }
+        
+        protected override void OnReachedMiddleState() { }
     }
 }

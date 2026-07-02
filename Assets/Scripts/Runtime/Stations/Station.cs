@@ -9,40 +9,41 @@ namespace Runtime.Stations {
         public float middleStateDuration;
         public float endStateDuration;
 
-        protected T CurrentItem;
-        protected int StationKey;
-        protected event Action OnReachedMiddleState;
-        protected event Action OnReachedEndState;
+        protected T currentItem;
+        protected int stationKey;
         
         public abstract void StartStation();
         public abstract void StopStation();
 
         protected void StartStationTimer() {
-            if (itemDock.HeldItem?.TryGetComponent(out CurrentItem) ?? false) {
+            if (itemDock.HeldItem?.TryGetComponent(out currentItem) ?? false) {
                 enabled = true;
                 itemDock.HeldItem.SetInteractable(false);
 
-                if (!CurrentItem.HasStationTimer(StationKey)) {
-                    CurrentItem.CreateStationTimer(StationKey);
+                if (!currentItem.HasStationTimer(stationKey)) {
+                    currentItem.CreateStationTimer(stationKey);
                 }
             }
         }
         
         private void Awake() {
             enabled = false;
-            StationKey = gameObject.GetInstanceID();
+            stationKey = gameObject.GetInstanceID();
         }
         
         private void Update() {
-            CurrentItem.TickStationTimer(StationKey);
+            currentItem.TickStationTimer(stationKey);
             
-            if (CurrentItem.GetStationTime(StationKey) >= middleStateDuration) {
-                OnReachedMiddleState?.Invoke();
+            if (currentItem.GetStationTime(stationKey) >= middleStateDuration) {
+                OnReachedMiddleState();
             }
 
-            if (CurrentItem.GetStationTime(StationKey) >= endStateDuration) {
-                OnReachedEndState?.Invoke();
+            if (currentItem.GetStationTime(stationKey) >= endStateDuration) {
+                OnReachedEndState();
             }
         }
+        
+        protected abstract void OnReachedEndState();
+        protected abstract void OnReachedMiddleState();
     }
 }

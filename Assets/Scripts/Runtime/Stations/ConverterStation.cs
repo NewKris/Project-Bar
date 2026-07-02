@@ -14,11 +14,10 @@ namespace Runtime.Stations {
         public Ingredient endState;
     }
     
-    public class MixerStation : Station<DrinkObject> {
+    public class ConverterStation : Station<DrinkObject> {
         public RumbleAnimation rumble;
         
         public Conversion[] conversions;
-
         
         public override void StartStation() {
             StartStationTimer();
@@ -27,6 +26,13 @@ namespace Runtime.Stations {
         public override void StopStation() {
             enabled = false;
             itemDock.HeldItem?.SetInteractable(true);
+        }
+
+        protected override void OnReachedEndState() {
+            ConvertToEndStates();
+        }
+        protected override void OnReachedMiddleState() {
+            ConvertToMiddleStates();
         }
 
         private void OnEnable() {
@@ -39,25 +45,43 @@ namespace Runtime.Stations {
 
         private void ConvertToMiddleStates() {
             foreach (Conversion conversion in conversions) {
-                TryConvert(CurrentItem, conversion.startState, conversion.middleState);
+                TryConvertIngredients(currentItem, conversion.startState, conversion.middleState);
             }
         }
 
         private void ConvertToEndStates() {
             foreach (Conversion conversion in conversions) {
-                TryConvert(CurrentItem, conversion.middleState, conversion.endState);
+                if (conversion.startState is DrinkContainer container) {
+                    TryConvertContainer(
+                        currentItem, 
+                        container, 
+                        container
+                    );
+                }
+                else {
+                    TryConvertIngredients(
+                        currentItem, 
+                        conversion.middleState, 
+                        conversion.endState
+                    );
+                }
             }
             
-            CurrentItem.RemoveStationKey(StationKey);
+            currentItem.RemoveStationKey(stationKey);
         }
 
-        private void TryConvert(DrinkObject drink, Ingredient from, Ingredient to) {
+        private void TryConvertIngredients(DrinkObject drink, Ingredient from, Ingredient to) {
             if (!drink.currentContents.ingredients.Contains(from)) return;
             
             int convertCount = drink.currentContents.ingredients.Count(x => x == from);
             
             drink.currentContents.ingredients.RemoveAll(x => x == from);
             drink.currentContents.ingredients.AddAmount(to, convertCount);
+        }
+
+        private void TryConvertContainer(DrinkObject drink, DrinkContainer from, DrinkContainer to) {
+            if (drink.currentContents.drinkContainer == from)
+                drink.currentContents.drinkContainer = to;
         }
     }
 }
