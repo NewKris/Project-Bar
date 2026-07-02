@@ -11,27 +11,5 @@ namespace Runtime.Drink {
                 currentContents.mixType = MixType.Shaken;
             }
         }
-
-        public void CreateMixTimer(int key) {
-            MixDurations.Add(key, 0);
-        }
-
-        public bool HasMixTimer(int key) {
-            return  MixDurations.ContainsKey(key);
-        }
-
-        public void TickMix(int key) {
-            if (MixDurations.ContainsKey(key)) {
-                MixDurations[key] += Time.deltaTime;
-            }
-        }
-
-        public void RemoveMixerKey(int key) {
-            MixDurations.Remove(key);
-        }
-
-        public float GetMixAmount(int key) {
-            return  MixDurations.GetValueOrDefault(key, 0);
-        }
     }
 }

@@ -9,7 +9,7 @@ namespace Runtime.Drink {
         public DrinkContents currentContents;
         
         public float ShakeDuration { get; protected set; }
-        protected Dictionary<int, float> MixDurations { get; set; }
+        protected Dictionary<int, float> StationDurations { get; private set; }
 
         public void EmptyContents() {
             currentContents.ingredients.Clear();
@@ -25,19 +25,41 @@ namespace Runtime.Drink {
         
         public void AddIngredient(Ingredient ingredient) {
             currentContents.ingredients.Add(ingredient);
-            DecreaseMixDurations();
+            DecreaseStationDurations();
         }
 
         private void Awake() {
-            MixDurations = new  Dictionary<int, float>();
+            StationDurations = new  Dictionary<int, float>();
         }
 
-        private void DecreaseMixDurations() {
-            int[] keys = MixDurations.Keys.ToArray();
+        private void DecreaseStationDurations() {
+            int[] keys = StationDurations.Keys.ToArray();
             
             foreach (int key in keys) {
-                MixDurations[key] *= 0.5f;
+                StationDurations[key] *= 0.5f;
             }
+        }
+        
+        public void CreateStationTimer(int key) {
+            StationDurations.Add(key, 0);
+        }
+
+        public bool HasStationTimer(int key) {
+            return  StationDurations.ContainsKey(key);
+        }
+
+        public void TickStationTimer(int key) {
+            if (StationDurations.ContainsKey(key)) {
+                StationDurations[key] += Time.deltaTime;
+            }
+        }
+
+        public void RemoveStationKey(int key) {
+            StationDurations.Remove(key);
+        }
+
+        public float GetStationTime(int key) {
+            return  StationDurations.GetValueOrDefault(key, 0);
         }
     }
 }

@@ -14,35 +14,19 @@ namespace Runtime.Stations {
         public Ingredient endState;
     }
     
-    public class MixerStation : MonoBehaviour {
-        public ItemDock itemDock;
+    public class MixerStation : Station<DrinkObject> {
         public RumbleAnimation rumble;
-        public float minMixDuration;
-        public float maxMixDuration;
+        
         public Conversion[] conversions;
 
-        private int _stationKey;
-        private Shaker _currentShaker;
         
-        public void StartMixer() {
-            if (itemDock.HeldItem?.TryGetComponent(out _currentShaker) ?? false) {
-                enabled = true;
-                itemDock.HeldItem.SetInteractable(false);
-
-                if (!_currentShaker.HasMixTimer(_stationKey)) {
-                    _currentShaker.CreateMixTimer(_stationKey);
-                }
-            }
+        public override void StartStation() {
+            StartStationTimer();
         }
 
-        public void StopMixer() {
+        public override void StopStation() {
             enabled = false;
             itemDock.HeldItem?.SetInteractable(true);
-        }
-
-        private void Awake() {
-            enabled = false;
-            _stationKey = gameObject.GetInstanceID();
         }
 
         private void OnEnable() {
@@ -53,30 +37,18 @@ namespace Runtime.Stations {
             rumble.Shaking = false;
         }
 
-        private void Update() {
-            _currentShaker.TickMix(_stationKey);
-            
-            if (_currentShaker.GetMixAmount(_stationKey) >= minMixDuration) {
-                ConvertToMiddleStates();
-            }
-
-            if (_currentShaker.GetMixAmount(_stationKey) >= maxMixDuration) {
-                ConvertToEndStates();
-            }
-        }
-
         private void ConvertToMiddleStates() {
             foreach (Conversion conversion in conversions) {
-                TryConvert(_currentShaker, conversion.startState, conversion.middleState);
+                TryConvert(CurrentItem, conversion.startState, conversion.middleState);
             }
         }
 
         private void ConvertToEndStates() {
             foreach (Conversion conversion in conversions) {
-                TryConvert(_currentShaker, conversion.middleState, conversion.endState);
+                TryConvert(CurrentItem, conversion.middleState, conversion.endState);
             }
             
-            _currentShaker.RemoveMixerKey(_stationKey);
+            CurrentItem.RemoveStationKey(StationKey);
         }
 
         private void TryConvert(DrinkObject drink, Ingredient from, Ingredient to) {
