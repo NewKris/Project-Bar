@@ -8,16 +8,12 @@ namespace Runtime.Satisfaction
 {
     public class SatisfactionManager : MonoBehaviour
     {
-        public UnityAction<int> OnCustomerSlotUnlocked;
-        public UnityAction<int> OnCustomerSlotLocked;
-        public UnityAction<bool> OnToggleTarget;
-        public UnityAction OnGameOver;
-        
-        
         public Level currentLevel;
         public SatisfactionPort satisfactionPort;
 
         public int currentSatisfaction;
+        
+        [SerializeField] private SatisfactionEvents satisfactionEvents;
         
         private bool _targetUnlocked = false;
         private bool[] _availableCustomers;
@@ -49,7 +45,7 @@ namespace Runtime.Satisfaction
             
             if (currentSatisfaction <= 0)
             {
-                OnGameOver?.Invoke();
+                satisfactionEvents.GameOver();
             }
         }
 
@@ -58,12 +54,12 @@ namespace Runtime.Satisfaction
             if (currentSatisfaction >= currentLevel.targetSatisfaction && !_targetUnlocked)
             {
                 _targetUnlocked = true;
-                OnToggleTarget?.Invoke(_targetUnlocked);
+                satisfactionEvents.ToggleTarget(_targetUnlocked);
             }
             else if (currentSatisfaction < currentLevel.targetSatisfaction && _targetUnlocked)
             {
                 _targetUnlocked = false;
-                OnToggleTarget?.Invoke(_targetUnlocked);
+                satisfactionEvents.ToggleTarget(_targetUnlocked);
             }
         }
 
@@ -82,13 +78,13 @@ namespace Runtime.Satisfaction
             if (currentSatisfaction >= unlock && !_availableCustomers[index])
             {
                 _availableCustomers[index] = true;
-                OnCustomerSlotUnlocked?.Invoke(index);
+                satisfactionEvents.ChangeCustomerSlotState(index, false);
             }
 
             if (currentSatisfaction < unlock && _availableCustomers[index])
             {
                 _availableCustomers[index] = false;
-                OnCustomerSlotLocked?.Invoke(index);
+                satisfactionEvents.ChangeCustomerSlotState(index, true);
             }
         }
 

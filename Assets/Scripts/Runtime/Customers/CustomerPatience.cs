@@ -10,35 +10,37 @@ namespace Runtime.Customers
         public UnityAction OnPatienceTick;
         public UnityAction OnPatienceTimeOut;
         
-        
         [SerializeField] private Image patienceImage;
         
-        
-        [Foldout("Timers")]
-        [Tooltip("The time it takes before the customer leaves")]
-        [SerializeField] private float patienceTimer;
-        
-        [Foldout("Timers")]
-        [Tooltip("The time it takes before the customer asks the player to hurry up")]
-        [SerializeField] private float patienceTickTime;
-
-        
+        // _patience is the full length of the patience timer
+        private float _patience;
+        // _patienceTimer is the timer that counts down
         private float _patienceTimer;
+        private float _patienceTickTime;
+        
         private bool _patienceTickDialogueHasTriggered;
         private bool _isLeaving;
 
         private void Start()
         {
-            _patienceTimer = patienceTimer;
+            _patienceTimer = _patience;
+        }
+
+        public void Setup(float timer, float tickTime)
+        {
+            _patience = timer;
+            _patienceTickTime = tickTime;
+
+            _patienceTimer = _patience;
         }
 
         private void Update()
         {
             _patienceTimer -= Time.deltaTime;
 
-            patienceImage.fillAmount = Mathf.Max(_patienceTimer, 0) / patienceTimer;
+            patienceImage.fillAmount = Mathf.Max(_patienceTimer, 0) / _patience;
 
-            if (_patienceTimer <= patienceTimer - patienceTickTime && !_patienceTickDialogueHasTriggered)
+            if (_patienceTimer <= _patience - _patienceTickTime && !_patienceTickDialogueHasTriggered)
             {
                 _patienceTickDialogueHasTriggered = true;
                 OnPatienceTick?.Invoke();

@@ -13,41 +13,25 @@ namespace Runtime.Customers
     [RequireComponent(typeof(CustomerMovement))] [RequireComponent(typeof(CustomerDialogue))] [RequireComponent(typeof(CustomerPatience))]
     public class Customer : MonoBehaviour
     {
+        public CustomerData data;
+        
         [Tooltip("The scriptable object satisfaction port")]
         [SerializeField] private SatisfactionPort satisfactionPort;
         
-        [Tooltip("Is used to know whether customer is the target")]
-        [SerializeField] private bool isTarget;
+        private List<Recipe> _acceptableDrinks;
         
-        [Tooltip("The possible drinks that when served to the customer will result in a successful order")]
-        [SerializeField] private List<Recipe> acceptableDrinks;
+        private float _timePenaltyRepeatOrder;
         
-        
-        [Foldout("Timers")]
-        [Tooltip("The time that will be removed from the patience timer when order is repeated")]
-        [SerializeField] [Min(0)] private float timePenaltyRepeatOrder;
-        
-        
-        [Foldout("Satisfaction settings")]
-        [Tooltip("The amount of satisfaction that the player will gain on a successful order")]
-        [SerializeField] [Min(0)] private int satisfactionSuccess;
-        
-        [Foldout("Satisfaction settings")]
-        [Tooltip("The amount of satisfaction that the player will lose on if they fail the order")]
-        [SerializeField] [Min(0)] private int satisfactionFailure;
-        
-        [Foldout("Satisfaction settings")]
-        [Tooltip("The amount of satisfaction that the player will lose if the customer isn't served")]
-        [SerializeField] [Min(0)] private int satisfactionMissedOrder;
-        
-        [Foldout("Satisfaction settings")]
-        [Tooltip("The amount of satisfaction that the player will lose if they repeat the customers order")]
-        [SerializeField] [Min(0)] private int satisfactionRepeatOrder;
+        private int _satisfactionSuccess;
+        private int _satisfactionFailure;
+        private int _satisfactionMissedOrder;
+        private int _satisfactionRepeatOrder;
 
         private CustomerMovement _customerMovement;
         private CustomerDialogue _customerDialogue;
         private CustomerPatience _customerPatience;
         
+        private bool _isTarget;
         private bool _hasOrdered;
         private bool _isLeaving;
 
@@ -69,16 +53,44 @@ namespace Runtime.Customers
 
         private void Start()
         {
-            
-            _customerDialogue.SetName();
-            EnterBar();
+            Debug.Log("CUSTOMER SETUP IS STILL CALLED IN CUSTOMER REMOVE WHEN CUSTOMER SPAWNING IS IMPLEMENTED");
+            CustomerSetup(data);
         }
 
         private void HandlePatienceTimeOut()
         {
             _customerDialogue.PatienceTimeOut();
-            satisfactionPort.DecreaseSatisfaction(satisfactionMissedOrder);
+            satisfactionPort.DecreaseSatisfaction(_satisfactionMissedOrder);
             LeaveBar();
+        }
+
+        
+        public void CustomerSetup(CustomerData data)
+        {
+            _isTarget = data.isTarget;
+            _acceptableDrinks = data.acceptableDrinks;
+            _timePenaltyRepeatOrder = data.timePenaltyRepeatOrder;
+            _satisfactionSuccess = data.satisfactionSuccess;
+            _satisfactionFailure = data.satisfactionFailure;
+            _satisfactionMissedOrder = data.satisfactionMissedOrder;
+            _satisfactionRepeatOrder = data.satisfactionRepeatOrder;
+            
+            _customerPatience.Setup(data.patienceTimer, data.patienceTickTime);
+            _customerDialogue.Setup(
+                data.customerName,
+                data.attentionDialogue,
+                data.orderDialogue,
+                data.repeatOrderDialogue,
+                data.successDialogue,
+                data.failureDialogue,
+                data.patienceTimerTickDialogue,
+                data.patienceTimeOutDialogue
+            );
+
+            // TODO: Add movement positions to customer movement
+            
+            
+            EnterBar();
         }
 
         public void ServeDrink(DrinkContents drink)
@@ -86,17 +98,17 @@ namespace Runtime.Customers
             // Compare contents with accepted drinks
             Debug.Log("Serving 💅");
 
-            if (drink.DrinkIsAccepted(acceptableDrinks))
+            if (drink.DrinkIsAccepted(_acceptableDrinks))
             {
                 Debug.Log("Drink accepted!");
                 _customerDialogue.Success();
-                satisfactionPort.IncreaseSatisfaction(satisfactionSuccess);
+                satisfactionPort.IncreaseSatisfaction(_satisfactionSuccess);
             }
             else
             {
                 Debug.Log("Drink rejected");
                 _customerDialogue.Failure();
-                satisfactionPort.DecreaseSatisfaction(satisfactionFailure);
+                satisfactionPort.DecreaseSatisfaction(_satisfactionFailure);
             }
             
             LeaveBar();
@@ -115,8 +127,8 @@ namespace Runtime.Customers
             else
             {
                 _customerDialogue.RepeatOrder();
-                satisfactionPort.DecreaseSatisfaction(satisfactionRepeatOrder);
-                _customerPatience.AddTime(-timePenaltyRepeatOrder);
+                satisfactionPort.DecreaseSatisfaction(_satisfactionRepeatOrder);
+                _customerPatience.AddTime(-_timePenaltyRepeatOrder);
             }
         }
 

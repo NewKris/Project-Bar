@@ -9,85 +9,75 @@ namespace Runtime.Customers
     {
         public bool IsSpeaking => dialogueDisplay.showingDialogue;
         
-        [Tooltip("The name that will be displayed as the customer name")]
-        [SerializeField] private string customerName;
         
         [Tooltip("The DialogueDisplay component attached to the customers dialogue boxes")]
         [SerializeField] private DialogueDisplay dialogueDisplay;
         
+        private string _customerName;
+        private string _attentionDialogue;
+        private string _orderDialogue;
+        private string _repeatOrderDialogue;
+        private string _successDialogue;
+        private string _failureDialogue;
+        private string _patienceTimerTickDialogue;
+        private string _patienceTimeOutDialogue;
         
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer enters the bar")]
-        [SerializeField] private string attentionDialogue;
-        
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer first orders")]
-        [SerializeField] private string orderDialogue;
-        
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer is asked to repeat the order")]
-        [SerializeField] private string repeatOrderDialogue;
-
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer has been served the correct drink")]
-        [SerializeField] private string successDialogue;
-
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer has been served an incorrect drink")]
-        [SerializeField] private string failureDialogue;
-
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer starts to get impatient")]
-        [FormerlySerializedAs("gettingImpatientDialogue")]
-        [SerializeField] private string patienceTimerTickDialogue;
-        
-        [Foldout("Dialogues")][ResizableTextArea]
-        [Tooltip("The dialogue displayed when the customer's patience has run out")]
-        [SerializeField] private string patienceTimeOutDialogue;
-        
-        
-        [Foldout("Timers")]
         [Tooltip("The time the dialogue will remain visible upon activation")]
         [SerializeField] private float dialoguePopUpTimer;
 
-        public void SetName()
+        public void Setup(string customerName, string attention, string order, string repeatOrder, string success,
+            string failure, string timerTick, string timeOut)
         {
-            dialogueDisplay.SetCharacterName(customerName);
+            _customerName = customerName;
+            SetName();
+            
+            _attentionDialogue = attention;
+            _orderDialogue = order;
+            _repeatOrderDialogue = repeatOrder;
+            _successDialogue = success;
+            _failureDialogue = failure;
+            _patienceTimerTickDialogue = timerTick;
+            _patienceTimeOutDialogue = timeOut;
+        }
+        
+        private void SetName()
+        {
+            dialogueDisplay.SetCharacterName(_customerName);
         }
 
         public void Attention()
         {
-            ShowDialogue(attentionDialogue);
+            ShowDialogue(_attentionDialogue);
         }
 
         public void Order()
         {
-            ShowDialogue(orderDialogue);
+            ShowDialogue(_orderDialogue);
         }
 
         public void RepeatOrder()
         {
-            ShowDialogue(repeatOrderDialogue);
+            ShowDialogue(_repeatOrderDialogue);
         }
 
         public void Success()
         {
-            ShowDialogue(successDialogue);
+            ShowDialogue(_successDialogue);
         }
 
         public void Failure()
         {
-            ShowDialogue(failureDialogue);
+            ShowDialogue(_failureDialogue);
         }
 
         public void PatienceTick()
         {
-            ShowDialogue(patienceTimerTickDialogue);
+            ShowDialogue(_patienceTimerTickDialogue);
         }
 
         public void PatienceTimeOut()
         {
-            ShowDialogue(patienceTimeOutDialogue);
+            ShowDialogue(_patienceTimeOutDialogue);
         }
         
         private void ShowDialogue(string dialogue)
