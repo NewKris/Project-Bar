@@ -86,7 +86,7 @@ namespace Runtime.Customers
             // Compare contents with accepted drinks
             Debug.Log("Serving 💅");
 
-            if (IsDrinkAccepted(drink))
+            if (drink.DrinkIsAccepted(acceptableDrinks))
             {
                 Debug.Log("Drink accepted!");
                 _customerDialogue.Success();
@@ -100,99 +100,6 @@ namespace Runtime.Customers
             }
             
             LeaveBar();
-        }
-
-        private bool IsDrinkAccepted(DrinkContents drink)
-        {
-            List<Recipe> possibleRecipes = acceptableDrinks;
-
-            if (drink.autoFail) return false;
-            
-            possibleRecipes = CheckForMatchingContainer(drink.GetContainer(), possibleRecipes);
-            if (possibleRecipes.Count == 0)
-            {
-                Debug.Log("Drink mismatch: Container");
-                return false;
-            }
-            
-            possibleRecipes = CheckForMatchingMixType(drink.mixType, possibleRecipes);
-            if (possibleRecipes.Count == 0)
-            {
-                Debug.Log("Drink mismatch: MixType");
-                return false;
-            }
-            
-            possibleRecipes = CheckForMatchingIngredients(drink.ingredients, possibleRecipes);
-            if (possibleRecipes.Count == 0)
-            {
-                Debug.Log("Drink mismatch: Ingredients");
-                return false;
-            }
-
-            if (!CheckForCorrectOrderOfIngredients(drink.ingredients)) {
-                Debug.Log("Wrong order of ingredients");
-                return false;
-            }
-            
-            return true;
-        }
-
-        private List<Recipe> CheckForMatchingContainer(DrinkContainer container, List<Recipe> recipes)
-        {
-            List<Recipe> possibleRecipes = new List<Recipe>();
-
-            foreach (Recipe recipe in recipes)
-            {
-                if (recipe.contents.ingredients.Contains(container)) possibleRecipes.Add(recipe);
-            }
-
-            return possibleRecipes;
-        }
-
-        private List<Recipe> CheckForMatchingMixType(MixType mixType, List<Recipe> recipes)
-        {
-            List<Recipe> possibleRecipes = new List<Recipe>();
-
-            foreach (Recipe recipe in recipes)
-            {
-                if (recipe.contents.mixType == mixType) possibleRecipes.Add(recipe);
-            }
-
-            return possibleRecipes;
-        }
-
-        private List<Recipe> CheckForMatchingIngredients(List<Ingredient> ingredients, List<Recipe> recipes)
-        {
-            List<Recipe> possibleRecipes = new List<Recipe>();
-
-            foreach (Recipe recipe in recipes)
-            {
-                bool isPossible = true;
-                foreach (Ingredient ingredient in ingredients)
-                {
-                    if (!recipe.contents.ingredients.Contains(ingredient))
-                    {
-                        isPossible = false;
-                        break;
-                    }
-                }
-                
-                if (isPossible) possibleRecipes.Add(recipe);
-            }
-            
-            return possibleRecipes;
-        }
-
-        private bool CheckForCorrectOrderOfIngredients(List<Ingredient> ingredients)
-        {
-            IngredientType typeOfPreviousIngredient = ingredients[0].type;
-
-            for (int i = 1; i < ingredients.Count; i++)
-            {
-                if (ingredients[i].type < typeOfPreviousIngredient) return false;
-            }
-
-            return true;
         }
 
         public void Order()
