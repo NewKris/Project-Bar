@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e38e5cf50f845f0b7dd6e3f243991ec, type: 3}
-  m_Name: Level 1
+  m_Script: {fileID: 11500000, guid: 3ad1a7db4c974473b5c4cb3894ef387f, type: 3}
+  m_Name: Customer Event Port
   m_EditorClassIdentifier: 
-  Name: OutdoorsScene
-  startSatisfaction: 25
-  customerUnlocks: 000000004b00000064000000
-  targetSatisfaction: 150
-  maximumSatisfaction: 300

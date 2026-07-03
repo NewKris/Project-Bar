@@ -13,10 +13,10 @@ namespace Runtime.Customers
     [RequireComponent(typeof(CustomerMovement))] [RequireComponent(typeof(CustomerDialogue))] [RequireComponent(typeof(CustomerPatience))]
     public class Customer : MonoBehaviour
     {
-        public CustomerData data;
-        
         [Tooltip("The scriptable object satisfaction port")]
         [SerializeField] private SatisfactionPort satisfactionPort;
+        
+        private CustomerEventPort _customerEventPort;
         
         private List<Recipe> _acceptableDrinks;
         
@@ -51,12 +51,6 @@ namespace Runtime.Customers
             _customerPatience.OnPatienceTimeOut -= HandlePatienceTimeOut;
         }
 
-        private void Start()
-        {
-            Debug.Log("CUSTOMER SETUP IS STILL CALLED IN CUSTOMER REMOVE WHEN CUSTOMER SPAWNING IS IMPLEMENTED");
-            CustomerSetup(data);
-        }
-
         private void HandlePatienceTimeOut()
         {
             _customerDialogue.PatienceTimeOut();
@@ -65,7 +59,7 @@ namespace Runtime.Customers
         }
 
         
-        public void CustomerSetup(CustomerData data)
+        public void CustomerSetup(CustomerData data, CustomerEventPort port, Vector3 barPosition, Vector3 exitPosition)
         {
             _isTarget = data.isTarget;
             _acceptableDrinks = data.acceptableDrinks;
@@ -87,8 +81,9 @@ namespace Runtime.Customers
                 data.patienceTimeOutDialogue
             );
 
-            // TODO: Add movement positions to customer movement
+            _customerEventPort = port;
             
+            _customerMovement.Setup(barPosition, exitPosition, port);
             
             EnterBar();
         }
