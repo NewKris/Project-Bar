@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6619984528798104938}
   - component: {fileID: 4432744846156579488}
   - component: {fileID: 265703177922246227}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mixer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,9 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDock: {fileID: 6619984528798104938}
-  rumble: {fileID: 2009701099269720862}
   middleStateDuration: 0.2
   endStateDuration: 1
+  rumble: {fileID: 2009701099269720862}
   conversions:
   - startState: {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
     middleState: {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}

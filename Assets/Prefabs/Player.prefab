@@ -411,6 +411,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactDistance: 2
+  defaultMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &6067592385918225850
 GameObject:
   m_ObjectHideFlags: 0

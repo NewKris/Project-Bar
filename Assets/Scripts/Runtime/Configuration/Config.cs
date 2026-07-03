@@ -10,8 +10,6 @@ namespace Runtime.Configuration {
         
         private const string FilePath = "/Config/config";
         
-        public float shakeDurationInSeconds = 1f;
-
         public static async Task Load() {
             if (FileManager.FileExists(FilePath)) {
                 Instance = await FileManager.DeserializeFile<Config>(FilePath);

@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace Runtime.Drink {
     public class Shaker : DrinkObject {
+        public float shakeDuration = 0.5f;
         
         public void TickShake() {
             ShakeDuration += Time.deltaTime;
-            if (ShakeDuration >= Config.Instance.shakeDurationInSeconds) {
+            if (ShakeDuration >= shakeDuration) {
                 currentContents.mixType = MixType.Shaken;
             }
         }

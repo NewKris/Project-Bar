@@ -414,6 +414,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8232452032915344539}
     m_Modifications:
+    - target: {fileID: 180270214283710571, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3134649963233762181, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_Name
       value: Dialogue Box

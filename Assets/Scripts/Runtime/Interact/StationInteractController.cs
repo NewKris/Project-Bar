@@ -1,4 +1,5 @@
-﻿using Runtime.Utility;
+﻿using System;
+using Runtime.Utility;
 using UnityEngine;
 
 namespace Runtime.Interact {
@@ -6,9 +7,10 @@ namespace Runtime.Interact {
         public InteractRay interactRay;
         
         private StationInteraction _currentInteraction;
+        private int _layerMask;
 
         public void TryBeginInteract() {
-            if (interactRay.TryFindInteraction(out StationInteraction interaction)) {
+            if (interactRay.TryFindInteraction(out StationInteraction interaction, _layerMask)) {
                 _currentInteraction = interaction;
                 interaction.BeginInteraction();
             }
@@ -20,6 +22,10 @@ namespace Runtime.Interact {
             }
             
             _currentInteraction = null;
+        }
+
+        private void Awake() {
+            _layerMask = 1 << LayerMask.NameToLayer("Station");
         }
     }
 }
