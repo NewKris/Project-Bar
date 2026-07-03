@@ -23,6 +23,7 @@ MonoBehaviour:
   satisfactionFailure: 5
   satisfactionMissedOrder: 7
   satisfactionRepeatOrder: 2
+  satisfactionKickedOut: 3
   attentionDialogue: Your day just got a whole lot fresher now that Magnus Mint is
     in the house!!
   orderDialogue: I need something minty fresh, just like me! A mojito perhaps!
@@ -31,3 +32,4 @@ MonoBehaviour:
   failureDialogue: This is not so fresh, you should be ashamed.
   patienceTimerTickDialogue: This place is getting less fresh by the second.
   patienceTimeOutDialogue: This place is as fresh as a dumpster, I'm leaving.
+  kickedOutDialogue: Couldn't handle this many customers at once huh?

@@ -16,6 +16,9 @@ namespace Runtime.Customers
         [Tooltip("The scriptable object satisfaction port")]
         [SerializeField] private SatisfactionPort satisfactionPort;
         
+        [Tooltip("Determines whether the player should lose satisfaction when the customer gets kicked out")]
+        [SerializeField] private bool loseSatisfactionWhenKickedOut;
+        
         private CustomerEventPort _customerEventPort;
         
         private List<Recipe> _acceptableDrinks;
@@ -26,6 +29,7 @@ namespace Runtime.Customers
         private int _satisfactionFailure;
         private int _satisfactionMissedOrder;
         private int _satisfactionRepeatOrder;
+        private int _satisfactionKickedOut;
 
         private CustomerMovement _customerMovement;
         private CustomerDialogue _customerDialogue;
@@ -68,6 +72,7 @@ namespace Runtime.Customers
             _satisfactionFailure = data.satisfactionFailure;
             _satisfactionMissedOrder = data.satisfactionMissedOrder;
             _satisfactionRepeatOrder = data.satisfactionRepeatOrder;
+            _satisfactionKickedOut = data.satisfactionKickedOut;
             
             _customerPatience.Setup(data.patienceTimer, data.patienceTickTime);
             _customerDialogue.Setup(
@@ -131,6 +136,12 @@ namespace Runtime.Customers
         public void KickOut()
         {
             _customerDialogue.KickOut();
+
+            if (loseSatisfactionWhenKickedOut)
+            {
+                satisfactionPort.DecreaseSatisfaction(_satisfactionKickedOut);
+            }
+            
             LeaveBar();
         }
 

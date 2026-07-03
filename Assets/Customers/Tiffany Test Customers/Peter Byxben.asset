@@ -24,6 +24,7 @@ MonoBehaviour:
   satisfactionFailure: 5
   satisfactionMissedOrder: 7
   satisfactionRepeatOrder: 2
+  satisfactionKickedOut: 3
   attentionDialogue: What's up?!
   orderDialogue: It's been a tough day so I could use a pick me up.  vodka, either
     plain or on the rocks. It don' matter to me.
@@ -33,3 +34,4 @@ MonoBehaviour:
   patienceTimerTickDialogue: Hey just because I've had a tough day doesn't mean I
     can wait all night.
   patienceTimeOutDialogue: And the day just keeps getting worse...
+  kickedOutDialogue: Couldn't handle this many customers at once huh?

@@ -24,6 +24,7 @@ MonoBehaviour:
   satisfactionFailure: 17
   satisfactionMissedOrder: 17
   satisfactionRepeatOrder: 7
+  satisfactionKickedOut: 3
   attentionDialogue: Soon may the wellerman come
   orderDialogue: "Fifteen men on the dead man's chest\u2014 Yo ho ho and a bottle
     of rom!"
@@ -34,3 +35,4 @@ MonoBehaviour:
     sails.
   patienceTimerTickDialogue: Turn that ship around me boys
   patienceTimeOutDialogue: Farewell and adieu to you spanish ladies.
+  kickedOutDialogue: Couldn't handle this many customers at once huh?
