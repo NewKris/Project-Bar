@@ -103,6 +103,7 @@ namespace Runtime.Player {
 
         private void RemoveItemFromHand() {
             _heldItem?.SetFrontRender(false);
+            _heldItem?.SetInteractable(true);
             _heldItem = null;
         }
 
@@ -111,6 +112,7 @@ namespace Runtime.Player {
             
             _heldItem = item;
             _heldItem.SetFrontRender(true);
+            item.SetInteractable(false);
             item.Pin(itemPivot);
         }
 
