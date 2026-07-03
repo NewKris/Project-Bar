@@ -68,7 +68,7 @@ namespace Runtime.Customers
                     data = target;
                 }
             }
-            if (!data) data = availableCustomers[Random.Range(0, customerSlots.Length)];
+            if (!data) data = availableCustomers[Random.Range(0, availableCustomers.Length)];
             
             newCustomer.CustomerSetup(data, port, barPosition, exitPosition);
             

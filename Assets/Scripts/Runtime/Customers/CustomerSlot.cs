@@ -21,7 +21,7 @@ namespace Runtime.Customers
         public Vector3 customerExitPosition;
         
         private Customer _currentCustomer;
-        private bool _enabled = true;
+        private bool _enabled = false;
         private float _spawnTimer;
         
         public void Enable()
@@ -48,8 +48,7 @@ namespace Runtime.Customers
 
         private void Start()
         {
-            _spawnTimer = timeBetweenCustomers;
-            _currentCustomer = null;
+            EmptySlot();
         }
 
         private void EmptySlot()
@@ -84,6 +83,7 @@ namespace Runtime.Customers
                     customerOrderPosition,
                     customerExitPosition
                 );
+                _spawnTimer = timeBetweenCustomers;
             }
         }
     }

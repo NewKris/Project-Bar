@@ -16,7 +16,7 @@ namespace Runtime.Satisfaction
 
         public void DecreaseSatisfaction(int value)
         {
-            OnSatisfactionChange?.Invoke(-Mathf.Abs(value));
+            OnSatisfactionChange?.Invoke(-(Mathf.Abs(value)));
         }
 
         public void SetSatisfaction(int value)

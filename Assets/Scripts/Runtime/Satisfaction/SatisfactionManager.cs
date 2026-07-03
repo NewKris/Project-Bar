@@ -104,6 +104,7 @@ namespace Runtime.Satisfaction
             currentSatisfaction = currentLevel.startSatisfaction;
             _targetUnlocked = false;
             _availableCustomers = new bool[currentLevel.customerUnlocks.Length];
+            HandleCustomerUnlocks();
         }
     }
 }
