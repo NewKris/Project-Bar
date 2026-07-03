@@ -37,7 +37,7 @@ namespace Runtime.Satisfaction
 
         public void GameOver()
         {
-            OnGameOver.Invoke();
+            OnGameOver?.Invoke();
         }
     }
 }
