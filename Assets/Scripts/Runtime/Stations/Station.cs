@@ -6,8 +6,6 @@ using UnityEngine;
 namespace Runtime.Stations {
     public abstract class Station<T> : MonoBehaviour where T : DrinkObject {
         public ItemDock itemDock;
-        public float middleStateDuration;
-        public float endStateDuration;
 
         protected T currentItem;
         protected int stationKey;
@@ -31,19 +29,8 @@ namespace Runtime.Stations {
             stationKey = gameObject.GetInstanceID();
         }
         
-        private void Update() {
+        protected virtual void Update() {
             currentItem.TickStationTimer(stationKey);
-            
-            if (currentItem.GetStationTime(stationKey) >= middleStateDuration) {
-                OnReachedMiddleState();
-            }
-
-            if (currentItem.GetStationTime(stationKey) >= endStateDuration) {
-                OnReachedEndState();
-            }
         }
-        
-        protected abstract void OnReachedEndState();
-        protected abstract void OnReachedMiddleState();
     }
 }

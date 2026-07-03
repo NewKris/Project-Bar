@@ -1022,7 +1022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6406469135893643069, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.89
+      value: -3.8899999
       objectReference: {fileID: 0}
     - target: {fileID: 6406469135893643069, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1060,14 +1060,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8760255224563793390, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
-      propertyPath: endStateDuration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8760255224563793390, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
-      propertyPath: middleStateDuration
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1092,26 +1084,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2198659114856467048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4771978590559843112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5adef6b1cb7447acb60255b7b09ac0d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemDock: {fileID: 4381846017730153196}
-  middleStateDuration: 0
-  endStateDuration: 0
-  rumble: {fileID: 9003397032340929688}
-  conversions:
-  - startState: {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
-    middleState: {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
-    endState: {fileID: 11400000, guid: afe2b0e5bdb83ff4ebdd269d3547dd5c, type: 2}
 --- !u!4 &2202027117281339793
 Transform:
   m_ObjectHideFlags: 0
@@ -1321,7 +1293,7 @@ Transform:
   m_GameObject: {fileID: 4771978590559843112}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.89, y: 0.35112014, z: -1.518}
+  m_LocalPosition: {x: -1.89, y: 0.35112014, z: -0.518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1338,10 +1310,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4609927736522311867}
   - component: {fileID: 8117776317346122304}
-  - component: {fileID: 2198659114856467048}
   - component: {fileID: 4381846017730153196}
   - component: {fileID: 6527365770904139046}
   - component: {fileID: 7259361452718080469}
+  - component: {fileID: 8117776317346122305}
   m_Layer: 0
   m_Name: Ingredient Source
   m_TagString: Untagged
@@ -1582,9 +1554,9 @@ MonoBehaviour:
   onBeginInteraction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2198659114856467048}
-        m_TargetAssemblyTypeName: Runtime.Stations.MixerStation, Assembly-CSharp
-        m_MethodName: StartMixer
+      - m_Target: {fileID: 8117776317346122305}
+        m_TargetAssemblyTypeName: Runtime.Stations.FillStation, Assembly-CSharp
+        m_MethodName: StartStation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1597,9 +1569,9 @@ MonoBehaviour:
   onEndInteraction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2198659114856467048}
-        m_TargetAssemblyTypeName: Runtime.Stations.MixerStation, Assembly-CSharp
-        m_MethodName: StopMixer
+      - m_Target: {fileID: 8117776317346122305}
+        m_TargetAssemblyTypeName: Runtime.Stations.FillStation, Assembly-CSharp
+        m_MethodName: StopStation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1632,6 +1604,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &8117776317346122305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4771978590559843112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c6f2ac40b641cf885ec8d93fdc84b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDock: {fileID: 4381846017730153196}
+  ingredient: {fileID: 11400000, guid: 46f92cdf33d232d45b71292bedc3f93f, type: 2}
+  fillDuration: 0.5
+  rumble: {fileID: 9003397032340929688}
 --- !u!114 &9003397032340929688
 MonoBehaviour:
   m_ObjectHideFlags: 0

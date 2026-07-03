@@ -1,13 +1,19 @@
-﻿using Runtime.Drink;
+﻿using Runtime.Animations;
+using Runtime.Drink;
 using UnityEngine;
 
 namespace Runtime.Stations {
     public class FillStation : Station<DrinkObject> {
         public Ingredient ingredient;
+        public float fillDuration;
+        public RumbleAnimation rumble;
 
-        private DrinkObject _drink;
-        
         public override void StartStation() {
+            if (AlreadyContainsIngredient()) {
+                Debug.Log($"{gameObject.name} already contains ingredient");
+                return;
+            }
+            
             StartStationTimer();
         }
         
@@ -15,9 +21,32 @@ namespace Runtime.Stations {
             enabled = false;
             itemDock.HeldItem?.SetInteractable(true);
         }
-
-        protected override void OnReachedEndState() { }
         
-        protected override void OnReachedMiddleState() { }
+        private void OnEnable() {
+            rumble.Shaking = true;
+        }
+
+        private void OnDisable() {
+            rumble.Shaking = false;
+        }
+
+        protected override void Update() {
+            base.Update();
+
+            if (currentItem.GetStationTime(stationKey) > fillDuration) {
+                AddIngredient();
+            }
+        }
+
+        private bool AlreadyContainsIngredient() {
+            return itemDock.HeldItem != null 
+                   && itemDock.HeldItem.TryGetComponent(out DrinkObject drink) 
+                   && drink.currentContents.ingredients.Contains(ingredient);
+        }
+
+        private void AddIngredient() {
+            currentItem.AddIngredient(ingredient);
+            currentItem.RemoveStationKey(stationKey);
+        }
     }
 }

@@ -16,6 +16,8 @@ namespace Runtime.Stations {
     
     public class ConverterStation : Station<DrinkObject> {
         public RumbleAnimation rumble;
+        public float  middleStateDuration;
+        public float  endStateDuration;
         
         public Conversion[] conversions;
         
@@ -28,19 +30,24 @@ namespace Runtime.Stations {
             itemDock.HeldItem?.SetInteractable(true);
         }
 
-        protected override void OnReachedEndState() {
-            ConvertToEndStates();
-        }
-        protected override void OnReachedMiddleState() {
-            ConvertToMiddleStates();
-        }
-
         private void OnEnable() {
             rumble.Shaking = true;
         }
 
         private void OnDisable() {
             rumble.Shaking = false;
+        }
+
+        protected override void Update() {
+            base.Update();
+            
+            if (currentItem.GetStationTime(stationKey) >= middleStateDuration) {
+                ConvertToMiddleStates();
+            }
+
+            if (currentItem.GetStationTime(stationKey) >= endStateDuration) {
+                ConvertToEndStates();
+            }
         }
 
         private void ConvertToMiddleStates() {
