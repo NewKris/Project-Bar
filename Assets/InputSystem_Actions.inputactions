@@ -185,6 +185,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Ingredient 4",
+                    "type": "Button",
+                    "id": "f1677f8e-5ba6-4899-a6ee-7a1fb8b1f51f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ingredient V",
+                    "type": "Button",
+                    "id": "3180c348-9e99-4b3a-8779-6ed9a21527b4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -416,6 +434,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9de3346f-08a4-4540-b9af-b5bf7b671612",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ingredient 4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c44cde47-6651-48be-98fe-e32e50b4a7e0",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ingredient V",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

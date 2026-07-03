@@ -51,6 +51,7 @@ MonoBehaviour:
   - 1
   - 2
   - 3
+  - 4
   - Q
   - W
   - E
@@ -62,6 +63,7 @@ MonoBehaviour:
   - Z
   - X
   - C
+  - V
 --- !u!114 &6830070769615864448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f64aa7255849d1b66951cce797ece0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pourPenalty: 5
+  satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
   itemPivot: {fileID: 4636003247188984305}
   handShake: {fileID: 155191795229461188}
 --- !u!114 &2956154837243967506

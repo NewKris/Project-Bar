@@ -9,6 +9,7 @@ namespace Runtime.Drink {
         [Foldout("Prep")] public Ingredient ingredient1;
         [Foldout("Prep")] public Ingredient ingredient2;
         [Foldout("Prep")] public Ingredient ingredient3;
+        [Foldout("Prep")] public Ingredient ingredient4;
 
         [Foldout("Liquids")] public Ingredient ingredientQ;
         [Foldout("Liquids")] public Ingredient ingredientW;
@@ -22,6 +23,7 @@ namespace Runtime.Drink {
         [Foldout("Garnish")] public Ingredient ingredientZ;
         [Foldout("Garnish")] public Ingredient ingredientX;
         [Foldout("Garnish")] public Ingredient ingredientC;
+        [Foldout("Garnish")] public Ingredient ingredientV;
         
         public static Ingredient GetIngredient(string key) {
             return Instance.KeyToIngredient(key.Trim());
@@ -33,6 +35,7 @@ namespace Runtime.Drink {
                     "1" => ingredient1,
                     "2" => ingredient2,
                     "3" => ingredient3,
+                    "4" => ingredient4,
                     "Q" => ingredientQ,
                     "W" => ingredientW,
                     "E" => ingredientE,
@@ -44,6 +47,7 @@ namespace Runtime.Drink {
                     "Z" => ingredientZ,
                     "X" => ingredientX,
                     "C" => ingredientC,
+                    "V" => ingredientV,
                     _ => throw new ArgumentOutOfRangeException(nameof(key), key, null)
                 };
             }
