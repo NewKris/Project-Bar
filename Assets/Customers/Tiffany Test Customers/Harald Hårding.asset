@@ -24,6 +24,7 @@ MonoBehaviour:
   satisfactionFailure: 5
   satisfactionMissedOrder: 7
   satisfactionRepeatOrder: 2
+  satisfactionKickedOut: 3
   attentionDialogue: Aargh!
   orderDialogue: Beeer!
   repeatOrderDialogue: Beeeeeeeeer!
@@ -31,3 +32,4 @@ MonoBehaviour:
   failureDialogue: Grrrrrrrrrraah!
   patienceTimerTickDialogue: Argh!!
   patienceTimeOutDialogue: Argj Graaaaaaaah!
+  kickedOutDialogue: Couldn't handle this many customers at once huh?

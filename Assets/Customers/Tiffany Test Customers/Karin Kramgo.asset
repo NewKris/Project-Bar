@@ -23,6 +23,7 @@ MonoBehaviour:
   satisfactionFailure: 5
   satisfactionMissedOrder: 7
   satisfactionRepeatOrder: 2
+  satisfactionKickedOut: 3
   attentionDialogue: Hello! Barkeep!?
   orderDialogue: I could really go for some soda! :)
   repeatOrderDialogue: Have you already forgotten such a simple order as a soda?
@@ -31,3 +32,4 @@ MonoBehaviour:
   failureDialogue: This is not a soda. :(
   patienceTimerTickDialogue: I might as well leave if this is the service I get.
   patienceTimeOutDialogue: Ugh! This place stinks!
+  kickedOutDialogue: Couldn't handle this many customers at once huh?

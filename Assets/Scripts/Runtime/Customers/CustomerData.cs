@@ -47,6 +47,10 @@ namespace Runtime.Customers
         [Tooltip("The amount of satisfaction that the player will lose if they repeat the customers order")]
         [Min(0)] public int satisfactionRepeatOrder;
         
+        [Foldout("Satisfaction settings")]
+        [Tooltip("The amount of satisfaction that the player will lose if the customer gets kicked out (requires loseSatisfactionWhenKickedOut in the customer prefab to be enabled)")]
+        [Min(0)] public int satisfactionKickedOut;
+        
         
         [Foldout("Dialogues")][ResizableTextArea]
         [Tooltip("The dialogue displayed when the customer enters the bar")]
