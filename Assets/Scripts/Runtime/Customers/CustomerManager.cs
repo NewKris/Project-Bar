@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using NaughtyAttributes;
 using Runtime.Satisfaction;
 using Runtime.Scene_Handling;
@@ -32,6 +33,7 @@ namespace Runtime.Customers
 
         private float _targetSpawnChance;
         private bool _targetUnlocked = false;
+        private HashSet<CustomerData> _activeCustomers = new HashSet<CustomerData>();
 
         private void OnEnable()
         {
@@ -61,14 +63,36 @@ namespace Runtime.Customers
 
             CustomerData data = null;
 
-            if (_targetUnlocked)
+            if (_targetUnlocked && !_activeCustomers.Contains(target))
             {
                 if (Random.Range(0, 100) < _targetSpawnChance)
                 {
                     data = target;
                 }
+                else
+                {
+                    _targetSpawnChance += targetChanceIncrease;
+                }
+
             }
-            if (!data) data = availableCustomers[Random.Range(0, availableCustomers.Length)];
+            
+            if (!data)
+            {
+                int maxAttempts = 10;
+                int attempts = 0;
+                
+                data = availableCustomers[Random.Range(0, availableCustomers.Length)];
+                
+                while (_activeCustomers.Contains(data) && attempts < maxAttempts)
+                {
+                    data = availableCustomers[Random.Range(0, availableCustomers.Length)];
+                    attempts++;
+                }
+            }
+
+            _activeCustomers.Add(data);
+
+            port.OnCustomerEvent += () => _activeCustomers.Remove(data);
             
             newCustomer.CustomerSetup(data, port, barPosition, exitPosition);
             
@@ -85,9 +109,14 @@ namespace Runtime.Customers
             customerSlots[slot].Disable();
         }
 
-        private void ToggleTarget(bool unlocked)
+        private void ToggleTarget(bool state)
         {
-            _targetUnlocked = unlocked;
+            _targetUnlocked = state;
+
+            if (!_targetUnlocked && shouldTargetReset)
+            {
+                _targetSpawnChance = targetBaseChance;
+            }
         }
     }
 }

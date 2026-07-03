@@ -1,0 +1,214 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &761473727576346964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3162832283516822392}
+  - component: {fileID: 6294701951916416029}
+  m_Layer: 0
+  m_Name: CustomerSlot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3162832283516822392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761473727576346964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3671229431931111797}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6294701951916416029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761473727576346964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7a51e3bcbd4ae8ae6eaabf00c18ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerManager: {fileID: 0}
+  customerEventPort: {fileID: 11400000, guid: 56cec7d85be9f8841abc946b87e5522f, type: 2}
+  timeBetweenCustomers: 5
+  customerSpawnPosition: {x: 0, y: 1, z: 11.6}
+  customerOrderPosition: {x: 0, y: 1, z: 3.6}
+  customerExitPosition: {x: 0, y: 1, z: 11.6}
+--- !u!1 &2025599996765401903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 386544193695923239}
+  - component: {fileID: 1503347883127721424}
+  m_Layer: 0
+  m_Name: CustomerSlot Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &386544193695923239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025599996765401903}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 2.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3671229431931111797}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1503347883127721424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025599996765401903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7a51e3bcbd4ae8ae6eaabf00c18ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerManager: {fileID: 0}
+  customerEventPort: {fileID: 11400000, guid: 1bca69f1fdac4374db2be697759bd8f0, type: 2}
+  timeBetweenCustomers: 5
+  customerSpawnPosition: {x: -5, y: 1, z: 11.6}
+  customerOrderPosition: {x: -5, y: 1, z: 3.6}
+  customerExitPosition: {x: -5, y: 1, z: 11.6}
+--- !u!1 &3180887341664502920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6155265272885372183}
+  - component: {fileID: 5930884039805743641}
+  m_Layer: 0
+  m_Name: CustomerSlot Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6155265272885372183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3180887341664502920}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: 0, z: 2.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3671229431931111797}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5930884039805743641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3180887341664502920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7a51e3bcbd4ae8ae6eaabf00c18ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerManager: {fileID: 0}
+  customerEventPort: {fileID: 11400000, guid: 4ffe4fa309d76aa4985692a7cbeb2504, type: 2}
+  timeBetweenCustomers: 5
+  customerSpawnPosition: {x: 5, y: 1, z: 11.6}
+  customerOrderPosition: {x: 5, y: 1, z: 3.6}
+  customerExitPosition: {x: 5, y: 1, z: 11.6}
+--- !u!1 &5228688772791884835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3671229431931111797}
+  - component: {fileID: 7722442215785127237}
+  m_Layer: 0
+  m_Name: Customer Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3671229431931111797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228688772791884835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3162832283516822392}
+  - {fileID: 386544193695923239}
+  - {fileID: 6155265272885372183}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7722442215785127237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228688772791884835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabb7e69b45a49a0aecd2ac26cd6b434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  satisfactionEvents: {fileID: 11400000, guid: 8e3b1e746fc9f50478c8103e198f74ff, type: 2}
+  customerSlots:
+  - {fileID: 6294701951916416029}
+  - {fileID: 1503347883127721424}
+  - {fileID: 5930884039805743641}
+  customerPrefab: {fileID: 3255688253476523512, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
+  availableCustomers:
+  - {fileID: 11400000, guid: aec0d8e64e8c6724aae8615f555b0ae8, type: 2}
+  - {fileID: 11400000, guid: 98c21083ca15ce342a1442dc16c1d5cb, type: 2}
+  - {fileID: 11400000, guid: 391c00e6400001e47a8464539bbf46da, type: 2}
+  - {fileID: 11400000, guid: 56dbf718f70cdd54b82d243fb43e4c68, type: 2}
+  target: {fileID: 11400000, guid: 779e5fe7ee372f34a953594534a98d7c, type: 2}
+  targetBaseChance: 10
+  targetChanceIncrease: 5
+  shouldTargetReset: 1

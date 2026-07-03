@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
-  m_Name: TiffanyTestTarget
+  m_Name: "Harald H\xE5rding"
   m_EditorClassIdentifier: 
   customerName: "Harald H\xE5rding"
   isTarget: 1
@@ -24,10 +24,10 @@ MonoBehaviour:
   satisfactionFailure: 5
   satisfactionMissedOrder: 7
   satisfactionRepeatOrder: 2
-  attentionDialogue: A
-  orderDialogue: B
-  repeatOrderDialogue: C
-  successDialogue: D
-  failureDialogue: E
-  patienceTimerTickDialogue: F
-  patienceTimeOutDialogue: G
+  attentionDialogue: Aargh!
+  orderDialogue: Beeer!
+  repeatOrderDialogue: Beeeeeeeeer!
+  successDialogue: Beer :)
+  failureDialogue: Grrrrrrrrrraah!
+  patienceTimerTickDialogue: Argh!!
+  patienceTimeOutDialogue: Argj Graaaaaaaah!
