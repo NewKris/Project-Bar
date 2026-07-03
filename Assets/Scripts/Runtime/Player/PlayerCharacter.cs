@@ -37,7 +37,7 @@ namespace Runtime.Player {
         }
 
         private void OnDrawGizmos() {
-            HandlesProxy.DrawCapsule(transform.position + Vector3.up, 2, 0.5f, 3, Color.green);
+            HandlesProxy.DrawCapsule(transform.position + Vector3.up, 2, 0.5f, 1, Color.green);
         }
     }
 }
