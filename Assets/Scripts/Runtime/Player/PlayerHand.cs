@@ -5,6 +5,7 @@ using Runtime.Drink;
 using Runtime.Interact;
 using Runtime.Items;
 using Runtime.Satisfaction;
+using Runtime.Stations;
 using UnityEngine;
 
 namespace Runtime.Player {
@@ -41,6 +42,9 @@ namespace Runtime.Player {
             
             if (handInteraction.TryGetComponent(out ItemDock dock) && dock.CanPlaceItem()) {
                 dock.PlaceItem(HeldItem);
+            }
+            else if (handInteraction.TryGetComponent(out PassiveStation passiveStation) && passiveStation.CanPlaceItem()) {
+                passiveStation.PlaceItem(HeldItem);
             }
             else if (handInteraction.TryGetComponent(out Customer customer) && (HeldItem.TryGetComponent(out DrinkObject drink)))
             {
