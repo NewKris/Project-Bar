@@ -76,5 +76,8 @@ namespace Runtime.Customers
         [Tooltip("The dialogue displayed when the customer's patience has run out")]
         public string patienceTimeOutDialogue;
         
+        [Foldout("Dialogues")][ResizableTextArea]
+        [Tooltip("The dialogue displayed when the customer gets kicked out due to customer slot closing")]
+        public string kickedOutDialogue = "Couldn't handle this many customers at once huh?";
     }
 }

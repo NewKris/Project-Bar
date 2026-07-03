@@ -50,8 +50,8 @@ MonoBehaviour:
   satisfactionEvents: {fileID: 11400000, guid: 8e3b1e746fc9f50478c8103e198f74ff, type: 2}
   customerSlots:
   - {fileID: 6294701951916416029}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4099406708206315796}
+  - {fileID: 5302233253166588281}
   customerPrefab: {fileID: 3255688253476523512, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
   availableCustomers:
   - {fileID: 11400000, guid: aec0d8e64e8c6724aae8615f555b0ae8, type: 2}
@@ -135,6 +135,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
+--- !u!114 &4099406708206315796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
+  m_PrefabInstance: {fileID: 4503213812900291060}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7a51e3bcbd4ae8ae6eaabf00c18ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4925778597022160497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8801512049759205253, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
@@ -222,6 +233,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8801512049759205253, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
   m_PrefabInstance: {fileID: 5697041132453783961}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5302233253166588281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
+  m_PrefabInstance: {fileID: 5697041132453783961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7a51e3bcbd4ae8ae6eaabf00c18ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5891240098189530365
 PrefabInstance:
   m_ObjectHideFlags: 0
