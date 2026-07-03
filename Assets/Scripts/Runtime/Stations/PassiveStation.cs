@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Linq;
 using Runtime.Drink;
+using Runtime.Interact;
 using Runtime.Items;
 using UnityEngine;
 
 namespace Runtime.Stations {
+    [RequireComponent(typeof(HandInteraction))]
     public class PassiveStation : MonoBehaviour {
         private ItemDock[] _docks;
 
