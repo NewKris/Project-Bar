@@ -4,14 +4,19 @@ using Runtime.Customers;
 using Runtime.Drink;
 using Runtime.Interact;
 using Runtime.Items;
+using Runtime.Satisfaction;
 using UnityEngine;
 
 namespace Runtime.Player {
     public class PlayerHand : MonoBehaviour {
+        public int pourPenalty;
+        
+        [Header("References")]
+        public SatisfactionPort satisfactionPort;
         public Transform itemPivot;
         public HandShakeAnimation  handShake;
         
-        private ItemPickup _heldItem;
+        public ItemPickup HeldItem { get; private set; }
 
         public bool ShakeDrink { get; set; }
         
@@ -28,52 +33,40 @@ namespace Runtime.Player {
         }
         
         public void ReleaseHeldItem(HandInteraction handInteraction) {
-            if (handInteraction == null || _heldItem == null) {
-                _heldItem?.Unpin();
+            if (handInteraction == null || HeldItem == null) {
+                HeldItem?.Unpin();
                 RemoveItemFromHand();
                 return;
             }
             
             if (handInteraction.TryGetComponent(out ItemDock dock) && dock.CanPlaceItem()) {
-                dock.PlaceItem(_heldItem);
+                dock.PlaceItem(HeldItem);
             }
-            else if (handInteraction.TryGetComponent(out Customer customer) && (_heldItem.TryGetComponent(out DrinkObject drink)))
+            else if (handInteraction.TryGetComponent(out Customer customer) && (HeldItem.TryGetComponent(out DrinkObject drink)))
             {
                 customer.ServeDrink(drink.currentContents);
-                _heldItem.Despawn();
-                _heldItem = null;
+                HeldItem.Despawn();
+                HeldItem = null;
                 return;
             }
             else {
-                _heldItem?.Unpin();
+                HeldItem?.Unpin();
             }
             
             RemoveItemFromHand();
         }
 
         public void PourDrink(HandInteraction handInteraction) {
-            if (!_heldItem || !_heldItem.TryGetComponent(out DrinkObject heldDrink)) return;
+            if (!HeldItem || !HeldItem.TryGetComponent(out DrinkObject heldDrink)) return;
 
             if (handInteraction?.TryGetComponent(out DrinkObject targetDrink) ?? false) {
                 targetDrink.AddContents(heldDrink.currentContents);
             }
+            else {
+                satisfactionPort.DecreaseSatisfaction(pourPenalty);
+            }
             
             heldDrink.EmptyContents();
-        }
-
-        private void OnGUI() {
-            if (_heldItem?.TryGetComponent(out DrinkObject drink) ?? false) {
-                GUILayout.BeginArea(new Rect(10, 10, 500, 500));
-                
-                GUILayout.Label($"Container: {drink.currentContents.drinkContainer.name}");
-                GUILayout.Label($"Mix: {drink.currentContents.mixType}");
-                
-                foreach (Ingredient ingredient in drink.currentContents.ingredients) {
-                    GUILayout.Label(ingredient.name);
-                }
-                
-                GUILayout.EndArea();
-            }
         }
 
         private void Awake() {
@@ -89,10 +82,10 @@ namespace Runtime.Player {
         }
 
         private void TryAddIngredient(string ingredientAction) {
-            if (!_heldItem) return;
+            if (!HeldItem) return;
 
             Ingredient ingredient = IngredientList.GetIngredient(ConvertActionToKey(ingredientAction));
-            if (ingredient != null && _heldItem.TryGetComponent(out DrinkObject drink)) {
+            if (ingredient != null && HeldItem.TryGetComponent(out DrinkObject drink)) {
                 drink.AddIngredient(ingredient);
             }
         }
@@ -102,22 +95,22 @@ namespace Runtime.Player {
         }
 
         private void RemoveItemFromHand() {
-            _heldItem?.SetFrontRender(false);
-            _heldItem?.SetInteractable(true);
-            _heldItem = null;
+            HeldItem?.SetFrontRender(false);
+            HeldItem?.SetInteractable(true);
+            HeldItem = null;
         }
 
         private void PickUpItem(ItemPickup item) {
-            if (_heldItem) return;
+            if (HeldItem) return;
             
-            _heldItem = item;
-            _heldItem.SetFrontRender(true);
+            HeldItem = item;
+            HeldItem.SetFrontRender(true);
             item.SetInteractable(false);
             item.Pin(itemPivot);
         }
 
         private void TryShakeDrink() {
-            if (ShakeDrink && _heldItem && _heldItem.TryGetComponent(out Shaker shaker)) {
+            if (ShakeDrink && HeldItem && HeldItem.TryGetComponent(out Shaker shaker)) {
                 shaker.TickShake();
                 handShake.Shaking = true;
             }
