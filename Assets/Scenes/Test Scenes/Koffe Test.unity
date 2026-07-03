@@ -1174,14 +1174,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8579862950282568340, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-      propertyPath: pourPenalty
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8579862950282568340, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
-      propertyPath: satisfactionPort
-      value: 
-      objectReference: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

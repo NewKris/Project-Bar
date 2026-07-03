@@ -26,7 +26,7 @@ namespace Runtime.Items {
         private void OnDrawGizmos() {
             if (!itemPivot) return;
             
-            HandlesProxy.DrawDisc(itemPivot.position, Vector3.up, 0.25f, false, Color.yellow);
+            HandlesProxy.DrawDisc(itemPivot.position, Vector3.up, 0.05f, false, Color.yellow);
         }
     }
 }
