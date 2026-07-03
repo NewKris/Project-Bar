@@ -43,7 +43,7 @@ namespace Runtime.Player {
             if (handInteraction.TryGetComponent(out ItemDock dock) && dock.CanPlaceItem()) {
                 dock.PlaceItem(HeldItem);
             }
-            else if (handInteraction.TryGetComponent(out PassiveStation passiveStation) && passiveStation.CanPlaceItem()) {
+            else if (handInteraction.TryGetComponent(out MultiDock passiveStation) && passiveStation.CanPlaceItem()) {
                 passiveStation.PlaceItem(HeldItem);
             }
             else if (handInteraction.TryGetComponent(out Customer customer) && (HeldItem.TryGetComponent(out DrinkObject drink)))

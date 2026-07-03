@@ -1,13 +1,10 @@
-﻿using System;
-using System.Linq;
-using Runtime.Drink;
+﻿using System.Linq;
 using Runtime.Interact;
-using Runtime.Items;
 using UnityEngine;
 
-namespace Runtime.Stations {
+namespace Runtime.Items {
     [RequireComponent(typeof(HandInteraction))]
-    public class PassiveStation : MonoBehaviour {
+    public class MultiDock : MonoBehaviour {
         private ItemDock[] _docks;
 
         public void PlaceItem(ItemPickup item) {
@@ -20,10 +17,6 @@ namespace Runtime.Stations {
 
         private void Awake() {
             _docks = GetComponentsInChildren<ItemDock>();
-        }
-
-        private void Update() {
-            
         }
 
         private ItemDock FindFirstAvailableSlot() {
