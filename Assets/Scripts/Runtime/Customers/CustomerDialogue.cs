@@ -21,12 +21,13 @@ namespace Runtime.Customers
         private string _failureDialogue;
         private string _patienceTimerTickDialogue;
         private string _patienceTimeOutDialogue;
+        private string _kickedOutDialogue;
         
         [Tooltip("The time the dialogue will remain visible upon activation")]
         [SerializeField] private float dialoguePopUpTimer;
 
         public void Setup(string customerName, string attention, string order, string repeatOrder, string success,
-            string failure, string timerTick, string timeOut)
+            string failure, string timerTick, string timeOut, string kickedOut)
         {
             _customerName = customerName;
             SetName();
@@ -38,6 +39,7 @@ namespace Runtime.Customers
             _failureDialogue = failure;
             _patienceTimerTickDialogue = timerTick;
             _patienceTimeOutDialogue = timeOut;
+            _kickedOutDialogue = kickedOut;
         }
         
         private void SetName()
@@ -78,6 +80,11 @@ namespace Runtime.Customers
         public void PatienceTimeOut()
         {
             ShowDialogue(_patienceTimeOutDialogue);
+        }
+
+        public void KickOut()
+        {
+            ShowDialogue(_kickedOutDialogue);
         }
         
         private void ShowDialogue(string dialogue)

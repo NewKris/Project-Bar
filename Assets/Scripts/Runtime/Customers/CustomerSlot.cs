@@ -10,6 +10,9 @@ namespace Runtime.Customers
         [SerializeField] private CustomerEventPort customerEventPort;
         [SerializeField] private float timeBetweenCustomers = 5f;
         
+        [Tooltip("Determines whether the slot will force active customer to leave when disabled")]
+        [SerializeField] private bool kickOutCustomerWhenDisabled = true;
+        
         [Foldout("Positions")]
         [Tooltip("The position where the customer will spawn at")]
         public Vector3 customerSpawnPosition;
@@ -33,6 +36,11 @@ namespace Runtime.Customers
         public void Disable()
         {
             _enabled = false;
+
+            if (kickOutCustomerWhenDisabled && _currentCustomer)
+            {
+                _currentCustomer.KickOut();
+            }
         }
 
 
@@ -43,7 +51,7 @@ namespace Runtime.Customers
 
         private void OnDisable()
         {
-            
+            customerEventPort.OnCustomerEvent -= EmptySlot;
         }
 
         private void Start()

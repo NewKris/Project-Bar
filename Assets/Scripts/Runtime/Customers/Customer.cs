@@ -78,7 +78,8 @@ namespace Runtime.Customers
                 data.successDialogue,
                 data.failureDialogue,
                 data.patienceTimerTickDialogue,
-                data.patienceTimeOutDialogue
+                data.patienceTimeOutDialogue,
+                data.kickedOutDialogue
             );
 
             _customerEventPort = port;
@@ -125,6 +126,12 @@ namespace Runtime.Customers
                 satisfactionPort.DecreaseSatisfaction(_satisfactionRepeatOrder);
                 _customerPatience.AddTime(-_timePenaltyRepeatOrder);
             }
+        }
+
+        public void KickOut()
+        {
+            _customerDialogue.KickOut();
+            LeaveBar();
         }
 
         private void EnterBar()
