@@ -34,6 +34,7 @@ namespace Runtime.Customers
         private float _targetSpawnChance;
         private bool _targetUnlocked = false;
         private HashSet<CustomerData> _activeCustomers = new HashSet<CustomerData>();
+        private HashSet<CustomerData> _servedCustomers = new HashSet<CustomerData>();
 
         private void OnEnable()
         {
@@ -78,16 +79,25 @@ namespace Runtime.Customers
             
             if (!data)
             {
-                int maxAttempts = 10;
-                int attempts = 0;
-                
-                data = availableCustomers[Random.Range(0, availableCustomers.Length)];
-                
-                while (_activeCustomers.Contains(data) && attempts < maxAttempts)
+                if (_servedCustomers.Count < availableCustomers.Length)
                 {
-                    data = availableCustomers[Random.Range(0, availableCustomers.Length)];
-                    attempts++;
+                    data = availableCustomers[_servedCustomers.Count];
+                    _servedCustomers.Add(data);
                 }
+                else
+                {
+                    int maxAttempts = 10;
+                    int attempts = 0;
+                    
+                    data = availableCustomers[Random.Range(0, availableCustomers.Length)];
+                    
+                    while (_activeCustomers.Contains(data) && attempts < maxAttempts)
+                    {
+                        data = availableCustomers[Random.Range(0, availableCustomers.Length)];
+                        attempts++;
+                    }
+                }
+                
             }
 
             _activeCustomers.Add(data);
@@ -97,7 +107,7 @@ namespace Runtime.Customers
             newCustomer.CustomerSetup(data, port, barPosition, exitPosition);
             
             return newCustomer;
-        } 
+        }
 
         private void UnlockCustomerSlot(int slot)
         {
