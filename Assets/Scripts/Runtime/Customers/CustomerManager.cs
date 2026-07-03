@@ -35,6 +35,7 @@ namespace Runtime.Customers
         private bool _targetUnlocked = false;
         private HashSet<CustomerData> _activeCustomers = new HashSet<CustomerData>();
         private HashSet<CustomerData> _servedCustomers = new HashSet<CustomerData>();
+        private CustomerData _lastCustomer = null;
 
         private void OnEnable()
         {
@@ -64,7 +65,7 @@ namespace Runtime.Customers
 
             CustomerData data = null;
 
-            if (_targetUnlocked && !_activeCustomers.Contains(target))
+            if (_targetUnlocked && !_activeCustomers.Contains(target) && _lastCustomer != target)
             {
                 if (Random.Range(0, 100) < _targetSpawnChance)
                 {
@@ -91,7 +92,7 @@ namespace Runtime.Customers
                     
                     data = availableCustomers[Random.Range(0, availableCustomers.Length)];
                     
-                    while (_activeCustomers.Contains(data) && attempts < maxAttempts)
+                    while ((_activeCustomers.Contains(data) || data == _lastCustomer) && attempts < maxAttempts)
                     {
                         data = availableCustomers[Random.Range(0, availableCustomers.Length)];
                         attempts++;
@@ -102,7 +103,11 @@ namespace Runtime.Customers
 
             _activeCustomers.Add(data);
 
-            port.OnCustomerEvent += () => _activeCustomers.Remove(data);
+            port.OnCustomerEvent += () =>
+            {
+                _activeCustomers.Remove(data);
+                _lastCustomer = data;
+            };
             
             newCustomer.CustomerSetup(data, port, barPosition, exitPosition);
             
