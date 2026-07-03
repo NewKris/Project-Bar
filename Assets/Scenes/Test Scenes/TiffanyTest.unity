@@ -950,9 +950,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: timeBetweenCustomers
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5228688772791884835, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: m_Name
       value: Customer Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302233253166588281, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: timeBetweenCustomers
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5930884039805743641, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: timeBetweenCustomers
