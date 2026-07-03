@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using NaughtyAttributes;
 using Runtime.Animations;
 using Runtime.Drink;
 using Runtime.Items;
@@ -15,9 +16,9 @@ namespace Runtime.Stations {
     }
     
     public class ConverterStation : Station<DrinkObject> {
-        public RumbleAnimation rumble;
         public float  middleStateDuration;
         public float  endStateDuration;
+        [Foldout("References")] public RumbleAnimation rumble;
         
         public Conversion[] conversions;
         

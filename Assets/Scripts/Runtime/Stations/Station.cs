@@ -1,11 +1,12 @@
 ﻿using System;
+using NaughtyAttributes;
 using Runtime.Drink;
 using Runtime.Items;
 using UnityEngine;
 
 namespace Runtime.Stations {
     public abstract class Station<T> : MonoBehaviour where T : DrinkObject {
-        public ItemDock itemDock;
+        [Foldout("References")] public ItemDock itemDock;
 
         protected T currentItem;
         protected int stationKey;

@@ -1,4 +1,5 @@
-﻿using Runtime.Animations;
+﻿using NaughtyAttributes;
+using Runtime.Animations;
 using Runtime.Drink;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace Runtime.Stations {
     public class FillStation : Station<DrinkObject> {
         public Ingredient ingredient;
         public float fillDuration;
-        public RumbleAnimation rumble;
+        [Foldout("References")] public RumbleAnimation rumble;
 
         public override void StartStation() {
             if (AlreadyContainsIngredient()) {
