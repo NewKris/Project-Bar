@@ -79,12 +79,24 @@ PrefabInstance:
       value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
+      propertyPath: customerExitPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
       propertyPath: customerOrderPosition.x
       value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
+      propertyPath: customerOrderPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
       propertyPath: customerSpawnPosition.x
       value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
+      propertyPath: customerSpawnPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6579952526263895465, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
       propertyPath: m_Name
@@ -168,8 +180,16 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
+      propertyPath: customerExitPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
       propertyPath: customerOrderPosition.x
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
+      propertyPath: customerOrderPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
       propertyPath: customerSpawnPosition.x
@@ -177,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
       propertyPath: customerSpawnPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6579952526263895465, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
       propertyPath: m_Name
@@ -252,6 +272,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3671229431931111797}
     m_Modifications:
+    - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
+      propertyPath: customerExitPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
+      propertyPath: customerOrderPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475874907078543584, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
+      propertyPath: customerSpawnPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6579952526263895465, guid: d8f1c629c626ee54494aefbe9ddb6320, type: 3}
       propertyPath: m_Name
       value: CustomerSlot

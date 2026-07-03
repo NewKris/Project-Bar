@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: "Harald H\xE5rding"
   m_EditorClassIdentifier: 
   customerName: "Harald H\xE5rding"
+  mesh: {fileID: 3805400676242804164, guid: e343c12c7caa08a42bac559fdbf3d37a, type: 3}
   isTarget: 1
   acceptableDrinks:
   - {fileID: 11400000, guid: 2f22008f9336cc4429e4ffe953e005c8, type: 2}

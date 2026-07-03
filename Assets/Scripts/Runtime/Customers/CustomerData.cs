@@ -10,6 +10,10 @@ namespace Runtime.Customers
     {
         [Tooltip("The name that will be displayed as the customer name")]
         public string customerName;
+
+        [Tooltip("The mesh that will be used as the customers model (if left empty the mesh in the customer prefab will be used)")]
+        [ShowAssetPreview(128, 128)]
+        public Mesh mesh;
         
         [Tooltip("Is used to know whether customer is the target")]
         public bool isTarget;

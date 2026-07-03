@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Magnus Mint
   m_EditorClassIdentifier: 
   customerName: Magnus Mint
+  mesh: {fileID: 6998265217813063757, guid: e343c12c7caa08a42bac559fdbf3d37a, type: 3}
   isTarget: 0
   acceptableDrinks:
   - {fileID: 11400000, guid: 8818ce4c18e8a8b4099a7d6a44986d46, type: 2}

@@ -19,7 +19,8 @@ namespace Runtime.Customers
         [Tooltip("Determines whether the player should lose satisfaction when the customer gets kicked out")]
         [SerializeField] private bool loseSatisfactionWhenKickedOut;
         
-        private CustomerEventPort _customerEventPort;
+        [Tooltip("The mesh renderer used for the customers model")]
+        [SerializeField] private MeshFilter customerMeshFilter;
         
         private List<Recipe> _acceptableDrinks;
         
@@ -55,6 +56,13 @@ namespace Runtime.Customers
             _customerPatience.OnPatienceTimeOut -= HandlePatienceTimeOut;
         }
 
+        // private void Start()
+        // {
+        //     GameObject cam = FindFirstObjectByType<Camera>().gameObject;
+        //     transform.LookAt(cam.transform);
+        //     transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y+180, transform.eulerAngles.z);
+        // }
+
         private void HandlePatienceTimeOut()
         {
             _customerDialogue.PatienceTimeOut();
@@ -65,6 +73,7 @@ namespace Runtime.Customers
         
         public void CustomerSetup(CustomerData data, CustomerEventPort port, Vector3 barPosition, Vector3 exitPosition)
         {
+            if (data.mesh != null) customerMeshFilter.mesh = data.mesh;
             _isTarget = data.isTarget;
             _acceptableDrinks = data.acceptableDrinks;
             _timePenaltyRepeatOrder = data.timePenaltyRepeatOrder;
@@ -86,8 +95,6 @@ namespace Runtime.Customers
                 data.patienceTimeOutDialogue,
                 data.kickedOutDialogue
             );
-
-            _customerEventPort = port;
             
             _customerMovement.Setup(barPosition, exitPosition, port);
             

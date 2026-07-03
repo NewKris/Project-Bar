@@ -1,4 +1,5 @@
 using System.Collections;
+using Runtime.Player;
 using Runtime.Utility;
 using UnityEngine;
 
@@ -45,6 +46,10 @@ namespace Runtime.Customers
                 
                 yield return new WaitForFixedUpdate();
             }
+            
+            GameObject player = FindFirstObjectByType<PlayerCharacter>().gameObject;
+            transform.LookAt(player.transform);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y+180, transform.eulerAngles.z);
         }
         
         private IEnumerator WalkToExit()

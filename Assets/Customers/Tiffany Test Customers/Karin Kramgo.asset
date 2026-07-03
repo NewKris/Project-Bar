@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Karin Kramgo
   m_EditorClassIdentifier: 
   customerName: Karin Kramgo
+  mesh: {fileID: 1394639093289289063, guid: e343c12c7caa08a42bac559fdbf3d37a, type: 3}
   isTarget: 0
   acceptableDrinks:
   - {fileID: 11400000, guid: 4c15a6cdf9c5e954d8d50f1d55449cb8, type: 2}
