@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3abf2a9851e48c08a1cda02ec8c0608, type: 3}
   m_Name: Victory
   m_EditorClassIdentifier: 
-  sceneName: MainMenu
+  sceneName: Victory Screen

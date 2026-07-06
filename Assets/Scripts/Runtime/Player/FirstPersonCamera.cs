@@ -31,6 +31,10 @@ namespace Runtime.Player {
             SetCursorLock(true);
         }
 
+        private void OnDestroy() {
+            SetCursorLock(false);
+        }
+
         public void ChangeCameraHeight(float amount) {
             if (Mathf.Abs(amount) < crouchDeadZone) return;
 

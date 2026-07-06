@@ -24,7 +24,7 @@ namespace Runtime {
             }
             
             if (_playerHand?.HeldItem?.TryGetComponent(out DrinkObject drink) ?? false) {
-                GUILayout.Label($"Container: {drink.currentContents.drinkContainer.name}");
+                GUILayout.Label($"Container: {drink.currentContents.drinkContainer?.name ?? "NONE"}");
                 GUILayout.Label($"Mix: {drink.currentContents.mixType}");
                 
                 foreach (Ingredient ingredient in drink.currentContents.ingredients) {

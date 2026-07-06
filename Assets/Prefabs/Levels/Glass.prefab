@@ -212,7 +212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentContents:
-    container: {fileID: 0}
-    ingredients: []
     mixType: 0
-    autoFail: 0
+    drinkContainer: {fileID: 0}
+    ingredients: []
