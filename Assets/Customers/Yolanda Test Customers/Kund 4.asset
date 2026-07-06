@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
   m_Name: Kund 4
   m_EditorClassIdentifier: 
-  customerName: ge mojito
+  customerName: 'k4: mojito'
+  mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
   - {fileID: 11400000, guid: 8818ce4c18e8a8b4099a7d6a44986d46, type: 2}

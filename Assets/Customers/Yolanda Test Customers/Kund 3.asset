@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
   m_Name: Kund 3
   m_EditorClassIdentifier: 
-  customerName: "ge cola i \xF6lglas"
+  customerName: "k3: cola i \xF6lglas"
+  mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
   - {fileID: 11400000, guid: 4c15a6cdf9c5e954d8d50f1d55449cb8, type: 2}

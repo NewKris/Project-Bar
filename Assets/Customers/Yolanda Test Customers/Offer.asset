@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
   m_Name: Offer
   m_EditorClassIdentifier: 
-  customerName: ge vodka i whiskey
+  customerName: 'offer: vodka i whiskey'
+  mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
   - {fileID: 11400000, guid: 7843ec0354f87d1429b17e87c389523f, type: 2}
