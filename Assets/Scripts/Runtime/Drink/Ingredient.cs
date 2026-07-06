@@ -3,6 +3,7 @@
 namespace Runtime.Drink {
     [CreateAssetMenu(menuName = "Drink/Ingredient")]
     public class Ingredient : ScriptableObject {
+        public bool isPoisonous;
         public IngredientType type;
     }
 }
