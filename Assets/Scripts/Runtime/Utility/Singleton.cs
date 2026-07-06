@@ -5,6 +5,7 @@ namespace Runtime.Utility {
         public static bool SetSingleton<T>(ref T singleton, T instance) where T : MonoBehaviour {
             if (singleton == null) {
                 singleton = instance;
+                singleton.transform.SetParent(null);
                 Object.DontDestroyOnLoad(instance.gameObject);
                 return true;
             }

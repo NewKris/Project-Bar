@@ -18,11 +18,11 @@ namespace Runtime.Satisfaction
         {
             if (lockSlot)
             {
-                OnCustomerSlotLocked.Invoke(slot);
+                OnCustomerSlotLocked?.Invoke(slot);
             }
             else
             {
-                OnCustomerSlotUnlocked.Invoke(slot);
+                OnCustomerSlotUnlocked?.Invoke(slot);
             }
         }
 

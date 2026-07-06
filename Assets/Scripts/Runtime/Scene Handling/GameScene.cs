@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Runtime.Scene_Handling
 {
@@ -7,6 +8,6 @@ namespace Runtime.Scene_Handling
     public class GameScene : ScriptableObject
     {
         [Scene]
-        public string Name;
+        public string sceneName;
     }
 }

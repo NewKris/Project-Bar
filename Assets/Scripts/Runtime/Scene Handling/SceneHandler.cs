@@ -7,40 +7,35 @@ namespace Runtime.Scene_Handling
     [CreateAssetMenu(fileName = "Scene Handler", menuName = "Scene Handling/Scene Handler", order = 0)]
     public class SceneHandler : ScriptableObject
     {
-        public GameScene GameplayScene;
-        public GameScene CoreScene;
-        public GameScene MainMenuScene;
-        public List<GameScene> Levels = new List<GameScene>();
-        public int CurrentLevelIndex = 0;
+        public GameScene gameplayScene;
+        public GameScene mainMenuScene;
+        public GameScene gameOverScreen;
+        public GameScene victoryScreen;
 
-        public void LoadLevelWithIndex(int index)
-        {
-            if (index < 0 || index >= Levels.Count)
-            {
-                Debug.LogWarning($"{name}-Scene Manager: Scene Index out of range.");
-                CurrentLevelIndex = 0;
-                return;
-            }
-            SceneManager.LoadSceneAsync(Levels[index].Name, LoadSceneMode.Additive);
+        // public async void LoadLevelWithIndex(int index) {
+        //     if (index < 0 || index >= levels.Count) {
+        //         Debug.LogWarning($"{name}-Scene Manager: Scene Index out of range.");
+        //         currentLevelIndex = 0;
+        //         return;
+        //     }
+        //     
+        //     await SceneManager.LoadSceneAsync(levels[index].sceneName, LoadSceneMode.Additive);
+        // }
+        
+        public void StartGame() {
+            SceneTransitionController.TransitionToScene(gameplayScene);
+        }
+
+        public void GameOver() {
+            SceneTransitionController.TransitionToScene(gameOverScreen);
         }
         
-        public void StartGame()
-        {
-            CurrentLevelIndex = 0;
-            SceneManager.LoadSceneAsync(CoreScene.Name, LoadSceneMode.Single);
-            SceneManager.LoadSceneAsync(GameplayScene.Name, LoadSceneMode.Additive);
-            LoadLevelWithIndex(0);
+        public void Victory() {
+            SceneTransitionController.TransitionToScene(victoryScreen);
         }
-
-        public void NextLevel()
-        {
-            SceneManager.UnloadSceneAsync(Levels[CurrentLevelIndex].Name);
-            LoadLevelWithIndex(CurrentLevelIndex + 1);
-        }
-
-        public void MainMenu()
-        {
-            SceneManager.LoadSceneAsync(MainMenuScene.Name, LoadSceneMode.Single);
+        
+        public void MainMenu() {
+            SceneTransitionController.TransitionToScene(mainMenuScene);
         }
     }
 }
