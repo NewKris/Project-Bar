@@ -4,13 +4,17 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using Runtime.Dialogue;
 using Runtime.Drink;
+using Runtime.Interact;
 using Runtime.Satisfaction;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Runtime.Customers
 {
-    [RequireComponent(typeof(CustomerMovement))] [RequireComponent(typeof(CustomerDialogue))] [RequireComponent(typeof(CustomerPatience))]
+    [RequireComponent(typeof(CustomerMovement))]
+    [RequireComponent(typeof(CustomerDialogue))]
+    [RequireComponent(typeof(CustomerPatience))]
+    [RequireComponent((typeof(Interactable)))]
     public class Customer : MonoBehaviour
     {
         [Tooltip("The scriptable object satisfaction port")]
