@@ -11,10 +11,11 @@ using UnityEngine.Serialization;
 
 namespace Runtime.Customers
 {
+    [RequireComponent(typeof(CustomerBase))]
     [RequireComponent(typeof(CustomerMovement))]
     [RequireComponent(typeof(CustomerDialogue))]
     [RequireComponent(typeof(CustomerPatience))]
-    [RequireComponent((typeof(Interactable)))]
+    [RequireComponent(typeof(Interactable))]
     public class Customer : MonoBehaviour
     {
         [Tooltip("The scriptable object satisfaction port")]
@@ -22,9 +23,6 @@ namespace Runtime.Customers
         
         [Tooltip("Determines whether the player should lose satisfaction when the customer gets kicked out")]
         [SerializeField] private bool loseSatisfactionWhenKickedOut;
-        
-        [Tooltip("The mesh renderer used for the customers model")]
-        [SerializeField] private MeshFilter customerMeshFilter;
         
         private List<Recipe> _acceptableDrinks;
         
@@ -36,7 +34,7 @@ namespace Runtime.Customers
         private int _satisfactionRepeatOrder;
         private int _satisfactionKickedOut;
 
-        private CustomerMovement _customerMovement;
+        private CustomerBase _customerBase;
         private CustomerDialogue _customerDialogue;
         private CustomerPatience _customerPatience;
         
@@ -46,9 +44,15 @@ namespace Runtime.Customers
 
         private void OnEnable()
         {
-            _customerPatience = GetComponent<CustomerPatience>();
-            _customerMovement = GetComponent<CustomerMovement>();
-            _customerDialogue = GetComponent<CustomerDialogue>();
+            _customerBase ??= GetComponent<CustomerBase>();
+            _customerPatience ??= GetComponent<CustomerPatience>();
+            _customerDialogue ??= GetComponent<CustomerDialogue>();
+            
+            _customerBase.onServeDrink += ServeDrink;
+            _customerBase.onOrder += OnOrder;
+            _customerBase.onRepeatOrder += OnRepeatOrder;
+            _customerBase.onEnterBar += OnEnterBar;
+            
             
             _customerPatience.OnPatienceTick += _customerDialogue.PatienceTick;
             _customerPatience.OnPatienceTimeOut += HandlePatienceTimeOut;
@@ -60,24 +64,18 @@ namespace Runtime.Customers
             _customerPatience.OnPatienceTimeOut -= HandlePatienceTimeOut;
         }
 
-        // private void Start()
-        // {
-        //     GameObject cam = FindFirstObjectByType<Camera>().gameObject;
-        //     transform.LookAt(cam.transform);
-        //     transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y+180, transform.eulerAngles.z);
-        // }
-
         private void HandlePatienceTimeOut()
         {
             _customerDialogue.PatienceTimeOut();
             satisfactionPort.DecreaseSatisfaction(_satisfactionMissedOrder);
-            LeaveBar();
+            _customerBase.LeaveBar();
         }
 
         
         public void CustomerSetup(CustomerData data, CustomerEventPort port, Vector3 barPosition, Vector3 exitPosition)
         {
-            if (data.mesh != null) customerMeshFilter.mesh = data.mesh;
+            _customerBase.Setup(data.mesh, barPosition, exitPosition, port);
+            
             _isTarget = data.isTarget;
             _acceptableDrinks = data.acceptableDrinks;
             _timePenaltyRepeatOrder = data.timePenaltyRepeatOrder;
@@ -100,12 +98,10 @@ namespace Runtime.Customers
                 data.kickedOutDialogue
             );
             
-            _customerMovement.Setup(barPosition, exitPosition, port);
-            
-            EnterBar();
+            _customerBase.EnterBar();
         }
 
-        public void ServeDrink(DrinkContents drink)
+        private void ServeDrink(DrinkContents drink)
         {
             // Compare contents with accepted drinks
             Debug.Log("Serving 💅");
@@ -123,25 +119,18 @@ namespace Runtime.Customers
                 satisfactionPort.DecreaseSatisfaction(_satisfactionFailure);
             }
             
-            LeaveBar();
+            _customerBase.LeaveBar();
         }
 
-        public void Order()
-        {
-            if (_customerDialogue.IsSpeaking) return;
-            if (_isLeaving) return;
+        private void OnRepeatOrder() {
+            _customerDialogue.RepeatOrder();
+            satisfactionPort.DecreaseSatisfaction(_satisfactionRepeatOrder);
+            _customerPatience.AddTime(-_timePenaltyRepeatOrder);
+        }
 
-            if (!_hasOrdered)
-            {
-                _customerDialogue.Order();
-                _hasOrdered = true;
-            }
-            else
-            {
-                _customerDialogue.RepeatOrder();
-                satisfactionPort.DecreaseSatisfaction(_satisfactionRepeatOrder);
-                _customerPatience.AddTime(-_timePenaltyRepeatOrder);
-            }
+        private void OnOrder()
+        {
+            _customerDialogue.Order();
         }
 
         public void KickOut()
@@ -153,20 +142,12 @@ namespace Runtime.Customers
                 satisfactionPort.DecreaseSatisfaction(_satisfactionKickedOut);
             }
             
-            LeaveBar();
+            _customerBase.LeaveBar();
         }
 
-        private void EnterBar()
+        private void OnEnterBar()
         {
             _customerDialogue.Attention();
-            _customerMovement.EnterBar();
-        }
-
-        private void LeaveBar()
-        {
-            if (_isLeaving) return;
-            _customerMovement.ExitBar();
-            _isLeaving = true;
         }
     }
 }

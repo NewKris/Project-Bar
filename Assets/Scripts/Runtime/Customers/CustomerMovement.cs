@@ -38,6 +38,9 @@ namespace Runtime.Customers
         {
             float elapsedTime = 0;
             Vector3 startPosition = transform.position;
+            GameObject player = FindFirstObjectByType<PlayerCharacter>().gameObject;
+            transform.LookAt(player.transform);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y+180, transform.eulerAngles.z);
 
             while (elapsedTime < movementTime)
             {
@@ -47,7 +50,6 @@ namespace Runtime.Customers
                 yield return new WaitForFixedUpdate();
             }
             
-            GameObject player = FindFirstObjectByType<PlayerCharacter>().gameObject;
             transform.LookAt(player.transform);
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y+180, transform.eulerAngles.z);
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Runtime.Customers
 {
-    [CreateAssetMenu(fileName = "Customer", menuName = "Customer", order = 0)]
+    [CreateAssetMenu(fileName = "Customer", menuName = "Character Data/Customer", order = 1)]
     public class CustomerData : ScriptableObject
     {
         [Tooltip("The name that will be displayed as the customer name")]

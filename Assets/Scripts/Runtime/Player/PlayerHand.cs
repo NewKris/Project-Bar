@@ -46,7 +46,7 @@ namespace Runtime.Player {
             else if (handInteraction.TryGetComponent(out MultiDock passiveStation) && passiveStation.CanPlaceItem()) {
                 passiveStation.PlaceItem(HeldItem);
             }
-            else if (handInteraction.TryGetComponent(out Customer customer) && (HeldItem.TryGetComponent(out DrinkObject drink)))
+            else if (handInteraction.TryGetComponent(out CustomerBase customer) && (HeldItem.TryGetComponent(out DrinkObject drink)))
             {
                 customer.ServeDrink(drink.currentContents);
                 HeldItem.Despawn();

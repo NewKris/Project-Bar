@@ -10,7 +10,7 @@ namespace Runtime.Player
         {
             if (interactable == null) return;
             
-            if (interactable.TryGetComponent(out Customer customer))
+            if (interactable.TryGetComponent(out CustomerBase customer))
             {
                 customer.Order();
             }
