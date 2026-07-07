@@ -60,7 +60,6 @@ namespace Runtime.Customers {
             }
             else {
                 onRepeatOrder?.Invoke();
-                _hasOrdered = false;
             }
         }
     }
