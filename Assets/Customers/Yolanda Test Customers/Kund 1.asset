@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerName: "k1: \xF6l i vinglas"
   mesh: {fileID: 0}
-  isTarget: 1
+  isTarget: 0
   acceptableDrinks:
   - {fileID: 11400000, guid: 2f22008f9336cc4429e4ffe953e005c8, type: 2}
   - {fileID: 11400000, guid: a694c3bacecd1e74c8f970b32cd554ec, type: 2}

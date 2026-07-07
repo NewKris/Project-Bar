@@ -3176,7 +3176,7 @@ GameObject:
   - component: {fileID: 175697444}
   - component: {fileID: 175697443}
   m_Layer: 0
-  m_Name: Fridge for safekeeping
+  m_Name: Fridge wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17040,11 +17040,11 @@ Transform:
   - {fileID: 1764524519}
   - {fileID: 1580820268}
   - {fileID: 175697442}
+  - {fileID: 2061416850}
   - {fileID: 434851096}
   - {fileID: 307764931}
   - {fileID: 1162907236}
   - {fileID: 577735942}
-  - {fileID: 2061416850}
   - {fileID: 406713535}
   - {fileID: 2017137740}
   - {fileID: 1297571301}

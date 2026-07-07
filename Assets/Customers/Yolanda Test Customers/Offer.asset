@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
   m_Name: Offer
   m_EditorClassIdentifier: 
-  customerName: 'offer: vodka i whiskey'
+  customerName: 'offer: vodka rocks i whiskey'
   mesh: {fileID: 0}
-  isTarget: 0
+  isTarget: 1
   acceptableDrinks:
-  - {fileID: 11400000, guid: 7843ec0354f87d1429b17e87c389523f, type: 2}
+  - {fileID: 11400000, guid: d197fa3eba28b444c8c1ed15ce37775f, type: 2}
   - {fileID: 11400000, guid: 739808914d1ffe747bfc1b9bee3d70b9, type: 2}
   timePenaltyRepeatOrder: 4
   patienceTimer: 40
