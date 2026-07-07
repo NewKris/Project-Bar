@@ -7,7 +7,7 @@ namespace Runtime.Customers
     public class CustomerEventPort : ScriptableObject
     {
         public UnityAction OnCustomerEvent;
-
+        
         public void RaiseCustomerEvent()
         {
             OnCustomerEvent?.Invoke();

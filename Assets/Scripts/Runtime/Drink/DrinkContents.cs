@@ -9,6 +9,10 @@ namespace Runtime.Drink {
         public MixType mixType;
         public DrinkContainer drinkContainer;
         public List<Ingredient> ingredients;
+
+        public bool ContainsPoison() {
+            return ingredients.Any(x => x.isPoisonous);
+        }
         
         public bool DrinkIsAccepted(List<Recipe> acceptedRecipes) {
             List<Recipe> possibleRecipes = acceptedRecipes;

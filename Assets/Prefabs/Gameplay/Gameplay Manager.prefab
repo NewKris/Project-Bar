@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneHandler: {fileID: 11400000, guid: 31294f4ab7809ec49a6bc6863f7cb624, type: 2}
   satisfactionEvents: {fileID: 11400000, guid: 8e3b1e746fc9f50478c8103e198f74ff, type: 2}
+  customerEventPort: {fileID: 11400000, guid: dff084a8993e2af4bacb99c66f229fe5, type: 2}

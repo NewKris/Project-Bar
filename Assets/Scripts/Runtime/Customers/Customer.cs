@@ -21,6 +21,9 @@ namespace Runtime.Customers
         [Tooltip("The scriptable object satisfaction port")]
         [SerializeField] private SatisfactionPort satisfactionPort;
         
+        [Tooltip("The scriptable object customer event port")]
+        [SerializeField] private CustomerEvents customerEventPort;
+        
         [Tooltip("Determines whether the player should lose satisfaction when the customer gets kicked out")]
         [SerializeField] private bool loseSatisfactionWhenKickedOut;
         
@@ -117,6 +120,10 @@ namespace Runtime.Customers
                 Debug.Log("Drink rejected");
                 _customerDialogue.Failure();
                 satisfactionPort.DecreaseSatisfaction(_satisfactionFailure);
+            }
+
+            if (drink.ContainsPoison()) {
+                customerEventPort.RaiseCustomerDiedEvent(_isTarget);
             }
             
             _customerBase.LeaveBar();

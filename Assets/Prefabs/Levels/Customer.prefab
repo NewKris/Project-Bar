@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
+  customerEventPort: {fileID: 11400000, guid: dff084a8993e2af4bacb99c66f229fe5, type: 2}
   loseSatisfactionWhenKickedOut: 1
 --- !u!114 &4818803729512919718
 MonoBehaviour:
