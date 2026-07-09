@@ -5,31 +5,21 @@ using UnityEngine;
 namespace Runtime.Looking {
     public class LookController : MonoBehaviour {
         public InteractRay interactRay;
+        public int bufferSize = 5;
 
-        public LookObject Current { get; private set; }
-        
+        private LookObject[] _objectBuffer;
+
+        public LookObject Current => _objectBuffer[0];
+
+        private void Awake() {
+            _objectBuffer = new LookObject[bufferSize];
+        }
+
         private void Update() {
-            if (interactRay.TryFindInteraction(out LookObject lookObject)) {
-                LookAtObject(lookObject);
-            } else {
-                StopLooking();
+            int hitCount = interactRay.TryFindAllInteractions(_objectBuffer);
+            for (int i = 0; i < hitCount; i++) {
+                _objectBuffer[i].LookAt();
             }
-        }
-
-        private void StopLooking() {
-            if (Current) {
-                Current.enabled = false;
-                Current = null;
-            }
-        }
-
-        private void LookAtObject(LookObject lookObject) {
-            if (Current && Current != lookObject) {
-                Current.enabled = false;
-            }
-            
-            Current = lookObject;
-            Current.enabled = true;
         }
     }
 }

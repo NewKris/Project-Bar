@@ -7,6 +7,13 @@ namespace Runtime.Looking {
         public UnityEvent onBeginLook;
         public UnityEvent onEndLook;
 
+        private bool _isLookedAt;
+        
+        public void LookAt() {
+            _isLookedAt = true;
+            enabled = true;
+        }
+        
         private void OnEnable() {
             onBeginLook?.Invoke();
         }
@@ -17,6 +24,13 @@ namespace Runtime.Looking {
 
         private void Awake() {
             enabled = false;
+        }
+
+        private void Update() {
+            if (_isLookedAt)
+                _isLookedAt = false;
+            else
+                enabled = false;
         }
     }
 }
