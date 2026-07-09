@@ -6,8 +6,8 @@ namespace Runtime.Looking {
     public class LookController : MonoBehaviour {
         public InteractRay interactRay;
 
-        private LookObject _current;
-
+        public LookObject Current { get; private set; }
+        
         private void Update() {
             if (interactRay.TryFindInteraction(out LookObject lookObject)) {
                 LookAtObject(lookObject);
@@ -17,19 +17,19 @@ namespace Runtime.Looking {
         }
 
         private void StopLooking() {
-            if (_current) {
-                _current.enabled = false;
-                _current = null;
+            if (Current) {
+                Current.enabled = false;
+                Current = null;
             }
         }
 
         private void LookAtObject(LookObject lookObject) {
-            if (_current && _current != lookObject) {
-                _current.enabled = false;
+            if (Current && Current != lookObject) {
+                Current.enabled = false;
             }
             
-            _current = lookObject;
-            _current.enabled = true;
+            Current = lookObject;
+            Current.enabled = true;
         }
     }
 }
