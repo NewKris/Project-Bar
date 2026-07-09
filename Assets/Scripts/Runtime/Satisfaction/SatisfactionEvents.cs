@@ -1,3 +1,5 @@
+using Runtime.Customers;
+using Runtime.Customers.Tutorial_Agent;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,6 +15,7 @@ namespace Runtime.Satisfaction
         /// </summary>
         public UnityAction<bool> OnToggleTarget;
         public UnityAction OnGameOver;
+        public UnityAction<CustomerData[], TargetData> OnUpdateCustomers;
 
         public void ChangeCustomerSlotState(int slot, bool lockSlot)
         {
@@ -24,6 +27,11 @@ namespace Runtime.Satisfaction
             {
                 OnCustomerSlotUnlocked?.Invoke(slot);
             }
+        }
+
+        public void UpdateCustomers(CustomerData[] customers, TargetData target)
+        {
+            OnUpdateCustomers?.Invoke(customers, target);
         }
 
         /// <summary>

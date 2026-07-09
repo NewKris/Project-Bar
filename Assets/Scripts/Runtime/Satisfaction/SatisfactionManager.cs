@@ -103,6 +103,7 @@ namespace Runtime.Satisfaction
         {
             currentSatisfaction = currentLevel.startSatisfaction;
             _targetUnlocked = false;
+            satisfactionEvents.UpdateCustomers(currentLevel.availableCustomers, currentLevel.target);
             _availableCustomers = new bool[currentLevel.customerUnlocks.Length];
             HandleCustomerUnlocks();
         }

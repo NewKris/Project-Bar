@@ -17,3 +17,13 @@ MonoBehaviour:
   customerUnlocks: 000000004b00000064000000
   targetSatisfaction: 150
   maximumSatisfaction: 300
+  availableCustomers:
+  - {fileID: 11400000, guid: 030aee5f59a580b428e898642cfe112c, type: 2}
+  - {fileID: 11400000, guid: 96cfab581704df64f8e3a783350c8eac, type: 2}
+  - {fileID: 11400000, guid: f0b2bc17026479d47a98ec3e6cd1a877, type: 2}
+  - {fileID: 11400000, guid: bcfb4acb547d9ff4ba28700304bf57f4, type: 2}
+  target:
+    customerData: {fileID: 11400000, guid: fbf4e05554abab74980664441e92eb9e, type: 2}
+    baseChance: 10
+    chanceIncrease: 5
+    shouldSpawnChanceReset: 1

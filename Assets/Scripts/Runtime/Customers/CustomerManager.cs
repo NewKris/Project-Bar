@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
+using Runtime.Customers.Tutorial_Agent;
 using Runtime.Satisfaction;
 using Runtime.Scene_Handling;
 using UnityEngine;
@@ -15,21 +16,14 @@ namespace Runtime.Customers
         [Foldout("Customers")]
         [SerializeField] private CustomerSlot[] customerSlots;
         [Foldout("Customers")]
-        [SerializeField] private Customer customerPrefab;
-        [Foldout("Customers")]
-        [SerializeField] private CustomerData[] availableCustomers;
+        [SerializeField] private Customer customerPrefab; 
         
-        [Foldout("Target")]
-        [SerializeField] private CustomerData target;
-        [Foldout("Target")]
-        [Tooltip("The base percentage of target spawning when available")]
-        [SerializeField] [Range(0f, 100f)] private float targetBaseChance;
-        [Foldout("Target")]
-        [Tooltip("The percentage units that the target spawn chance will increase by when other customers are spawned while the target is available")]
-        [SerializeField] [Range(0f, 100f)] private float targetChanceIncrease;
-        [Foldout("Target")]
-        [Tooltip("If true, the target spawn chance will reset when target becomes unavailable")]
-        [SerializeField] private bool shouldTargetReset = true;
+        private CustomerData[] _availableCustomers;
+        
+        private CustomerData _target;
+        private float _targetBaseChance;
+        private float _targetChanceIncrease;
+        private bool _shouldTargetReset = true;
 
         private float _targetSpawnChance;
         private bool _targetUnlocked = false;
@@ -42,6 +36,7 @@ namespace Runtime.Customers
             satisfactionEvents.OnToggleTarget += ToggleTarget;
             satisfactionEvents.OnCustomerSlotUnlocked += UnlockCustomerSlot;
             satisfactionEvents.OnCustomerSlotLocked += LockCustomerSlot;
+            satisfactionEvents.OnUpdateCustomers += UpdateCustomers;
         }
 
         private void OnDisable()
@@ -49,6 +44,7 @@ namespace Runtime.Customers
             satisfactionEvents.OnToggleTarget -= ToggleTarget;
             satisfactionEvents.OnCustomerSlotUnlocked -= UnlockCustomerSlot;
             satisfactionEvents.OnCustomerSlotLocked -= LockCustomerSlot;
+            satisfactionEvents.OnUpdateCustomers -= UpdateCustomers;
         }
 
         private void Start()
@@ -59,30 +55,40 @@ namespace Runtime.Customers
             }
         }
 
+        private void UpdateCustomers(CustomerData[] customers, TargetData targetData)
+        {
+            _availableCustomers = customers;
+            _target = targetData.customerData;
+            _targetBaseChance = targetData.baseChance;
+            _targetChanceIncrease = targetData.chanceIncrease;
+            _shouldTargetReset = targetData.shouldSpawnChanceReset;
+
+        }
+
         public Customer SpawnCustomer(CustomerEventPort port, Vector3 spawnPosition, Vector3 barPosition, Vector3 exitPosition)
         {
             Customer newCustomer = Instantiate(customerPrefab, spawnPosition, Quaternion.identity);
 
             CustomerData data = null;
 
-            if (_targetUnlocked && !_activeCustomers.Contains(target) && _lastCustomer != target)
+            if (_targetUnlocked && !_activeCustomers.Contains(_target) && _lastCustomer != _target)
             {
                 if (Random.Range(0, 100) < _targetSpawnChance)
                 {
-                    data = target;
+                    data = _target;
                 }
                 else
                 {
-                    _targetSpawnChance += targetChanceIncrease;
+                    _targetSpawnChance += _targetChanceIncrease;
                 }
 
             }
             
             if (!data)
             {
-                if (_servedCustomers.Count < availableCustomers.Length)
+                if (_servedCustomers.Count < _availableCustomers.Length)
                 {
-                    data = availableCustomers[_servedCustomers.Count];
+                    data = _availableCustomers[_servedCustomers.Count];
                     _servedCustomers.Add(data);
                 }
                 else
@@ -90,11 +96,11 @@ namespace Runtime.Customers
                     int maxAttempts = 10;
                     int attempts = 0;
                     
-                    data = availableCustomers[Random.Range(0, availableCustomers.Length)];
+                    data = _availableCustomers[Random.Range(0, _availableCustomers.Length)];
                     
                     while ((_activeCustomers.Contains(data) || data == _lastCustomer) && attempts < maxAttempts)
                     {
-                        data = availableCustomers[Random.Range(0, availableCustomers.Length)];
+                        data = _availableCustomers[Random.Range(0, _availableCustomers.Length)];
                         attempts++;
                     }
                 }
@@ -128,9 +134,9 @@ namespace Runtime.Customers
         {
             _targetUnlocked = state;
 
-            if (!_targetUnlocked && shouldTargetReset)
+            if (!_targetUnlocked && _shouldTargetReset)
             {
-                _targetSpawnChance = targetBaseChance;
+                _targetSpawnChance = _targetBaseChance;
             }
         }
     }

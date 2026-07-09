@@ -1,3 +1,5 @@
+using Runtime.Customers;
+using Runtime.Customers.Tutorial_Agent;
 using UnityEngine;
 
 namespace Runtime.Scene_Handling
@@ -11,5 +13,7 @@ namespace Runtime.Scene_Handling
         [Tooltip("The amount of satisfaction needed for the target to be able to spawn")]
         public int targetSatisfaction;
         public int maximumSatisfaction;
+        public CustomerData[] availableCustomers;
+        public TargetData target;
     }
 }
