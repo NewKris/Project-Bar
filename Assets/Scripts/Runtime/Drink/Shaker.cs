@@ -11,6 +11,14 @@ namespace Runtime.Drink {
             if (ShakeDuration >= shakeDuration) {
                 currentContents.mixType = MixType.Shaken;
             }
+            
+            TryDestroyDrink();
+        }
+
+        private void TryDestroyDrink() {
+            if (currentContents.isDestroyed || !currentContents.ContainsPrepOrGarnish()) return;
+
+            currentContents.isDestroyed = true;
         }
     }
 }

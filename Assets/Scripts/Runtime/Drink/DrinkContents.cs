@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace Runtime.Drink {
@@ -9,14 +10,24 @@ namespace Runtime.Drink {
         public MixType mixType;
         public DrinkContainer drinkContainer;
         public List<Ingredient> ingredients;
+        [ReadOnly] public bool isDestroyed;
 
         public bool ContainsPoison() {
             return ingredients.Any(x => x.isPoisonous);
         }
+
+        public bool ContainsPrepOrGarnish() {
+            return ingredients.Any(x => x.type is IngredientType.prep or IngredientType.garnish);
+        }
         
         public bool DrinkIsAccepted(List<Recipe> acceptedRecipes) {
+            if (isDestroyed) {
+                Debug.Log("Drink mismatch: Contains destroyed ingredients");
+                return false;
+            }
+            
             List<Recipe> possibleRecipes = acceptedRecipes;
-
+            
             possibleRecipes = GetRecipesWithEligibleContainer(drinkContainer, possibleRecipes);
             if (possibleRecipes.Count == 0)
             {

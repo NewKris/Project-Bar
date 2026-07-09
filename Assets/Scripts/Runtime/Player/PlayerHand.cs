@@ -61,17 +61,19 @@ namespace Runtime.Player {
         }
 
         public void PourDrink(HandInteraction handInteraction) {
-            if (!HeldItem 
-                || !HeldItem.TryGetComponent(out DrinkObject heldDrink)
-            ) return;
+            if (!HeldItem || !HeldItem.TryGetComponent(out DrinkObject heldDrink)) return;
 
             if (handInteraction?.TryGetComponent(out DrinkObject targetDrink) ?? false) {
                 targetDrink.AddContents(heldDrink.currentContents);
-            } else if ((!handInteraction?.TryGetComponent(out Sink _) ?? true) && heldDrink.currentContents.ingredients.Count > 0) {
+            } else if (!InteractionIsSink(handInteraction) && heldDrink.HasContents) {
                 satisfactionPort.DecreaseSatisfaction(pourPenalty);
             }
             
             heldDrink.EmptyContents();
+        }
+
+        private bool InteractionIsSink(HandInteraction interaction) {
+            return interaction?.TryGetComponent(out Sink _) ?? false;
         }
 
         private void Awake() {

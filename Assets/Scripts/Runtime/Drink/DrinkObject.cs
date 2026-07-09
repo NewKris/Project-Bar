@@ -11,15 +11,19 @@ namespace Runtime.Drink {
         protected float ShakeDuration { get; set; }
         private Dictionary<int, float> StationDurations { get; set; }
 
+        public bool HasContents => currentContents.ingredients.Count > 0;
+        
         public void EmptyContents() {
             currentContents.ingredients.Clear();
             currentContents.mixType = MixType.None;
+            currentContents.isDestroyed = false;
             ResetDurations();
         }
 
         public void AddContents(DrinkContents contents) {
             currentContents.ingredients.AddRange(contents.ingredients);
             currentContents.mixType = contents.mixType;
+            currentContents.isDestroyed |= contents.isDestroyed;
             ResetDurations();
         }
         
