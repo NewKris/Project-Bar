@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
-using Runtime.Customers.Tutorial_Agent;
 using Runtime.Satisfaction;
-using Runtime.Scene_Handling;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

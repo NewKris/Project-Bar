@@ -1,8 +1,7 @@
 ﻿using System;
-using NaughtyAttributes;
 using UnityEngine;
 
-namespace Runtime.Customers.Tutorial_Agent {
+namespace Runtime.Customers {
     [Serializable]
     public class TargetData {
         public CustomerData customerData;
