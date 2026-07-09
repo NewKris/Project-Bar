@@ -1120,8 +1120,75 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5143385605728237706, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1981485714}
+    - targetCorrespondingSourceObject: {fileID: 5143385605728237706, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1981485713}
   m_SourcePrefab: {fileID: 100100000, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+--- !u!1 &1981485712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5143385605728237706, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+  m_PrefabInstance: {fileID: 1981485711}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1981485713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981485712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d17169283404cc585fcb6272c8455d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBeginLook:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1981485714}
+        m_TargetAssemblyTypeName: Runtime.Looking.LookDebug, Assembly-CSharp
+        m_MethodName: StartLooking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEndLook:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1981485714}
+        m_TargetAssemblyTypeName: Runtime.Looking.LookDebug, Assembly-CSharp
+        m_MethodName: StopLooking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1981485714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981485712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d130d652ba4153bc0cf172b57eff74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offMaterial: {fileID: 2100000, guid: c79a6e2db87eb0f41a9c1b89e7b4f153, type: 2}
+  onMaterial: {fileID: 2100000, guid: 9546c0a4cb51843d699a564616cc1c01, type: 2}
 --- !u!1001 &1338351280153326021
 PrefabInstance:
   m_ObjectHideFlags: 0
