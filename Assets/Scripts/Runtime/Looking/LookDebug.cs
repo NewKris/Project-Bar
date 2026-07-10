@@ -30,6 +30,10 @@ namespace Runtime.Looking {
 
         private void Reset() {
             affectedRenderers = GetComponentsInChildren<MeshRenderer>(true);
+
+            if (TryGetComponent(out MeshRenderer renderer)) {
+                offMaterial = renderer.material;
+            }
         }
 
         private void Awake() {
