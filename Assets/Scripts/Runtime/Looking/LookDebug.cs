@@ -12,11 +12,19 @@ namespace Runtime.Looking {
             foreach (MeshRenderer meshRenderer in affectedRenderers) {
                 meshRenderer.material = onMaterial;
             }
+
+            if (TryGetComponent(out MeshRenderer renderer)) {
+                renderer.material = onMaterial;
+            }
         }
 
         public void StopLooking() {
             foreach (MeshRenderer meshRenderer in affectedRenderers) {
                 meshRenderer.material = offMaterial;
+            }
+            
+            if (TryGetComponent(out MeshRenderer renderer)) {
+                renderer.material = offMaterial;
             }
         }
 
