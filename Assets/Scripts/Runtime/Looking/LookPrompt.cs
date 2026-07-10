@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 
 namespace Runtime.Looking {
+    [RequireComponent(typeof(LookObject))]
     public class LookPrompt : MonoBehaviour {
         public string promptText;
         

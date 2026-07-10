@@ -2,6 +2,7 @@
 using UnityEngine;
 
 namespace Runtime.Looking {
+    [RequireComponent(typeof(LookObject))]
     public class LookDebug : MonoBehaviour {
         public Material offMaterial;
         public Material onMaterial;

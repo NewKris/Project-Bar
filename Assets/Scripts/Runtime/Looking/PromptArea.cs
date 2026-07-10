@@ -2,7 +2,12 @@
 using UnityEngine;
 
 namespace Runtime.Looking {
+    [RequireComponent(typeof(LookObject), typeof(BoxCollider))]
     public class PromptArea : MonoBehaviour {
+        private void Reset() {
+            GetComponent<BoxCollider>().isTrigger = true;
+        }
+
         private void Awake() {
             if (TryGetComponent(out LookObject lookObject)) {
                 lookObject.onBeginLook.AddListener(EnableAllPrompts);
