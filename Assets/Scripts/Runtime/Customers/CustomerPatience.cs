@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using Runtime.Configuration;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -36,7 +37,7 @@ namespace Runtime.Customers
 
         private void Update()
         {
-            _patienceTimer -= Time.deltaTime;
+            _patienceTimer -= Time.deltaTime * Config.instance.patienceMultiplier;
 
             patienceImage.fillAmount = Mathf.Max(_patienceTimer, 0) / _patience;
 
