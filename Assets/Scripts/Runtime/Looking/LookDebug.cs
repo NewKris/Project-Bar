@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Runtime.Looking {
     public class LookDebug : MonoBehaviour {
@@ -11,6 +12,13 @@ namespace Runtime.Looking {
 
         public void StopLooking() {
             GetComponent<MeshRenderer>().material = offMaterial;
+        }
+
+        private void Awake() {
+            if (TryGetComponent(out LookObject lookObject)) {
+                lookObject.onBeginLook.AddListener(StartLooking);
+                lookObject.onEndLook.AddListener(StopLooking);
+            }
         }
     }
 }
