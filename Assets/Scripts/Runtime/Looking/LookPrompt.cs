@@ -22,7 +22,7 @@ namespace Runtime.Looking {
             PromptText prompt = GetComponentInChildren<PromptText>(true);
 
             if (prompt != null) {
-                prompt.GetComponent<TextMeshProUGUI>().text = $"[{promptText}]";
+                prompt.GetComponent<TextMeshProUGUI>().text = promptText;
                 prompt.gameObject.SetActive(false);
             }
 
