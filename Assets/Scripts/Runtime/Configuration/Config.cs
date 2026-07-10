@@ -6,17 +6,19 @@ using UnityEngine;
 namespace Runtime.Configuration {
     [Serializable]
     public class Config {
-        public static Config Instance = new Config();
+        public static Config instance = new Config();
         
-        private const string FilePath = "/Config/config";
+        private const string FILE_PATH = "/Config/config";
+
+        public float patienceMultiplier = 1;
         
         public static async Task Load() {
-            if (FileManager.FileExists(FilePath)) {
-                Instance = await FileManager.DeserializeFile<Config>(FilePath);
+            if (FileManager.FileExists(FILE_PATH)) {
+                instance = await FileManager.DeserializeFile<Config>(FILE_PATH);
             }
             else {
-                Instance = new Config();
-                await FileManager.SerializeFile(Instance, FilePath);
+                instance = new Config();
+                await FileManager.SerializeFile(instance, FILE_PATH);
             }
             
         }
