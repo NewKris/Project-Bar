@@ -9,6 +9,8 @@ namespace Runtime.Looking {
         private void Awake() {
             PromptText prompt = InitializePrompt();
             
+            if (!prompt) return;
+            
             if (TryGetComponent(out LookObject lookObject)) {
                 lookObject.onBeginLook.AddListener(prompt.HighlightPrompt);
                 lookObject.onEndLook.AddListener(prompt.StopHighlight);
@@ -17,8 +19,11 @@ namespace Runtime.Looking {
 
         private PromptText InitializePrompt() {
             PromptText prompt = GetComponentInChildren<PromptText>(true);
-            prompt.GetComponent<TextMeshProUGUI>().text = $"[{promptText}]";
-            prompt.gameObject.SetActive(false);
+
+            if (prompt != null) {
+                prompt.GetComponent<TextMeshProUGUI>().text = $"[{promptText}]";
+                prompt.gameObject.SetActive(false);
+            }
 
             return prompt;
         }
