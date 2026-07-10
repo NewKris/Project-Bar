@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Levels/OutdoorsScene.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: af41a67499a281c438562717b8c0fd07
+  - enabled: 1
+    path: Assets/Scenes/Levels/OutdoorsScene.unity
+    guid: 8124e5870f4fd4c779e7a5f994e84ad1
   - enabled: 1
     path: Assets/Scenes/CoreScene.unity
     guid: c6d1470d994a84748b1ba7f6dd62ae64
