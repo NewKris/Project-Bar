@@ -9,7 +9,6 @@ namespace Runtime.Looking {
     public class LookPrompt : MonoBehaviour {
         public string promptText;
         public Transform promptTransform;
-        public PromptCanvas promptCanvas;
 
         [Foldout("Debug")] public float debugSize = 0.2f;
         [Foldout("Debug")] public Color debugColor = Color.green;
@@ -25,8 +24,10 @@ namespace Runtime.Looking {
         }
         
         private void Awake() {
+            PromptCanvas canvas = FindAnyObjectByType<PromptCanvas>();
+            
             Transform pivot = promptTransform != null ? promptTransform : transform;
-            _prompt = promptCanvas.CreatePromptText(promptText, pivot);
+            _prompt = canvas.CreatePromptText(promptText, pivot);
             
             if (TryGetComponent(out LookObject lookObject)) {
                 lookObject.onBeginLook.AddListener(_prompt.HighlightPrompt);
