@@ -9,7 +9,7 @@ using UnityEngine;
 namespace Runtime.Customers.Tutorial_Agent {
     [RequireComponent(typeof(CustomerBase))]
     [RequireComponent(typeof(TutorialDialogueRunner))]
-    [RequireComponent(typeof(TutorialHighlightable))]
+    [RequireComponent(typeof(Highlightable))]
     public class TutorialAgent : MonoBehaviour {
         [SerializeField] private CustomerEventPort tutorialFinishedPort;
         [SerializeField] private Vector3 exitPosition;
@@ -18,13 +18,13 @@ namespace Runtime.Customers.Tutorial_Agent {
         
         private CustomerBase _base;
         private TutorialDialogueRunner _dialogueRunner;
-        private TutorialHighlightable _agentHighlightable;
+        private Highlightable _agentHighlightable;
 
         // Needs to start at negative one so that next step function can be called on start
         private int _currentStep = -1;
         private float _timer;
 
-        private HashSet<TutorialHighlightable> _objectsClicked;
+        private HashSet<Highlightable> _objectsClicked;
         
         // Avoids index out of range exception by using Mathf.Min
         private TutorialAgentStep CurrentStep => tutorialSteps[Mathf.Min(_currentStep, tutorialSteps.Length - 1)];
@@ -33,7 +33,7 @@ namespace Runtime.Customers.Tutorial_Agent {
         private void OnEnable() {
             _base = GetComponent<CustomerBase>();
             _dialogueRunner = GetComponent<TutorialDialogueRunner>();
-            _agentHighlightable = GetComponent<TutorialHighlightable>();
+            _agentHighlightable = GetComponent<Highlightable>();
 
             _base.onOrder += OnOrder;
             _base.onServeDrink += OnServeDrink;
@@ -68,7 +68,7 @@ namespace Runtime.Customers.Tutorial_Agent {
             }
 
             if (CurrentStep.progressType == TutorialProgressType.ClickObjects) {
-                foreach (TutorialHighlightable obj in CurrentStep.objectsToHighlight.Array) {
+                foreach (Highlightable obj in CurrentStep.objectsToHighlight.Array) {
                     obj.Highlight();
                     obj.onClicked += () => {
                         HandleObjectClicked(obj);
@@ -121,7 +121,7 @@ namespace Runtime.Customers.Tutorial_Agent {
             _base.LeaveBar();
         }
 
-        private void HandleObjectClicked(TutorialHighlightable obj) {
+        private void HandleObjectClicked(Highlightable obj) {
             _objectsClicked.Add(obj);
             if (_objectsClicked.Count >= CurrentStep.objectsToHighlight.Array.Length) {
                 NextStep();

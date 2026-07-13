@@ -16,7 +16,7 @@ namespace Runtime.Player
                 customer.Order();
             }
 
-            if (interactable.TryGetComponent(out TutorialHighlightable highlightable)) {
+            if (interactable.TryGetComponent(out Highlightable highlightable)) {
                 highlightable.Click();
             }
         }
