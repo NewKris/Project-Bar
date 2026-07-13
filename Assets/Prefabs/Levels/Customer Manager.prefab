@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   satisfactionEvents: {fileID: 11400000, guid: 8e3b1e746fc9f50478c8103e198f74ff, type: 2}
   tutorialFinishedPort: {fileID: 11400000, guid: 19877315dd5d58549b50d6b583224655, type: 2}
-  waitForTutorial: 1
+  waitForTutorial: 0
   customerSlots:
   - {fileID: 6294701951916416029}
   - {fileID: 4099406708206315796}
