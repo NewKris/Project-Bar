@@ -69,7 +69,8 @@ namespace Runtime.Customers
                 yield return new WaitForFixedUpdate();
             }
             
-            _customerEventPort.RaiseCustomerEvent();
+            if (_customerEventPort) _customerEventPort.RaiseCustomerEvent();
+
             Destroy(gameObject);
         }
         

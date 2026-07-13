@@ -48,20 +48,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satisfactionEvents: {fileID: 11400000, guid: 8e3b1e746fc9f50478c8103e198f74ff, type: 2}
+  tutorialFinishedPort: {fileID: 11400000, guid: 19877315dd5d58549b50d6b583224655, type: 2}
+  waitForTutorial: 1
   customerSlots:
   - {fileID: 6294701951916416029}
   - {fileID: 4099406708206315796}
   - {fileID: 5302233253166588281}
   customerPrefab: {fileID: 3255688253476523512, guid: a2efd6c97c636214689d62a2498ce4e8, type: 3}
-  availableCustomers:
-  - {fileID: 11400000, guid: aec0d8e64e8c6724aae8615f555b0ae8, type: 2}
-  - {fileID: 11400000, guid: 98c21083ca15ce342a1442dc16c1d5cb, type: 2}
-  - {fileID: 11400000, guid: 391c00e6400001e47a8464539bbf46da, type: 2}
-  - {fileID: 11400000, guid: 56dbf718f70cdd54b82d243fb43e4c68, type: 2}
-  target: {fileID: 11400000, guid: 779e5fe7ee372f34a953594534a98d7c, type: 2}
-  targetBaseChance: 10
-  targetChanceIncrease: 5
-  shouldTargetReset: 1
 --- !u!1001 &4503213812900291060
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,7 @@
 using System;
+using NaughtyAttributes;
 using Runtime;
+using Runtime.Customers;
 using Runtime.Scene_Handling;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +13,7 @@ namespace Runtime.Satisfaction
         public Level currentLevel;
         public SatisfactionPort satisfactionPort;
 
+        [HideInInspector] [ShowNonSerializedField]
         public int currentSatisfaction;
         
         [SerializeField] private SatisfactionEvents satisfactionEvents;
