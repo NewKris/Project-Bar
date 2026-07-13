@@ -5,6 +5,13 @@ using UnityEngine;
 namespace Runtime.Looking {
     public class PromptText : MonoBehaviour {
         public Color highlightColor;
+
+        public void Initialize(string text, Transform pivot) {
+            GetComponent<TextMeshProUGUI>().text = text;
+            transform.position = pivot.position;
+            transform.rotation = pivot.rotation;
+            gameObject.SetActive(false);
+        }
         
         public void HighlightPrompt() {
             GetComponent<TextMeshProUGUI>().color = highlightColor;

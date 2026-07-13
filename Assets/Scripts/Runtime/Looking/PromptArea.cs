@@ -8,7 +8,7 @@ namespace Runtime.Looking {
             GetComponent<BoxCollider>().isTrigger = true;
         }
 
-        private void Awake() {
+        private void Start() {
             if (TryGetComponent(out LookObject lookObject)) {
                 lookObject.onBeginLook.AddListener(EnableAllPrompts);
                 lookObject.onEndLook.AddListener(DisableAllPrompts);
@@ -16,14 +16,14 @@ namespace Runtime.Looking {
         }
 
         private void EnableAllPrompts() {
-            foreach (PromptText prompt in GetComponentsInChildren<PromptText>(true)) {
-                prompt.gameObject.SetActive(true);
+            foreach (LookPrompt prompt in GetComponentsInChildren<LookPrompt>(true)) {
+                prompt.ShowPrompt();
             }
         }
 
         private void DisableAllPrompts() {
-            foreach (PromptText prompt in GetComponentsInChildren<PromptText>(true)) {
-                prompt.gameObject.SetActive(false);
+            foreach (LookPrompt prompt in GetComponentsInChildren<LookPrompt>(true)) {
+                prompt.HidePrompt();
             }
         }
     }
