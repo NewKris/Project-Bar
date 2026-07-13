@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -6,7 +7,11 @@ namespace Runtime.Dialogue
 {
     public static class TextMethods
     {
-        public static IEnumerator DisplayText(TMP_Text textComponent,string dialogue, float timeUntilFullyDisplayed)
+        public static IEnumerator DisplayText(
+            TMP_Text textComponent,
+            string dialogue,
+            float timeUntilFullyDisplayed
+        )
         {
             if (timeUntilFullyDisplayed <= 0)
             {
@@ -23,12 +28,13 @@ namespace Runtime.Dialogue
             while (currentIndex < characterCount)
             {
                 currentMessage += dialogue[currentIndex];
+                
                 textComponent.text = currentMessage;
                 currentIndex++;
                 yield return new WaitForSeconds(timePerLetter);
             }
             
-            textComponent.text = dialogue;
+            //textComponent.text = dialogue;
         }
     }
 }

@@ -35,7 +35,8 @@ namespace Runtime.Dialogue
             }
             
             dialogueBox.gameObject.SetActive(true);
-            // dialogueBox.text = dialogue;
+
+            if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine); 
             _dialogueCoroutine =
                 StartCoroutine(TextMethods.DisplayText(dialogueBox.textComponent, dialogue, writeTime));
         }
