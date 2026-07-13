@@ -8,7 +8,8 @@ namespace Runtime.Looking {
     [RequireComponent(typeof(LookObject))]
     public class LookPrompt : MonoBehaviour {
         public string promptText;
-        public Transform promptTransform;
+        public Vector3 positionOffset;
+        public Vector3 rotationOffset;
 
         [Foldout("Debug")] public float debugSize = 0.2f;
         [Foldout("Debug")] public Color debugColor = Color.green;
@@ -26,8 +27,10 @@ namespace Runtime.Looking {
         private void Awake() {
             PromptCanvas canvas = FindAnyObjectByType<PromptCanvas>();
             
-            Transform pivot = promptTransform != null ? promptTransform : transform;
-            _prompt = canvas.CreatePromptText(promptText, pivot);
+            Vector3 pos = transform.position + positionOffset;
+            Quaternion rot = transform.rotation * Quaternion.Euler(rotationOffset);
+            
+            _prompt = canvas.CreatePromptText(promptText, pos, rot);
             
             if (TryGetComponent(out LookObject lookObject)) {
                 lookObject.onBeginLook.AddListener(_prompt.HighlightPrompt);
@@ -36,8 +39,9 @@ namespace Runtime.Looking {
         }
 
         private void OnDrawGizmos() {
-            Transform pivot = promptTransform != null ? promptTransform : transform;
-            HandlesProxy.DrawDisc(pivot.position, pivot.forward, debugSize, false, debugColor);
+            Vector3 pos = transform.position + positionOffset;
+            Vector3 forward = Quaternion.Euler(rotationOffset) * transform.forward;
+            HandlesProxy.DrawDisc(pos, forward, debugSize, false, debugColor);
         }
     }
 }

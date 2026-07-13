@@ -6,9 +6,9 @@ namespace Runtime.Looking {
         
         public GameObject promptTextPrefab;
 
-        public PromptText CreatePromptText(string text, Transform pivot) {
+        public PromptText CreatePromptText(string text, Vector3 position, Quaternion rotation) {
             PromptText promptText = Instantiate(promptTextPrefab, transform).GetComponent<PromptText>();
-            promptText.Initialize(text, pivot);
+            promptText.Initialize(text, position, rotation);
 
             return promptText;
         }

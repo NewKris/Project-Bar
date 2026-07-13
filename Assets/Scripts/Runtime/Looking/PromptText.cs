@@ -6,10 +6,10 @@ namespace Runtime.Looking {
     public class PromptText : MonoBehaviour {
         public Color highlightColor;
 
-        public void Initialize(string text, Transform pivot) {
+        public void Initialize(string text, Vector3 position, Quaternion rotation) {
             GetComponent<TextMeshProUGUI>().text = text;
-            transform.position = pivot.position;
-            transform.rotation = pivot.rotation;
+            transform.position = position;
+            transform.rotation = rotation;
             gameObject.SetActive(false);
         }
         
