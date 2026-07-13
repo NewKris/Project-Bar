@@ -2,7 +2,7 @@
     public enum TutorialProgressType {
         None,
         ClickAgent,
-        ClickObject,
+        ClickObjects,
         ServeDrink
     }
 }

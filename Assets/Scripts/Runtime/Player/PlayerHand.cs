@@ -2,6 +2,7 @@
 using Runtime.Animations;
 using Runtime.Customers;
 using Runtime.Drink;
+using Runtime.Highlighting;
 using Runtime.Interact;
 using Runtime.Items;
 using Runtime.Satisfaction;
@@ -30,6 +31,10 @@ namespace Runtime.Player {
                 PickUpItem(pickup);
             } else if (handInteraction.TryGetComponent(out ItemSource source)) {
                 PickUpItem(source.SpawnItem());
+            }
+            
+            if (handInteraction.TryGetComponent(out Highlightable highlightable)) {
+                highlightable.Click();
             }
         }
         

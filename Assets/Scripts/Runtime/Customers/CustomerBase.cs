@@ -8,7 +8,6 @@ namespace Runtime.Customers {
     [RequireComponent((typeof(Interactable)))]
     public class CustomerBase : MonoBehaviour {
         public UnityAction onOrder;
-        public UnityAction onRepeatOrder;
         public UnityAction<DrinkContents> onServeDrink;
         public UnityAction onEnterBar;
         
@@ -17,7 +16,6 @@ namespace Runtime.Customers {
         
         private CustomerMovement _customerMovement;
         
-        private bool _hasOrdered;
         private bool _isLeaving;
 
         public void Setup(Mesh mesh, Vector3 barPosition, Vector3 exitPosition, CustomerEventPort port) {
@@ -54,13 +52,7 @@ namespace Runtime.Customers {
         public void Order()
         {
             if (_isLeaving) return;
-            if (!_hasOrdered) {
-                onOrder?.Invoke();
-                _hasOrdered = true;
-            }
-            else {
-                onRepeatOrder?.Invoke();
-            }
+            onOrder?.Invoke();
         }
     }
 }

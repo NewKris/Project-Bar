@@ -1,4 +1,5 @@
 using Runtime.Customers;
+using Runtime.Highlighting;
 using Runtime.Interact;
 using UnityEngine;
 
@@ -13,6 +14,10 @@ namespace Runtime.Player
             if (interactable.TryGetComponent(out CustomerBase customer))
             {
                 customer.Order();
+            }
+
+            if (interactable.TryGetComponent(out Highlightable highlightable)) {
+                highlightable.Click();
             }
         }
     }

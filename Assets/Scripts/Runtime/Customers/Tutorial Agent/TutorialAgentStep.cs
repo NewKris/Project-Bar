@@ -1,6 +1,7 @@
 ﻿using System;
 using NaughtyAttributes;
 using Runtime.Drink;
+using Runtime.Highlighting;
 using UnityEngine;
 // HideNestedArrayAttribute from https://github.com/dbrizov/NaughtyAttributes/issues/142#issuecomment-1993967793
 #if UNITY_EDITOR
@@ -57,7 +58,7 @@ namespace Runtime.Customers.Tutorial_Agent {
         public TutorialProgressType progressType;
         
         public bool ServeDrink => progressType == TutorialProgressType.ServeDrink;
-        public bool ClickObject => progressType == TutorialProgressType.ClickObject;
+        public bool ClickObject => progressType == TutorialProgressType.ClickObjects;
         
         [ShowIf("ServeDrink"), AllowNesting, HideNestedArray]
         public NestedArray<Recipe> acceptedDrinks;
@@ -69,9 +70,6 @@ namespace Runtime.Customers.Tutorial_Agent {
         public string wrongDrinkDialogue;
         
         [ShowIf("ClickObject"), AllowNesting, HideNestedArray]
-        public NestedArray<GameObject> objectsToHighlight;
-
-
-
+        public NestedArray<Highlightable> objectsToHighlight;
     }
 }

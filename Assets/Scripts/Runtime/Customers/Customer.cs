@@ -53,7 +53,6 @@ namespace Runtime.Customers
             
             _customerBase.onServeDrink += ServeDrink;
             _customerBase.onOrder += OnOrder;
-            _customerBase.onRepeatOrder += OnRepeatOrder;
             _customerBase.onEnterBar += OnEnterBar;
             
             
@@ -65,6 +64,9 @@ namespace Runtime.Customers
         {
             _customerPatience.OnPatienceTick -= _customerDialogue.PatienceTick;
             _customerPatience.OnPatienceTimeOut -= HandlePatienceTimeOut;
+            _customerBase.onServeDrink -= ServeDrink;
+            _customerBase.onOrder -= OnOrder;
+            _customerBase.onEnterBar -= OnEnterBar;
         }
 
         private void HandlePatienceTimeOut()
@@ -129,15 +131,18 @@ namespace Runtime.Customers
             _customerBase.LeaveBar();
         }
 
-        private void OnRepeatOrder() {
-            _customerDialogue.RepeatOrder();
-            satisfactionPort.DecreaseSatisfaction(_satisfactionRepeatOrder);
-            _customerPatience.AddTime(-_timePenaltyRepeatOrder);
-        }
-
         private void OnOrder()
         {
-            _customerDialogue.Order();
+            if (!_hasOrdered) {
+                _hasOrdered = true;
+                _customerDialogue.Order();
+            }
+            else {
+                _customerDialogue.RepeatOrder();
+                satisfactionPort.DecreaseSatisfaction(_satisfactionRepeatOrder);
+                _customerPatience.AddTime(-_timePenaltyRepeatOrder);
+            }
+            
         }
 
         public void KickOut()
