@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8398349836049914882}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,6 +100,9 @@ GameObject:
   - component: {fileID: 122345590983111866}
   - component: {fileID: 6672725777763676241}
   - component: {fileID: 7774962364505540768}
+  - component: {fileID: 8051146127654132906}
+  - component: {fileID: 1646419751155653338}
+  - component: {fileID: 5973511632322931311}
   m_Layer: 0
   m_Name: TutorialAgent
   m_TagString: Untagged
@@ -175,10 +178,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4eb5077e84448c8e138ca3419bbda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialFinishedPort: {fileID: 0}
+  exitPosition: {x: 0, y: 0, z: 11.66}
   tutorialSteps:
-  - stepStartedDialogue: 
-    reminderTimer: 0
-    reminderDialogue: 
+  - stepStartedDialogue: "Tjabba! Klicka p\xE5 mig vet jag!"
+    reminderTimer: 20
+    reminderDialogue: 'To progress you need to: CLICK ME!'
     progressType: 1
     acceptedDrinks:
       Array: []
@@ -186,6 +191,17 @@ MonoBehaviour:
     wrongDrinkDialogue: 
     objectsToHighlight:
       Array: []
+  - stepStartedDialogue: "Du klarade det! Nu g\xF6r det igen!"
+    reminderTimer: 20
+    reminderDialogue: 'To progress you need to: CLICK ME!'
+    progressType: 1
+    acceptedDrinks:
+      Array: []
+    repeatOrderDialogue: 
+    wrongDrinkDialogue: 
+    objectsToHighlight:
+      Array: []
+  tutorialCompletedDialogue: 
 --- !u!114 &7774962364505540768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +216,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueDisplay: {fileID: 7230968431717910778}
   dialoguePopUpTimer: 5
+--- !u!114 &8051146127654132906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8465399020216961972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014d48b08b2f4bce82481d141600f4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1646419751155653338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8465399020216961972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014d48b08b2f4bce82481d141600f4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &5973511632322931311
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8465399020216961972}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &6291853473255591633
 PrefabInstance:
   m_ObjectHideFlags: 0

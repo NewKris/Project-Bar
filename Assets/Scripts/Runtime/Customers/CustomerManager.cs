@@ -10,11 +10,18 @@ namespace Runtime.Customers
     public class CustomerManager : MonoBehaviour
     {
         [SerializeField] private SatisfactionEvents satisfactionEvents;
+        [SerializeField] private CustomerEventPort tutorialFinishedPort;
+        
+        [Tooltip("If true then customer slots will not be unlocked until tutorial is finished.")]
+        [SerializeField] private bool waitForTutorial = true;
         
         [Foldout("Customers")]
         [SerializeField] private CustomerSlot[] customerSlots;
         [Foldout("Customers")]
-        [SerializeField] private Customer customerPrefab; 
+        [SerializeField] private Customer customerPrefab;
+
+        private bool[] _customersToUnlockOnTutorialFinished;
+        private bool _isTutorialFinished;
         
         private CustomerData[] _availableCustomers;
         
@@ -31,10 +38,14 @@ namespace Runtime.Customers
 
         private void OnEnable()
         {
+            _customersToUnlockOnTutorialFinished = new bool[customerSlots.Length];
+            
             satisfactionEvents.OnToggleTarget += ToggleTarget;
             satisfactionEvents.OnCustomerSlotUnlocked += UnlockCustomerSlot;
             satisfactionEvents.OnCustomerSlotLocked += LockCustomerSlot;
             satisfactionEvents.OnUpdateCustomers += UpdateCustomers;
+            
+            tutorialFinishedPort.OnCustomerEvent += OnTutorialFinished;
         }
 
         private void OnDisable()
@@ -43,10 +54,11 @@ namespace Runtime.Customers
             satisfactionEvents.OnCustomerSlotUnlocked -= UnlockCustomerSlot;
             satisfactionEvents.OnCustomerSlotLocked -= LockCustomerSlot;
             satisfactionEvents.OnUpdateCustomers -= UpdateCustomers;
+            
+            tutorialFinishedPort.OnCustomerEvent -= OnTutorialFinished;
         }
 
-        private void Start()
-        {
+        private void Start() {
             foreach (CustomerSlot slot in customerSlots)
             {
                 slot.customerManager = this;
@@ -120,12 +132,23 @@ namespace Runtime.Customers
 
         private void UnlockCustomerSlot(int slot)
         {
-            customerSlots[slot].Enable();
+            if (waitForTutorial && !_isTutorialFinished) {
+                _customersToUnlockOnTutorialFinished[slot] = true;
+            }
+            else {
+                customerSlots[slot].Enable();
+            }
         }
 
         private void LockCustomerSlot(int slot)
         {
-            customerSlots[slot].Disable();
+            if (waitForTutorial && !_isTutorialFinished) {
+                _customersToUnlockOnTutorialFinished[slot] = false;
+            }
+            else {
+                customerSlots[slot].Disable();
+            }
+            
         }
 
         private void ToggleTarget(bool state)
@@ -135,6 +158,15 @@ namespace Runtime.Customers
             if (!_targetUnlocked && _shouldTargetReset)
             {
                 _targetSpawnChance = _targetBaseChance;
+            }
+        }
+
+        private void OnTutorialFinished() {
+            _isTutorialFinished = true;
+            for (int i = 0; i < _customersToUnlockOnTutorialFinished.Length; i++) {
+                if (_customersToUnlockOnTutorialFinished[i]) {
+                    UnlockCustomerSlot(i);
+                }
             }
         }
     }

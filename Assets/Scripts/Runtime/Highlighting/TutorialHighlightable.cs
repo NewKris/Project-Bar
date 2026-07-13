@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 
 namespace Runtime.Highlighting {
-    public class Highlightable : MonoBehaviour {
+    public class TutorialHighlightable : MonoBehaviour {
         private bool _highlighted = false;
         public UnityAction onClicked;
         

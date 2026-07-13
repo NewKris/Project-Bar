@@ -119,6 +119,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &383003380
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 595830357310101570, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 595830357310101570, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 595830357310101570, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 595830357310101570, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 595830357310101570, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 595830357310101570, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 595830357310101570, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 595830357310101570, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 595830357310101570, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 595830357310101570, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialFinishedPort
+      value: 
+      objectReference: {fileID: 11400000, guid: 19877315dd5d58549b50d6b583224655, type: 2}
+    - target: {fileID: 8465399020216961972, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_Name
+      value: TutorialAgent
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
 --- !u!1 &962684801
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,118 +420,6 @@ MonoBehaviour:
   m_AreaLightEmissiveMeshShadowCastingMode: 0
   m_AreaLightEmissiveMeshMotionVectorGenerationMode: 0
   m_AreaLightEmissiveMeshLayer: -1
---- !u!1 &1344989747
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1344989752}
-  - component: {fileID: 1344989751}
-  - component: {fileID: 1344989750}
-  - component: {fileID: 1344989749}
-  - component: {fileID: 1344989748}
-  - component: {fileID: 1344989753}
-  m_Layer: 0
-  m_Name: TutorialAgent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1344989748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344989747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf4eb5077e84448c8e138ca3419bbda6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tutorialSteps:
-  - stepStartedDialogue: 
-    reminderTimer: 0
-    reminderDialogue: 
-    progressType: 0
-    acceptedDrinks:
-      Array: []
-    repeatOrderDialogue: 
-    wrongDrinkDialogue: 
-    objectsToHighlight:
-      Array: []
---- !u!114 &1344989749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344989747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5158c7c643aa4418bdc104b0ea7c6549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customerMeshFilter: {fileID: 0}
---- !u!114 &1344989750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344989747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717a7ff1475047dc9f71178ad5b3bb28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1344989751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344989747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e342c87020844a3bb13a921a10960e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementTime: 0
-  timeBeforeExit: 1.5
---- !u!4 &1344989752
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344989747}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1344989753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344989747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2b01ee4395b4c1995e611b5268b407e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueDisplay: {fileID: 0}
-  dialoguePopUpTimer: 0
 --- !u!43 &1425271258
 Mesh:
   m_ObjectHideFlags: 0
@@ -1223,4 +1172,4 @@ SceneRoots:
   - {fileID: 1981485711}
   - {fileID: 1133297448393482645}
   - {fileID: 7417182807668389984}
-  - {fileID: 1344989752}
+  - {fileID: 383003380}

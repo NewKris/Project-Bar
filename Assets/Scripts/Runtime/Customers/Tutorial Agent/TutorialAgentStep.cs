@@ -70,6 +70,6 @@ namespace Runtime.Customers.Tutorial_Agent {
         public string wrongDrinkDialogue;
         
         [ShowIf("ClickObject"), AllowNesting, HideNestedArray]
-        public NestedArray<Highlightable> objectsToHighlight;
+        public NestedArray<TutorialHighlightable> objectsToHighlight;
     }
 }

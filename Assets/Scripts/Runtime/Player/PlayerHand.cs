@@ -33,7 +33,7 @@ namespace Runtime.Player {
                 PickUpItem(source.SpawnItem());
             }
             
-            if (handInteraction.TryGetComponent(out Highlightable highlightable)) {
+            if (handInteraction.TryGetComponent(out TutorialHighlightable highlightable)) {
                 highlightable.Click();
             }
         }
