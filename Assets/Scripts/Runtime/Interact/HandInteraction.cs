@@ -1,7 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Runtime.Interact {
-    public class HandInteraction : MonoBehaviour {
-        
-    }
+    public class HandInteraction : MonoBehaviour { }
 }

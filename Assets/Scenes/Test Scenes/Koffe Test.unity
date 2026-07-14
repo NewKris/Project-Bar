@@ -1575,8 +1575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: E
-  positionOffset: {x: 0, y: 0.79, z: 0}
-  rotationOffset: {x: 49.6, y: -54.13, z: 0}
+  positionOffset: {x: 0, y: 0.8, z: 0}
+  rotationOffset: {x: 0, y: 0, z: 0}
   debugSize: 0.1
   debugColor: {r: 1, g: 0.03949187, b: 0, a: 0.44705883}
 --- !u!1 &2025596237
@@ -1758,8 +1758,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: E
-  positionOffset: {x: 0, y: 0.79, z: 0}
-  rotationOffset: {x: 49.6, y: -54.13, z: 0}
+  positionOffset: {x: 0, y: 0.8, z: 0}
+  rotationOffset: {x: 0, y: 0, z: 0}
   debugSize: 0.1
   debugColor: {r: 1, g: 0, b: 0, a: 0.44705883}
 --- !u!114 &2034468356

@@ -1,4 +1,5 @@
 using System;
+using NaughtyAttributes;
 using Runtime.Player;
 using Runtime.Utility;
 using UnityEngine;
@@ -11,19 +12,34 @@ namespace Runtime.Interact {
         public UnityEvent<HandInteraction> onRelease;
         public UnityEvent<HandInteraction> onPour;
 
+        private HandInteraction[] _interactionsBuffer;
+        
         public void TryGrabInteract() {
-            HandInteraction interact = interactRay.TryFindInteraction(out HandInteraction interaction) ? interaction : null;
+            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction, _interactionsBuffer) 
+                ? interaction 
+                : null;
+            
             onGrab.Invoke(interact);
         }
 
         public void TryReleaseInteract() {
-            HandInteraction interact = interactRay.TryFindInteraction(out HandInteraction interaction) ? interaction : null;
+            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction, _interactionsBuffer) 
+                ? interaction 
+                : null;
+            
             onRelease.Invoke(interact);
         }
 
         public void TryPourInteract() {
-            HandInteraction interact = interactRay.TryFindInteraction(out HandInteraction interaction) ? interaction : null;
+            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction, _interactionsBuffer) 
+                ? interaction 
+                : null;
+            
             onPour.Invoke(interact);
+        }
+
+        private void Awake() {
+            _interactionsBuffer = new HandInteraction[5];
         }
     }
 }

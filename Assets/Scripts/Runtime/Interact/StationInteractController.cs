@@ -7,10 +7,10 @@ namespace Runtime.Interact {
         public InteractRay interactRay;
         
         private StationInteraction _currentInteraction;
-        private int _layerMask;
+        private StationInteraction[] _buffer;
 
         public void TryBeginInteract() {
-            if (interactRay.TryFindInteraction(out StationInteraction interaction, _layerMask)) {
+            if (interactRay.TryFindAnyInteraction(out StationInteraction interaction, _buffer)) {
                 _currentInteraction = interaction;
                 interaction.BeginInteraction();
             }
@@ -25,7 +25,7 @@ namespace Runtime.Interact {
         }
 
         private void Awake() {
-            _layerMask = 1 << LayerMask.NameToLayer("Station");
+            _buffer = new StationInteraction[5];
         }
     }
 }

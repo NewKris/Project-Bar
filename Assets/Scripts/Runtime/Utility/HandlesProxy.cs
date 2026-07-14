@@ -1,5 +1,4 @@
 ﻿using Runtime.Utility.Extensions;
-using UnityEditor;
 using UnityEngine;
 
 namespace Runtime.Utility {
@@ -239,7 +238,7 @@ namespace Runtime.Utility {
             Color color
         ) {
 #if UNITY_EDITOR
-            Handles.color = color;
+            UnityEditor.Handles.color = color;
             float startAngle = angle * -0.5f;
             float stepSize = angle / resolution;
 
@@ -250,11 +249,11 @@ namespace Runtime.Utility {
                 points[i] = position + q * forward * radius;
 
                 if (i == 0 || i == resolution) {
-                    Handles.DrawLine(position, points[i], thickness);
+                    UnityEditor.Handles.DrawLine(position, points[i], thickness);
                 }
                 
                 if (i > 0) {
-                    Handles.DrawLine(points[i - 1], points[i], thickness);
+                    UnityEditor.Handles.DrawLine(points[i - 1], points[i], thickness);
                 }
             }
 #endif
