@@ -11,8 +11,8 @@ namespace Runtime.Looking {
         public Vector3 positionOffset;
         public Vector3 rotationOffset;
 
-        [Foldout("Debug")] public float debugSize = 0.2f;
-        [Foldout("Debug")] public Color debugColor = Color.green;
+        [Foldout("Debug")] public float debugSize = 0.05f;
+        [Foldout("Debug")] public Color debugColor = new Color(0f, 1f, 0f, 0.2f);
         
         private PromptText _prompt;
         
