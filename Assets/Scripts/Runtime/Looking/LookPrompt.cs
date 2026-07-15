@@ -15,6 +15,9 @@ namespace Runtime.Looking {
         [Foldout("Debug")] public Color debugColor = Color.green;
         
         private PromptText _prompt;
+        
+        private Vector3 PromptPosition => transform.position + transform.TransformDirection(positionOffset);
+        private Quaternion PromptRotation => transform.rotation * Quaternion.Euler(rotationOffset);
 
         public void ShowPrompt() {
             _prompt.gameObject.SetActive(true);
@@ -26,11 +29,8 @@ namespace Runtime.Looking {
         
         private void Awake() {
             PromptCanvas canvas = FindAnyObjectByType<PromptCanvas>();
-            
-            Vector3 pos = transform.position + positionOffset;
-            Quaternion rot = transform.rotation * Quaternion.Euler(rotationOffset);
-            
-            _prompt = canvas.CreatePromptText(promptText, pos, rot);
+
+            _prompt = canvas.CreatePromptText(promptText, PromptPosition, PromptRotation);
             
             if (TryGetComponent(out LookObject lookObject)) {
                 lookObject.onBeginLook.AddListener(_prompt.HighlightPrompt);
@@ -39,9 +39,8 @@ namespace Runtime.Looking {
         }
 
         private void OnDrawGizmos() {
-            Vector3 pos = transform.position + positionOffset;
-            Vector3 forward = Quaternion.Euler(rotationOffset) * transform.forward;
-            HandlesProxy.DrawDisc(pos, forward, debugSize, false, debugColor);
+            Vector3 forward = PromptRotation * Vector3.forward;
+            HandlesProxy.DrawDisc(PromptPosition, forward, debugSize, false, debugColor);
         }
     }
 }

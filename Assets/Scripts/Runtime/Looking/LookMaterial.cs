@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Runtime.Looking {
     [RequireComponent(typeof(LookObject))]
-    public class LookDebug : MonoBehaviour {
+    public class LookMaterial : MonoBehaviour {
         public Material offMaterial;
         public Material onMaterial;
         public MeshRenderer[] affectedRenderers;
