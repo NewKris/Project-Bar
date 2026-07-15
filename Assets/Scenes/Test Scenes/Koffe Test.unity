@@ -1585,7 +1585,7 @@ MonoBehaviour:
   promptText: E
   positionOffset: {x: 0, y: 0.8, z: 0}
   rotationOffset: {x: 0, y: 0, z: 0}
-  debugSize: 0.1
+  debugSize: 0.05
   debugColor: {r: 0.24781048, g: 1, b: 0, a: 0.5019608}
 --- !u!1 &2025596237
 GameObject:
@@ -1768,7 +1768,7 @@ MonoBehaviour:
   promptText: E
   positionOffset: {x: 0, y: 0.8, z: 0}
   rotationOffset: {x: 0, y: 0, z: 0}
-  debugSize: 0.1
+  debugSize: 0.05
   debugColor: {r: 0.24781048, g: 1, b: 0, a: 0.5019608}
 --- !u!114 &2034468356
 MonoBehaviour:

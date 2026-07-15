@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptColor: {r: 0.24781048, g: 1, b: 0, a: 0.5019608}
+  promptSize: 0.05
