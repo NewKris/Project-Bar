@@ -2,10 +2,13 @@
 using UnityEngine;
 
 namespace Runtime.Looking {
-    [RequireComponent(typeof(LookObject), typeof(BoxCollider))]
+    [RequireComponent(typeof(LookObject))]
     public class PromptArea : MonoBehaviour {
         private void Reset() {
-            GetComponent<BoxCollider>().isTrigger = true;
+            if (!TryGetComponent(out Collider _)) {
+                BoxCollider col = gameObject.AddComponent<BoxCollider>();
+                col.isTrigger = true;
+            }
         }
 
         private void Start() {
