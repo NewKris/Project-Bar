@@ -4,14 +4,20 @@ using FMOD.Studio;
 using FMODUnity;
 using Runtime.Utility;
 using UnityEngine;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Runtime.Audio {
     public class MusicManager : MonoBehaviour {
         private static MusicManager Instance;
-        private static EventReference CurrentMusic;
+        private static EventInstance CurrentMusic;
 
         public static void PlayMusic(EventReference music) {
-            
+            if (CurrentMusic.isValid()) {
+                CurrentMusic.stop(STOP_MODE.ALLOWFADEOUT);
+            }
+
+            CurrentMusic = RuntimeManager.CreateInstance(music);
+            CurrentMusic.start();
         }
 
         private void Awake() {
@@ -21,7 +27,9 @@ namespace Runtime.Audio {
         }
 
         private void OnDestroy() {
-            Singleton.SetSingleton(ref Instance, this);
+            if (Singleton.SetSingleton(ref Instance, this) && CurrentMusic.isValid()) {
+                CurrentMusic.stop(STOP_MODE.IMMEDIATE);
+            }
         }
     }
 }
