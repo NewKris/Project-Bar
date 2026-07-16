@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
-  m_Name: Kund 6
+  m_Name: Kund mint
   m_EditorClassIdentifier: 
-  customerName: 'k5: frozen daiquiri'
+  customerName: 'k4: blow my (flaming) skull'
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
   - {fileID: 11400000, guid: a694c3bacecd1e74c8f970b32cd554ec, type: 2}
-  - {fileID: 11400000, guid: 6aa51b26ac345fc44b909702820c0d6f, type: 2}
-  timePenaltyRepeatOrder: 0.5
+  - {fileID: 11400000, guid: 00d2c5154ee41e34497f1e62105eef55, type: 2}
+  timePenaltyRepeatOrder: 10
   patienceTimer: 60
   patienceTickTime: 30
   satisfactionSuccess: 10

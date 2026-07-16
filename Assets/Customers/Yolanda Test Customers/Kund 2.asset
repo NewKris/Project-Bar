@@ -12,28 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
   m_Name: Kund 2
   m_EditorClassIdentifier: 
-  customerName: 'k2: rum i whiskey'
+  customerName: 'k2: cuba libre alt lime'
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
-  - {fileID: 11400000, guid: 6aa51b26ac345fc44b909702820c0d6f, type: 2}
-  - {fileID: 11400000, guid: debf73305086a6e4c9451b6d42a137eb, type: 2}
-  timePenaltyRepeatOrder: 0.7
+  - {fileID: 11400000, guid: 891292d9444f7f24babfcf215ad3b597, type: 2}
+  - {fileID: 11400000, guid: b31c23e538f0640489f5a9abff408355, type: 2}
+  timePenaltyRepeatOrder: 10
   patienceTimer: 60
   patienceTickTime: 30
-  satisfactionSuccess: 27
-  satisfactionFailure: 17
-  satisfactionMissedOrder: 17
-  satisfactionRepeatOrder: 7
+  satisfactionSuccess: 10
+  satisfactionFailure: 5
+  satisfactionMissedOrder: 7
+  satisfactionRepeatOrder: 2
   satisfactionKickedOut: 0
-  attentionDialogue: Soon may the wellerman come
-  orderDialogue: "Fifteen men on the dead man's chest\u2014 Yo ho ho and a bottle
-    of rom!"
-  repeatOrderDialogue: "Drink and the devil had done for the rest\u2014 Yo ho ho
-    and a bottle of rom!"
-  successDialogue: What would you do with a drunken sailor!
-  failureDialogue: She's called the Flying Dutchman and it's rage that fills her
-    sails.
-  patienceTimerTickDialogue: Turn that ship around me boys
-  patienceTimeOutDialogue: Farewell and adieu to you spanish ladies.
-  kickedOutDialogue: Couldn't handle this many customers at once huh?
+  attentionDialogue: Hey! Yeah, you.
+  orderDialogue: Cuba Libre, dude. Maybe on the rocks.
+  repeatOrderDialogue: Cuba. Libre. Freedom!
+  successDialogue: Yes, capitalism babyyy!
+  failureDialogue: You prefer communism, huh?
+  patienceTimerTickDialogue: Are you running on socialist time? Sheesh.
+  patienceTimeOutDialogue: Yeah, no.
+  kickedOutDialogue: Yeah, you definitely suck.

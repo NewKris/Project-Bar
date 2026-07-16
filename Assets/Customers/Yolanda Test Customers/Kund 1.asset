@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
   m_Name: Kund 1
   m_EditorClassIdentifier: 
-  customerName: "k1: \xF6l i vinglas"
+  customerName: "k1: \xF6l el gallop"
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
-  - {fileID: 11400000, guid: 2f22008f9336cc4429e4ffe953e005c8, type: 2}
-  - {fileID: 11400000, guid: a694c3bacecd1e74c8f970b32cd554ec, type: 2}
   - {fileID: 11400000, guid: d38be3ad6fb3b3041b0ff9050b8c9dc8, type: 2}
-  - {fileID: 11400000, guid: 6aa51b26ac345fc44b909702820c0d6f, type: 2}
+  - {fileID: 11400000, guid: d31a95397ed7b8348898f55f0eb6410a, type: 2}
   timePenaltyRepeatOrder: 5
   patienceTimer: 60
   patienceTickTime: 30
@@ -28,11 +26,11 @@ MonoBehaviour:
   satisfactionMissedOrder: 7
   satisfactionRepeatOrder: 2
   satisfactionKickedOut: 0
-  attentionDialogue: Aargh!
-  orderDialogue: Beeer!
-  repeatOrderDialogue: Beeeeeeeeer!
-  successDialogue: Beer :)
-  failureDialogue: Grrrrrrrrrraah!
-  patienceTimerTickDialogue: Argh!!
-  patienceTimeOutDialogue: Argj Graaaaaaaah!
-  kickedOutDialogue: Couldn't handle this many customers at once huh?
+  attentionDialogue: Sup, mate?
+  orderDialogue: Beer, please.
+  repeatOrderDialogue: 'I said: a beer.'
+  successDialogue: Mmm, hits the spot!
+  failureDialogue: How can you mess up a beer, man?
+  patienceTimerTickDialogue: "I\u2019m waiting\u2026"
+  patienceTimeOutDialogue: Are we even in the same time zone?
+  kickedOutDialogue: "Oh, I don\u2019t want to deal with you. Bye."

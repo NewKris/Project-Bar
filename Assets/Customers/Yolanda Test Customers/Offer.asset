@@ -18,8 +18,7 @@ MonoBehaviour:
   acceptableDrinks:
   - {fileID: 11400000, guid: d197fa3eba28b444c8c1ed15ce37775f, type: 2}
   - {fileID: 11400000, guid: 739808914d1ffe747bfc1b9bee3d70b9, type: 2}
-  - {fileID: 11400000, guid: 6aa51b26ac345fc44b909702820c0d6f, type: 2}
-  timePenaltyRepeatOrder: 4
+  timePenaltyRepeatOrder: 10
   patienceTimer: 40
   patienceTickTime: 20
   satisfactionSuccess: 10
@@ -27,13 +26,11 @@ MonoBehaviour:
   satisfactionMissedOrder: 7
   satisfactionRepeatOrder: 2
   satisfactionKickedOut: 0
-  attentionDialogue: What's up?!
-  orderDialogue: It's been a tough day so I could use a pick me up.  vodka, either
-    plain or on the rocks. It don' matter to me.
-  repeatOrderDialogue: A vodka. You really should pay more attention.
-  successDialogue: Thank you! This is exactly what I needed.
-  failureDialogue: You okay buddy?
-  patienceTimerTickDialogue: Hey just because I've had a tough day doesn't mean I
-    can wait all night.
-  patienceTimeOutDialogue: And the day just keeps getting worse...
-  kickedOutDialogue: Couldn't handle this many customers at once huh?
+  attentionDialogue: Why, hello there.
+  orderDialogue: Vodka on the rocks.
+  repeatOrderDialogue: Vodka with ice in it.
+  successDialogue: Perfectly clear.
+  failureDialogue: "This\u2026 does not taste right."
+  patienceTimerTickDialogue: "Still here\u2026"
+  patienceTimeOutDialogue: "I\u2019ll try the next bar over."
+  kickedOutDialogue: Some people crumble under the pressure.
