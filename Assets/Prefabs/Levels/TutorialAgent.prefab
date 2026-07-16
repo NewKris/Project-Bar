@@ -101,7 +101,6 @@ GameObject:
   - component: {fileID: 6672725777763676241}
   - component: {fileID: 7774962364505540768}
   - component: {fileID: 8051146127654132906}
-  - component: {fileID: 1646419751155653338}
   - component: {fileID: 5973511632322931311}
   m_Layer: 0
   m_Name: TutorialAgent
@@ -178,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4eb5077e84448c8e138ca3419bbda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialFinishedPort: {fileID: 0}
+  tutorialFinishedPort: {fileID: 11400000, guid: 19877315dd5d58549b50d6b583224655, type: 2}
   exitPosition: {x: 0, y: 0, z: 11.66}
   tutorialSteps:
   - stepStartedDialogue: "Tjabba! Klicka p\xE5 mig vet jag!"
@@ -201,7 +200,7 @@ MonoBehaviour:
     wrongDrinkDialogue: 
     objectsToHighlight:
       Array: []
-  tutorialCompletedDialogue: 
+  tutorialCompletedDialogue: Bye!
 --- !u!114 &7774962364505540768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,18 +216,6 @@ MonoBehaviour:
   dialogueDisplay: {fileID: 7230968431717910778}
   dialoguePopUpTimer: 5
 --- !u!114 &8051146127654132906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8465399020216961972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014d48b08b2f4bce82481d141600f4e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1646419751155653338
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
