@@ -20,3 +20,6 @@ MonoBehaviour:
     scenes:
     - GameplayScene
     - OutdoorsScene
+  - buttonText: yoltest
+    scenes:
+    - YolandaTest
