@@ -19,9 +19,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2f22008f9336cc4429e4ffe953e005c8, type: 2}
   - {fileID: 11400000, guid: a694c3bacecd1e74c8f970b32cd554ec, type: 2}
   - {fileID: 11400000, guid: d38be3ad6fb3b3041b0ff9050b8c9dc8, type: 2}
+  - {fileID: 11400000, guid: 6aa51b26ac345fc44b909702820c0d6f, type: 2}
   timePenaltyRepeatOrder: 5
-  patienceTimer: 20
-  patienceTickTime: 10
+  patienceTimer: 60
+  patienceTickTime: 30
   satisfactionSuccess: 10
   satisfactionFailure: 5
   satisfactionMissedOrder: 7

@@ -18,9 +18,10 @@ MonoBehaviour:
   acceptableDrinks:
   - {fileID: 11400000, guid: d197fa3eba28b444c8c1ed15ce37775f, type: 2}
   - {fileID: 11400000, guid: 739808914d1ffe747bfc1b9bee3d70b9, type: 2}
+  - {fileID: 11400000, guid: 6aa51b26ac345fc44b909702820c0d6f, type: 2}
   timePenaltyRepeatOrder: 4
   patienceTimer: 40
-  patienceTickTime: 25
+  patienceTickTime: 20
   satisfactionSuccess: 10
   satisfactionFailure: 5
   satisfactionMissedOrder: 7
