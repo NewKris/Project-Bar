@@ -21,6 +21,10 @@ namespace Runtime.Satisfaction
         private bool _targetUnlocked = false;
         private bool[] _availableCustomers;
 
+        public int CurrentSatisfaction => currentSatisfaction;
+        public int TargetSatisfaction => currentLevel.targetSatisfaction;
+        public bool TargetCanSpaw => _targetUnlocked;
+        
         private void OnEnable()
         {
             satisfactionPort.OnSatisfactionChange += HandleSatisfactionChange;

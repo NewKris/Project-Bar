@@ -36,6 +36,8 @@ namespace Runtime.Customers
         private HashSet<CustomerData> _servedCustomers = new HashSet<CustomerData>();
         private CustomerData _lastCustomer = null;
 
+        public float TargetSpawnChance => _targetSpawnChance;
+
         private void OnEnable()
         {
             _customersToUnlockOnTutorialFinished = new bool[customerSlots.Length];
