@@ -11,16 +11,18 @@ namespace Runtime.Configuration {
         private const string FILE_PATH = "/Config/config";
 
         public float patienceMultiplier = 1;
+        public bool verboseLogging = false;
         
         public static async Task Load() {
             if (FileManager.FileExists(FILE_PATH)) {
                 instance = await FileManager.DeserializeFile<Config>(FILE_PATH);
+                
             }
             else {
                 instance = new Config();
-                await FileManager.SerializeFile(instance, FILE_PATH);
             }
-            
+
+            await FileManager.SerializeFile(instance, FILE_PATH);
         }
     }
 }

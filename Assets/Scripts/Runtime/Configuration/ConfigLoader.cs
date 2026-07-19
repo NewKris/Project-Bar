@@ -6,6 +6,8 @@ using UnityEngine;
 
 namespace Runtime.Configuration {
     public class ConfigLoader : MonoBehaviour {
+        public static event Action<Config> OnConfigLoaded;
+        
         private static ConfigLoader Instance;
         
         private void Awake() {
@@ -23,6 +25,8 @@ namespace Runtime.Configuration {
             while (!task.IsCompleted) {
                 yield return null;
             }
+            
+            OnConfigLoaded?.Invoke(Config.instance);
         }
     }
 }

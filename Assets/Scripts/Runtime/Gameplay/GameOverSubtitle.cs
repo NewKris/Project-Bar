@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Runtime {
+namespace Runtime.Gameplay {
     public class GameOverSubtitle : MonoBehaviour {
         public static GameOverReason reason;
 

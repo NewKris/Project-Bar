@@ -5,10 +5,10 @@ using Runtime.Items;
 using UnityEngine;
 
 namespace Runtime.Stations {
-    public abstract class Station<T> : MonoBehaviour where T : DrinkObject {
+    public abstract class Station : MonoBehaviour {
         [Foldout("References")] public ItemDock itemDock;
 
-        protected T currentItem;
+        protected DrinkObject currentItem;
         protected int stationKey;
         
         public abstract void StartStation();
@@ -24,7 +24,11 @@ namespace Runtime.Stations {
                 }
             }
         }
-        
+
+        private void Reset() {
+            gameObject.layer = LayerMask.NameToLayer("Station");
+        }
+
         private void Awake() {
             enabled = false;
             stationKey = gameObject.GetInstanceID();

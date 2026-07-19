@@ -11,28 +11,17 @@ namespace Runtime.Interact {
 
         private RaycastHit[] _hitBuffer;
         
-        public bool TryFindInteraction<T>(out T interactables) where T: MonoBehaviour {
-            return TryFindInteraction(out interactables, defaultMask);
+        public bool TryFindInteraction<T>(out T interactable) where T: MonoBehaviour {
+            return TryFindInteraction(out interactable, defaultMask);
         }
         
-        public bool TryFindInteraction<T>(out T interactables, int layerMask) where T: MonoBehaviour {
+        public bool TryFindInteraction<T>(out T interactable, LayerMask mask) where T : MonoBehaviour {
+            interactable = null;
+
             Ray ray =  new Ray(transform.position, transform.forward);
-            bool hit =  Physics.Raycast(ray, out RaycastHit hitInfo, interactDistance, layerMask);
+            Physics.Raycast(ray, out RaycastHit hitInfo, interactDistance, mask);
 
-            if (!hit) {
-                interactables = null;
-                return false;
-            }
-            
-            hitInfo.collider.TryGetComponent(out interactables);
-            return interactables != null;
-        }
-
-        public bool TryFindAnyInteraction<T>(out T interactables) where T : MonoBehaviour {
-            Ray ray =  new Ray(transform.position, transform.forward);
-            Physics.Raycast(ray, out RaycastHit hitInfo, interactDistance, defaultMask);
-
-            return hitInfo.collider.TryGetComponent(out interactables);
+            return hitInfo.collider?.TryGetComponent(out interactable) ?? false;
         }
         
         public int TryFindAllInteractions<T>(T[] interactables) where T: MonoBehaviour {

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Linq;
-using Runtime.Customers;
+﻿using Runtime.Customers;
 using Runtime.Drink;
 using Runtime.Player;
 using Runtime.Satisfaction;
-using Runtime.Utility;
 using UnityEngine;
 
-namespace Runtime {
+namespace Runtime.Gameplay {
     public class DebugUi : MonoBehaviour {
         private SatisfactionManager _satisfactionManager;
         private PlayerHand _playerHand;

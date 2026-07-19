@@ -15,7 +15,7 @@ namespace Runtime.Stations {
         public Ingredient endState;
     }
     
-    public class ConverterStation : Station<DrinkObject> {
+    public class ConverterStation : Station {
         public float  middleStateDuration;
         public float  endStateDuration;
         [Foldout("References")] public RumbleAnimation rumble;

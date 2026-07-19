@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Runtime.Configuration;
 using Runtime.Customers;
 using Runtime.Satisfaction;
 using Runtime.Scene_Handling;
+using Runtime.Utility;
 using UnityEngine;
 
-namespace Runtime {
+namespace Runtime.Gameplay {
     public enum GameOverReason {
         None,
         Satisfaction,
@@ -19,11 +20,15 @@ namespace Runtime {
         private void Awake() {
             satisfactionEvents.OnGameOver += SatisfactionGameOver;
             customerEventPort.OnCustomerDied += EvaluateAssassination;
+            ConfigLoader.OnConfigLoaded += SetLoggingLevel;
+            
+            SetLoggingLevel(Config.instance);
         }
 
         private void OnDestroy() {
             satisfactionEvents.OnGameOver -= SatisfactionGameOver;
             customerEventPort.OnCustomerDied -= EvaluateAssassination;
+            ConfigLoader.OnConfigLoaded -= SetLoggingLevel;
         }
 
         private void SatisfactionGameOver() {
@@ -53,6 +58,10 @@ namespace Runtime {
             }
             
             GUILayout.EndArea();
+        }
+
+        private void SetLoggingLevel(Config config) {
+            VerboseDebug.enableVerboseLogging = config.verboseLogging;
         }
     }
 }

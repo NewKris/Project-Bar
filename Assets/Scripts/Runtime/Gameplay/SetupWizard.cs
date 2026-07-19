@@ -1,8 +1,10 @@
 ﻿using NaughtyAttributes;
+using Runtime.Interact;
 using Runtime.Looking;
+using Runtime.Stations;
 using UnityEngine;
 
-namespace Runtime {
+namespace Runtime.Gameplay {
     public class SetupWizard : MonoBehaviour {
         public Color promptColor;
         public float promptSize;
@@ -18,6 +20,13 @@ namespace Runtime {
         public void ResetPromptDebugSize() {
             foreach (LookPrompt prompt in FindObjectsByType<LookPrompt>(FindObjectsInactive.Include, FindObjectsSortMode.None)) {
                 prompt.debugSize  = promptSize;
+            }
+        }
+
+        [Button]
+        public void SetAllStationLayers() {
+            foreach (Station station in FindObjectsByType<Station>(FindObjectsInactive.Include, FindObjectsSortMode.None)) {
+                station.gameObject.layer = LayerMask.NameToLayer("Station");
             }
         }
     }

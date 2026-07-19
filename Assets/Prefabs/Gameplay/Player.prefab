@@ -526,6 +526,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRay: {fileID: 4792878758102882743}
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &4792878758102882743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,7 +544,7 @@ MonoBehaviour:
   interactDistance: 5
   defaultMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1015
   bufferSize: 5
 --- !u!114 &1498840524606664506
 MonoBehaviour:

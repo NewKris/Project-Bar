@@ -13,27 +13,31 @@ namespace Runtime.Interact {
         public UnityEvent<HandInteraction> onPour;
 
         public void TryGrabInteract() {
-            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction) 
+            HandInteraction interact = interactRay.TryFindInteraction(out HandInteraction interaction) 
                 ? interaction 
                 : null;
             
-            Debug.Log(interact?.gameObject.name ?? "No interaction");
+            VerboseDebug.Log($"Grabbed on: {interact?.gameObject.name ?? "Nothing"}");
             
             onGrab.Invoke(interact);
         }
 
         public void TryReleaseInteract() {
-            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction) 
+            HandInteraction interact = interactRay.TryFindInteraction(out HandInteraction interaction) 
                 ? interaction 
                 : null;
+            
+            VerboseDebug.Log($"Released on: {interact?.gameObject.name ?? "Nothing"}");
             
             onRelease.Invoke(interact);
         }
 
         public void TryPourInteract() {
-            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction) 
+            HandInteraction interact = interactRay.TryFindInteraction(out HandInteraction interaction) 
                 ? interaction 
                 : null;
+            
+            VerboseDebug.Log($"Poured on: {interact?.gameObject.name ?? "Nothing"}");
             
             onPour.Invoke(interact);
         }

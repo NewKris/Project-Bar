@@ -1,4 +1,4 @@
-namespace Runtime
+namespace Runtime.Gameplay
 {
     public sealed class GameModifiers
     {

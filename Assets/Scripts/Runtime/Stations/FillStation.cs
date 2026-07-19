@@ -4,7 +4,7 @@ using Runtime.Drink;
 using UnityEngine;
 
 namespace Runtime.Stations {
-    public class FillStation : Station<DrinkObject> {
+    public class FillStation : Station {
         public Ingredient ingredient;
         public float fillDuration;
         [Foldout("References")] public RumbleAnimation rumble;
