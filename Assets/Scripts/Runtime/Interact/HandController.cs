@@ -12,18 +12,18 @@ namespace Runtime.Interact {
         public UnityEvent<HandInteraction> onRelease;
         public UnityEvent<HandInteraction> onPour;
 
-        private HandInteraction[] _interactionsBuffer;
-        
         public void TryGrabInteract() {
-            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction, _interactionsBuffer) 
+            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction) 
                 ? interaction 
                 : null;
+            
+            Debug.Log(interact?.gameObject.name ?? "No interaction");
             
             onGrab.Invoke(interact);
         }
 
         public void TryReleaseInteract() {
-            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction, _interactionsBuffer) 
+            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction) 
                 ? interaction 
                 : null;
             
@@ -31,15 +31,11 @@ namespace Runtime.Interact {
         }
 
         public void TryPourInteract() {
-            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction, _interactionsBuffer) 
+            HandInteraction interact = interactRay.TryFindAnyInteraction(out HandInteraction interaction) 
                 ? interaction 
                 : null;
             
             onPour.Invoke(interact);
-        }
-
-        private void Awake() {
-            _interactionsBuffer = new HandInteraction[5];
         }
     }
 }

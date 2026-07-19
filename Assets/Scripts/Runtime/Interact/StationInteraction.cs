@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 
 namespace Runtime.Interact {
-    public class StationInteraction : MonoBehaviour {
+    public class StationInteraction : MonoBehaviour, IInteraction {
         public UnityEvent onBeginInteraction;
         public UnityEvent onEndInteraction;
         

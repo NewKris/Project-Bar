@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4792878758102882743, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: defaultMask.m_Bits
+      value: 1015
+      objectReference: {fileID: 0}
     - target: {fileID: 5365584187497957331, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.223

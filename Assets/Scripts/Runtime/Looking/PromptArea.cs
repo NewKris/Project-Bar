@@ -1,4 +1,5 @@
 ﻿using System;
+using Runtime.Interact;
 using UnityEngine;
 
 namespace Runtime.Looking {
@@ -16,6 +17,8 @@ namespace Runtime.Looking {
                 lookObject.onBeginLook.AddListener(EnableAllPrompts);
                 lookObject.onEndLook.AddListener(DisableAllPrompts);
             }
+            
+            TryAssignLayer();
         }
 
         private void EnableAllPrompts() {
@@ -27,6 +30,12 @@ namespace Runtime.Looking {
         private void DisableAllPrompts() {
             foreach (LookPrompt prompt in GetComponentsInChildren<LookPrompt>(true)) {
                 prompt.HidePrompt();
+            }
+        }
+
+        private void TryAssignLayer() {
+            if (!TryGetComponent(out IInteraction _)) {
+                gameObject.layer = LayerMask.NameToLayer("Ignore Interactions");
             }
         }
     }

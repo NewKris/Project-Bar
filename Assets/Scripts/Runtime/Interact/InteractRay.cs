@@ -28,10 +28,11 @@ namespace Runtime.Interact {
             return interactables != null;
         }
 
-        public bool TryFindAnyInteraction<T>(out T interactables, T[] buffer) where T : MonoBehaviour {
-            int interactCount = TryFindAllInteractions(buffer);
-            interactables = buffer[0];
-            return interactCount > 0;
+        public bool TryFindAnyInteraction<T>(out T interactables) where T : MonoBehaviour {
+            Ray ray =  new Ray(transform.position, transform.forward);
+            Physics.Raycast(ray, out RaycastHit hitInfo, interactDistance, defaultMask);
+
+            return hitInfo.collider.TryGetComponent(out interactables);
         }
         
         public int TryFindAllInteractions<T>(T[] interactables) where T: MonoBehaviour {
