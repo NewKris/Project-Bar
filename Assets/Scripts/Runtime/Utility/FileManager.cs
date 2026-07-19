@@ -21,7 +21,7 @@ namespace Runtime.Utility {
             string absolutePath = CreateAbsolutePath(directory);
             
             Directory.CreateDirectory(absolutePath);
-            Debug.Log("Created directory: " + absolutePath);
+            VerboseDebug.Log("Created directory: " + absolutePath);
             
             UpdateFileSystem();
         }
@@ -32,33 +32,33 @@ namespace Runtime.Utility {
         
         public static async Task SerializeFile<T>(T data, string localPath) {
             string absolutePath = CreateAbsolutePath(localPath) + FILE_TYPE;
-            Debug.Log("Serializing: " + absolutePath);
+            VerboseDebug.Log("Serializing: " + absolutePath);
             
             Directory.CreateDirectory(Path.GetDirectoryName(absolutePath) ?? "");
             string json = JsonUtility.ToJson(data, true);
             await File.WriteAllTextAsync(absolutePath, json);
             UpdateFileSystem();
             
-            Debug.Log("File saved: " + absolutePath);
+            VerboseDebug.Log("File saved: " + absolutePath);
         }
 
         public static async Task<T> DeserializeFile<T>(string localPath) {
             string absolutePath = CreateAbsolutePath(localPath) + FILE_TYPE;
-            Debug.Log("Deserializing: " + absolutePath);
+            VerboseDebug.Log("Deserializing: " + absolutePath);
 
             if (!File.Exists(absolutePath)) {
                 return JsonUtility.FromJson<T>("");
             }
             
             string json = await File.ReadAllTextAsync(absolutePath);
-            Debug.Log("File Loaded: " + absolutePath);
+            VerboseDebug.Log("File Loaded: " + absolutePath);
             
             return JsonUtility.FromJson<T>(json);
         }
 
         public static void DeleteFile(string localPath) {
             string absolutePath = CreateAbsolutePath(localPath) + FILE_TYPE;
-            Debug.Log("Deleting: " + absolutePath);
+            VerboseDebug.Log("Deleting: " + absolutePath);
             
             if (File.Exists(absolutePath)) {
                 File.Delete(absolutePath);
