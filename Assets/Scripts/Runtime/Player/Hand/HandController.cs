@@ -1,11 +1,9 @@
-using System;
-using NaughtyAttributes;
-using Runtime.Player;
+using Runtime.Interact;
 using Runtime.Utility;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Runtime.Interact {
+namespace Runtime.Player.Hand {
     public class HandController : MonoBehaviour {
         public InteractRay interactRay;
         public UnityEvent<HandInteraction> onGrab;

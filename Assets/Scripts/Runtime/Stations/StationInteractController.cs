@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Runtime.Interact;
 using Runtime.Utility;
 using UnityEngine;
 
-namespace Runtime.Interact {
+namespace Runtime.Stations {
     public class StationInteractController : MonoBehaviour {
         public InteractRay interactRay;
         public LayerMask interactMask;

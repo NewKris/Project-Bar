@@ -1,15 +1,12 @@
-﻿using System;
-using Runtime.Animations;
+﻿using Runtime.Animations;
 using Runtime.Customers;
 using Runtime.Drink;
 using Runtime.Highlighting;
-using Runtime.Interact;
 using Runtime.Items;
 using Runtime.Satisfaction;
-using Runtime.Stations;
 using UnityEngine;
 
-namespace Runtime.Player {
+namespace Runtime.Player.Hand {
     public class PlayerHand : MonoBehaviour {
         public int pourPenalty;
         

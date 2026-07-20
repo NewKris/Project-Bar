@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Runtime.Interact;
+using UnityEngine;
 using UnityEngine.Events;
 
-namespace Runtime.Interact {
+namespace Runtime.Stations {
     public class StationInteraction : MonoBehaviour, IInteraction {
         public UnityEvent onBeginInteraction;
         public UnityEvent onEndInteraction;

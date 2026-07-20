@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Runtime.Interact;
 using UnityEngine;
 
-namespace Runtime.Interact {
+namespace Runtime.Player.Hand {
     public class HandInteraction : MonoBehaviour, IInteraction { }
 }
