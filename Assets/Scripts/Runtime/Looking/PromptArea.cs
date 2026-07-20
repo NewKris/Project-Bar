@@ -21,6 +21,13 @@ namespace Runtime.Looking {
             TryAssignLayer();
         }
 
+        private void OnDestroy() {
+            if (TryGetComponent(out LookObject lookObject)) {
+                lookObject.onBeginLook.RemoveListener(EnableAllPrompts);
+                lookObject.onEndLook.RemoveListener(DisableAllPrompts);
+            }
+        }
+
         private void EnableAllPrompts() {
             foreach (LookPrompt prompt in GetComponentsInChildren<LookPrompt>(true)) {
                 prompt.ShowPrompt();
