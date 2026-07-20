@@ -560,6 +560,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRay: {fileID: 4792878758102882743}
   bufferSize: 5
+  lookLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &6067592385918225850
 GameObject:
   m_ObjectHideFlags: 0

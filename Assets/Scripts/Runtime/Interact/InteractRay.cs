@@ -28,7 +28,7 @@ namespace Runtime.Interact {
             return TryFindAllInteractions(interactables, defaultMask);
         }
         
-        public int TryFindAllInteractions<T>(T[] interactables, int layerMask) where T: MonoBehaviour {
+        public int TryFindAllInteractions<T>(T[] interactables, LayerMask layerMask) where T: MonoBehaviour {
             Ray ray =  new Ray(transform.position, transform.forward);
             int hitCount =  Physics.RaycastNonAlloc(ray, _hitBuffer, interactDistance, layerMask);
 

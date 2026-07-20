@@ -6,6 +6,7 @@ namespace Runtime.Looking {
     public class LookController : MonoBehaviour {
         public InteractRay interactRay;
         public int bufferSize = 5;
+        public LayerMask lookLayer;
 
         private LookObject[] _objectBuffer;
 
@@ -16,7 +17,7 @@ namespace Runtime.Looking {
         }
 
         private void Update() {
-            int hitCount = interactRay.TryFindAllInteractions(_objectBuffer);
+            int hitCount = interactRay.TryFindAllInteractions(_objectBuffer, lookLayer);
             for (int i = 0; i < hitCount; i++) {
                 _objectBuffer[i].LookAt();
             }
