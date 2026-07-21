@@ -4,12 +4,14 @@ using System.Linq;
 using Runtime.Drink;
 using Runtime.Highlighting;
 using Runtime.Interact;
+using Runtime.Player.Hand;
 using UnityEngine;
 
 namespace Runtime.Customers.Tutorial_Agent {
     [RequireComponent(typeof(CustomerBase))]
     [RequireComponent(typeof(TutorialDialogueRunner))]
     [RequireComponent(typeof(Highlightable))]
+    [RequireComponent(typeof(HandInteraction))]
     public class TutorialAgent : MonoBehaviour {
         [SerializeField] private CustomerEventPort tutorialFinishedPort;
         [SerializeField] private Vector3 exitPosition;
@@ -68,6 +70,7 @@ namespace Runtime.Customers.Tutorial_Agent {
             }
 
             if (CurrentStep.progressType == TutorialProgressType.ClickObjects) {
+                _objectsClicked = new HashSet<Highlightable>();
                 foreach (Highlightable obj in CurrentStep.objectsToHighlight.Array) {
                     obj.TutorialHighlight();
                     obj.onClicked += () => {
