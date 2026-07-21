@@ -1,4 +1,5 @@
 using System;
+using Runtime.Audio;
 using Runtime.Satisfaction;
 using UnityEngine;
 
@@ -6,11 +7,13 @@ namespace Runtime.Items {
     public class ItemPickup : MonoBehaviour {
         public int dropPenalty;
         public SatisfactionPort satisfactionPort;
+        public ItemAudio itemAudio;
         
         public event Action OnPinned;
 
         public void BreakItem() {
             satisfactionPort.DecreaseSatisfaction(dropPenalty);
+            SfxManager.PlayOneShot(itemAudio.breakAudio, transform.position);
             Despawn();
         }
 
