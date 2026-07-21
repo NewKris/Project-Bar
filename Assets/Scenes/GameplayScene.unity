@@ -412,6 +412,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: fbf4e05554abab74980664441e92eb9e, type: 2}
     - target: {fileID: 7722442215785127237, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: waitForTutorial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722442215785127237, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: 'availableCustomers.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 030aee5f59a580b428e898642cfe112c, type: 2}
