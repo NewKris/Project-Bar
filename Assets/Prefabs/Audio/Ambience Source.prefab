@@ -51,7 +51,7 @@ MonoBehaviour:
       Data2: 1303691740
       Data3: -395776339
       Data4: -1624514450
-    Path: event:/AMB/AMB
+    Path: event:/Sound/AMB/AMB
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2

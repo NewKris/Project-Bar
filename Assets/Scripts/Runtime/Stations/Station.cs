@@ -1,5 +1,6 @@
 ﻿using System;
 using NaughtyAttributes;
+using Runtime.Audio;
 using Runtime.Drink;
 using Runtime.Items;
 using UnityEngine;
@@ -7,6 +8,7 @@ using UnityEngine;
 namespace Runtime.Stations {
     public abstract class Station : MonoBehaviour {
         [Foldout("References")] public ItemDock itemDock;
+        [Foldout("References")] public StationAudio stationAudio;
 
         protected DrinkObject currentItem;
         protected int stationKey;

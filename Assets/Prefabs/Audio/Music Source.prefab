@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music:
     Guid:
-      Data1: 815252491
-      Data2: 1303691740
-      Data3: -395776339
-      Data4: -1624514450
-    Path: event:/AMB/AMB
+      Data1: 143461437
+      Data2: 1077980361
+      Data3: 485966469
+      Data4: 764010045
+    Path: event:/Music/Song 1
   playOnStart: 1
