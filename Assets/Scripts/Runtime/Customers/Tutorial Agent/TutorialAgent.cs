@@ -64,12 +64,12 @@ namespace Runtime.Customers.Tutorial_Agent {
             _timer = CurrentStep.reminderTimer;
 
             if (CurrentStep.progressType == TutorialProgressType.ClickAgent) {
-                _agentHighlightable.Highlight();
+                _agentHighlightable.TutorialHighlight();
             }
 
             if (CurrentStep.progressType == TutorialProgressType.ClickObjects) {
                 foreach (Highlightable obj in CurrentStep.objectsToHighlight.Array) {
-                    obj.Highlight();
+                    obj.TutorialHighlight();
                     obj.onClicked += () => {
                         HandleObjectClicked(obj);
                     };

@@ -1,19 +1,47 @@
-﻿using UnityEngine;
+﻿using NaughtyAttributes;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Runtime.Highlighting {
     public class Highlightable : MonoBehaviour {
-        private bool _highlighted = false;
+        private bool _tutorialClickable;
+        private bool _lookedAt;
         public UnityAction onClicked;
         
-        public void Highlight() {
-            _highlighted = true;
+        [SerializeField] private GameObject meshGameObject;
+
+        [SerializeField] [Layer] private int defaultLayer;
+        [SerializeField] [Layer] private int tutorialHighlightLayer;
+        [SerializeField] [Layer] private int lookHighlightLayer;
+        
+        private void UpdateState(bool tutorialClickable, bool lookedAt) {
+            _tutorialClickable = tutorialClickable;
+            _lookedAt = lookedAt;
+
+            if (_lookedAt) {
+                meshGameObject.layer = lookHighlightLayer;
+            } else if (_tutorialClickable) {
+                meshGameObject.layer = tutorialHighlightLayer;
+            }
+            else {
+                meshGameObject.layer = defaultLayer;
+            }
+        }
+
+        public void LookAtHighlight(bool lookedAt) {
+            Debug.Log("LookAtHighlight!");
+            UpdateState(_tutorialClickable, lookedAt);
+        }
+        
+        public void TutorialHighlight() {
+            Debug.Log("Tutorial Highlight");
+            UpdateState(true, _lookedAt);
         }
 
         public void Click() {
-            if (!_highlighted) return;
+            if (!_tutorialClickable) return;
             onClicked?.Invoke();
-            _highlighted = false;
+            UpdateState(false, _lookedAt);
         }
         
     }
