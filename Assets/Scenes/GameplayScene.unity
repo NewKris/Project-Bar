@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Killbox
       objectReference: {fileID: 0}
+    - target: {fileID: 5370626666926038765, guid: d864afe1814c3204fabef065b600e58b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -284,6 +288,26 @@ PrefabInstance:
     - target: {fileID: 2165381306993256821, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499851229979202358, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7932356
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499851229979202358, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499851229979202358, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6089148
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499851229979202358, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499851229979202358, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 75.022
       objectReference: {fileID: 0}
     - target: {fileID: 5365584187497957331, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalPosition.x
