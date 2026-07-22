@@ -2,6 +2,7 @@
 using System.Linq;
 using NaughtyAttributes;
 using Runtime.Animations;
+using Runtime.Audio;
 using Runtime.Drink;
 using Runtime.Items;
 using Runtime.Utility.Extensions;
@@ -21,14 +22,18 @@ namespace Runtime.Stations {
         [Foldout("References")] public RumbleAnimation rumble;
         
         public Conversion[] conversions;
-        
+
         public override void StartStation() {
             StartStationTimer();
+
+            SfxManager.StartAudio(stationAudioKey, stationAudio);
         }
 
         public override void StopStation() {
             enabled = false;
             itemDock.HeldItem?.SetInteractable(true);
+            
+            SfxManager.StopAudio(stationAudioKey);
         }
 
         private void OnEnable() {

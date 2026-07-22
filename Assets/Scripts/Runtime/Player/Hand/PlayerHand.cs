@@ -114,8 +114,10 @@ namespace Runtime.Player.Hand {
             
             HeldItem = item;
             HeldItem.SetFrontRender(true);
-            item.SetInteractable(false);
-            item.Pin(itemPivot);
+            HeldItem.SetInteractable(false);
+            HeldItem.Pin(itemPivot);
+            HeldItem.PlayPickupSound();
+            
         }
 
         private void TryShakeDrink() {
