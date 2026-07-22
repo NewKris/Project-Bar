@@ -23,21 +23,17 @@ namespace Runtime.Stations {
         
         public Conversion[] conversions;
 
-        private string _loopAudioKey;
-        
         public override void StartStation() {
             StartStationTimer();
-            SfxManager.StartAudio(_loopAudioKey, stationAudio.activeLoop);
+
+            SfxManager.StartAudio(stationAudioKey, stationAudio);
         }
 
         public override void StopStation() {
             enabled = false;
             itemDock.HeldItem?.SetInteractable(true);
-            SfxManager.StopAudio(_loopAudioKey);
-        }
-
-        private void Start() {
-            _loopAudioKey = SfxManager.CreateUniqueKey(this, stationAudio.activeLoop);
+            
+            SfxManager.StopAudio(stationAudioKey);
         }
 
         private void OnEnable() {

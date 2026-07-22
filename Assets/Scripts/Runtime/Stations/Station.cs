@@ -1,4 +1,5 @@
 ﻿using System;
+using FMODUnity;
 using NaughtyAttributes;
 using Runtime.Audio;
 using Runtime.Drink;
@@ -8,10 +9,11 @@ using UnityEngine;
 namespace Runtime.Stations {
     public abstract class Station : MonoBehaviour {
         [Foldout("References")] public ItemDock itemDock;
-        [Foldout("References")] public StationAudio stationAudio;
+        public EventReference stationAudio;
 
         protected DrinkObject currentItem;
         protected int stationKey;
+        protected string stationAudioKey;
         
         public abstract void StartStation();
         public abstract void StopStation();
@@ -34,6 +36,8 @@ namespace Runtime.Stations {
         private void Awake() {
             enabled = false;
             stationKey = gameObject.GetInstanceID();
+
+            stationAudioKey = SfxManager.CreateUniqueKey(this, stationAudio);
         }
         
         protected virtual void Update() {

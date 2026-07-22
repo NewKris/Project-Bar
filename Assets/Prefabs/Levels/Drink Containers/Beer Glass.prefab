@@ -74,6 +74,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropPenalty: 5
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
+  pickUpAudio:
+    Guid:
+      Data1: -587870909
+      Data2: 1318527939
+      Data3: -1627008332
+      Data4: 1123728037
+    Path: event:/Sound/Player/Picking-up glass
+  putDownAudio:
+    Guid:
+      Data1: -258185045
+      Data2: 1237321187
+      Data3: -1651398771
+      Data4: 1011838685
+    Path: event:/Sound/Player/Putting down glass
+  breakAudio:
+    Guid:
+      Data1: -1668651081
+      Data2: 1124821238
+      Data3: -1179025483
+      Data4: 515156706
+    Path: event:/Sound/Player/Glass Crash
 --- !u!114 &6000973712984336668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +124,13 @@ MonoBehaviour:
     drinkContainer: {fileID: 11400000, guid: 2a513089301673a4e96540c64bf1ad5f, type: 2}
     ingredients: []
     isDestroyed: 0
+  pourAudio:
+    Guid:
+      Data1: 206663481
+      Data2: 1122002480
+      Data3: 1065574306
+      Data4: -508254091
+    Path: event:/Sound/Player/Pouring liquid
 --- !u!54 &6998004882580571311
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,5 +1,7 @@
-﻿using NaughtyAttributes;
+﻿using System;
+using NaughtyAttributes;
 using Runtime.Animations;
+using Runtime.Audio;
 using Runtime.Drink;
 using UnityEngine;
 
@@ -15,14 +17,18 @@ namespace Runtime.Stations {
                 return;
             }
             
+            SfxManager.StartAudio(stationAudioKey, stationAudio);
+            
             StartStationTimer();
         }
         
         public override void StopStation() {
             enabled = false;
             itemDock.HeldItem?.SetInteractable(true);
+            
+            SfxManager.StopAudio(stationAudioKey);
         }
-        
+
         private void OnEnable() {
             rumble.Shaking = true;
         }

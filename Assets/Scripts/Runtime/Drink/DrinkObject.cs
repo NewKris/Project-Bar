@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using FMODUnity;
+using Runtime.Audio;
 using UnityEngine;
 
 namespace Runtime.Drink {
     public class DrinkObject : MonoBehaviour {
         public DrinkContents currentContents;
+        public EventReference pourAudio;
         
         protected float ShakeDuration { get; set; }
         private Dictionary<int, float> StationDurations { get; set; }
@@ -12,6 +15,10 @@ namespace Runtime.Drink {
         public bool HasContents => currentContents.ingredients.Count > 0;
         
         public void EmptyContents() {
+            if (currentContents.ContainsLiquid()) {
+                SfxManager.PlayOneShot(pourAudio);
+            }
+            
             currentContents.ingredients.Clear();
             currentContents.mixType = MixType.None;
             currentContents.isDestroyed = false;

@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using FMOD;
 using FMOD.Studio;
 using FMODUnity;
 using Runtime.Utility;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Runtime.Audio {
     public class SfxManager : MonoBehaviour {
-        private static Dictionary<string, EventInstance> ActiveAudio = new  Dictionary<string, EventInstance>();
+        private static readonly Dictionary<string, EventInstance> ActiveAudio = new  Dictionary<string, EventInstance>();
 
         public static string CreateUniqueKey(MonoBehaviour instance, EventReference audio, int id = 0) {
             return instance.GetInstanceID() + audio.Path + id;
@@ -16,14 +18,20 @@ namespace Runtime.Audio {
         
         public static void StartAudio(string key, EventReference audio) {
             if (!ActiveAudio.ContainsKey(key)) {
-                ActiveAudio.Add(key, RuntimeManager.CreateInstance(audio));
-                ActiveAudio[key].start();
+                Debug.Log("Start");
+                EventInstance instance = RuntimeManager.CreateInstance(audio);
+                ActiveAudio.Add(key, instance);
+                
+                instance.start();
             }
         }
 
         public static void StopAudio(string key) {
             if (ActiveAudio.ContainsKey(key)) {
-                ActiveAudio[key].stop(STOP_MODE.ALLOWFADEOUT);
+                Debug.Log("Stop");
+                
+                ActiveAudio[key].stop(STOP_MODE.IMMEDIATE);
+                ActiveAudio[key].release();
                 ActiveAudio.Remove(key);
             }
         }

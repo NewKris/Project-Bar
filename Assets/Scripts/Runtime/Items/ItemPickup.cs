@@ -1,4 +1,6 @@
 using System;
+using FMODUnity;
+using NaughtyAttributes;
 using Runtime.Audio;
 using Runtime.Satisfaction;
 using UnityEngine;
@@ -7,13 +9,26 @@ namespace Runtime.Items {
     public class ItemPickup : MonoBehaviour {
         public int dropPenalty;
         public SatisfactionPort satisfactionPort;
-        public ItemAudio itemAudio;
+        
+        [Header("Audio")]
+        public EventReference pickUpAudio;
+        public EventReference putDownAudio;
+        public EventReference breakAudio;
         
         public event Action OnPinned;
 
+        public void PlayPickupSound() {
+            SfxManager.PlayOneShot(pickUpAudio);
+        }
+
+        public void PlayPutDownSound() {
+            SfxManager.PlayOneShot(putDownAudio);
+        }
+        
         public void BreakItem() {
+            SfxManager.PlayOneShot(breakAudio, transform.position);
+            
             satisfactionPort.DecreaseSatisfaction(dropPenalty);
-            SfxManager.PlayOneShot(itemAudio.breakAudio, transform.position);
             Despawn();
         }
 
