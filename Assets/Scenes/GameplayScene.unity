@@ -291,23 +291,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3499851229979202358, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9792501
       objectReference: {fileID: 0}
     - target: {fileID: 3499851229979202358, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3499851229979202358, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.20265573
       objectReference: {fileID: 0}
     - target: {fileID: 3499851229979202358, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3499851229979202358, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 23.385
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792878758102882743, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: bufferSize
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5365584187497957331, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalPosition.x
@@ -427,9 +431,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: timeBetweenCustomers
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerExitPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerOrderPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerOrderPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerSpawnPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerSpawnPosition.z
+      value: 11.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5228688772791884835, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: m_Name
       value: Customer Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302233253166588281, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: timeBetweenCustomers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294701951916416029, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: timeBetweenCustomers
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7722442215785127237, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: target
