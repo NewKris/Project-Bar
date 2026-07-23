@@ -46,6 +46,7 @@ namespace Runtime.Dialogue
             if (!alwaysDisplayName) nameObject.gameObject.SetActive(false);
             dialogueBox.gameObject.SetActive(false);
             showingDialogue = false;
+            _breakingActiveDialogue = false;
         }
 
         public void ShowDialogueTimed(string dialogue, float timer)
@@ -62,6 +63,8 @@ namespace Runtime.Dialogue
                 {
                     yield return new WaitForFixedUpdate();
                 }
+
+                _breakingActiveDialogue = false;
             }
             
             ShowDialogue(dialogue);
