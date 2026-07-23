@@ -27,6 +27,7 @@ namespace Runtime.Customers.Tutorial_Agent {
         // Needs to start at negative one so that next step function can be called on start
         private int _currentStep = -1;
         private float _timer;
+        private float _timeSinceStepChanged;
 
         private HashSet<Highlightable> _objectsClicked;
         
@@ -89,9 +90,8 @@ namespace Runtime.Customers.Tutorial_Agent {
 
             if (CurrentStep.progressType == TutorialProgressType.ClickAgent) {
                 NextStep();
-            }
-
-            if (CurrentStep.progressType == TutorialProgressType.ServeDrink) {
+            } 
+            else if (CurrentStep.progressType == TutorialProgressType.ServeDrink) {
                 _dialogueRunner.ShowDialogue(CurrentStep.repeatOrderDialogue);
             }
         }
@@ -115,8 +115,9 @@ namespace Runtime.Customers.Tutorial_Agent {
 
         private void Update() {
             _timer -= Time.deltaTime;
+            _timeSinceStepChanged += Time.deltaTime;
 
-            if (_timer <= 0) {
+            if (_timer <= 0 && !_base.isLeaving) {
                 _dialogueRunner.ShowDialogue(CurrentStep.reminderDialogue);
                 _timer = CurrentStep.reminderTimer;
             }

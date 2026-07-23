@@ -16,7 +16,7 @@ namespace Runtime.Customers {
         
         private CustomerMovement _customerMovement;
         
-        private bool _isLeaving;
+        public bool isLeaving;
 
         public void NoMeshSetup(Vector3 barPosition, Vector3 exitPosition, CustomerEventPort port) {
             _customerMovement.Setup(barPosition, exitPosition, port);
@@ -41,22 +41,22 @@ namespace Runtime.Customers {
 
         public void LeaveBar()
         {
-            if (_isLeaving) return;
+            if (isLeaving) return;
             _customerMovement.ExitBar();
-            _isLeaving = true;
+            isLeaving = true;
         }
 
         public void ServeDrink(DrinkContents drink) {
             Debug.Log("Serving 💅");
             
-            if (_isLeaving) return;
+            if (isLeaving) return;
             
             onServeDrink?.Invoke(drink);
         }
 
         public void Order()
         {
-            if (_isLeaving) return;
+            if (isLeaving) return;
             onOrder?.Invoke();
         }
     }

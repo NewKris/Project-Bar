@@ -45,6 +45,7 @@ namespace Runtime.Dialogue
         {
             if (!alwaysDisplayName) nameObject.gameObject.SetActive(false);
             dialogueBox.gameObject.SetActive(false);
+            showingDialogue = false;
         }
 
         public void ShowDialogueTimed(string dialogue, float timer)
@@ -78,8 +79,8 @@ namespace Runtime.Dialogue
             }
             
             _breakingActiveDialogue = false;
-            HideDialogue();
             showingDialogue = false;
+            HideDialogue();
         }
 
         public void SetCharacterName(string characterName)
