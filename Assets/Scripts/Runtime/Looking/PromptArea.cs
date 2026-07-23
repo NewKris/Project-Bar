@@ -29,13 +29,13 @@ namespace Runtime.Looking {
         }
 
         private void EnableAllPrompts() {
-            foreach (LookPrompt prompt in GetComponentsInChildren<LookPrompt>(true)) {
+            foreach (LookPrompt prompt in GetComponentsInChildren<LookPrompt>()) {
                 prompt.ShowPrompt();
             }
         }
 
         private void DisableAllPrompts() {
-            foreach (LookPrompt prompt in GetComponentsInChildren<LookPrompt>(true)) {
+            foreach (LookPrompt prompt in GetComponentsInChildren<LookPrompt>()) {
                 prompt.HidePrompt();
             }
         }
