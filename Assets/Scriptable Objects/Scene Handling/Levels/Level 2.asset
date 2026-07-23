@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e38e5cf50f845f0b7dd6e3f243991ec, type: 3}
-  m_Name: Level 1
+  m_Name: Level 2
   m_EditorClassIdentifier: 
   sceneName: OutdoorsScene
   startSatisfaction: 50
@@ -19,15 +19,9 @@ MonoBehaviour:
   maximumSatisfaction: 150
   availableCustomers:
   - {fileID: 11400000, guid: 030aee5f59a580b428e898642cfe112c, type: 2}
-  - {fileID: 11400000, guid: 7d1425b28ab4dd3458c9bacddcb6e203, type: 2}
+  - {fileID: 11400000, guid: 96cfab581704df64f8e3a783350c8eac, type: 2}
   - {fileID: 11400000, guid: f0b2bc17026479d47a98ec3e6cd1a877, type: 2}
-  - {fileID: 11400000, guid: 2a8f6a1820fe41243bcf1b274aa94bf4, type: 2}
-  - {fileID: 11400000, guid: 3f4c68164aef2f24e8529647ecf8e5f0, type: 2}
-  - {fileID: 11400000, guid: a24b70c2f571d7e4c8ad467c417988d1, type: 2}
-  - {fileID: 11400000, guid: 5bc9c1c8699350d479e515c93ff2f283, type: 2}
-  - {fileID: 11400000, guid: 3d6c00c02ec32fe4381cec2513002417, type: 2}
-  - {fileID: 11400000, guid: 255e54a19b9a9ff4eafd7757c2b5d469, type: 2}
-  - {fileID: 11400000, guid: 2cb944e6cf02f3a42a2235f6d9c70f24, type: 2}
+  - {fileID: 11400000, guid: bcfb4acb547d9ff4ba28700304bf57f4, type: 2}
   target:
     customerData: {fileID: 11400000, guid: fbf4e05554abab74980664441e92eb9e, type: 2}
     baseChance: 25

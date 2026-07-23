@@ -7204,6 +7204,247 @@ Material:
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+--- !u!1 &538816278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 538816284}
+  - component: {fileID: 538816283}
+  - component: {fileID: 538816282}
+  - component: {fileID: 538816281}
+  - component: {fileID: 538816280}
+  - component: {fileID: 538816279}
+  m_Layer: 0
+  m_Name: Recipies 1 - cocktails, all
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &538816279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538816278}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.6648254, y: 1.475813, z: 0}
+  m_Center: {x: -0.16787791, y: -0.0048873425, z: 0}
+--- !u!114 &538816280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538816278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717a7ff1475047dc9f71178ad5b3bb28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &538816281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538816278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014d48b08b2f4bce82481d141600f4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshGameObject: {fileID: 538816278}
+  defaultLayer: 0
+  tutorialHighlightLayer: 0
+  lookHighlightLayer: 0
+--- !u!114 &538816282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538816278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Cocktail Menu\n1.  Blow my skull (Whiskey glass): Beer, rum\n2.  Cuba
+    libre (Whiskey glass): Ice, rum, cola\n3.  Daiquiri (Martini glass): Sugar, ice,
+    rum, lime slice\nDark'n'Stormy (Whiskey glass): Ice, Rum, Ginger Beer, Lime Juice,
+    Lime Slice\n4.  Gimlet (Martini  glass): Gin, Lime juice, Lime slice\n5.  Kamikaze
+    (Chilled Martini glass): Vodka, Triple Sec, lime juice, [Shake], Lime slice\nMaiden's
+    Prayer (Martini glass): Ice, Gin, Triple sec, Lime Juice, Orange Juice, [Shake]
+    \n6.  Margarita (Martini glass): Salt, ice, tequila, triple sec, lime juice,
+    lime slice\n7.  Marquisette (Martini glass): Sugar, white wine, rum, lime juice,
+    [Shake], lime slice\n8.  Mojito (Martini glass): Ice, rum, lime slice, mint\n9. 
+    Moscow Mule (Copper Mug): Ice, vodka, ginger beer, lime slice\n10. Screwdriver
+    (Whiskey glass): Ice, vodka, orange juice\n11. Shandygaff (Copper Mug): Beer,
+    ginger beer\n12. Tequila slammer (Whiskey glass): Ice, tequila, ginger beer,
+    [Shake]"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 1
+  m_fontSizeBase: 1
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 0
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 538816283}
+  m_maskType: 0
+--- !u!23 &538816283
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538816278}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!224 &538816284
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538816278}
+  m_LocalRotation: {x: -0, y: 0.99981767, z: -0, w: 0.019096998}
+  m_LocalPosition: {x: 0, y: 0, z: -1.254}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 177.812, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.006, y: 1.716}
+  m_SizeDelta: {x: 4, y: 1.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &577735941
 GameObject:
   m_ObjectHideFlags: 0
@@ -9482,7 +9723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420169647867857010, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: m_Name
-      value: Liquor Bottle
+      value: Gin Bottle
       objectReference: {fileID: 0}
     - target: {fileID: 4441773041383232119, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -9932,171 +10173,6 @@ Transform:
   - {fileID: 296826902}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!43 &835322701
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh98400
-  serializedVersion: 11
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 36
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 24
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.11621031, y: 0.09609625, z: 0.12411684}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200010003000200040005000600050007000600080009000a0009000b000a000c000d000e000d000f000e00100011001200110013001200140015001600150017001600
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 24
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 40
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 1152
-    _typelessdata: acffedbd1ccec4bdf830fe3d00000000000000000000803f000080bf0000000000000000000080bfacff6d3e78cc4e3facffed3d1ccec4bdf830fe3d00000000000000000000803f000080bf0000000000000000000080bf0000000078cc4e3facffedbd1ccec43df830fe3d00000000000000000000803f000080bf0000000000000000000080bfacff6d3e0000803facffed3d1ccec43df830fe3d00000000000000000000803f000080bf0000000000000000000080bf000000000000803facffed3d1ccec4bdf830fe3d0000803f000000000000000000000000000000000000803f000080bff8307e3e78cc4e3facffed3d1ccec4bdf830febd0000803f000000000000000000000000000000000000803f000080bf0000000078cc4e3facffed3d1ccec43df830fe3d0000803f000000000000000000000000000000000000803f000080bff8307e3e0000803facffed3d1ccec43df830febd0000803f000000000000000000000000000000000000803f000080bf000000000000803facffed3d1ccec4bdf830febd0000000000000000000080bf0000803f0000000000000000000080bfacff6d3e78cc4e3facffedbd1ccec4bdf830febd0000000000000000000080bf0000803f0000000000000000000080bf0000000078cc4e3facffed3d1ccec43df830febd0000000000000000000080bf0000803f0000000000000000000080bfacff6d3e0000803facffedbd1ccec43df830febd0000000000000000000080bf0000803f0000000000000000000080bf000000000000803facffedbd1ccec4bdf830febd000080bf00000000000000000000000000000000000080bf000080bff8307e3e78cc4e3facffedbd1ccec4bdf830fe3d000080bf00000000000000000000000000000000000080bf000080bf0000000078cc4e3facffedbd1ccec43df830febd000080bf00000000000000000000000000000000000080bf000080bff8307e3e0000803facffedbd1ccec43df830fe3d000080bf00000000000000000000000000000000000080bf000080bf000000000000803facffedbd1ccec43df830fe3d000000000000803f000000000000803f0000000000000000000080bf000000000000803facffed3d1ccec43df830fe3d000000000000803f000000000000803f0000000000000000000080bfacff6d3e0000803facffedbd1ccec43df830febd000000000000803f000000000000803f0000000000000000000080bf00000000c273403facffed3d1ccec43df830febd000000000000803f000000000000803f0000000000000000000080bfacff6d3ec273403facffedbd1ccec4bdf830febd00000000000080bf00000000000080bf0000000000000000000080bfacff6d3ec273403facffed3d1ccec4bdf830febd00000000000080bf00000000000080bf0000000000000000000080bf00000000c273403facffedbd1ccec4bdf830fe3d00000000000080bf00000000000080bf0000000000000000000080bfacff6d3e0000803facffed3d1ccec4bdf830fe3d00000000000080bf00000000000080bf0000000000000000000080bf000000000000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.11621031, y: 0.09609625, z: 0.12411684}
-  m_MeshUsageFlags: 0
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &838496608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2677636650737403054, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
@@ -14016,7 +14092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420169647867857010, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: m_Name
-      value: Liquor Bottle (4)
+      value: Vodka Bottle
       objectReference: {fileID: 0}
     - target: {fileID: 4441773041383232119, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -14098,7 +14174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420169647867857010, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: m_Name
-      value: Liquor Bottle (2)
+      value: Tequila Bottle
       objectReference: {fileID: 0}
     - target: {fileID: 4441773041383232119, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -15210,7 +15286,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 835322701}
+  m_Mesh: {fileID: 173619229}
 --- !u!33 &1352028985
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -15790,11 +15866,11 @@ MonoBehaviour:
     orange juice, orange slice\nM2. Mockdriver (Whiskey glass): ginger beer, orange
     juice\nM3. Mocktail Mule (Copper Mug): Ice, ginger beer, lime juice, lime slice,
     mint\n \nFrozen Cocktails\nF1. Frozen Daiquiri (Martini glass): Sugar, slush,
-    rum, lime slice\nF2. Frozen Margarita (Martini glass): Salt, ice, tequila, triple
-    sec, lime juice, lime slice\nF3. Frozen Screwdriver (Whiskey glass): Slush, vodka,
-    orange juice\n\nBurning Drinks\nP1. Blow My Flaming Skull (Whiskey glass): Caramelized
-    sugar, Beer, Rum, Pyrotechnics\nP2. Hot Shot (Whiskey glass): Tequila, Flaming
-    Shot"
+    rum, lime slice\nF2. Frozen Margarita (Martini glass): Salt, slush, tequila,
+    triple sec, lime juice, lime slice\nF3. Frozen Screwdriver (Whiskey glass): Slush,
+    vodka, orange juice\n\nBurning Drinks\nP1. Blow My Flaming Skull (Whiskey glass):
+    Caramelized sugar, Beer, Rum, Pyrotechnics\nP2. Hot Shot (Whiskey glass): Tequila,
+    Flaming Shot"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16067,7 +16143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420169647867857010, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: m_Name
-      value: Liquor Bottle (3)
+      value: Triple SecBottle
       objectReference: {fileID: 0}
     - target: {fileID: 4441773041383232119, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -17866,7 +17942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420169647867857010, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: m_Name
-      value: Liquor Bottle (5)
+      value: White Wine Bottle
       objectReference: {fileID: 0}
     - target: {fileID: 4441773041383232119, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -17942,18 +18018,74 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3778057767648576786, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_fontSize
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778057767648576786, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825807489838692313, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: movementTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825807489838692313, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: timeBeforeExit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265527081617958188, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265527081617958188, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265527081617958188, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265527081617958188, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718252086168075913, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718252086168075913, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718252086168075913, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718252086168075913, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.17500001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718252086168075913, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.141
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718252086168075913, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5973511632322931311, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.size
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialCompletedDialogue
-      value: "You are ready to meet the world now, and murder it. I\u2019ll be back
-        for your next mission, and teach you some new tricks. Goodspeed, Agent Gumbo "
+      value: "Go make a killing, kid. I\u2019ll be back for your next mission, and
+        teach you some new tricks. Godspeed, Agent Gumbo."
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].progressType
@@ -17961,11 +18093,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[1].progressType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[2].progressType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].progressType
@@ -17989,11 +18121,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[8].progressType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].progressType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].reminderTimer
@@ -18001,6 +18133,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].progressType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[11].progressType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].progressType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
@@ -18044,24 +18184,33 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[11].reminderTimer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].reminderTimer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].reminderDialogue
       value: 'Look at me and press [SPACE] to continue. '
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[1].reminderDialogue
-      value: Click me to continue., kid.
+      value: Click the Beer Glass Rack, kid.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[2].reminderDialogue
-      value: 'Pick up a Beer Glass, fill it with Beer using [SPACE]. '
+      value: Pick up a Beer Glass, put it in the Beer Tap, and Click me.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].reminderDialogue
-      value: 'Give me the Beer, kid. '
+      value: Pick up the Beer Glass with Beer, and serve me by releasing it on me.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[4].reminderDialogue
-      value: Look at the Liqueur Bottles in front of you to see the shortcut.
+      value: Look at the Bottles in front of you to see the Shortcut. Serve me Rum
+        in a Whiskey Glass.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[5].reminderDialogue
@@ -18069,23 +18218,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[6].reminderDialogue
-      value: 'Beer and Rum in a Whiskey Glass, makes Blow My Skull. '
+      value: Beer and Rum in a Whiskey Glass, makes my head go boom.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[7].reminderDialogue
-      value: Click me to continue., Kid.
+      value: Click me to continue.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[8].reminderDialogue
-      value: 'Click the Ampoule to Continue '
+      value: Click me to continue.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].reminderDialogue
-      value: Look at the Poison Ampoule to see its Shortcut.
+      value: Click me to continue.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].reminderDialogue
-      value: Click me so we can wrap this up.
+      value: Click the Poison Ampoule to Continue, kid.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[11].reminderDialogue
+      value: Look at the Poison Ampoule to see its Shortcut, and serve me a Blow
+        My Skull with Poison.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].reminderDialogue
+      value: Click me so we can wrap this up, and you can start working.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].wrongDrinkDialogue
@@ -18113,24 +18271,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].wrongDrinkDialogue
-      value: You're not making a killing. Again.
+      value: That's not what I asked for. Again.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].stepStartedDialogue
-      value: Hi, Kid. Ready for your new career? "Bartender Assassin"!
+      value: Hi, Kid. Ready for your new career? "Bartender Assassin"! Oh, and press
+        [SPACE] while looking at me to continue.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].wrongDrinkDialogue
+      value: That's not what I asked for. Again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[11].wrongDrinkDialogue
+      value: I know you. Do better.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].wrongDrinkDialogue
       value: You're not making a killing. Again.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[1].stepStartedDialogue
-      value: First things first, you need to know how to serve.
+      value: First things first, you need to know how to serve customers. Look to
+        your left. See the Beer Glass Rack? Click it to continue.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[2].stepStartedDialogue
-      value: Look to your left, and grab a Beer Glass with [Left Click], put in the
-        Beer Tap, and fill it with Beer by pressing [SPACE].
+      value: Now, grab a Beer Glass by holding [Left Click], and put in the Beer
+        Tap, then Click me to continue.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].repeatOrderDialogue
@@ -18138,12 +18306,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].stepStartedDialogue
-      value: "When it\u2019s filled, serve it to me by releasing the Glass when looking
-        at me. "
+      value: To fill a Glass with beverage from a Tap, hold [SPACE] while looking
+        at the Tap. Now serve me a Beer.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[4].repeatOrderDialogue
-      value: Beer and Rum in a Whiskey Glass. I believe in you.
+      value: Rum in a Whiskey Glass. I believe in you.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[4].stepStartedDialogue
@@ -18157,11 +18325,12 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[5].stepStartedDialogue
       value: "Perfect. Now, let\u2019s mix a drink. We\u2019ll start easy with \u201CBlow
-        My Skull\u201D. You can see the recipe on the screen to your right."
+        My Skull\u201D. You can see the recipe on the Screen to your right. Click
+        it to continue."
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[6].repeatOrderDialogue
-      value: Beer and Rum in a Whiskey Glass. I believe in you.
+      value: Beer, Rum, Whiskey Glass. I believe in you.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[6].stepStartedDialogue
@@ -18174,9 +18343,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[7].stepStartedDialogue
-      value: 'Excellent. And for the final part of today''s lesson: Murder. When
-        you find your target, you need to give them the right drink, and put Poison
-        in it.'
+      value: 'Excellent. And the final lesson of the day: Murder. Your Target will
+        reveal themself if you impress the Customers.'
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[8].repeatOrderDialogue
@@ -18184,24 +18352,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[8].stepStartedDialogue
-      value: 'Look under the desk to your right, see the ampoule?  '
+      value: Do this by serving them and raising their Satisfaction. As you do, the
+        odds of your Target approaching your bar increases.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].repeatOrderDialogue
-      value: Beer and Rum in a Whiskey Glass. Top it off with Poison.
+      value: Beer and Rum in a Whiskey Glass. I believe in you.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].stepStartedDialogue
-      value: 'Now, serve me a Blow My Skull with Poison in it. '
+      value: When you find your Target, give them the right drink, and put Poison
+        in it.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].repeatOrderDialogue
-      value: Beer and Rum in a Whiskey Glass. Top it off with Poison.
+      value: Beer and Rum in a Whiskey Glass. I believe in you.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].stepStartedDialogue
+      value: Crouch with [SCROLL] and look under the desk to your right. See the
+        Poison Ampoule? Click it to continue.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[11].repeatOrderDialogue
+      value: Beer and Rum in a Whiskey Glass. Top it off with Poison.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[11].stepStartedDialogue
+      value: And finally, serve me a lethal Blow My Skull to finish your lesson.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].repeatOrderDialogue
+      value: Beer and Rum in a Whiskey Glass. Top it off with Poison.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].stepStartedDialogue
       value: "Good job, kid. Imperceptible sleight of hand. Though I\u2019m not going
-        to drink it.  "
+        to drink it. Now, click me to start your mission."
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].acceptedDrinks.Array.Array.size
@@ -18236,6 +18423,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[11].acceptedDrinks.Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].acceptedDrinks.Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[3].acceptedDrinks.Array.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: d31a95397ed7b8348898f55f0eb6410a, type: 2}
@@ -18262,13 +18457,21 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[9].acceptedDrinks.Array.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 5c9971b7eb5a84a4faedd46f32765271, type: 2}
+      objectReference: {fileID: 11400000, guid: 00d2c5154ee41e34497f1e62105eef55, type: 2}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].objectsToHighlight.Array.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[10].acceptedDrinks.Array.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 00d2c5154ee41e34497f1e62105eef55, type: 2}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: 'tutorialSteps.Array.data[11].acceptedDrinks.Array.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c9971b7eb5a84a4faedd46f32765271, type: 2}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: 'tutorialSteps.Array.data[12].acceptedDrinks.Array.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 5c9971b7eb5a84a4faedd46f32765271, type: 2}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
@@ -18312,13 +18515,21 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[11].objectsToHighlight.Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].objectsToHighlight.Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[0].objectsToHighlight.Array.Array.data[0]'
       value: 
       objectReference: {fileID: 1487491381}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[1].objectsToHighlight.Array.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 822621011}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[2].objectsToHighlight.Array.Array.data[0]'
       value: 
@@ -18326,7 +18537,7 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[3].objectsToHighlight.Array.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1095250243}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[4].objectsToHighlight.Array.Array.data[0]'
       value: 
@@ -18346,13 +18557,21 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[8].objectsToHighlight.Array.Array.data[0]'
       value: 
-      objectReference: {fileID: 1352028983}
+      objectReference: {fileID: 2009796654}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[9].objectsToHighlight.Array.Array.data[0]'
       value: 
       objectReference: {fileID: 2009796654}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[10].objectsToHighlight.Array.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1352028983}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: 'tutorialSteps.Array.data[11].objectsToHighlight.Array.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2009796654}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: 'tutorialSteps.Array.data[12].objectsToHighlight.Array.Array.data[0]'
       value: 
       objectReference: {fileID: 2009796654}
     - target: {fileID: 8051146127654132906, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
@@ -18361,7 +18580,31 @@ PrefabInstance:
       objectReference: {fileID: 2084233561}
     - target: {fileID: 8465399020216961972, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: m_Name
-      value: TutorialAgent
+      value: TutorialAgent - Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937940842605928498, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937940842605928498, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937940842605928498, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937940842605928498, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.335
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937940842605928498, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937940842605928498, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22879,7 +23122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420169647867857010, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: m_Name
-      value: Liquor Bottle (1)
+      value: Rum Bottle
       objectReference: {fileID: 0}
     - target: {fileID: 4441773041383232119, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -24285,6 +24528,7 @@ GameObject:
   - component: {fileID: 2009796651}
   - component: {fileID: 2009796654}
   - component: {fileID: 2009796655}
+  - component: {fileID: 2009796656}
   m_Layer: 0
   m_Name: Recipies 1 - cocktails
   m_TagString: Untagged
@@ -24314,38 +24558,23 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Cocktail Menu
 
-    1.  Blow my skull (Whiskey glass): Beer, rum
+    1. Blow my skull (Whiskey glass): Beer, rum
 
-    2. 
+    2.
     Cuba libre (Whiskey glass): Ice, rum, cola
 
-    3.  Daiquiri (Martini glass):
-    Sugar, ice, rum, lime
+    3. Daiquiri (Martini glass):
+    Sugar, ice, rum, lime slice
 
-    4.  Gimlet (Martini  glass): Gin, Lime juice, Lime
+    4. Mojito (Martini glass): Ice, rum, lime slice,
+    mint
 
-    5. 
-    Kamikaze (C. Martini glass): Vodka, Triple Sec, lime juice, Shake, Lime
+    5. Moscow Mule (Copper Mug): Ice, vodka, ginger beer, lime slice
 
-    6. 
-    Margarita (Martini glass): Salt, ice, tequila, triple sec, lime juice, lime slice
+    6.
+    Shandygaff (Copper Mug): Beer, ginger beer
 
-    7. 
-    Marquisette (Martini glass): Sugar, white wine, rum, lime juice, shake Lime slice
-
-    8. 
-    Mojito (Martini glass): Ice, rum, lime slice, mint
-
-    9.  Moscow Mule (Copper
-    Mug): Ice, vodka, ginger beer, lime slice
-
-    10. Screwdriver (Whiskey glass):
-    Ice, vodka, orange
-
-    11. Shandygaff (Copper Mug): Beer, ginger beer
-
-    12.
-    Tequila slammer (Whiskey glass): Ice, tequila, ginger beer'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -24473,7 +24702,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009796650}
   m_LocalRotation: {x: -0, y: 0.4908326, z: -0, w: 0.8712539}
-  m_LocalPosition: {x: 0, y: 0, z: 0.583}
+  m_LocalPosition: {x: 0, y: 0, z: 0.287}
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -24481,7 +24710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 58.791, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.304, y: 1.708}
+  m_AnchoredPosition: {x: 1.304, y: 1.509}
   m_SizeDelta: {x: 4, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2009796654
@@ -24512,6 +24741,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717a7ff1475047dc9f71178ad5b3bb28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2009796656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009796650}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.6648254, y: 1.475813, z: 0}
+  m_Center: {x: -0.16787791, y: -0.0048873425, z: 0}
 --- !u!1001 &2013187543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26319,6 +26569,7 @@ SceneRoots:
   - {fileID: 833774957}
   - {fileID: 1963688183}
   - {fileID: 2009796653}
+  - {fileID: 538816284}
   - {fileID: 1369590108}
   - {fileID: 1621668999}
   - {fileID: 1591988858}
