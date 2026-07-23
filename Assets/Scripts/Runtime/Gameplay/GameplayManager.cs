@@ -1,4 +1,5 @@
-﻿using Runtime.Configuration;
+﻿using System.Collections;
+using Runtime.Configuration;
 using Runtime.Customers;
 using Runtime.Satisfaction;
 using Runtime.Scene_Handling;
@@ -13,14 +14,19 @@ namespace Runtime.Gameplay {
     }
     
     public class GameplayManager : MonoBehaviour {
+        private static bool GameEnded;
+        
         public SceneHandler sceneHandler;
         public SatisfactionEvents satisfactionEvents;
         public CustomerEvents customerEventPort;
+        public float gameEndWait = 5;
 
         private void Awake() {
             satisfactionEvents.OnGameOver += SatisfactionGameOver;
             customerEventPort.OnCustomerDied += EvaluateAssassination;
             ConfigLoader.OnConfigLoaded += SetLoggingLevel;
+
+            GameEnded = false;
             
             SetLoggingLevel(Config.instance);
         }
@@ -32,18 +38,22 @@ namespace Runtime.Gameplay {
         }
 
         private void SatisfactionGameOver() {
+            if (GameEnded) return;
+            
             GameOverSubtitle.reason = GameOverReason.Satisfaction;
-            sceneHandler.GameOver();
+            StartCoroutine(EndGame(false));
         }
 
         private void WrongTargetGameOver() {
+            if (GameEnded) return;
+            
             GameOverSubtitle.reason = GameOverReason.WrongTarget;
-            sceneHandler.GameOver();
+            StartCoroutine(EndGame(false));
         }
 
         private void EvaluateAssassination(bool targetKilled) {
             if (targetKilled) {
-                sceneHandler.Victory();
+                StartCoroutine(EndGame(true));
             }
             else {
                 WrongTargetGameOver();
@@ -62,6 +72,15 @@ namespace Runtime.Gameplay {
 
         private void SetLoggingLevel(Config config) {
             VerboseDebug.enableVerboseLogging = config.verboseLogging;
+        }
+
+        private IEnumerator EndGame(bool victory) {
+            GameEnded = true;
+            
+            yield return new WaitForSeconds(gameEndWait);
+            
+            if (victory) sceneHandler.Victory();
+            else sceneHandler.GameOver();
         }
     }
 }
