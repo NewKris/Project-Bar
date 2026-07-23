@@ -116,16 +116,16 @@ namespace Runtime.Customers
                 Debug.Log("Drink accepted!");
                 _customerDialogue.Success();
                 satisfactionPort.IncreaseSatisfaction(_satisfactionSuccess);
+                
+                if (drink.ContainsPoison()) {
+                    customerEventPort.RaiseCustomerDiedEvent(_isTarget);
+                }
             }
             else
             {
                 Debug.Log("Drink rejected");
                 _customerDialogue.Failure();
                 satisfactionPort.DecreaseSatisfaction(_satisfactionFailure);
-            }
-
-            if (drink.ContainsPoison()) {
-                customerEventPort.RaiseCustomerDiedEvent(_isTarget);
             }
             
             _customerBase.LeaveBar();
