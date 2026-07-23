@@ -17,7 +17,7 @@ namespace Runtime.Audio {
         }
         
         public static void StartAudio(string key, EventReference audio) {
-            if (!ActiveAudio.ContainsKey(key)) {
+            if (!ActiveAudio.ContainsKey(key) && !audio.IsNull) {
                 Debug.Log("Start");
                 EventInstance instance = RuntimeManager.CreateInstance(audio);
                 ActiveAudio.Add(key, instance);
@@ -37,16 +37,22 @@ namespace Runtime.Audio {
         }
         
         public static void PlayOneShot(EventReference audio) {
+            if (audio.IsNull) return;
+            
             VerboseDebug.Log($"Playing oneshot: {audio}");
             RuntimeManager.PlayOneShot(audio);
         }
         
         public static void PlayOneShot(EventReference audio, Vector3 position) {
+            if (audio.IsNull) return;
+
             VerboseDebug.Log($"Playing oneshot: {audio} at {position}");
             RuntimeManager.PlayOneShot(audio, position);
         }
         
         public static void PlayOneShot(EventReference audio, GameObject gameObject) {
+            if (audio.IsNull) return;
+            
             VerboseDebug.Log($"Playing oneshot: {audio} on {gameObject.name}");
             RuntimeManager.PlayOneShotAttached(audio, gameObject);
         }
