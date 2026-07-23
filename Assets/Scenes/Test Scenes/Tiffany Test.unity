@@ -10036,6 +10036,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: name
+      value: Sture
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -15488,367 +15492,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPivot: {fileID: 1201674911}
---- !u!1001 &1215528469
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: priority
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: customPasses.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: 'customPasses.Array.data[0]'
-      value: 78177937934516224
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: 'customPasses.Array.data[1]'
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: 'customPasses.Array.data[2]'
-      value: 78177847454990620
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: 'customPasses.Array.data[3]'
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[0].m_Name
-      value: Tutorial Highlight
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[0].enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[1].enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[0].clearFlags
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[0].passFoldout
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[1].passFoldout
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[0].filterFoldout
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[0].overrideStencil
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[0].renderQueueType
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: 'managedReferences[78177847454990619]'
-      value: Unity.RenderPipelines.HighDefinition.Runtime UnityEngine.Rendering.HighDefinition.FullScreenCustomPass
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: 'managedReferences[78177847454990620]'
-      value: Unity.RenderPipelines.HighDefinition.Runtime UnityEngine.Rendering.HighDefinition.DrawRenderersCustomPass
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: 'managedReferences[78177937934516224]'
-      value: Unity.RenderPipelines.HighDefinition.Runtime UnityEngine.Rendering.HighDefinition.FullScreenCustomPass
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[0].layerMask.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[0].overrideMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 7369a89e2e9163f4cb981e174ce0f03e, type: 2}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[1].fetchColorBuffer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[0].overrideDepthState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990619].m_Name
-      value: Outline
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].m_Name
-      value: Look Highlight
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177937934516224].m_Name
-      value: Custom Pass
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990619].enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177937934516224].enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[0].overrideMaterialPassName
-      value: FirstPass
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990619].m_Version
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].m_Version
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177937934516224].m_Version
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990619].clearFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].clearFlags
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].depthWrite
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].shaderPass
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177937934516224].clearFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990619].passFoldout
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].passFoldout
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177937934516224].passFoldout
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].overrideMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].filterFoldout
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].overrideShader
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].overrideStencil
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].renderQueueType
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].rendererFoldout
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].sortingCriteria
-      value: 59
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].stencilReadMask
-      value: 192
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990619].fetchColorBuffer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990619].materialPassName
-      value: Custom Pass 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].layerMask.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].overrideMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 6fc647bdf4af87d4196f9fe7b393718f, type: 2}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].stencilWriteMask
-      value: 192
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177937934516224].fetchColorBuffer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177937934516224].materialPassName
-      value: Custom Pass 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990619].materialPassIndex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990619].targetColorBuffer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990619].targetDepthBuffer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].targetColorBuffer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].targetDepthBuffer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177937934516224].materialPassIndex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177937934516224].targetColorBuffer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177937934516224].targetDepthBuffer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].overrideDepthState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].depthCompareFunction
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].stencilFailOperation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].stencilPassOperation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].stencilReferenceValue
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990619].fullscreenPassMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 197fa27eeea40aa4cabef1a138193519, type: 2}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].overrideShaderPassName
-      value: Forward
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].stencilCompareFunction
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177937934516224].fullscreenPassMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 197fa27eeea40aa4cabef1a138193519, type: 2}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].overrideShaderPassIndex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].overrideMaterialPassName
-      value: FirstPass
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].overrideMaterialPassIndex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8498401518627060002, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: managedReferences[78177847454990620].stencilDepthFailOperation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5760003062222315077, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: m_Name
-      value: Selection
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436617061557465952, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436617061557465952, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436617061557465952, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436617061557465952, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436617061557465952, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436617061557465952, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436617061557465952, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436617061557465952, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436617061557465952, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436617061557465952, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0d05f7d188e212a40a703869cc1f3aee, type: 3}
 --- !u!1 &1222596692
 GameObject:
   m_ObjectHideFlags: 0
@@ -23348,6 +22991,63 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1001 &8718054794315492554
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1661716184429924662, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661716184429924662, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661716184429924662, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661716184429924662, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661716184429924662, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661716184429924662, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661716184429924662, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661716184429924662, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661716184429924662, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661716184429924662, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311514412249725971, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
+      propertyPath: m_Name
+      value: Selection
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ebb64adb6f52eb6469562efd15a0bc6e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -23360,7 +23060,7 @@ SceneRoots:
   - {fileID: 1283679337}
   - {fileID: 2076046546}
   - {fileID: 1491080398}
-  - {fileID: 1215528469}
+  - {fileID: 8718054794315492554}
   - {fileID: 1181362470}
   - {fileID: 546394645}
   - {fileID: 1812445567}

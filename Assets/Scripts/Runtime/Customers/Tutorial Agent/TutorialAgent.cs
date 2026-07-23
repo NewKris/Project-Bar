@@ -13,6 +13,8 @@ namespace Runtime.Customers.Tutorial_Agent {
     [RequireComponent(typeof(Highlightable))]
     [RequireComponent(typeof(HandInteraction))]
     public class TutorialAgent : MonoBehaviour {
+        [SerializeField] private string characterName;
+        
         [SerializeField] private CustomerEventPort tutorialFinishedPort;
         [SerializeField] private Vector3 exitPosition;
         [SerializeField] private TutorialAgentStep[] tutorialSteps;
@@ -52,6 +54,7 @@ namespace Runtime.Customers.Tutorial_Agent {
             
             _base.Setup(null, transform.position, exitPosition, tutorialFinishedPort);
             NextStep();
+            _dialogueRunner.SetCharacterName(characterName);
         }
 
         private void NextStep() {

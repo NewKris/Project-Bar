@@ -12,5 +12,9 @@ namespace Runtime.Customers.Tutorial_Agent {
         {
             dialogueDisplay.ShowDialogueTimed(dialogue, dialoguePopUpTimer);
         }
+
+        public void SetCharacterName(string characterName) {
+            dialogueDisplay.SetCharacterName(characterName);
+        }
     }
 }
