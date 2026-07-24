@@ -4,8 +4,11 @@ using UnityEngine.Events;
 namespace Runtime.Satisfaction
 {
     [CreateAssetMenu(fileName = "Satisfaction Port", menuName = "Satisfaction/Satisfaction Port")]
-    public class SatisfactionPort : ScriptableObject
-    {
+    public class SatisfactionPort : ScriptableObject {
+        public int overflowPenalty;
+        public int splashPenalty;
+        public int dropPenalty;
+        
         public UnityAction<int> OnSatisfactionChange;
         public UnityAction<int> OnSatisfactionSet;
 

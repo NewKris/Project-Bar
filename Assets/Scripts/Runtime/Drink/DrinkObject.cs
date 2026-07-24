@@ -2,12 +2,18 @@
 using System.Linq;
 using FMODUnity;
 using Runtime.Audio;
+using Runtime.Satisfaction;
+using Runtime.Utility;
 using UnityEngine;
 
 namespace Runtime.Drink {
     public class DrinkObject : MonoBehaviour {
         public DrinkContents currentContents;
         public EventReference pourAudio;
+        
+        [Header("Overflow")]
+        public int maxIngredients;
+        public SatisfactionPort satisfactionPort;
         
         protected float ShakeDuration { get; set; }
         private Dictionary<int, float> StationDurations { get; set; }
@@ -33,6 +39,13 @@ namespace Runtime.Drink {
         }
         
         public void AddIngredient(Ingredient ingredient) {
+            if (currentContents.IngredientCount >= maxIngredients) {
+                VerboseDebug.Log("Cannot add ingredient: Container is full!");
+                satisfactionPort.DecreaseSatisfaction(satisfactionPort.overflowPenalty);
+                return;
+            }
+            
+            VerboseDebug.Log("Adding ingredient " + ingredient.name);
             currentContents.ingredients.Add(ingredient);
             DecreaseStationDurations();
         }
@@ -47,6 +60,8 @@ namespace Runtime.Drink {
         }
 
         private void DecreaseStationDurations() {
+            if(StationDurations.Count == 0) return;
+            
             int[] keys = StationDurations.Keys.ToArray();
             
             foreach (int key in keys) {

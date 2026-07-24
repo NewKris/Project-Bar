@@ -8,8 +8,6 @@ using UnityEngine;
 
 namespace Runtime.Player.Hand {
     public class PlayerHand : MonoBehaviour {
-        public int pourPenalty;
-        
         [Header("References")]
         public SatisfactionPort satisfactionPort;
         public Transform itemPivot;
@@ -68,7 +66,7 @@ namespace Runtime.Player.Hand {
             if (handInteraction?.TryGetComponent(out DrinkObject targetDrink) ?? false) {
                 targetDrink.AddContents(heldDrink.currentContents);
             } else if (!InteractionIsSink(handInteraction) && heldDrink.HasContents) {
-                satisfactionPort.DecreaseSatisfaction(pourPenalty);
+                satisfactionPort.DecreaseSatisfaction(satisfactionPort.splashPenalty);
             }
             
             heldDrink.EmptyContents();

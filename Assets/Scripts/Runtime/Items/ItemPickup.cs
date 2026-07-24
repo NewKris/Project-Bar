@@ -7,7 +7,6 @@ using UnityEngine;
 
 namespace Runtime.Items {
     public class ItemPickup : MonoBehaviour {
-        public int dropPenalty;
         public SatisfactionPort satisfactionPort;
         
         [Header("Audio")]
@@ -28,7 +27,7 @@ namespace Runtime.Items {
         public void BreakItem() {
             SfxManager.PlayOneShot(breakAudio, transform.position);
             
-            satisfactionPort.DecreaseSatisfaction(dropPenalty);
+            satisfactionPort.DecreaseSatisfaction(satisfactionPort.dropPenalty);
             Despawn();
         }
 

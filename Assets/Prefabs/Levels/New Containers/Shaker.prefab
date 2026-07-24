@@ -187,6 +187,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropPenalty: 5
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
+  pickUpAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  putDownAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  breakAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &250910469939608800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,3 +236,15 @@ MonoBehaviour:
     mixType: 0
     drinkContainer: {fileID: 11400000, guid: a701c98ef916cbf4fb0550f6b905a770, type: 2}
     ingredients: []
+    isDestroyed: 0
+  pourAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  maxIngredients: 6
+  overFlowPenalty: 10
+  satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
+  shakeDuration: 0.5

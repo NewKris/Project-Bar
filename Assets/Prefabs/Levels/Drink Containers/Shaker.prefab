@@ -244,4 +244,7 @@ MonoBehaviour:
       Data3: 1065574306
       Data4: -508254091
     Path: event:/Sound/Player/Pouring liquid
+  maxIngredients: 6
+  overFlowPenalty: 10
+  satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
   shakeDuration: 0.5

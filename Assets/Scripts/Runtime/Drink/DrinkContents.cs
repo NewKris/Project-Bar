@@ -12,6 +12,8 @@ namespace Runtime.Drink {
         public List<Ingredient> ingredients;
         [ReadOnly] public bool isDestroyed;
 
+        public int IngredientCount => ingredients.Count;
+        
         public bool ContainsLiquid() {
             return ingredients.Any(x => x.type is IngredientType.liquid);
         }

@@ -74,6 +74,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropPenalty: 5
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
+  pickUpAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  putDownAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  breakAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &6079459009122228705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +124,16 @@ MonoBehaviour:
     drinkContainer: {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
     ingredients: []
     isDestroyed: 0
+  pourAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  maxIngredients: 6
+  overFlowPenalty: 10
+  satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
 --- !u!54 &1070929371429201032
 Rigidbody:
   m_ObjectHideFlags: 0

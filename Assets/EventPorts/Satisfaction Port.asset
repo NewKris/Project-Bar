@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3601255128d44254fb07f3512da95f07, type: 3}
   m_Name: Satisfaction Port
   m_EditorClassIdentifier: 
+  overflowPenalty: 10
+  splashPenalty: 10
+  dropPenalty: 10
