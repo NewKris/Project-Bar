@@ -15,6 +15,7 @@ namespace Runtime.Items {
         public void PlaceItem(ItemPickup item) {
             item.Pin(itemPivot);
             HeldItem = item;
+            HeldItem.PlayPutDownSound();
             HeldItem.OnPinned += RemoveItem;
         }
 
