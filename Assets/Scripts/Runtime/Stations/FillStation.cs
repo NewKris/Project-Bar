@@ -17,7 +17,7 @@ namespace Runtime.Stations {
                 return;
             }
             
-            SfxManager.StartAudio(stationAudioKey, stationAudio);
+            SfxManager.StartAudio(stationAudioKey, stationAudio, transform.position);
             
             StartStationTimer();
         }

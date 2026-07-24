@@ -16,22 +16,20 @@ namespace Runtime.Audio {
             return instance.GetInstanceID() + audio.Path + id;
         }
         
-        public static void StartAudio(string key, EventReference audio) {
+        public static void StartAudio(string key, EventReference audio, Vector3 position) {
             if (!ActiveAudio.ContainsKey(key) && !audio.IsNull) {
-                Debug.Log("Start");
                 EventInstance instance = RuntimeManager.CreateInstance(audio);
+
                 ActiveAudio.Add(key, instance);
-                
+                instance.set3DAttributes(position.To3DAttributes());
                 instance.start();
+                instance.release();
             }
         }
 
         public static void StopAudio(string key) {
             if (ActiveAudio.ContainsKey(key)) {
-                Debug.Log("Stop");
-                
-                ActiveAudio[key].stop(STOP_MODE.IMMEDIATE);
-                ActiveAudio[key].release();
+                ActiveAudio[key].stop(STOP_MODE.ALLOWFADEOUT);
                 ActiveAudio.Remove(key);
             }
         }

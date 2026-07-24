@@ -26,7 +26,7 @@ namespace Runtime.Stations {
         public override void StartStation() {
             StartStationTimer();
 
-            SfxManager.StartAudio(stationAudioKey, stationAudio);
+            SfxManager.StartAudio(stationAudioKey, stationAudio, transform.position);
         }
 
         public override void StopStation() {
