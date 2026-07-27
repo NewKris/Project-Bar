@@ -47,6 +47,19 @@ MonoBehaviour:
   customerManager: {fileID: 0}
   customerEventPort: {fileID: 11400000, guid: 56cec7d85be9f8841abc946b87e5522f, type: 2}
   timeBetweenCustomers: 5
+  kickOutCustomerWhenDisabled: 1
   customerSpawnPosition: {x: 0, y: 1, z: 11.6}
+  spawnPositionHandleColors:
+    yAxisHandleColor: {r: 1, g: 0.003921569, b: 0.49803922, a: 0}
+    xAxisHandleColor: {r: 1, g: 0.7294118, b: 0.8745098, a: 0}
+    zAxisHandleColor: {r: 0.92941177, g: 0.67058825, b: 0.9019608, a: 0}
   customerOrderPosition: {x: 0, y: 1, z: 3.6}
+  orderPositionHandleColors:
+    yAxisHandleColor: {r: 0.11433481, g: 0.3155795, b: 0.7735849, a: 0}
+    xAxisHandleColor: {r: 0.5058824, g: 0.84705883, b: 0.8156863, a: 0}
+    zAxisHandleColor: {r: 0.7254902, g: 0.8509804, b: 0.92156863, a: 0}
   customerExitPosition: {x: 0, y: 1, z: 11.6}
+  exitPositionHandleColors:
+    yAxisHandleColor: {r: 0.3372549, g: 0.50980395, b: 0.011764706, a: 0}
+    xAxisHandleColor: {r: 0.45490196, g: 0.7647059, b: 0.39607844, a: 0}
+    zAxisHandleColor: {r: 0.7882353, g: 0.8, b: 0.24705882, a: 0}

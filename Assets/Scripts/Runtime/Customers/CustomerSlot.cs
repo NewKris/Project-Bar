@@ -16,12 +16,18 @@ namespace Runtime.Customers
         [Foldout("Positions")]
         [Tooltip("The position where the customer will spawn at")]
         public Vector3 customerSpawnPosition;
+        [Tooltip("The colors that will be used for the custom handles for the spawn position")]
+        public CustomHandleColors spawnPositionHandleColors;
         [Foldout("Positions")]
         [Tooltip("The position the customer should stand at while ordering.")]
         public Vector3 customerOrderPosition;
+        [Tooltip("The colors that will be used for the custom handles for the order position")]
+        public CustomHandleColors orderPositionHandleColors;
         [Foldout("Positions")]
         [Tooltip("The position the customer should leave.")]
         public Vector3 customerExitPosition;
+        [Tooltip("The colors that will be used for the custom handles for the exit position")]
+        public CustomHandleColors exitPositionHandleColors;
         
         private Customer _currentCustomer;
         private bool _enabled = false;
