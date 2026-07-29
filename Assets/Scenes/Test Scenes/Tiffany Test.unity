@@ -17141,12 +17141,16 @@ PrefabInstance:
       value: 7.508043
       objectReference: {fileID: 0}
     - target: {fileID: 6294701951916416029, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerSpawnPosition.x
+      value: -5.596895
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294701951916416029, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: customerSpawnPosition.y
-      value: 0
+      value: 4.468787
       objectReference: {fileID: 0}
     - target: {fileID: 6294701951916416029, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: customerSpawnPosition.z
-      value: 14.178188
+      value: 10.057546
       objectReference: {fileID: 0}
     - target: {fileID: 7722442215785127237, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: target

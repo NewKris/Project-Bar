@@ -53,13 +53,22 @@ MonoBehaviour:
     yAxisHandleColor: {r: 1, g: 0.003921569, b: 0.49803922, a: 0}
     xAxisHandleColor: {r: 1, g: 0.7294118, b: 0.8745098, a: 0}
     zAxisHandleColor: {r: 0.92941177, g: 0.67058825, b: 0.9019608, a: 0}
+    xyPlaneHandleColor: {r: 1, g: 0, b: 0, a: 0}
+    yzPlaneHandleColor: {r: 1, g: 0, b: 0.79045916, a: 0}
+    xzPlaneHandleColor: {r: 1, g: 0, b: 0.5257082, a: 0}
   customerOrderPosition: {x: 0, y: 1, z: 3.6}
   orderPositionHandleColors:
     yAxisHandleColor: {r: 0.11433481, g: 0.3155795, b: 0.7735849, a: 0}
     xAxisHandleColor: {r: 0.5058824, g: 0.84705883, b: 0.8156863, a: 0}
     zAxisHandleColor: {r: 0.7254902, g: 0.8509804, b: 0.92156863, a: 0}
+    xyPlaneHandleColor: {r: 0.06762886, g: 0, b: 1, a: 0}
+    yzPlaneHandleColor: {r: 0.34591183, g: 0.5741619, b: 0.66666657, a: 0}
+    xzPlaneHandleColor: {r: 0, g: 0.8301759, b: 1, a: 0}
   customerExitPosition: {x: 0, y: 1, z: 11.6}
   exitPositionHandleColors:
     yAxisHandleColor: {r: 0.3372549, g: 0.50980395, b: 0.011764706, a: 0}
     xAxisHandleColor: {r: 0.45490196, g: 0.7647059, b: 0.39607844, a: 0}
     zAxisHandleColor: {r: 0.7882353, g: 0.8, b: 0.24705882, a: 0}
+    xyPlaneHandleColor: {r: 0.010204933, g: 0.49685526, b: 0, a: 0}
+    yzPlaneHandleColor: {r: 0.105513915, g: 0.61006284, b: 0.2327795, a: 0}
+    xzPlaneHandleColor: {r: 0.5744813, g: 0.67295593, b: 0, a: 0}
