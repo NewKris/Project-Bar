@@ -21,3 +21,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 0cc7e2dbb46a6b6418e1013dbe6abc12, type: 2}
     - {fileID: 11400000, guid: 4cfbbac680c812841a86d8cfb1aad9f0, type: 2}
     - {fileID: 11400000, guid: e168a93c3e9b5d34ba04621d93ee33eb, type: 2}
+    isDestroyed: 0
+  icon: {fileID: 21300000, guid: 7831402ff7d2a8744b3a583a87972f61, type: 3}
+  customDisplayName: 
+  description: 

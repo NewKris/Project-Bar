@@ -38688,6 +38688,12 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 361913620}
+    - target: {fileID: 3734600813580472791, guid: 9cd22da40e9c84a49a73616bdc8e82f1, type: 3}
+      propertyPath: textFormat
+      value: '{id}. {name} ({container})
+
+        {ingredients}'
+      objectReference: {fileID: 0}
     - target: {fileID: 4336941387735503219, guid: 9cd22da40e9c84a49a73616bdc8e82f1, type: 3}
       propertyPath: m_Mesh
       value: 
