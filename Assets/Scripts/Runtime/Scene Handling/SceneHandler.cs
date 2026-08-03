@@ -21,8 +21,15 @@ namespace Runtime.Scene_Handling
         //     
         //     await SceneManager.LoadSceneAsync(levels[index].sceneName, LoadSceneMode.Additive);
         // }
+
+        public void NextLevel() {
+            LevelManager.currentLevelIndex++;
+            GameScene targetScene = LevelManager.ReachedTheEnd ? mainMenuScene : gameplayScene;
+            SceneTransitionController.TransitionToScene(targetScene);
+        }
         
         public void StartGame() {
+            LevelManager.currentLevelIndex = 0;
             SceneTransitionController.TransitionToScene(gameplayScene);
         }
 
