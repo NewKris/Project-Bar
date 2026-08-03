@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NaughtyAttributes;
+using Runtime.Utility.Attributes;
 using UnityEngine;
 
 namespace Runtime.Drink {
@@ -10,7 +10,7 @@ namespace Runtime.Drink {
         public MixType mixType;
         public DrinkContainer drinkContainer;
         public List<Ingredient> ingredients;
-        [ReadOnly] public bool isDestroyed;
+        [HideInInspector] public bool isDestroyed;
 
         public int IngredientCount => ingredients.Count;
         

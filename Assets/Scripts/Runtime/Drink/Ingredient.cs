@@ -5,5 +5,8 @@ namespace Runtime.Drink {
     public class Ingredient : ScriptableObject {
         public bool isPoisonous;
         public IngredientType type;
+        public string customDisplayName;
+        
+        public string DisplayName => string.IsNullOrEmpty(customDisplayName) ? name : customDisplayName;
     }
 }
