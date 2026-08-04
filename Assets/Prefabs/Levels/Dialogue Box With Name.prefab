@@ -92,6 +92,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 180270214283710571}
   textComponent: {fileID: 7151572035769748419}
+  dialogueAudio:
+    Guid:
+      Data1: 1718111176
+      Data2: 1087231777
+      Data3: 1714830469
+      Data4: 1587627039
+    Path: event:/lalala sound test
+  timeBetweenAudio: 0.1
 --- !u!1 &2412582280886377936
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +191,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 2412582280886377936}
   textComponent: {fileID: 2476854673661646326}
+  dialogueAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  timeBetweenAudio: 0
 --- !u!1 &2830132801687522158
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +304,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -438,10 +455,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasName: 1
-  nameObject: {fileID: 25093065861190253}
+  nameObject: {fileID: 2476854673661646326}
   alwaysDisplayName: 1
   dialogueBox: {fileID: 3499902585674057071}
-  timeUntilDialogueFullyDisplayed: 1
+  writeTime: 1
   timeRemainingImage: {fileID: 6394890106939790612}
   showingDialogue: 0
 --- !u!1 &3825685622880436262
@@ -624,6 +641,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

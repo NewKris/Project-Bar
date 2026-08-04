@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Runtime.Dialogue
 {
+    // Could still be used but will in most cases be replaced with the AnimateText function in the DialogueBox class
     public static class TextMethods
     {
         public static IEnumerator DisplayText(

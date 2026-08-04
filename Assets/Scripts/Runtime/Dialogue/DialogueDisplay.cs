@@ -9,8 +9,11 @@ namespace Runtime.Dialogue
     public class DialogueDisplay : MonoBehaviour
     {
         [SerializeField] private bool hasName;
-        [EnableIf("hasName")] [SerializeField] private DialogueBox nameObject;
+        [EnableIf("hasName")] [SerializeField] private TMP_Text nameObject;
         [EnableIf("hasName")] [SerializeField] private bool alwaysDisplayName;
+        
+        
+        // rework dialogue box back to old and use a separate
         
         [SerializeField] private DialogueBox dialogueBox;
         [Tooltip("The time it takes until all text is shown, if 0 or less all dialogue will be shown at once otherwise one letter at a time")]
@@ -19,7 +22,7 @@ namespace Runtime.Dialogue
         [SerializeField] private Image timeRemainingImage;
 
         private string _name;
-        private Coroutine _dialogueCoroutine;
+        //private Coroutine _dialogueCoroutine;
         [HideInInspector]
         public bool showingDialogue;
 
@@ -31,14 +34,16 @@ namespace Runtime.Dialogue
             if (hasName && !alwaysDisplayName)
             {
                 nameObject.gameObject.SetActive(true);
-                nameObject.textComponent.text = _name;
+                nameObject.text = _name;
             }
             
             dialogueBox.gameObject.SetActive(true);
 
-            if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine); 
-            _dialogueCoroutine =
-                StartCoroutine(TextMethods.DisplayText(dialogueBox.textComponent, dialogue, writeTime));
+            // if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine); 
+            // _dialogueCoroutine =
+            //     StartCoroutine(TextMethods.DisplayText(dialogueBox.textComponent, dialogue, writeTime));
+            
+            dialogueBox.DisplayText(dialogue, writeTime);
         }
         
         public void HideDialogue()
@@ -93,7 +98,7 @@ namespace Runtime.Dialogue
             if (alwaysDisplayName)
             {
                 nameObject.gameObject.SetActive(true);
-                nameObject.textComponent.text = characterName;
+                nameObject.text = characterName;
             }
         }
 
@@ -101,7 +106,7 @@ namespace Runtime.Dialogue
         {
             _name = characterName;
             nameObject.gameObject.SetActive(true);
-            nameObject.textComponent.text = characterName;
+            nameObject.text = characterName;
         }
 
         public void HideCharacterName()

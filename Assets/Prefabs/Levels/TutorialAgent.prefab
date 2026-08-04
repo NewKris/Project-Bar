@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 7774962364505540768}
   - component: {fileID: 8051146127654132906}
   - component: {fileID: 5973511632322931311}
+  - component: {fileID: 1039092552414592219}
   m_Layer: 0
   m_Name: TutorialAgent
   m_TagString: Untagged
@@ -165,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerMeshFilter: {fileID: 7256620274058946089}
+  isLeaving: 0
 --- !u!114 &6672725777763676241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4eb5077e84448c8e138ca3419bbda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
   tutorialFinishedPort: {fileID: 11400000, guid: 19877315dd5d58549b50d6b583224655, type: 2}
   exitPosition: {x: 0, y: 0, z: 11.66}
   tutorialSteps:
@@ -227,6 +230,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014d48b08b2f4bce82481d141600f4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshGameObject: {fileID: 0}
+  defaultLayer: 0
+  tutorialHighlightLayer: 0
+  lookHighlightLayer: 0
 --- !u!136 &5973511632322931311
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -250,6 +257,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1039092552414592219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8465399020216961972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e909c1af90844a49b6d0fb29c1fb69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6291853473255591633
 PrefabInstance:
   m_ObjectHideFlags: 0
