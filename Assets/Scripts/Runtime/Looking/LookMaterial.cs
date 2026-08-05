@@ -4,9 +4,10 @@ using UnityEngine;
 namespace Runtime.Looking {
     [RequireComponent(typeof(LookObject))]
     public class LookMaterial : MonoBehaviour {
-        public Material offMaterial;
         public Material onMaterial;
         public MeshRenderer[] affectedRenderers;
+
+        private Material _offMaterial;
 
         public void StartLooking() {
             foreach (MeshRenderer meshRenderer in affectedRenderers) {
@@ -20,26 +21,26 @@ namespace Runtime.Looking {
 
         public void StopLooking() {
             foreach (MeshRenderer meshRenderer in affectedRenderers) {
-                meshRenderer.material = offMaterial;
+                meshRenderer.material = _offMaterial;
             }
             
             if (TryGetComponent(out MeshRenderer renderer)) {
-                renderer.material = offMaterial;
+                renderer.material = _offMaterial;
             }
         }
 
         private void Reset() {
             affectedRenderers = GetComponentsInChildren<MeshRenderer>(true);
-
-            if (TryGetComponent(out MeshRenderer renderer)) {
-                offMaterial = renderer.material;
-            }
         }
 
         private void Awake() {
             if (TryGetComponent(out LookObject lookObject)) {
                 lookObject.onBeginLook.AddListener(StartLooking);
                 lookObject.onEndLook.AddListener(StopLooking);
+            }
+            
+            if (TryGetComponent(out MeshRenderer renderer)) {
+                _offMaterial = renderer.material;
             }
         }
     }
