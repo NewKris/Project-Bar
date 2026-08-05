@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Runtime.Looking {
@@ -8,7 +9,12 @@ namespace Runtime.Looking {
         public MeshRenderer[] affectedRenderers;
 
         private Material _offMaterial;
+        private Material[] _offMaterials;
 
+        public void ResetAffectedRenderers() {
+            affectedRenderers = GetComponentsInChildren<MeshRenderer>(true);
+        }
+        
         public void StartLooking() {
             foreach (MeshRenderer meshRenderer in affectedRenderers) {
                 meshRenderer.material = onMaterial;
@@ -20,8 +26,8 @@ namespace Runtime.Looking {
         }
 
         public void StopLooking() {
-            foreach (MeshRenderer meshRenderer in affectedRenderers) {
-                meshRenderer.material = _offMaterial;
+            for (int i = 0; i < affectedRenderers.Length; i++) {
+                affectedRenderers[i].material = _offMaterials[i];
             }
             
             if (TryGetComponent(out MeshRenderer renderer)) {
@@ -30,7 +36,7 @@ namespace Runtime.Looking {
         }
 
         private void Reset() {
-            affectedRenderers = GetComponentsInChildren<MeshRenderer>(true);
+            ResetAffectedRenderers();
         }
 
         private void Awake() {
@@ -42,6 +48,8 @@ namespace Runtime.Looking {
             if (TryGetComponent(out MeshRenderer renderer)) {
                 _offMaterial = renderer.material;
             }
+            
+            _offMaterials = affectedRenderers.Select(x => x.material).ToArray();
         }
     }
 }

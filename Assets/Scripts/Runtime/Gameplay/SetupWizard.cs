@@ -2,12 +2,18 @@
 using Runtime.Interact;
 using Runtime.Looking;
 using Runtime.Stations;
+using Runtime.Utility.Extensions;
 using UnityEngine;
 
 namespace Runtime.Gameplay {
     public class SetupWizard : MonoBehaviour {
         public Color promptColor;
         public float promptSize;
+
+        [Button]
+        public void ResetLookMaterials() {
+            FindObjectsByType<LookMaterial>(FindObjectsSortMode.None).ForEach(x => x.ResetAffectedRenderers());
+        }
         
         [Button]
         public void ResetPromptDebugColors() {
