@@ -51,18 +51,15 @@ namespace Runtime.Dialogue
                 yield break;
             }
             
-            int characterCount = dialogue.Length;
-            int currentIndex = 0;
-            string currentMessage = "";
-            
+            textComponent.text = dialogue;
+            textComponent.ForceMeshUpdate();
+            textComponent.maxVisibleCharacters = 0;
+
+            int characterCount = textComponent.textInfo.characterCount;
             float timePerLetter = timeUntilFullyDisplayed / characterCount;
 
-            while (currentIndex < characterCount)
-            {
-                currentMessage += dialogue[currentIndex];
-                
-                textComponent.text = currentMessage;
-                currentIndex++;
+            for (int i = 0; i < characterCount; i++) {
+                textComponent.maxVisibleCharacters = i;
                 yield return new WaitForSeconds(timePerLetter);
             }
         }
