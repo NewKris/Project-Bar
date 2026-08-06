@@ -26421,15 +26421,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[1].reminderDialogue
-      value: Click the Beer Glass Rack, kid.
+      value: Click the Beer Mugs, kid.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[2].reminderDialogue
-      value: Pick up a Beer Glass, put it in the Beer Tap, and Click me.
+      value: Pick up a <color=red>Beer Mug, put it in the Beer Tap, and Click me.</color>
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].reminderDialogue
-      value: Pick up the Beer Glass with Beer, and serve me by releasing it on me.
+      value: Fill the Mug with Beer, pick up the Mug, and <color=blue>serve it by
+        releasing it on me.</color>
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[4].reminderDialogue
@@ -26499,8 +26500,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].stepStartedDialogue
-      value: Hi, Kid. Ready for your new career? "Bartender Assassin"! Oh, and press
-        [SPACE] while looking at me to continue.
+      value: Hi, Kid. Ready for your new career? <color=red>Bartender Assassin</color>!
+        Oh, and <color=blue>press [SPACE] while looking at me to continue.</color>
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].wrongDrinkDialogue
@@ -26517,21 +26518,23 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[1].stepStartedDialogue
       value: First things first, you need to know how to serve customers. Look to
-        your left. See the Beer Glass Rack? Click it to continue.
+        your left. See the <color=blue>Tray with Beer Mugs</color>? <color=blue>Click
+        it to continue.</color>
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[2].stepStartedDialogue
-      value: Now, grab a Beer Glass by holding [Left Click], and put in the Beer
-        Tap, then Click me to continue.
+      value: Now, grab a <color=red>Beer Mug</color> by holding [Left Click], and
+        put in the <color=red>Beer Tap</color>, then <color=blue>Click Me</color>
+        to continue.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].repeatOrderDialogue
-      value: Beer in a Beer Glass. I believe in you.
+      value: Beer in a Beer Mug. I believe in you.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].stepStartedDialogue
-      value: To fill a Glass with beverage from a Tap, hold [SPACE] while looking
-        at the Tap. Now serve me a Beer.
+      value: To fill a Glass with beverage from a Tap, <color=red>hold [SPACE] while
+        looking at the Tap</color>. Now serve me a Beer.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[4].repeatOrderDialogue
@@ -26539,8 +26542,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[4].stepStartedDialogue
-      value: "That\u2019s the one. Now, you need to learn Shortcuts. Take a Whiskey
-        Glass from you right, and fill it with Rum by pressing its Shortcut.  "
+      value: "That\u2019s the one. Now, you need to learn <color=red>Shortcuts</color>.
+        Take a <color=red>Lowball Glass</color> from you right, and fill it with
+        Rum by pressing its <color=red>Shortcut</color>."
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[5].repeatOrderDialogue
