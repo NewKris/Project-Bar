@@ -72,7 +72,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a529bfec7b48c0916b896bce616407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropPenalty: 5
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
   pickUpAudio:
     Guid:
@@ -132,7 +131,6 @@ MonoBehaviour:
       Data4: 0
     Path: 
   maxIngredients: 6
-  overFlowPenalty: 10
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
 --- !u!54 &-1016234374407061195
 Rigidbody:
@@ -173,6 +171,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eccdec9e6c76a2b4da767a4934383ff3, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
