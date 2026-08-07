@@ -27,8 +27,9 @@ MonoBehaviour:
   satisfactionRepeatOrder: 2
   satisfactionKickedOut: 0
   attentionDialogue: Drinks for days!
-  orderDialogue: Blow my skull, now!
-  repeatOrderDialogue: I mean the drink, not like guns or stuff.
+  orderDialogue: <color=blue>Blow My Skull</color>, now!
+  repeatOrderDialogue: I mean the drink, not like guns or stuff. <color=blue>Blow
+    My Skull!</color>!
   successDialogue: Yeeeaah! Head blown clean off!
   failureDialogue: "Awe, my skeleton is intact\u2026"
   patienceTimerTickDialogue: "I\u2019m getting more sober by the second"

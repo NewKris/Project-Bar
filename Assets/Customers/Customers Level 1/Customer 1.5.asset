@@ -27,8 +27,9 @@ MonoBehaviour:
   satisfactionKickedOut: 0
   attentionDialogue: Your day just got a whole lot fresher now that Magnus Mint is
     in the house!!
-  orderDialogue: I need something minty fresh, just like me! A mojito perhaps!
-  repeatOrderDialogue: A mojito. The only drink as fresh as me.
+  orderDialogue: I need something minty fresh, just like me! <color=blue>Mojito</color>
+    me up!
+  repeatOrderDialogue: <color=blue>Mojito</color>. The only drink as fresh as me.
   successDialogue: Very fresh of you, you might one day be as fresh as I am.
   failureDialogue: This is not so fresh, you should be ashamed.
   patienceTimerTickDialogue: This place is getting less fresh by the second.

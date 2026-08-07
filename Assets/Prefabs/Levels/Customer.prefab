@@ -436,7 +436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2412582280886377936, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2476854673661646326, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_fontSize
@@ -447,12 +447,20 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3123482404372508387, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123482404372508387, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3134649963233762181, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_Name
       value: Dialogue Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499902585674057071, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
+      propertyPath: timeBetweenAudio
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7221507417531994102, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_Pivot.x
@@ -552,11 +560,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8604462020546522317, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.76
+      value: -0.777
       objectReference: {fileID: 0}
     - target: {fileID: 8604462020546522317, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.281
+      value: 2.324
       objectReference: {fileID: 0}
     - target: {fileID: 8604462020546522317, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_ConstrainProportionsScale

@@ -25,11 +25,9 @@ MonoBehaviour:
   satisfactionMissedOrder: 17
   satisfactionRepeatOrder: 7
   satisfactionKickedOut: 0
-  attentionDialogue: Soon may the wellerman come
-  orderDialogue: "Fifteen men on the dead man's chest\u2014 Yo ho ho and a bottle
-    of rom!"
-  repeatOrderDialogue: "Drink and the devil had done for the rest\u2014 Yo ho ho
-    and a bottle of rom!"
+  attentionDialogue: Dudette!
+  orderDialogue: Dave desires <color=blue>Daiquiri</color>! Done Deal!
+  repeatOrderDialogue: '<color=blue>D. A. I. Q. U. I. R. I.</color> '
   successDialogue: What would you do with a drunken sailor!
   failureDialogue: She's called the Flying Dutchman and it's rage that fills her
     sails.

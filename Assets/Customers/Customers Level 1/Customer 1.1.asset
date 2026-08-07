@@ -27,8 +27,8 @@ MonoBehaviour:
   satisfactionRepeatOrder: 2
   satisfactionKickedOut: 0
   attentionDialogue: Sup, mate?
-  orderDialogue: Beer, please.
-  repeatOrderDialogue: 'I said: a beer.'
+  orderDialogue: <color=blue>Beer</color>, please.
+  repeatOrderDialogue: 'I said: <color=blue>a beer</color>.'
   successDialogue: Mmm, hits the spot!
   failureDialogue: How can you mess up a beer, man?
   patienceTimerTickDialogue: "I\u2019m waiting\u2026"

@@ -27,7 +27,8 @@ MonoBehaviour:
   satisfactionRepeatOrder: 2
   satisfactionKickedOut: 0
   attentionDialogue: Hey! Yeah, you.
-  orderDialogue: Cuba Libre, dude. Maybe on the rocks.
+  orderDialogue: <color=blue>Cuba Libre on the Rocks</color>, dude. Hit me with <color=blue>Lime</color>
+    if you want, bro.
   repeatOrderDialogue: Cuba. Libre. Freedom!
   successDialogue: Yes, capitalism babyyy!
   failureDialogue: You prefer communism, huh?

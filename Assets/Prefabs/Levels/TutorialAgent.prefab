@@ -289,6 +289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Box
       objectReference: {fileID: 0}
+    - target: {fileID: 3499902585674057071, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
+      propertyPath: timeBetweenAudio
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7221507417531994102, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

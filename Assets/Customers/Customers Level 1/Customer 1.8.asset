@@ -25,11 +25,9 @@ MonoBehaviour:
   satisfactionMissedOrder: 17
   satisfactionRepeatOrder: 7
   satisfactionKickedOut: 0
-  attentionDialogue: Soon may the wellerman come
-  orderDialogue: "Fifteen men on the dead man's chest\u2014 Yo ho ho and a bottle
-    of rom!"
-  repeatOrderDialogue: "Drink and the devil had done for the rest\u2014 Yo ho ho
-    and a bottle of rom!"
+  attentionDialogue: Tavarisj!
+  orderDialogue: Give me a taste of home, a <color=blue>Moscow Mule</color>, comrade
+  repeatOrderDialogue: The <color=blue>Mule of Moscow</color> has been ordered!
   successDialogue: What would you do with a drunken sailor!
   failureDialogue: She's called the Flying Dutchman and it's rage that fills her
     sails.
