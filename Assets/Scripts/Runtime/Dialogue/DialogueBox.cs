@@ -58,7 +58,7 @@ namespace Runtime.Dialogue
             int characterCount = textComponent.textInfo.characterCount;
             float timePerLetter = timeUntilFullyDisplayed / characterCount;
 
-            for (int i = 0; i < characterCount; i++) {
+            for (int i = 0; i <= characterCount; i++) {
                 textComponent.maxVisibleCharacters = i;
                 yield return new WaitForSeconds(timePerLetter);
             }
