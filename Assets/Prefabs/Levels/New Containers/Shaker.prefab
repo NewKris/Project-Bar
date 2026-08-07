@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1155542847166034155}
@@ -185,7 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a529bfec7b48c0916b896bce616407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropPenalty: 5
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
   pickUpAudio:
     Guid:
@@ -245,6 +244,5 @@ MonoBehaviour:
       Data4: 0
     Path: 
   maxIngredients: 6
-  overFlowPenalty: 10
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
   shakeDuration: 0.5
