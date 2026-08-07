@@ -1,4 +1,5 @@
 using Runtime.Customers;
+using Runtime.Dialogue;
 using Runtime.Highlighting;
 using Runtime.Interact;
 using UnityEngine;
@@ -18,6 +19,10 @@ namespace Runtime.Player
 
             if (interactable.TryGetComponent(out Highlightable highlightable)) {
                 highlightable.Click();
+            }
+
+            if (interactable.TryGetComponent(out DialogueDisplayProgressable dialogueBox)) {
+                dialogueBox.HideDialogue();
             }
         }
     }

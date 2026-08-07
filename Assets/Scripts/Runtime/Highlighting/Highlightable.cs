@@ -29,12 +29,10 @@ namespace Runtime.Highlighting {
         }
 
         public void LookAtHighlight(bool lookedAt) {
-            Debug.Log("LookAtHighlight!");
             UpdateState(_tutorialClickable, lookedAt);
         }
         
         public void TutorialHighlight() {
-            Debug.Log("Tutorial Highlight");
             UpdateState(true, _lookedAt);
         }
 

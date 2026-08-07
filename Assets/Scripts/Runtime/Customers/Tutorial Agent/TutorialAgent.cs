@@ -67,7 +67,7 @@ namespace Runtime.Customers.Tutorial_Agent {
             }
             
             _dialogueRunner.ShowDialogue(CurrentStep.stepStartedDialogue);
-            _timer = CurrentStep.reminderTimer;
+            // _timer = CurrentStep.reminderTimer;
 
             if (CurrentStep.progressType == TutorialProgressType.ClickAgent) {
                 _agentHighlightable.TutorialHighlight();
@@ -117,10 +117,10 @@ namespace Runtime.Customers.Tutorial_Agent {
             _timer -= Time.deltaTime;
             _timeSinceStepChanged += Time.deltaTime;
 
-            if (_timer <= 0 && !_base.isLeaving) {
-                _dialogueRunner.ShowDialogue(CurrentStep.reminderDialogue);
-                _timer = CurrentStep.reminderTimer;
-            }
+            // if (_timer <= 0 && !_base.isLeaving) {
+            //     _dialogueRunner.ShowDialogue(CurrentStep.reminderDialogue);
+            //     _timer = CurrentStep.reminderTimer;
+            // }
         }
 
         private void FinishTutorial() {

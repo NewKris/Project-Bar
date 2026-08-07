@@ -1,13 +1,11 @@
-using System.Collections;
-using NaughtyAttributes;
+﻿using NaughtyAttributes;
+using Runtime.Interact;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Runtime.Dialogue
-{
-    public class DialogueDisplay : MonoBehaviour
-    {
+namespace Runtime.Dialogue {
+    [RequireComponent(typeof(Interactable))]
+    public class DialogueDisplayProgressable : MonoBehaviour {
         [SerializeField] private bool hasName;
         [EnableIf("hasName")] [SerializeField] private NameBox nameObject;
         [EnableIf("hasName")] [SerializeField] private bool alwaysDisplayName;
@@ -18,14 +16,10 @@ namespace Runtime.Dialogue
         [Tooltip("The time it takes until all text is shown, if 0 or less all dialogue will be shown at once otherwise one letter at a time")]
         [SerializeField] private float writeTime = 1;
 
-        [SerializeField] private Image timeRemainingImage;
-
         private string _name;
-        //private Coroutine _dialogueCoroutine;
+
         [HideInInspector]
         public bool showingDialogue;
-
-        private bool _breakingActiveDialogue;
         
         
         public void ShowDialogue(string dialogue)
@@ -37,10 +31,6 @@ namespace Runtime.Dialogue
             }
             
             dialogueBox.gameObject.SetActive(true);
-
-            // if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine); 
-            // _dialogueCoroutine =
-            //     StartCoroutine(TextMethods.DisplayText(dialogueBox.textComponent, dialogue, writeTime));
             
             dialogueBox.DisplayText(dialogue, writeTime);
         }
@@ -50,52 +40,16 @@ namespace Runtime.Dialogue
             if (!alwaysDisplayName) nameObject.gameObject.SetActive(false);
             dialogueBox.gameObject.SetActive(false);
             showingDialogue = false;
-            _breakingActiveDialogue = false;
-        }
-
-        public void ShowDialogueTimed(string dialogue, float timer)
-        {
-            StartCoroutine(HandleTimedDialogue(dialogue, timer));
-        }
-        
-        private IEnumerator HandleTimedDialogue(string dialogue, float timer)
-        {
-            if (showingDialogue)
-            {
-                _breakingActiveDialogue = true;
-                while (_breakingActiveDialogue)
-                {
-                    yield return new WaitForFixedUpdate();
-                }
-
-                _breakingActiveDialogue = false;
-            }
-            
-            ShowDialogue(dialogue);
-            showingDialogue = true;
-            float elapsedTime = timer;
-
-            while (elapsedTime > 0)
-            {
-                timeRemainingImage.fillAmount = elapsedTime / timer;
-                elapsedTime -= Time.fixedDeltaTime;
-                
-                if (_breakingActiveDialogue) break;
-                
-                yield return new WaitForFixedUpdate();
-            }
-            
-            _breakingActiveDialogue = false;
-            showingDialogue = false;
-            HideDialogue();
         }
 
         public void SetCharacterName(string characterName)
         {
             if (!hasName) return;
             _name = characterName;
+            Debug.Log(characterName);
             if (alwaysDisplayName)
             {
+                Debug.Log("Hi I need help");
                 nameObject.gameObject.SetActive(true);
                 nameObject.textObject.text = characterName;
             }
@@ -112,6 +66,5 @@ namespace Runtime.Dialogue
         {
             nameObject.gameObject.SetActive(false);
         }
-        
     }
 }

@@ -50,9 +50,11 @@ namespace Runtime.Customers.Tutorial_Agent {
     public class TutorialAgentStep {
         [Tooltip("The dialogue that will play when this step starts")]
         public string stepStartedDialogue;
-
+        
+        /*
         public float reminderTimer;
         public string reminderDialogue;
+        */
         
         [Header("Progress settings")]
         public TutorialProgressType progressType;
