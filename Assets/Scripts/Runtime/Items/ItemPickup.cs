@@ -8,6 +8,7 @@ using UnityEngine;
 namespace Runtime.Items {
     public class ItemPickup : MonoBehaviour {
         public SatisfactionPort satisfactionPort;
+        public ItemSource source;
         
         [Header("Audio")]
         public EventReference pickUpAudio;

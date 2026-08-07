@@ -39,6 +39,8 @@ namespace Runtime.Player.Hand {
                 RemoveItemFromHand();
                 return;
             }
+
+            bool holdingDrink = HeldItem.TryGetComponent(out DrinkObject drink);
             
             if (handInteraction.TryGetComponent(out ItemDock dock) && dock.CanPlaceItem()) {
                 dock.PlaceItem(HeldItem);
@@ -46,9 +48,18 @@ namespace Runtime.Player.Hand {
             else if (handInteraction.TryGetComponent(out MultiDock passiveStation) && passiveStation.CanPlaceItem()) {
                 passiveStation.PlaceItem(HeldItem);
             }
-            else if (handInteraction.TryGetComponent(out CustomerBase customer) && (HeldItem.TryGetComponent(out DrinkObject drink)))
+            else if (handInteraction.TryGetComponent(out CustomerBase customer) && holdingDrink)
             {
                 customer.ServeDrink(drink.currentContents);
+                HeldItem.Despawn();
+                HeldItem = null;
+                return;
+            }
+            else if (handInteraction.TryGetComponent(out ItemSource source) && HeldItem.TryGetComponent(out ItemPickup pickup) && pickup.source == source) {
+                if (holdingDrink && drink.isDirty) {
+                    satisfactionPort.DecreaseSatisfaction(satisfactionPort.dirtyContainerPenalty);
+                }
+                
                 HeldItem.Despawn();
                 HeldItem = null;
                 return;

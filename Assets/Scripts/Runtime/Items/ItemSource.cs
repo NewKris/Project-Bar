@@ -5,7 +5,10 @@ namespace Runtime.Items {
         public GameObject itemPrefab;
 
         public ItemPickup SpawnItem() {
-            return Instantiate(itemPrefab).GetComponent<ItemPickup>();
+            ItemPickup pickup = Instantiate(itemPrefab).GetComponent<ItemPickup>();
+            pickup.source = this;
+
+            return pickup;
         }
     }
 }
