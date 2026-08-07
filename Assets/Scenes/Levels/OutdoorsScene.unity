@@ -19062,23 +19062,23 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 46f92cdf33d232d45b71292bedc3f93f, type: 2}
     - target: {fileID: 8227892601270170974, guid: 888909f5120c7ee44ad1d178cd147df6, type: 3}
       propertyPath: stationAudio.Path
-      value: event:/Sound/SFX/Blender
+      value: event:/Sound/SFX/Mixer loop
       objectReference: {fileID: 0}
     - target: {fileID: 8227892601270170974, guid: 888909f5120c7ee44ad1d178cd147df6, type: 3}
       propertyPath: stationAudio.Guid.Data1
-      value: -1161609565
+      value: 157515215
       objectReference: {fileID: 0}
     - target: {fileID: 8227892601270170974, guid: 888909f5120c7ee44ad1d178cd147df6, type: 3}
       propertyPath: stationAudio.Guid.Data2
-      value: 1195467629
+      value: 1089257611
       objectReference: {fileID: 0}
     - target: {fileID: 8227892601270170974, guid: 888909f5120c7ee44ad1d178cd147df6, type: 3}
       propertyPath: stationAudio.Guid.Data3
-      value: -1138971717
+      value: -352201836
       objectReference: {fileID: 0}
     - target: {fileID: 8227892601270170974, guid: 888909f5120c7ee44ad1d178cd147df6, type: 3}
       propertyPath: stationAudio.Guid.Data4
-      value: -1072443816
+      value: -2005223392
       objectReference: {fileID: 0}
     - target: {fileID: 8519365893418675459, guid: 888909f5120c7ee44ad1d178cd147df6, type: 3}
       propertyPath: itemPivot
@@ -21215,171 +21215,6 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 344221224896072625, guid: 9f3b4c3b71529e44f9cea67ac4ad5e21, type: 3}
   m_PrefabInstance: {fileID: 943586314}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &1208988440
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2262616
-  serializedVersion: 11
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 16
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.125, y: 0, z: 0.2}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200010003000200040005000600050007000600080009000a0009000b000a000c000d000e000d000f000e00
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 16
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 40
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 768
-    _typelessdata: 000000be00000000cdcc4cbe000000000000803f000000000000803f0000000000000000000080bf000000becdcc4cbe000000be0000000000000000000000000000803f000000000000803f0000000000000000000080bf000000be000000000000000000000000cdcc4cbe000000000000803f000000000000803f0000000000000000000080bf00000000cdcc4cbe000000000000000000000000000000000000803f000000000000803f0000000000000000000080bf0000000000000000000000be0000000000000000000000000000803f000000000000803f0000000000000000000080bf000000be00000000000000be00000000cdcc4c3e000000000000803f000000000000803f0000000000000000000080bf000000becdcc4c3e000000000000000000000000000000000000803f000000000000803f0000000000000000000080bf00000000000000000000000000000000cdcc4c3e000000000000803f000000000000803f0000000000000000000080bf00000000cdcc4c3e0000000000000000cdcc4cbe000000000000803f000000000000803f0000000000000000000080bf00000000cdcc4cbe000000000000000000000000000000000000803f000000000000803f0000000000000000000080bf00000000000000000000003e00000000cdcc4cbe000000000000803f000000000000803f0000000000000000000080bf0000003ecdcc4cbe0000003e0000000000000000000000000000803f000000000000803f0000000000000000000080bf0000003e00000000000000000000000000000000000000000000803f000000000000803f0000000000000000000080bf00000000000000000000000000000000cdcc4c3e000000000000803f000000000000803f0000000000000000000080bf00000000cdcc4c3e0000003e0000000000000000000000000000803f000000000000803f0000000000000000000080bf0000003e000000000000003e00000000cdcc4c3e000000000000803f000000000000803f0000000000000000000080bf0000003ecdcc4c3e
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.125, y: 0, z: 0.2}
-  m_MeshUsageFlags: 0
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &1213235157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28044,8 +27879,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialCompletedDialogue
-      value: "Go make a killing, kid. I\u2019ll be back for your next mission, and
-        teach you some new tricks. Godspeed, Agent Gumbo."
+      value: "<color=red>Go make a killing, kid</color>. I\u2019ll be back for your
+        next mission, and teach you some new tricks. <color=blue>Godspeed, Agent
+        Gumbo</color>."
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].progressType
@@ -28089,7 +27925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].progressType
@@ -28105,51 +27941,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[1].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[2].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[4].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[5].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[6].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[7].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[8].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[11].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[12].reminderTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].reminderDialogue
@@ -28157,11 +27993,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[1].reminderDialogue
-      value: Click the Beer Mugs, kid.
+      value: <color=blue>Click the Beer Mugs, kid.</color>
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[2].reminderDialogue
-      value: Pick up a <color=red>Beer Mug, put it in the Beer Tap, and Click me.</color>
+      value: Pick up a <color=red>Beer Mug, put it in the Beer Tap</color>, and <color=blue>Click
+        me.</color>
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].reminderDialogue
@@ -28170,8 +28007,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[4].reminderDialogue
-      value: Look at the Bottles in front of you to see the Shortcut. Serve me Rum
-        in a Whiskey Glass.
+      value: Look at the Bottles in front of you to see the Shortcut. <color=blue>Serve
+        me Rum in a Whiskey Glass</color>.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[5].reminderDialogue
@@ -28179,7 +28016,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[6].reminderDialogue
-      value: Beer and Rum in a Whiskey Glass, makes my head go boom.
+      value: <color=blue>Beer and Rum in a Whiskey Glass</color>, makes my head go
+        boom.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[7].reminderDialogue
@@ -28253,15 +28091,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[1].stepStartedDialogue
-      value: First things first, you need to know how to serve customers. Look to
-        your left. See the <color=blue>Tray with Beer Mugs</color>? <color=blue>Click
+      value: First things first, you need to know how to <color=red>Serve Customers</color>.
+        Look to your left. See the <color=red>Tray with Beer Mugs</color>? <color=blue>Click
         it to continue.</color>
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[2].stepStartedDialogue
       value: Now, grab a <color=red>Beer Mug</color> by holding [Left Click], and
-        put in the <color=red>Beer Tap</color>, then <color=blue>Click Me</color>
-        to continue.
+        put in the <color=red>Beer Tap</color> by releasing it there, then <color=blue>Click
+        Me</color> to continue.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].repeatOrderDialogue
@@ -28280,7 +28118,7 @@ PrefabInstance:
       propertyPath: tutorialSteps.Array.data[4].stepStartedDialogue
       value: "That\u2019s the one. Now, you need to learn <color=red>Shortcuts</color>.
         Take a <color=red>Lowball Glass</color> from you right, and fill it with
-        Rum by pressing its <color=red>Shortcut</color>."
+        Rum by pressing its <color=blue>Shortcut</color>."
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[5].repeatOrderDialogue
@@ -28288,9 +28126,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[5].stepStartedDialogue
-      value: "Perfect. Now, let\u2019s mix a drink. We\u2019ll start easy with \u201CBlow
-        My Skull\u201D. You can see the recipe on the Screen to your right. Click
-        it to continue."
+      value: "Perfect. Now, let\u2019s <color=red>Mix a Drink</color>. We\u2019ll
+        start easy with \u201CBlow My Skull\u201D. You can see the recipe on the
+        Screen to your right. <color=blue>Click the screen to continue</color>."
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[6].repeatOrderDialogue
@@ -28298,8 +28136,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[6].stepStartedDialogue
-      value: Take a Whiskey Glass from you right, fill it with Rum and Beer, and
-        serve it me. Do NOT shake it. Please.
+      value: Take a Whiskey Glass from you right, <color=red>fill it with Rum and
+        Beer</color>, and <color=blue>serve it me</color>. Do NOT shake it. Please.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[7].repeatOrderDialogue
@@ -28307,8 +28145,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[7].stepStartedDialogue
-      value: 'Excellent. And the final lesson of the day: Murder. Your Target will
-        reveal themself if you impress the Customers.'
+      value: 'Excellent. And the final lesson of the day: <color=red>Murder</color>.
+        Your Target will reveal themself if you <color=blue>impress the Customers</color>.'
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[8].repeatOrderDialogue
@@ -28316,8 +28154,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[8].stepStartedDialogue
-      value: Do this by serving them and raising their Satisfaction. As you do, the
-        odds of your Target approaching your bar increases.
+      value: Do this by serving them and raising their <color=red>Satisfaction</color>.
+        As you do, the odds of your <color=red>Target</color> approaching your bar
+        increases.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].repeatOrderDialogue
@@ -28325,8 +28164,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].stepStartedDialogue
-      value: When you find your Target, give them the right drink, and put Poison
-        in it.
+      value: When you find your Target, give them the right drink, and put <color=red>Poison
+        in it</color>.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].repeatOrderDialogue
@@ -28335,7 +28174,7 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].stepStartedDialogue
       value: Crouch with [SCROLL] and look under the desk to your right. See the
-        Poison Ampoule? Click it to continue.
+        <color=red>Poison Ampoule</color>? <color=blue>Click it to continue</color>.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[11].repeatOrderDialogue
@@ -28343,7 +28182,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[11].stepStartedDialogue
-      value: And finally, serve me a lethal Blow My Skull to finish your lesson.
+      value: And finally, serve me a <color=red>Poisonous Blow My Skull</color> to
+        <color=blue>finish your lesson</color>.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[12].repeatOrderDialogue
@@ -28352,7 +28192,7 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[12].stepStartedDialogue
       value: "Good job, kid. Imperceptible sleight of hand. Though I\u2019m not going
-        to drink it. Now, click me to start your mission."
+        to drink it. Now, <color=blue>click me to start your mission</color>."
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[3].acceptedDrinks.Array.Array.size
@@ -28538,6 +28378,10 @@ PrefabInstance:
       propertyPath: 'tutorialSteps.Array.data[12].objectsToHighlight.Array.Array.data[0]'
       value: 
       objectReference: {fileID: 2009796654}
+    - target: {fileID: 7774962364505540768, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: dialoguePopUpTimer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8051146127654132906, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: meshGameObject
       value: 
@@ -29737,7 +29581,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1208988440}
+  m_Mesh: {fileID: 715832424}
 --- !u!33 &1688348642
 MeshFilter:
   m_ObjectHideFlags: 10

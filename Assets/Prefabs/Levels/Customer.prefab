@@ -381,7 +381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2}
+  m_AnchoredPosition: {x: -0.014, y: 2.338}
   m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8727600154161967521
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5655722, b: 0.5613208, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -431,6 +431,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 8232452032915344539}
     m_Modifications:
     - target: {fileID: 180270214283710571, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412582280886377936, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -530,6 +534,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7477549324566395893, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8604462020546522317, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -543,8 +551,12 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8604462020546522317, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604462020546522317, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.35
+      value: 2.281
       objectReference: {fileID: 0}
     - target: {fileID: 8604462020546522317, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_ConstrainProportionsScale
