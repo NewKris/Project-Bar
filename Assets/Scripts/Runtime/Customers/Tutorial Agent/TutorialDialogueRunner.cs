@@ -4,12 +4,12 @@ using UnityEngine;
 namespace Runtime.Customers.Tutorial_Agent {
     public class TutorialDialogueRunner : MonoBehaviour {
         [Tooltip("The DialogueDisplay component attached to the customers dialogue boxes")]
-        [SerializeField] private DialogueDisplayProgressable dialogueDisplay;
+        [SerializeField] private DialogueDisplay dialogueDisplay;
         [Tooltip("The time the dialogue will remain visible upon activation")]
         [SerializeField] private float dialoguePopUpTimer;
 
         public void ShowDialogue(string dialogue) {
-            dialogueDisplay.ShowDialogue(dialogue);
+            dialogueDisplay.ShowDialogueTimed(dialogue, dialoguePopUpTimer);
         }
 
         public void SetCharacterName(string characterName) {

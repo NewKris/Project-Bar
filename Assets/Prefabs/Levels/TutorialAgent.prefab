@@ -184,8 +184,6 @@ MonoBehaviour:
   exitPosition: {x: 0, y: 0, z: 11.66}
   tutorialSteps:
   - stepStartedDialogue: "Tjabba! Klicka p\xE5 mig vet jag!"
-    reminderTimer: 20
-    reminderDialogue: 'To progress you need to: CLICK ME!'
     progressType: 1
     acceptedDrinks:
       Array: []
@@ -194,8 +192,6 @@ MonoBehaviour:
     objectsToHighlight:
       Array: []
   - stepStartedDialogue: "Du klarade det! Nu g\xF6r det igen!"
-    reminderTimer: 20
-    reminderDialogue: 'To progress you need to: CLICK ME!'
     progressType: 1
     acceptedDrinks:
       Array: []
