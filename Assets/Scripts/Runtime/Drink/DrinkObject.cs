@@ -24,7 +24,10 @@ namespace Runtime.Drink {
         
         public void EmptyContents() {
             if (currentContents.ContainsLiquid()) {
-                SfxManager.PlayOneShot(pourAudio);
+                SfxManager.PlayOneShot(new OneShotConfig() {
+                    eventReference = pourAudio,
+                    attachedGameObject = gameObject
+                });
             }
             
             currentContents.ingredients.Clear();

@@ -14,19 +14,34 @@ namespace Runtime.Items {
         public EventReference pickUpAudio;
         public EventReference putDownAudio;
         public EventReference breakAudio;
+        public string glassMaterialLabel;
         
         public event Action OnPinned;
+        
+        private FmodParameter[] _parameters;
 
         public void PlayPickupSound() {
-            SfxManager.PlayOneShot(pickUpAudio);
+            SfxManager.PlayOneShot(new OneShotConfig() {
+                eventReference = pickUpAudio,
+                attachedGameObject = gameObject,
+                parameters = _parameters
+            });
         }
 
         public void PlayPutDownSound() {
-            SfxManager.PlayOneShot(putDownAudio);
+            SfxManager.PlayOneShot(new OneShotConfig() {
+                eventReference = putDownAudio,
+                attachedGameObject = gameObject,
+                parameters = _parameters
+            });
         }
         
         public void BreakItem() {
-            SfxManager.PlayOneShot(breakAudio, transform.position);
+            SfxManager.PlayOneShot(new OneShotConfig() {
+                eventReference = breakAudio, 
+                position = transform.position,
+                parameters = _parameters
+            });
             
             satisfactionPort.DecreaseSatisfaction(satisfactionPort.dropPenalty);
             Despawn();
@@ -63,6 +78,12 @@ namespace Runtime.Items {
         public void Unpin() {
             GetComponent<Rigidbody>().isKinematic = false;
             transform.SetParent(null);
+        }
+
+        private void Awake() {
+            _parameters = new[] {
+                new FmodParameter() { parameterName = "GlassMaterial", value = glassMaterialLabel },
+            };
         }
     }
 }

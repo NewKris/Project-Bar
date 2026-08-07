@@ -35,24 +35,29 @@ namespace Runtime.Audio {
         }
         
         public static void PlayOneShot(EventReference audio) {
-            if (audio.IsNull) return;
-            
-            VerboseDebug.Log($"Playing oneshot: {audio}");
             RuntimeManager.PlayOneShot(audio);
         }
         
-        public static void PlayOneShot(EventReference audio, Vector3 position) {
-            if (audio.IsNull) return;
-
-            VerboseDebug.Log($"Playing oneshot: {audio} at {position}");
-            RuntimeManager.PlayOneShot(audio, position);
-        }
-        
-        public static void PlayOneShot(EventReference audio, GameObject gameObject) {
-            if (audio.IsNull) return;
+        public static void PlayOneShot(OneShotConfig config) {
+            if (config.eventReference.IsNull) return;
             
-            VerboseDebug.Log($"Playing oneshot: {audio} on {gameObject.name}");
-            RuntimeManager.PlayOneShotAttached(audio, gameObject);
+            EventInstance instance = RuntimeManager.CreateInstance(config.eventReference);
+
+            if (config.attachedGameObject) {
+                RuntimeManager.AttachInstanceToGameObject(instance, config.attachedGameObject);
+            }
+            else {
+                instance.set3DAttributes(RuntimeUtils.To3DAttributes(config.position));
+            }
+
+            if (config.parameters != null) {
+                foreach (FmodParameter parameter in config.parameters) {
+                    parameter.AddParameterToInstance(instance);
+                }
+            }
+            
+            instance.start();
+            instance.release();
         }
 
         private void OnDestroy() {
