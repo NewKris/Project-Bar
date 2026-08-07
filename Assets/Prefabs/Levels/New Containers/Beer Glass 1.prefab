@@ -89,11 +89,11 @@ MonoBehaviour:
     Path: 
   breakAudio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1668651081
+      Data2: 1124821238
+      Data3: -1179025483
+      Data4: 515156706
+    Path: event:/Sound/Bar/Glass Crash
 --- !u!114 &6000973712984336668
 MonoBehaviour:
   m_ObjectHideFlags: 0
