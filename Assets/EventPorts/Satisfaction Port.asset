@@ -15,3 +15,4 @@ MonoBehaviour:
   overflowPenalty: 10
   splashPenalty: 10
   dropPenalty: 10
+  dirtyContainerPenalty: 10

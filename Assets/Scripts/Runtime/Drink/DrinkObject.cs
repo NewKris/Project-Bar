@@ -8,6 +8,8 @@ using UnityEngine;
 
 namespace Runtime.Drink {
     public class DrinkObject : MonoBehaviour {
+        [HideInInspector] public bool isDirty;
+        
         public DrinkContents currentContents;
         public EventReference pourAudio;
         
@@ -32,6 +34,10 @@ namespace Runtime.Drink {
         }
 
         public void AddContents(DrinkContents contents) {
+            if (contents.ingredients.Count > 0) {
+                isDirty = true;
+            }
+            
             currentContents.ingredients.AddRange(contents.ingredients);
             currentContents.mixType = contents.mixType;
             currentContents.isDestroyed |= contents.isDestroyed;
@@ -46,6 +52,7 @@ namespace Runtime.Drink {
             }
             
             VerboseDebug.Log("Adding ingredient " + ingredient.name);
+            isDirty = true;
             currentContents.ingredients.Add(ingredient);
             DecreaseStationDurations();
         }

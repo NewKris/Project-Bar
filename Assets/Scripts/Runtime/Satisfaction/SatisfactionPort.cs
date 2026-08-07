@@ -8,6 +8,7 @@ namespace Runtime.Satisfaction
         public int overflowPenalty;
         public int splashPenalty;
         public int dropPenalty;
+        public int dirtyContainerPenalty;
         
         public UnityAction<int> OnSatisfactionChange;
         public UnityAction<int> OnSatisfactionSet;
