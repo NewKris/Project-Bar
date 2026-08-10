@@ -745,10 +745,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entryPrefab: {fileID: 8110599084227107864, guid: ac52789031cfebd4989eee094c39358d, type: 3}
-  recipes:
-  - {fileID: 11400000, guid: 891292d9444f7f24babfcf215ad3b597, type: 2}
-  - {fileID: 11400000, guid: a694c3bacecd1e74c8f970b32cd554ec, type: 2}
-  - {fileID: 11400000, guid: 9ef4bf2abeb309440bc018d24e44bf96, type: 2}
+  initialRecipes: []
+  port: {fileID: 11400000, guid: 2fd40aad2c5f50c40ae9e6804450cc6d, type: 2}
   textFormat: '{id}. {name} ({container})
 
     {ingredients}'

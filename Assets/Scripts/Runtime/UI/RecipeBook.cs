@@ -1,5 +1,6 @@
 using System;
 using NaughtyAttributes;
+using Runtime.Customers.Tutorial_Agent;
 using Runtime.Drink;
 using Runtime.Utility;
 using TMPro;
@@ -10,7 +11,8 @@ namespace Runtime.UI
 {
     public class RecipeBook : MonoBehaviour {
         public GameObject entryPrefab;
-        public Recipe[] recipes;
+        public Recipe[] initialRecipes;
+        public UnlockRecipesEventPort port;
         
         [Header("Formatting")]
         [TextArea] public string textFormat;
@@ -24,11 +26,22 @@ namespace Runtime.UI
 
         private int _recipeIdx;
         
-        public void AddRecipe(Recipe recipe) {
+        public void AddRecipes(Recipe[] newRecipes) {
             Transform entryParent = FindContentParent().transform;
-            PrintRecipe(recipe, entryParent);
+            
+            foreach (Recipe recipe in newRecipes) {
+                PrintRecipe(recipe, entryParent);
+            }
         }
-        
+
+        private void Awake() {
+            port.onRecipesUnlocked += AddRecipes;
+        }
+
+        private void OnDestroy() {
+            port.onRecipesUnlocked -= AddRecipes;
+        }
+
         private void Start() {
             PrintInitialRecipes();
         }
@@ -36,7 +49,7 @@ namespace Runtime.UI
         private void PrintInitialRecipes() {
             Transform entryParent = FindContentParent().transform;
 
-            foreach (Recipe recipe in recipes) {
+            foreach (Recipe recipe in initialRecipes) {
                 PrintRecipe(recipe, entryParent);
             }
         }
