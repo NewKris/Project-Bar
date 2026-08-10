@@ -21,14 +21,20 @@ namespace Runtime.Dialogue
         [SerializeField] private Image timeRemainingImage;
 
         private string _name;
-        //private Coroutine _dialogueCoroutine;
+        private Coroutine _dialogueCoroutine;
         [HideInInspector]
         public bool showingDialogue;
 
         private bool _breakingActiveDialogue;
+
+        public void ShowDialogueNonTimed(string dialogue) {
+            if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine);
+            
+            ShowDialogue(dialogue);
+            timeRemainingImage.gameObject.SetActive(false);
+        }
         
-        
-        public void ShowDialogue(string dialogue)
+        private void ShowDialogue(string dialogue)
         {
             if (hasName && !alwaysDisplayName)
             {
@@ -48,6 +54,7 @@ namespace Runtime.Dialogue
         public void HideDialogue()
         {
             if (!alwaysDisplayName) nameObject.gameObject.SetActive(false);
+            timeRemainingImage.gameObject.SetActive(true);
             dialogueBox.gameObject.SetActive(false);
             showingDialogue = false;
             _breakingActiveDialogue = false;
@@ -55,7 +62,7 @@ namespace Runtime.Dialogue
 
         public void ShowDialogueTimed(string dialogue, float timer)
         {
-            StartCoroutine(HandleTimedDialogue(dialogue, timer));
+            _dialogueCoroutine = StartCoroutine(HandleTimedDialogue(dialogue, timer));
         }
         
         private IEnumerator HandleTimedDialogue(string dialogue, float timer)
@@ -72,6 +79,7 @@ namespace Runtime.Dialogue
             }
             
             ShowDialogue(dialogue);
+            timeRemainingImage.gameObject.SetActive(true);
             showingDialogue = true;
             float elapsedTime = timer;
 

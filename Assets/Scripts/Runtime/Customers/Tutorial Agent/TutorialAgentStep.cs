@@ -3,6 +3,7 @@ using NaughtyAttributes;
 using Runtime.Drink;
 using Runtime.Highlighting;
 using UnityEngine;
+using UnityEngine.Events;
 // HideNestedArrayAttribute from https://github.com/dbrizov/NaughtyAttributes/issues/142#issuecomment-1993967793
 #if UNITY_EDITOR
 using UnityEditor;
@@ -48,13 +49,13 @@ public class NestedArray<T>
 namespace Runtime.Customers.Tutorial_Agent {
     [Serializable]
     public class TutorialAgentStep {
+        [Header("Step started settings ")]
         [Tooltip("The dialogue that will play when this step starts")]
         public string stepStartedDialogue;
-        
-        /*
-        public float reminderTimer;
-        public string reminderDialogue;
-        */
+        [Space(5)]
+        public UnityEvent onStepStarted;
+
+        public Recipe[] recipesToUnlockAtStart;
         
         [Header("Progress settings")]
         public TutorialProgressType progressType;
@@ -71,7 +72,18 @@ namespace Runtime.Customers.Tutorial_Agent {
         [ShowIf("ServeDrink"), AllowNesting]
         public string wrongDrinkDialogue;
         
+        [ShowIf("ServeDrink"), AllowNesting]
+        public float reminderTimer;
+        
+        [ShowIf("ServeDrink"), AllowNesting]
+        public string reminderDialogue;
+        
         [ShowIf("ClickObject"), AllowNesting, HideNestedArray]
         public NestedArray<Highlightable> objectsToHighlight;
+        
+        [Header("Step completed settings")]
+        [Space(5)]
+        public UnityEvent onStepCompleted;
+        public Recipe[] recipesToUnlockAtEnd;
     }
 }

@@ -8,8 +8,12 @@ namespace Runtime.Customers.Tutorial_Agent {
         [Tooltip("The time the dialogue will remain visible upon activation")]
         [SerializeField] private float dialoguePopUpTimer;
 
-        public void ShowDialogue(string dialogue) {
+        public void ShowDialogueTimed(string dialogue) {
             dialogueDisplay.ShowDialogueTimed(dialogue, dialoguePopUpTimer);
+        }
+
+        public void ShowDialogueNonTimed(string dialogue) {
+            dialogueDisplay.ShowDialogueNonTimed(dialogue);
         }
 
         public void SetCharacterName(string characterName) {
