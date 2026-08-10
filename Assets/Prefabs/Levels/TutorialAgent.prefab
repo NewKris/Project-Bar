@@ -181,24 +181,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   tutorialFinishedPort: {fileID: 11400000, guid: 19877315dd5d58549b50d6b583224655, type: 2}
+  unlockRecipesPort: {fileID: 11400000, guid: 2fd40aad2c5f50c40ae9e6804450cc6d, type: 2}
   exitPosition: {x: 0, y: 0, z: 11.66}
   tutorialSteps:
   - stepStartedDialogue: "Tjabba! Klicka p\xE5 mig vet jag!"
+    onStepStarted:
+      m_PersistentCalls:
+        m_Calls: []
+    recipesToUnlockAtStart: []
     progressType: 1
     acceptedDrinks:
       Array: []
     repeatOrderDialogue: 
     wrongDrinkDialogue: 
+    reminderTimer: 0
+    reminderDialogue: 
     objectsToHighlight:
       Array: []
+    onStepCompleted:
+      m_PersistentCalls:
+        m_Calls: []
+    recipesToUnlockAtEnd: []
   - stepStartedDialogue: "Du klarade det! Nu g\xF6r det igen!"
+    onStepStarted:
+      m_PersistentCalls:
+        m_Calls: []
+    recipesToUnlockAtStart: []
     progressType: 1
     acceptedDrinks:
       Array: []
     repeatOrderDialogue: 
     wrongDrinkDialogue: 
+    reminderTimer: 0
+    reminderDialogue: 
     objectsToHighlight:
       Array: []
+    onStepCompleted:
+      m_PersistentCalls:
+        m_Calls: []
+    recipesToUnlockAtEnd: []
   tutorialCompletedDialogue: Bye!
 --- !u!114 &7774962364505540768
 MonoBehaviour:

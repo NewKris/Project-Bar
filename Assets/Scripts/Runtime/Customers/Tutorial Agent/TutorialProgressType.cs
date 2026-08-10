@@ -3,6 +3,6 @@
         None,
         ClickAgent,
         ClickObjects,
-        ServeDrink
+        ServeDrink,
     }
 }

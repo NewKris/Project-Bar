@@ -30,7 +30,7 @@ namespace Runtime.Dialogue
         }
 
         private IEnumerator AnimateTextWithAudio(string dialogue, float timeUntilFullyDisplayed) {
-            if (_textAnimationCoroutine != null) StopCoroutine(_textDisplayingCoroutine);
+            if (_textAnimationCoroutine != null) StopCoroutine(_textAnimationCoroutine);
             _textAnimationCoroutine = StartCoroutine(AnimateText(dialogue, timeUntilFullyDisplayed));
 
             float timeElapsed = 0;

@@ -16,6 +16,7 @@ namespace Runtime.Customers.Tutorial_Agent {
         [SerializeField] private string characterName;
         
         [SerializeField] private CustomerEventPort tutorialFinishedPort;
+        [SerializeField] private UnlockRecipesEventPort unlockRecipesPort;
         [SerializeField] private Vector3 exitPosition;
         [SerializeField] private TutorialAgentStep[] tutorialSteps;
         [SerializeField] private string tutorialCompletedDialogue;
@@ -59,15 +60,24 @@ namespace Runtime.Customers.Tutorial_Agent {
         }
 
         private void NextStep() {
+            HandleStepEndActions();
             _currentStep += 1;
 
             if (_currentStep >= tutorialSteps.Length) {
                 FinishTutorial();
                 return;
             }
+
+            HandleStepStartUpActions();
             
-            _dialogueRunner.ShowDialogue(CurrentStep.stepStartedDialogue);
-            // _timer = CurrentStep.reminderTimer;
+
+            _timer = CurrentStep.reminderTimer;
+            if (CurrentStep.progressType == TutorialProgressType.ServeDrink) {
+                _dialogueRunner.ShowDialogueTimed(CurrentStep.stepStartedDialogue);
+            }
+            else {
+                _dialogueRunner.ShowDialogueNonTimed(CurrentStep.stepStartedDialogue);
+            }
 
             if (CurrentStep.progressType == TutorialProgressType.ClickAgent) {
                 _agentHighlightable.TutorialHighlight();
@@ -84,6 +94,24 @@ namespace Runtime.Customers.Tutorial_Agent {
             }
         }
 
+        private void HandleStepStartUpActions() {
+            CurrentStep.onStepStarted.Invoke();
+            if (CurrentStep.recipesToUnlockAtStart.Length > 0) {
+                unlockRecipesPort.UnlockRecipes(CurrentStep.recipesToUnlockAtStart);
+            }
+            
+        }
+
+        private void HandleStepEndActions() {
+            if (_currentStep >= 0) {
+                CurrentStep.onStepCompleted.Invoke();
+                if (CurrentStep.recipesToUnlockAtEnd.Length > 0) {
+                    unlockRecipesPort.UnlockRecipes(CurrentStep.recipesToUnlockAtEnd);
+                }
+            }
+        }
+        
+
         private void OnOrder() {
             if (_currentStep >= tutorialSteps.Length) return;
             if (CurrentStep == null) return;
@@ -92,7 +120,7 @@ namespace Runtime.Customers.Tutorial_Agent {
                 NextStep();
             } 
             else if (CurrentStep.progressType == TutorialProgressType.ServeDrink) {
-                _dialogueRunner.ShowDialogue(CurrentStep.repeatOrderDialogue);
+                _dialogueRunner.ShowDialogueTimed(CurrentStep.repeatOrderDialogue);
             }
         }
 
@@ -109,7 +137,7 @@ namespace Runtime.Customers.Tutorial_Agent {
             else
             {
                 Debug.Log("Drink rejected");
-                _dialogueRunner.ShowDialogue(CurrentStep.wrongDrinkDialogue);
+                _dialogueRunner.ShowDialogueTimed(CurrentStep.wrongDrinkDialogue);
             }
         }
 
@@ -117,14 +145,16 @@ namespace Runtime.Customers.Tutorial_Agent {
             _timer -= Time.deltaTime;
             _timeSinceStepChanged += Time.deltaTime;
 
-            // if (_timer <= 0 && !_base.isLeaving) {
-            //     _dialogueRunner.ShowDialogue(CurrentStep.reminderDialogue);
-            //     _timer = CurrentStep.reminderTimer;
-            // }
+            if (CurrentStep.progressType != TutorialProgressType.ServeDrink) return;
+            
+            if (_timer <= 0 && !_base.isLeaving) {
+                _dialogueRunner.ShowDialogueTimed(CurrentStep.reminderDialogue);
+                _timer = CurrentStep.reminderTimer;
+            }
         }
 
         private void FinishTutorial() {
-            _dialogueRunner.ShowDialogue(tutorialCompletedDialogue);
+            _dialogueRunner.ShowDialogueTimed(tutorialCompletedDialogue);
             _base.LeaveBar();
         }
 
