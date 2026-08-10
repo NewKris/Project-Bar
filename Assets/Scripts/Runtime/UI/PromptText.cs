@@ -1,8 +1,7 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
-namespace Runtime.Looking {
+namespace Runtime.UI {
     public class PromptText : MonoBehaviour {
         public Color highlightColor;
 

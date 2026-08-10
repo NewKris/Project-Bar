@@ -19,29 +19,29 @@ namespace Runtime.Stations {
     public class ConverterStation : Station {
         public float  middleStateDuration;
         public float  endStateDuration;
-        [Foldout("References")] public RumbleAnimation rumble;
         
         public Conversion[] conversions;
 
         public override void StartStation() {
-            StartStationTimer();
-
-            SfxManager.StartAudio(stationAudioKey, stationAudio, transform.position);
+            if (isToggle && IsActive) {
+                TurnStationOff();
+            }
+            else {
+                StartStationTimer();
+                SfxManager.StartAudio(stationAudioKey, stationAudio, transform.position);
+            }
         }
 
         public override void StopStation() {
-            enabled = false;
-            itemDock.HeldItem?.SetInteractable(true);
-            
-            SfxManager.StopAudio(stationAudioKey);
+            if (!isToggle) TurnStationOff();
+        }
+        
+        private bool IsDone() {
+            return currentItem.GetStationTime(stationKey) >= endStateDuration;
         }
 
-        private void OnEnable() {
-            rumble.Shaking = true;
-        }
-
-        private void OnDisable() {
-            rumble.Shaking = false;
+        protected override float MaxFill() {
+            return endStateDuration;
         }
 
         protected override void Update() {
@@ -51,8 +51,9 @@ namespace Runtime.Stations {
                 ConvertToMiddleStates();
             }
 
-            if (currentItem.GetStationTime(stationKey) >= endStateDuration) {
+            if (IsDone()) {
                 ConvertToEndStates();
+                TurnStationOff();
             }
         }
 
@@ -95,6 +96,13 @@ namespace Runtime.Stations {
         private void TryConvertContainer(DrinkObject drink, DrinkContainer from, DrinkContainer to) {
             if (drink.currentContents.drinkContainer == from)
                 drink.currentContents.drinkContainer = to;
+        }
+
+        private void TurnStationOff() {
+            enabled = false;
+            itemDock.HeldItem?.SetInteractable(true);
+            
+            SfxManager.StopAudio(stationAudioKey);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using NaughtyAttributes;
+using Runtime.UI;
 using Runtime.Utility;
 using TMPro;
 using UnityEngine;
@@ -28,7 +29,7 @@ namespace Runtime.Looking {
         }
         
         private void Awake() {
-            PromptCanvas canvas = FindAnyObjectByType<PromptCanvas>();
+            WorldSpaceCanvas canvas = FindAnyObjectByType<WorldSpaceCanvas>();
 
             _prompt = canvas.CreatePromptText(promptText, PromptPosition, PromptRotation);
             

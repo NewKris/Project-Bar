@@ -9,39 +9,41 @@ namespace Runtime.Stations {
     public class FillStation : Station {
         public Ingredient ingredient;
         public float fillDuration;
-        [Foldout("References")] public RumbleAnimation rumble;
 
         public override void StartStation() {
-            if (AlreadyContainsIngredient()) {
-                Debug.Log($"{gameObject.name} already contains ingredient");
-                return;
+            if (isToggle && IsActive) {
+                TurnStationOff();
             }
+            else {
+                if (AlreadyContainsIngredient()) {
+                    Debug.Log($"{gameObject.name} already contains ingredient");
+                    return;
+                }
             
-            SfxManager.StartAudio(stationAudioKey, stationAudio, transform.position);
+                SfxManager.StartAudio(stationAudioKey, stationAudio, transform.position);
             
-            StartStationTimer();
+                StartStationTimer();
+            }
         }
         
         public override void StopStation() {
-            enabled = false;
-            itemDock.HeldItem?.SetInteractable(true);
-            
-            SfxManager.StopAudio(stationAudioKey);
+            if (!isToggle) TurnStationOff();
         }
 
-        private void OnEnable() {
-            rumble.Shaking = true;
+        private bool IsDone() {
+            return currentItem.GetStationTime(stationKey) > fillDuration;
         }
-
-        private void OnDisable() {
-            rumble.Shaking = false;
+        
+        protected override float MaxFill() {
+            return fillDuration;
         }
-
+        
         protected override void Update() {
             base.Update();
 
-            if (currentItem.GetStationTime(stationKey) > fillDuration) {
+            if (IsDone()) {
                 AddIngredient();
+                TurnStationOff();
             }
         }
 
@@ -54,6 +56,13 @@ namespace Runtime.Stations {
         private void AddIngredient() {
             currentItem.AddIngredient(ingredient);
             currentItem.RemoveStationKey(stationKey);
+        }
+
+        private void TurnStationOff() {
+            enabled = false;
+            itemDock.HeldItem?.SetInteractable(true);
+            
+            SfxManager.StopAudio(stationAudioKey);
         }
     }
 }

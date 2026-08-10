@@ -115,3 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptTextPrefab: {fileID: 7796268320418405935, guid: ac31d277a7a40bf4298207246eb5ebff, type: 3}
+  fillCirclePrefab: {fileID: 2000404968153483126, guid: 29239cc967bafa046ad66163b25336be, type: 3}

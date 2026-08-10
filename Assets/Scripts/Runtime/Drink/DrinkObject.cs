@@ -21,6 +21,10 @@ namespace Runtime.Drink {
         private Dictionary<int, float> StationDurations { get; set; }
 
         public bool HasContents => currentContents.ingredients.Count > 0;
+
+        public float GetStationCompletion(int stationKey, float maxDuration) {
+            return StationDurations[stationKey] / maxDuration;
+        }
         
         public void EmptyContents() {
             if (currentContents.ContainsLiquid()) {
