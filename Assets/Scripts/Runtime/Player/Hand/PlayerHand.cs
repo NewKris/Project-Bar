@@ -63,6 +63,10 @@ namespace Runtime.Player.Hand {
                 HeldItem.Despawn();
                 HeldItem = null;
                 return;
+            } else if (handInteraction.TryGetComponent(out Bin _)) {
+                HeldItem.Despawn();
+                HeldItem = null;
+                return;
             }
             else {
                 HeldItem?.Unpin();
