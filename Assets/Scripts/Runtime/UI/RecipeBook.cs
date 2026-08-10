@@ -22,22 +22,30 @@ namespace Runtime.UI
         [Foldout("Keys")] public string containerKey = "{container}";
         [Foldout("Keys")] public string recipeIngredientsKey = "{ingredients}";
 
+        private int _recipeIdx;
+        
+        public void AddRecipe(Recipe recipe) {
+            Transform entryParent = FindContentParent().transform;
+            PrintRecipe(recipe, entryParent);
+        }
+        
         private void Start() {
-            PrintRecipes();
+            PrintInitialRecipes();
         }
 
-        private void PrintRecipes() {
+        private void PrintInitialRecipes() {
             Transform entryParent = FindContentParent().transform;
 
-            for (int i = 0; i < recipes.Length; i++) {
-                PrintRecipe(i, recipes[i], entryParent);
+            foreach (Recipe recipe in recipes) {
+                PrintRecipe(recipe, entryParent);
             }
         }
 
-        private void PrintRecipe(int index, Recipe recipe, Transform parent) {
+        private void PrintRecipe(Recipe recipe, Transform parent) {
             GameObject entry = Instantiate(entryPrefab, parent);
-            SetEntryText(index, recipe, entry);
+            SetEntryText(_recipeIdx, recipe, entry);
             SetEntrySprite(recipe, entry);
+            _recipeIdx++;
         }
 
         private void SetEntrySprite(Recipe recipe, GameObject entry) {
