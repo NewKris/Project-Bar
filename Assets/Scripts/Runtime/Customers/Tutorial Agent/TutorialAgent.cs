@@ -60,6 +60,8 @@ namespace Runtime.Customers.Tutorial_Agent {
         }
 
         private void NextStep() {
+            _dialogueRunner.HideDialogue();
+            
             HandleStepEndActions();
             _currentStep += 1;
 
