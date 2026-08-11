@@ -13,7 +13,7 @@ namespace Runtime.Audio {
         [Header("Satisfaction")]
         
         [Required]
-        public SatisfactionPort satisfactionPort;
+        public SatisfactionEvents satisfactionPort;
         
         [Required]
         public GameplayPort gameplayPort;
@@ -31,18 +31,15 @@ namespace Runtime.Audio {
         private bool _inEpilogue;
 
         private void OnDestroy() {
-            satisfactionPort.OnSatisfactionChange -= UpdateSatisfactionParameter;
-            satisfactionPort.OnSatisfactionSet -= UpdateSatisfactionParameter;
+            satisfactionPort.onSatisfactionValueUpdated -= UpdateSatisfactionParameter;
             gameplayPort.OnGameplayOver -= SetEpilogueLabel;
         }
 
         private void Start() {
-            satisfactionPort.OnSatisfactionChange += UpdateSatisfactionParameter;
-            satisfactionPort.OnSatisfactionSet += UpdateSatisfactionParameter;
+            satisfactionPort.onSatisfactionValueUpdated += UpdateSatisfactionParameter;
             gameplayPort.OnGameplayOver += SetEpilogueLabel;
             
             MusicManager.PlayMusic(music);
-            //MusicManager.SetParameter("MainMenu", "ToTutorial");
             UpdateSatisfactionParameter(0);
         }
 
@@ -53,18 +50,15 @@ namespace Runtime.Audio {
         
         private void UpdateSatisfactionParameter(int currentSatisfaction) {
             if (_inEpilogue) return;
-            
-            string label = labels[0];
-            
-            for (int i = 0; i < labels.Length; i++) {
-                label = labels[i];
+
+            int upperThreshold = 0;
+            for (int i = 0; i < thresholds.Length; i++) {
+                upperThreshold = i;
                 
-                if (i >= thresholds.Length || currentSatisfaction < thresholds[i]) {
-                    break;
-                }
+                if (currentSatisfaction < thresholds[i]) break;
             }
             
-            MusicManager.SetParameter(parameterName, label);
+            MusicManager.SetParameter(parameterName, labels[upperThreshold]);
         }
 
         private int CalculateCorrectAmountOfThresholds(int labelCount) {
