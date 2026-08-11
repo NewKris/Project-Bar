@@ -29,7 +29,6 @@ namespace Runtime.Audio {
         public string endLabel;
 
         private bool _inEpilogue;
-        private EventInstance _musicInstance;
 
         private void OnDestroy() {
             satisfactionPort.OnSatisfactionChange -= UpdateSatisfactionParameter;
@@ -42,13 +41,13 @@ namespace Runtime.Audio {
             satisfactionPort.OnSatisfactionSet += UpdateSatisfactionParameter;
             gameplayPort.OnGameplayOver += SetEpilogueLabel;
             
-            _musicInstance = MusicManager.PlayMusic(music);
-            _musicInstance.setParameterByNameWithLabel("MainMenu", "ToTutorial");
+            MusicManager.PlayMusic(music);
+            //MusicManager.SetParameter("MainMenu", "ToTutorial");
             UpdateSatisfactionParameter(0);
         }
 
         private void SetEpilogueLabel() {
-            _musicInstance.setParameterByNameWithLabel(parameterName, endLabel);
+            MusicManager.SetParameter(parameterName, endLabel);
             _inEpilogue = true;
         }
         
@@ -63,7 +62,7 @@ namespace Runtime.Audio {
                 label = labels[i];
             }
             
-            _musicInstance.setParameterByNameWithLabel(parameterName, label);
+            MusicManager.SetParameter(parameterName, label);
         }
 
         private int CalculateCorrectAmountOfThresholds(int labelCount) {

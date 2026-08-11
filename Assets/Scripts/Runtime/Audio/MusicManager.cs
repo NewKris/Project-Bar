@@ -11,15 +11,23 @@ namespace Runtime.Audio {
         private static MusicManager Instance;
         private static EventInstance CurrentMusic;
 
-        public static EventInstance PlayMusic(EventReference music) {
+        public static void PlayMusic(EventReference music) {
             if (CurrentMusic.isValid()) {
                 CurrentMusic.stop(STOP_MODE.ALLOWFADEOUT);
             }
 
             CurrentMusic = RuntimeManager.CreateInstance(music);
             CurrentMusic.start();
+        }
 
-            return CurrentMusic;
+        public static void SetParameter(string parameterName, float value) {
+            Debug.Log($"Set FMOD parameter {parameterName} to {value}");
+            CurrentMusic.setParameterByName(parameterName, value);
+        }
+
+        public static void SetParameter(string parameterName, string value) {
+            Debug.Log($"Set FMOD parameter {parameterName} to {value}");
+            CurrentMusic.setParameterByNameWithLabel(parameterName, value);
         }
 
         private void Awake() {
