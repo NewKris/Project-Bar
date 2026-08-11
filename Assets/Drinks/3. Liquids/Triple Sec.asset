@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765f618e78934992860ec1650ddb41fb, type: 3}
   m_Name: Triple Sec
   m_EditorClassIdentifier: 
+  isPoisonous: 0
   type: 2
+  customDisplayName: 
+  ingredientSound:
+    Guid:
+      Data1: 206663481
+      Data2: 1122002480
+      Data3: 1065574306
+      Data4: -508254091
+    Path: event:/Sound/Bar/Pouring liquid
