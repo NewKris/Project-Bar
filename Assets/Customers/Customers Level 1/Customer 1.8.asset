@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
   m_Name: Customer 1.8
   m_EditorClassIdentifier: 
-  customerName: moscow mule (8)
+  customerName: Soviet Spy (8)
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
@@ -25,12 +25,12 @@ MonoBehaviour:
   satisfactionMissedOrder: 17
   satisfactionRepeatOrder: 7
   satisfactionKickedOut: 0
-  attentionDialogue: Tavarisj!
-  orderDialogue: Give me a taste of home, a <color=blue>Moscow Mule</color>, comrade
+  attentionDialogue: Tovarishch!
+  orderDialogue: Give me a taste of home, a <color=blue>Moscow Mule</color>, comrade.
   repeatOrderDialogue: The <color=blue>Mule of Moscow</color> has been ordered!
-  successDialogue: What would you do with a drunken sailor!
-  failureDialogue: She's called the Flying Dutchman and it's rage that fills her
-    sails.
-  patienceTimerTickDialogue: Turn that ship around me boys
+  successDialogue: Spasiba, you have brough a tear of joy and strength to my eye
+  failureDialogue: Sram i pozor za doma i stranata!
+  patienceTimerTickDialogue: Davai, friend!
   patienceTimeOutDialogue: Farewell and adieu to you spanish ladies.
-  kickedOutDialogue: Couldn't handle this many customers at once huh?
+  kickedOutDialogue: "\u0441\u0440\u0430\u043C \u0438 \u043F\u043E\u0437\u043E\u0440
+    \u0437\u0430 \u0434\u043E\u043C\u0430 \u0438 \u0441\u0442\u0440\u0430\u043D\u0430\u0442\u0430"

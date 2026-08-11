@@ -20,6 +20,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b5557b6ab46a88247a10da39388b50b7, type: 2}
   - {fileID: 11400000, guid: bbd05041b0b70a44f88a3529fe415635, type: 2}
   - {fileID: 11400000, guid: 59726a084578f3846b371fa7880c34cc, type: 2}
+  - {fileID: 11400000, guid: 59726a084578f3846b371fa7880c34cc, type: 2}
+  - {fileID: 11400000, guid: 7a34116ef1047dc44a83247920ce6d54, type: 2}
+  - {fileID: 11400000, guid: 81a76a6348adddd4ba8c6ffdb0b73489, type: 2}
+  - {fileID: 11400000, guid: 72899971f8ab3c14fb0bf4a799f18760, type: 2}
+  - {fileID: 11400000, guid: 6950afd47ce659b469d99f9c83fdbb92, type: 2}
   timePenaltyRepeatOrder: 10
   patienceTimer: 60
   patienceTickTime: 30
@@ -31,8 +36,8 @@ MonoBehaviour:
   attentionDialogue: Hello! Barkeep!?
   orderDialogue: I could really go for some soda!, like a <color=blue>Cola</color>
     or <color=blue>Ginger Beer</color>!
-  repeatOrderDialogue: Have you already forgotten such a simple order as <color=blue>Ginger
-    Beer</color>? :|
+  repeatOrderDialogue: Have you already forgotten such a simple order as a <color=blue>Cola
+    or Ginger Beer</color>? :|
   successDialogue: Yay!! A soda!!! :D
   failureDialogue: This is not a soda. :(
   patienceTimerTickDialogue: I might as well leave if this is the service I get.

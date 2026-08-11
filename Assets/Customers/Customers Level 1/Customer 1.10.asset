@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
   m_Name: Customer 1.10
   m_EditorClassIdentifier: 
-  customerName: white wine (10)
+  customerName: Classy Cathy (10)
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
@@ -27,10 +27,9 @@ MonoBehaviour:
   satisfactionKickedOut: 0
   attentionDialogue: What is this dump?
   orderDialogue: Do you even have <color=blue>White Wine</color>?
-  repeatOrderDialogue: You mean to say you don't have <color=blue>White Wine</color>?
+  repeatOrderDialogue: Have you never heard of <color=blue>White Wine</color>?
   successDialogue: What would you do with a drunken sailor!
-  failureDialogue: She's called the Flying Dutchman and it's rage that fills her
-    sails.
-  patienceTimerTickDialogue: Turn that ship around me boys
-  patienceTimeOutDialogue: Farewell and adieu to you spanish ladies.
+  failureDialogue: This is going on your permanent record.
+  patienceTimerTickDialogue: I have places to be you know!
+  patienceTimeOutDialogue: Oh, my cab is here. See you never!
   kickedOutDialogue: Couldn't handle this many customers at once huh?
