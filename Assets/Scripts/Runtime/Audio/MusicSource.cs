@@ -57,9 +57,11 @@ namespace Runtime.Audio {
             string label = labels[0];
             
             for (int i = 0; i < labels.Length; i++) {
-                if (i >= thresholds.Length || currentSatisfaction < thresholds[i]) break;
-
                 label = labels[i];
+                
+                if (i >= thresholds.Length || currentSatisfaction < thresholds[i]) {
+                    break;
+                }
             }
             
             MusicManager.SetParameter(parameterName, label);
