@@ -27,11 +27,12 @@ MonoBehaviour:
   satisfactionRepeatOrder: 2
   satisfactionKickedOut: 0
   attentionDialogue: Drinks for days!
-  orderDialogue: <color=blue>Blow My Skull</color>, now!
+  orderDialogue: My head is on kinda loose, man. I need you to <color=blue>Blow My
+    Skull</color>, now!
   repeatOrderDialogue: I mean the drink, not like guns or stuff. <color=blue>Blow
-    My Skull!</color>!
+    My Skull!</color>, baby!
   successDialogue: Yeeeaah! Head blown clean off!
-  failureDialogue: "Awe, my skeleton is intact\u2026"
-  patienceTimerTickDialogue: "I\u2019m getting more sober by the second"
-  patienceTimeOutDialogue: "Someone else will have to blow me\u2026"
+  failureDialogue: "...204, 205, 206. Awe, my skeleton is intact\u2026"
+  patienceTimerTickDialogue: I'm losing blood over here! Haha, get it?
+  patienceTimeOutDialogue: "Someone else will have to blow me then\u2026"
   kickedOutDialogue: "You\u2019re the reddest of flags, girl."
