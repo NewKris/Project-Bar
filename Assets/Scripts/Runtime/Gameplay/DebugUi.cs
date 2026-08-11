@@ -23,7 +23,7 @@ namespace Runtime.Gameplay {
 
             if (_satisfactionManager) {
                 GUILayout.Label($"Satisfaction: {_satisfactionManager.currentSatisfaction} / {_satisfactionManager.TargetSatisfaction}", textStyle);
-                GUILayout.Label($"Target Can Spawn: {_satisfactionManager.TargetCanSpaw}", textStyle);
+                GUILayout.Label($"Target Can Spawn: {_satisfactionManager.TargetCanSpawn}", textStyle);
             }
 
             if (_customerManager) {
