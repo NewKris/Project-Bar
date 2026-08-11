@@ -61,16 +61,6 @@ namespace Runtime.Gameplay {
             }
         }
 
-        private void OnGUI() {
-            GUILayout.BeginArea(new Rect(Screen.width - 110, 10, 100, 300));
-            
-            if (GUILayout.Button("Exit Game")) {
-                sceneHandler.MainMenu();
-            }
-            
-            GUILayout.EndArea();
-        }
-
         private void SetLoggingLevel(Config config) {
             VerboseDebug.enableVerboseLogging = config.verboseLogging;
         }
