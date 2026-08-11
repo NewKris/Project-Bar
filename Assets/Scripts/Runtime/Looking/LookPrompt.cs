@@ -9,16 +9,15 @@ namespace Runtime.Looking {
     [RequireComponent(typeof(LookObject))]
     public class LookPrompt : MonoBehaviour {
         public string promptText;
-        public Vector3 positionOffset;
-        public Vector3 rotationOffset;
+        public Transform pivot;
 
         [Foldout("Debug")] public float debugSize = 0.05f;
         [Foldout("Debug")] public Color debugColor = new Color(0f, 1f, 0f, 0.2f);
         
         private PromptText _prompt;
         
-        private Vector3 PromptPosition => transform.position + transform.TransformDirection(positionOffset);
-        private Quaternion PromptRotation => transform.rotation * Quaternion.Euler(rotationOffset);
+        private Vector3 PromptPosition => pivot ? pivot.position : transform.position;
+        private Quaternion PromptRotation => pivot ? pivot.rotation : transform.rotation;
 
         public void ShowPrompt() {
             _prompt.gameObject.SetActive(true);
@@ -40,8 +39,15 @@ namespace Runtime.Looking {
         }
 
         private void OnDrawGizmos() {
-            Vector3 forward = PromptRotation * Vector3.forward;
+            Vector3 forward = PromptRotation * Vector3.back;
+            Vector3 up = PromptRotation * Vector3.up;
             HandlesProxy.DrawDisc(PromptPosition, forward, debugSize, false, debugColor);
+            
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(PromptPosition, forward * 0.1f);
+            
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawRay(PromptPosition, up * 0.1f);
         }
     }
 }

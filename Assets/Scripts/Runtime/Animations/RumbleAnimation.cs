@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Runtime.Animations {
     public class RumbleAnimation : MonoBehaviour {
@@ -7,18 +9,23 @@ namespace Runtime.Animations {
 
         private bool _shaking;
         private float _lastShake;
+        private Vector3 _origin;
 
         public bool Shaking {
             get => _shaking;
             set{
                 _shaking = value;
-                if (!_shaking) transform.localPosition = Vector3.zero;
+                if (!_shaking) transform.position = _origin;
             }
         }
-        
+
+        private void Awake() {
+            _origin = transform.position;
+        }
+
         private void Update() {
             if (Shaking && Time.time - _lastShake > frequency) {
-                transform.localPosition = Random.insideUnitSphere * amplitude;
+                transform.position = _origin + Random.insideUnitSphere * amplitude;
                 _lastShake = Time.time;
             }
         }
