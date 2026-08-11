@@ -43,6 +43,7 @@ namespace Runtime.Audio {
             gameplayPort.OnGameplayOver += SetEpilogueLabel;
             
             _musicInstance = MusicManager.PlayMusic(music);
+            _musicInstance.setParameterByNameWithLabel("MainMenu", "ToTutorial");
             UpdateSatisfactionParameter(0);
         }
 
