@@ -62,6 +62,11 @@ namespace Runtime.Drink {
             isDirty = true;
             currentContents.ingredients.Add(ingredient);
             DecreaseStationDurations();
+            
+            if (!ingredient.ingredientSound.IsNull) SfxManager.PlayOneShot(new OneShotConfig() {
+                eventReference = ingredient.ingredientSound,
+                attachedGameObject = gameObject
+            });
         }
 
         private void ResetDurations() {

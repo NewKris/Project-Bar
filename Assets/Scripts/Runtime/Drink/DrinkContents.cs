@@ -55,10 +55,10 @@ namespace Runtime.Drink {
                 return false;
             }
 
-            if (!CheckForCorrectOrderOfIngredients(ingredients)) {
+            /*if (!CheckForCorrectOrderOfIngredients(ingredients)) {
                 Debug.Log("Wrong order of ingredients");
                 return false;
-            }
+            }*/
             
             return true;
         }
