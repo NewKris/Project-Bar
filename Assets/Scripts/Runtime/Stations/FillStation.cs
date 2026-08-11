@@ -54,7 +54,7 @@ namespace Runtime.Stations {
         }
 
         private void AddIngredient() {
-            currentItem.AddIngredient(ingredient);
+            currentItem.AddIngredient(ingredient, true);
             currentItem.RemoveStationKey(stationKey);
         }
 

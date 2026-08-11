@@ -51,7 +51,7 @@ namespace Runtime.Drink {
             ResetDurations();
         }
         
-        public void AddIngredient(Ingredient ingredient) {
+        public void AddIngredient(Ingredient ingredient, bool skipSfx = false) {
             if (currentContents.IngredientCount >= maxIngredients) {
                 VerboseDebug.Log("Cannot add ingredient: Container is full!");
                 satisfactionPort.DecreaseSatisfaction(satisfactionPort.overflowPenalty);
@@ -63,10 +63,12 @@ namespace Runtime.Drink {
             currentContents.ingredients.Add(ingredient);
             DecreaseStationDurations();
             
-            if (!ingredient.ingredientSound.IsNull) SfxManager.PlayOneShot(new OneShotConfig() {
-                eventReference = ingredient.ingredientSound,
-                attachedGameObject = gameObject
-            });
+            if (!skipSfx && !ingredient.ingredientSound.IsNull) {
+                SfxManager.PlayOneShot(new OneShotConfig() {
+                    eventReference = ingredient.ingredientSound,
+                    attachedGameObject = gameObject
+                });
+            }
         }
 
         private void ResetDurations() {
