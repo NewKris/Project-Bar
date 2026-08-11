@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f58ba208f5c47e9b58aa2266db8890a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameplayPort: {fileID: 11400000, guid: 9baf410139eef4e4a84da744e21642e1, type: 2}
   sceneHandler: {fileID: 11400000, guid: 31294f4ab7809ec49a6bc6863f7cb624, type: 2}
   satisfactionEvents: {fileID: 11400000, guid: 8e3b1e746fc9f50478c8103e198f74ff, type: 2}
   customerEventPort: {fileID: 11400000, guid: dff084a8993e2af4bacb99c66f229fe5, type: 2}
+  gameEndWait: 5
