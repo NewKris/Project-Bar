@@ -23,7 +23,7 @@ namespace Runtime.Satisfaction
 
         public int CurrentSatisfaction => currentSatisfaction;
         public int TargetSatisfaction => currentLevel.targetSatisfaction;
-        public bool TargetCanSpaw => _targetUnlocked;
+        public bool TargetCanSpawn => _targetUnlocked;
         
         private void OnEnable()
         {
@@ -49,6 +49,8 @@ namespace Runtime.Satisfaction
             HandleTargetUnlock();
 
             HandleCustomerUnlocks();
+            
+            satisfactionEvents.UpdateSatisfaction(currentSatisfaction);
             
             if (currentSatisfaction <= 0)
             {
@@ -98,6 +100,7 @@ namespace Runtime.Satisfaction
         private void SetSatisfaction(int value)
         {
             currentSatisfaction = value;
+            satisfactionEvents.UpdateSatisfaction(currentSatisfaction);
         }
 
         public void SetLevel(Level level)
@@ -109,6 +112,7 @@ namespace Runtime.Satisfaction
         public void Restart()
         {
             currentSatisfaction = currentLevel.startSatisfaction;
+            satisfactionEvents.UpdateSatisfaction(currentSatisfaction);
             _targetUnlocked = false;
             satisfactionEvents.UpdateCustomers(currentLevel.availableCustomers, currentLevel.target);
             _availableCustomers = new bool[currentLevel.customerUnlocks.Length];

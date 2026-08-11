@@ -12,6 +12,10 @@ namespace Runtime.Customers.Tutorial_Agent {
             dialogueDisplay.ShowDialogueTimed(dialogue, dialoguePopUpTimer);
         }
 
+        public void HideDialogue() {
+            dialogueDisplay.HideDialogue();
+        }
+
         public void ShowDialogueNonTimed(string dialogue) {
             dialogueDisplay.ShowDialogueNonTimed(dialogue);
         }

@@ -15,6 +15,7 @@ namespace Runtime.Satisfaction
         public UnityAction<bool> OnToggleTarget;
         public UnityAction OnGameOver;
         public UnityAction<CustomerData[], TargetData> OnUpdateCustomers;
+        public UnityAction<int> onSatisfactionValueUpdated;
 
         public void ChangeCustomerSlotState(int slot, bool lockSlot)
         {
@@ -45,6 +46,10 @@ namespace Runtime.Satisfaction
         public void GameOver()
         {
             OnGameOver?.Invoke();
+        }
+
+        public void UpdateSatisfaction(int value) {
+            onSatisfactionValueUpdated?.Invoke(value);
         }
     }
 }
