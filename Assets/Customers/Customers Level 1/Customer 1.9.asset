@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
   m_Name: Customer 1.9
   m_EditorClassIdentifier: 
-  customerName: Shandygaff (9)
+  customerName: Jeanette Se Va (9)
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
@@ -25,12 +25,11 @@ MonoBehaviour:
   satisfactionMissedOrder: 17
   satisfactionRepeatOrder: 7
   satisfactionKickedOut: 0
-  attentionDialogue: Stop yapping!
-  orderDialogue: And hand me a <color=blue>Shandygaff</color>! ...ing.
+  attentionDialogue: Enough with the riffraff!!
+  orderDialogue: And hand me a <color=blue>Shandygaff</color>!
   repeatOrderDialogue: <color=blue>Shandygaff</color>, girl!
-  successDialogue: What would you do with a drunken sailor!
-  failureDialogue: She's called the Flying Dutchman and it's rage that fills her
-    sails.
-  patienceTimerTickDialogue: Turn that ship around me boys
-  patienceTimeOutDialogue: Farewell and adieu to you spanish ladies.
+  successDialogue: Yes! The Shandy has been gaffed!
+  failureDialogue: There's certaintly no gaff in this shandy
+  patienceTimerTickDialogue: Shhh....
+  patienceTimeOutDialogue: I deserve better than you.
   kickedOutDialogue: Couldn't handle this many customers at once huh?

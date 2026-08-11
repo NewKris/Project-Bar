@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
   m_Name: Customer 1.6
   m_EditorClassIdentifier: 
-  customerName: Pirate Queen (6)
+  customerName: Flying Dutchman (6)
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
@@ -26,14 +26,14 @@ MonoBehaviour:
   satisfactionMissedOrder: 17
   satisfactionRepeatOrder: 7
   satisfactionKickedOut: 0
-  attentionDialogue: Soon may the wellerman come!
-  orderDialogue: "Fifteen men on the dead man's chest\u2014 Yo ho ho and a bottle
-    of <color=blue>Rum</color>!"
+  attentionDialogue: Soon may the Wellerman come!
+  orderDialogue: "Fifteen men on the dead man's chest\u2014 Yo ho ho and a <color=blue>Lowball
+    of Rum</color>!"
   repeatOrderDialogue: "Drink and the devil had done for the rest\u2014 Yo ho ho
-    and a bottle of <color=blue>Rum</color>!"
+    and a <color=blue>Lowball of Rum</color>!"
   successDialogue: What would you do with a drunken sailor!
   failureDialogue: She's called the Flying Dutchman and it's rage that fills her
     sails.
   patienceTimerTickDialogue: Turn that ship around me boys
-  patienceTimeOutDialogue: Farewell and adieu to you spanish ladies.
+  patienceTimeOutDialogue: Farewell and adieu to you, spanish ladies.
   kickedOutDialogue: Couldn't handle this many customers at once huh?

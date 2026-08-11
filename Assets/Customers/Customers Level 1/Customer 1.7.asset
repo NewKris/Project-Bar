@@ -27,10 +27,9 @@ MonoBehaviour:
   satisfactionKickedOut: 0
   attentionDialogue: Dudette!
   orderDialogue: Dave desires <color=blue>Daiquiri</color>! Done Deal!
-  repeatOrderDialogue: '<color=blue>D. A. I. Q. U. I. R. I.</color> '
-  successDialogue: What would you do with a drunken sailor!
-  failureDialogue: She's called the Flying Dutchman and it's rage that fills her
-    sails.
-  patienceTimerTickDialogue: Turn that ship around me boys
-  patienceTimeOutDialogue: Farewell and adieu to you spanish ladies.
+  repeatOrderDialogue: <color=blue>D. A. I. Q. U. I. R. I.</color> Dave denies dyslexia!
+  successDialogue: Delightful drink, dearest! Danke!
+  failureDialogue: Definitely a dum-dum.
+  patienceTimerTickDialogue: Dude!
+  patienceTimeOutDialogue: Defeated by the dastardly daylight, darn...
   kickedOutDialogue: Couldn't handle this many customers at once huh?
