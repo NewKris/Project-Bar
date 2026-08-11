@@ -19561,6 +19561,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7560f89d6d466eb99b5871ade71d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1142798561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1142798562}
+  - component: {fileID: 1142798563}
+  m_Layer: 0
+  m_Name: Music Parameter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1142798562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142798561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1142798563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142798561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8f550e7ce84797b7845fa13fa3b694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: MainMenu
+  parameterValue: ToTutorial
 --- !u!23 &1143486961 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 200138491865754578, guid: 16adf084eb7a1af45856fa702ee56f55, type: 3}
@@ -27457,6 +27503,38 @@ PrefabInstance:
       propertyPath: 'tutorialSteps.Array.data[13].objectsToHighlight.Array.Array.data[0]'
       value: 
       objectReference: {fileID: 2009796654}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSatisfaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Runtime.Satisfaction.SatisfactionPort, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7774962364505540768, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: dialoguePopUpTimer
       value: 10
@@ -39418,3 +39496,4 @@ SceneRoots:
   - {fileID: 1591988858}
   - {fileID: 1991830380}
   - {fileID: 296826902}
+  - {fileID: 1142798562}

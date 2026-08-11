@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: 
   sceneName: OutdoorsScene
-  startSatisfaction: 50
+  startSatisfaction: 25
   customerUnlocks: 0000000064000000
   targetSatisfaction: 100
   maximumSatisfaction: 150

@@ -53,7 +53,11 @@ MonoBehaviour:
     Path: event:/Music/Song 1
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
   gameplayPort: {fileID: 11400000, guid: 9baf410139eef4e4a84da744e21642e1, type: 2}
-  parameterName: 
-  labels: []
-  thresholds: 
-  endLabel: 
+  parameterName: SatisfactionLevel1
+  labels:
+  - Tutorial
+  - 1Customer
+  - 2Customer
+  - MaxSatisfaction
+  thresholds: 320000006400000096000000
+  endLabel: LevelClear
