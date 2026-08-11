@@ -1529,8 +1529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: E
-  positionOffset: {x: 0, y: 0.8, z: 0}
-  rotationOffset: {x: 0, y: 0, z: 0}
+  pivot: {fileID: 0}
   debugSize: 0.05
   debugColor: {r: 0.24781048, g: 1, b: 0, a: 0.5019608}
 --- !u!1 &2025596237
@@ -1712,8 +1711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: E
-  positionOffset: {x: 0, y: 0.8, z: 0}
-  rotationOffset: {x: 0, y: 0, z: 0}
+  pivot: {fileID: 0}
   debugSize: 0.05
   debugColor: {r: 0.24781048, g: 1, b: 0, a: 0.5019608}
 --- !u!114 &2034468356
@@ -2041,6 +2039,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 115080116900137652, guid: 0aebadc066dd3224c8adedb8aca1cf63, type: 3}
+      propertyPath: gameplayPort
+      value: 
+      objectReference: {fileID: 11400000, guid: 9baf410139eef4e4a84da744e21642e1, type: 2}
+    - target: {fileID: 115080116900137652, guid: 0aebadc066dd3224c8adedb8aca1cf63, type: 3}
+      propertyPath: parameterName
+      value: thing
+      objectReference: {fileID: 0}
+    - target: {fileID: 115080116900137652, guid: 0aebadc066dd3224c8adedb8aca1cf63, type: 3}
+      propertyPath: satisfactionPort
+      value: 
+      objectReference: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
+    - target: {fileID: 115080116900137652, guid: 0aebadc066dd3224c8adedb8aca1cf63, type: 3}
+      propertyPath: labels.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 115080116900137652, guid: 0aebadc066dd3224c8adedb8aca1cf63, type: 3}
+      propertyPath: thresholds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2060005273185271862, guid: 0aebadc066dd3224c8adedb8aca1cf63, type: 3}
       propertyPath: m_Name
       value: Music Source

@@ -15,7 +15,8 @@ namespace Runtime.Gameplay {
     
     public class GameplayManager : MonoBehaviour {
         private static bool GameEnded;
-        
+
+        public GameplayPort gameplayPort;
         public SceneHandler sceneHandler;
         public SatisfactionEvents satisfactionEvents;
         public CustomerEvents customerEventPort;
@@ -76,6 +77,7 @@ namespace Runtime.Gameplay {
 
         private IEnumerator EndGame(bool victory) {
             GameEnded = true;
+            gameplayPort.EndGameplay();
             
             yield return new WaitForSeconds(gameEndWait);
             
