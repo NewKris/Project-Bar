@@ -10,7 +10,12 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Runtime.Audio {
     public class SfxManager : MonoBehaviour {
+        private static SfxManager Instance;
         private static readonly Dictionary<string, EventInstance> ActiveAudio = new  Dictionary<string, EventInstance>();
+
+        public EventReference successJingle;
+        public EventReference failureJingle;
+        
 
         public static string CreateUniqueKey(MonoBehaviour instance, EventReference audio, int id = 0) {
             return instance.GetInstanceID() + audio.Path + id;
@@ -32,6 +37,14 @@ namespace Runtime.Audio {
                 ActiveAudio[key].stop(STOP_MODE.ALLOWFADEOUT);
                 ActiveAudio.Remove(key);
             }
+        }
+
+        public static void PlaySuccess() {
+            if (!Instance.successJingle.IsNull) RuntimeManager.PlayOneShot(Instance.successJingle);
+        }
+        
+        public static void PlayFailure() {
+            if (!Instance.failureJingle.IsNull) RuntimeManager.PlayOneShot(Instance.failureJingle);
         }
         
         public static void PlayOneShot(EventReference audio) {
@@ -58,6 +71,10 @@ namespace Runtime.Audio {
             
             instance.start();
             instance.release();
+        }
+
+        private void Awake() {
+            Instance = this;
         }
 
         private void OnDestroy() {

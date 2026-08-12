@@ -1,3 +1,4 @@
+using Runtime.Audio;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,11 +17,13 @@ namespace Runtime.Satisfaction
         public void IncreaseSatisfaction(int value)
         {
             OnSatisfactionChange?.Invoke(Mathf.Abs(value));
+            SfxManager.PlaySuccess();
         }
 
         public void DecreaseSatisfaction(int value)
         {
             OnSatisfactionChange?.Invoke(-(Mathf.Abs(value)));
+            SfxManager.PlayFailure();
         }
 
         public void SetSatisfaction(int value)
