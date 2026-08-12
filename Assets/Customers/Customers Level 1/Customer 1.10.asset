@@ -28,8 +28,8 @@ MonoBehaviour:
   attentionDialogue: What is this dump?
   orderDialogue: Do you even have <color=blue>White Wine</color>?
   repeatOrderDialogue: Have you never heard of <color=blue>White Wine</color>?
-  successDialogue: What would you do with a drunken sailor!
+  successDialogue: I'll tell ALL the dolls about you, honey!
   failureDialogue: This is going on your permanent record.
   patienceTimerTickDialogue: I have places to be you know!
-  patienceTimeOutDialogue: Oh, my cab is here. See you never!
+  patienceTimeOutDialogue: Oh, that's my cab. Well, see you never!
   kickedOutDialogue: Couldn't handle this many customers at once huh?
