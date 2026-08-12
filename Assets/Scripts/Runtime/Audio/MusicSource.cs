@@ -62,7 +62,7 @@ namespace Runtime.Audio {
         }
 
         private int CalculateCorrectAmountOfThresholds(int labelCount) {
-            return labelCount - 1;
+            return labelCount;
         }
 
         private bool HasValidAmountsOfLabels(string[] currentLabels) {

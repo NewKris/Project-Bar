@@ -19363,7 +19363,7 @@ GameObject:
   - component: {fileID: 1131595027}
   - component: {fileID: 1131595028}
   m_Layer: 0
-  m_Name: 4. Alcohol Area 1
+  m_Name: 4.1 Alcohol Area 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22018,8 +22018,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 1016141640}
     m_Modifications:
     - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      propertyPath: m_Size.x
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      propertyPath: m_Size.y
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      propertyPath: m_Size.z
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      propertyPath: m_Center.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
       propertyPath: m_Center.y
-      value: -0.62
+      value: -0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      propertyPath: m_Center.z
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
       propertyPath: m_IsTrigger
@@ -27347,11 +27367,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825807489838692313, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: movementTime
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3825807489838692313, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: timeBeforeExit
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4265527081617958188, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: m_Pivot.y
@@ -28017,6 +28037,10 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7476821723189857214, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: timeBetweenAudio
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7774962364505540768, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: dialoguePopUpTimer
@@ -37622,7 +37646,6 @@ GameObject:
   - component: {fileID: 2016073308}
   - component: {fileID: 2016073307}
   - component: {fileID: 2016073306}
-  - component: {fileID: 2016073305}
   m_Layer: 0
   m_Name: Recipies level 1.all - cocktails (3)
   m_TagString: Untagged
@@ -37649,27 +37672,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00027003884, y: 0.45131567}
   m_SizeDelta: {x: 1, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &2016073305
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016073303}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.6648254, y: 1.475813, z: 0}
-  m_Center: {x: -0.16787791, y: -0.0048873425, z: 0}
 --- !u!114 &2016073306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37847,8 +37849,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 1016141640}
     m_Modifications:
     - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      propertyPath: m_Size.x
+      value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      propertyPath: m_Size.z
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
+      propertyPath: m_Center.x
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
       propertyPath: m_Center.y
-      value: -0.75
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 1595049848062301967, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
       propertyPath: m_IsTrigger

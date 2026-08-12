@@ -13,6 +13,7 @@ namespace Runtime.Customers.Tutorial_Agent {
     [RequireComponent(typeof(Highlightable))]
     [RequireComponent(typeof(HandInteraction))]
     public class TutorialAgent : MonoBehaviour {
+        public bool skipTutorial;
         [SerializeField] private string characterName;
         
         [SerializeField] private CustomerEventPort tutorialFinishedPort;
@@ -57,6 +58,16 @@ namespace Runtime.Customers.Tutorial_Agent {
             _base.Setup(null, transform.position, exitPosition, tutorialFinishedPort);
             NextStep();
             _dialogueRunner.SetCharacterName(characterName);
+
+            if (skipTutorial) {
+                Recipe[] recipesToUnlock = tutorialSteps
+                    .SelectMany(x => x.recipesToUnlockAtStart)
+                    .Union(tutorialSteps.SelectMany(x => x.recipesToUnlockAtEnd))
+                    .ToArray();
+                
+                unlockRecipesPort.UnlockRecipes(recipesToUnlock);
+                FinishTutorial();
+            }
         }
 
         private void NextStep() {

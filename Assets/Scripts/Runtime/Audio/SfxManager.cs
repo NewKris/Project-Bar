@@ -10,7 +10,10 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Runtime.Audio {
     public class SfxManager : MonoBehaviour {
+        private static SfxManager Instance;
         private static readonly Dictionary<string, EventInstance> ActiveAudio = new  Dictionary<string, EventInstance>();
+
+        public EventReference jingleEvent;
 
         public static string CreateUniqueKey(MonoBehaviour instance, EventReference audio, int id = 0) {
             return instance.GetInstanceID() + audio.Path + id;
@@ -31,6 +34,39 @@ namespace Runtime.Audio {
             if (ActiveAudio.ContainsKey(key)) {
                 ActiveAudio[key].stop(STOP_MODE.ALLOWFADEOUT);
                 ActiveAudio.Remove(key);
+            }
+        }
+
+        public static void PlayGreatSuccess() {
+            if (!Instance.jingleEvent.IsNull) {
+                PlayOneShot(new OneShotConfig() {
+                    eventReference = Instance.jingleEvent,
+                    parameters = new [] {
+                        new FmodParameter() { parameterName = "Jingle", value = "Great Success" },
+                    }
+                });
+            }
+        }
+        
+        public static void PlaySuccess() {
+            if (!Instance.jingleEvent.IsNull) {
+                PlayOneShot(new OneShotConfig() {
+                    eventReference = Instance.jingleEvent,
+                    parameters = new [] {
+                        new FmodParameter() { parameterName = "Jingle", value = "Success" },
+                    }
+                });
+            }
+        }
+        
+        public static void PlayFailure() {
+            if (!Instance.jingleEvent.IsNull) {
+                PlayOneShot(new OneShotConfig() {
+                    eventReference = Instance.jingleEvent,
+                    parameters = new [] {
+                        new FmodParameter() { parameterName = "Jingle", value = "Failure" },
+                    }
+                });
             }
         }
         
@@ -58,6 +94,10 @@ namespace Runtime.Audio {
             
             instance.start();
             instance.release();
+        }
+
+        private void Awake() {
+            Instance = this;
         }
 
         private void OnDestroy() {
