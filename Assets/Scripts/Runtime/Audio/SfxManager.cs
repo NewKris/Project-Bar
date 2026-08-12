@@ -13,9 +13,7 @@ namespace Runtime.Audio {
         private static SfxManager Instance;
         private static readonly Dictionary<string, EventInstance> ActiveAudio = new  Dictionary<string, EventInstance>();
 
-        public EventReference successJingle;
-        public EventReference failureJingle;
-        
+        public EventReference jingleEvent;
 
         public static string CreateUniqueKey(MonoBehaviour instance, EventReference audio, int id = 0) {
             return instance.GetInstanceID() + audio.Path + id;
@@ -39,12 +37,37 @@ namespace Runtime.Audio {
             }
         }
 
+        public static void PlayGreatSuccess() {
+            if (!Instance.jingleEvent.IsNull) {
+                PlayOneShot(new OneShotConfig() {
+                    eventReference = Instance.jingleEvent,
+                    parameters = new [] {
+                        new FmodParameter() { parameterName = "Jingle", value = "Great Success" },
+                    }
+                });
+            }
+        }
+        
         public static void PlaySuccess() {
-            if (!Instance.successJingle.IsNull) RuntimeManager.PlayOneShot(Instance.successJingle);
+            if (!Instance.jingleEvent.IsNull) {
+                PlayOneShot(new OneShotConfig() {
+                    eventReference = Instance.jingleEvent,
+                    parameters = new [] {
+                        new FmodParameter() { parameterName = "Jingle", value = "Success" },
+                    }
+                });
+            }
         }
         
         public static void PlayFailure() {
-            if (!Instance.failureJingle.IsNull) RuntimeManager.PlayOneShot(Instance.failureJingle);
+            if (!Instance.jingleEvent.IsNull) {
+                PlayOneShot(new OneShotConfig() {
+                    eventReference = Instance.jingleEvent,
+                    parameters = new [] {
+                        new FmodParameter() { parameterName = "Jingle", value = "Failure" },
+                    }
+                });
+            }
         }
         
         public static void PlayOneShot(EventReference audio) {
