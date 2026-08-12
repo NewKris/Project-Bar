@@ -19,6 +19,7 @@ namespace Runtime.Items {
         public event Action OnPinned;
         
         private FmodParameter[] _parameters;
+        private Transform _pin;
 
         public void PlayPickupSound() {
             SfxManager.PlayOneShot(new OneShotConfig() {
@@ -67,8 +68,8 @@ namespace Runtime.Items {
             
             Rigidbody rb = GetComponent<Rigidbody>();
             
-            transform.SetParent(pinPoint);
-            transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+            _pin = pinPoint;
+            SnapToPin();
             
             rb.isKinematic = true;
             rb.position = pinPoint.position;
@@ -78,12 +79,22 @@ namespace Runtime.Items {
         public void Unpin() {
             GetComponent<Rigidbody>().isKinematic = false;
             transform.SetParent(null);
+            _pin = null;
         }
 
         private void Awake() {
             _parameters = new[] {
                 new FmodParameter() { parameterName = "GlassMaterial", value = glassMaterialLabel },
             };
+        }
+
+        private void Update() {
+            if (_pin) SnapToPin();
+        }
+
+        private void SnapToPin() {
+            transform.position = _pin.position;
+            transform.rotation = _pin.rotation;
         }
     }
 }
