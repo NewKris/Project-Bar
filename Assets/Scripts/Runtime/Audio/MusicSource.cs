@@ -33,16 +33,23 @@ namespace Runtime.Audio {
         private void OnDestroy() {
             satisfactionPort.onSatisfactionValueUpdated -= UpdateSatisfactionParameter;
             gameplayPort.OnGameplayOver -= SetEpilogueLabel;
+            gameplayPort.OnGameplayStart -= UnsetEpilogueLabel;
         }
 
         private void Start() {
             satisfactionPort.onSatisfactionValueUpdated += UpdateSatisfactionParameter;
             gameplayPort.OnGameplayOver += SetEpilogueLabel;
+            gameplayPort.OnGameplayStart += UnsetEpilogueLabel;
             
             MusicManager.PlayMusic(music);
             UpdateSatisfactionParameter(0);
         }
 
+        private void UnsetEpilogueLabel() {
+            MusicManager.SetParameter(parameterName, labels[0]);
+            _inEpilogue = false;
+        }
+        
         private void SetEpilogueLabel() {
             MusicManager.SetParameter(parameterName, endLabel);
             _inEpilogue = true;

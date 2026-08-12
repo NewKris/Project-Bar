@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Runtime.Configuration;
 using Runtime.Customers;
 using Runtime.Satisfaction;
@@ -30,6 +31,10 @@ namespace Runtime.Gameplay {
             GameEnded = false;
             
             SetLoggingLevel(Config.instance);
+        }
+
+        private void Start() {
+            gameplayPort.StartGameplay();
         }
 
         private void OnDestroy() {
