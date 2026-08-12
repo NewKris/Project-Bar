@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
   m_Name: Target 1
   m_EditorClassIdentifier: 
-  customerName: Obie Trice(T1)
+  customerName: Obie Trice (T1)
   mesh: {fileID: 0}
   isTarget: 1
   acceptableDrinks:
@@ -27,11 +27,12 @@ MonoBehaviour:
   satisfactionRepeatOrder: 2
   satisfactionKickedOut: 0
   attentionDialogue: Why, hello there.
-  orderDialogue: <color=blue>Vodka on the Rocks</color>.
-  repeatOrderDialogue: What? You don't know how to make a <color=blue>Vodka with
-    Ice</color> in it.
-  successDialogue: Perfectly clear.
+  orderDialogue: I'm visiting from out of town. <color=blue>Vodka on the Rocks</color>,
+    please.
+  repeatOrderDialogue: You surely know how to make a <color=blue>Vodka with Ice</color>
+    in it.
+  successDialogue: Perfectly clear..I'll be back for more.
   failureDialogue: "This\u2026 does not taste right."
-  patienceTimerTickDialogue: "Still here\u2026"
-  patienceTimeOutDialogue: "I\u2019ll try the next bar over."
-  kickedOutDialogue: Some people crumble under the pressure.
+  patienceTimerTickDialogue: Soon I'll freeze over, if you know what I mean.
+  patienceTimeOutDialogue: I'll just try the other bartender.
+  kickedOutDialogue: I should've stayed out of town.
