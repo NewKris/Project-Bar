@@ -16,7 +16,7 @@ namespace Runtime.Audio {
         public EventReference jingleEvent;
 
         public static string CreateUniqueKey(MonoBehaviour instance, EventReference audio, int id = 0) {
-            return instance.GetInstanceID() + audio.Path + id;
+            return instance.GetInstanceID() + audio.ToString() + id;
         }
         
         public static void StartAudio(string key, EventReference audio, Vector3 position) {

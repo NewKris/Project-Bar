@@ -362,6 +362,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ea4647a43d44abaa29cddb8db8b038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jingleEvent:
+    Guid:
+      Data1: -383721896
+      Data2: 1120390013
+      Data3: 998050462
+      Data4: -753155223
+    Path: event:/Sound/SFX/Jingle
 --- !u!1 &5664193060780675177
 GameObject:
   m_ObjectHideFlags: 0
