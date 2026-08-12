@@ -27347,11 +27347,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825807489838692313, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: movementTime
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3825807489838692313, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: timeBeforeExit
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4265527081617958188, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: m_Pivot.y
@@ -28017,6 +28017,10 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7476821723189857214, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: timeBetweenAudio
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7774962364505540768, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: dialoguePopUpTimer

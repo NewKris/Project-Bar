@@ -94,11 +94,11 @@ MonoBehaviour:
   textComponent: {fileID: 7151572035769748419}
   dialogueAudio:
     Guid:
-      Data1: 1718111176
-      Data2: 1087231777
-      Data3: 1714830469
-      Data4: 1587627039
-    Path: event:/lalala sound test
+      Data1: 1865081767
+      Data2: 1235212916
+      Data3: -941157959
+      Data4: -1233010919
+    Path: event:/Sound/UI/Char_Talking
   timeBetweenAudio: 0.1
 --- !u!1 &2412582280886377936
 GameObject:
