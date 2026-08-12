@@ -10,6 +10,8 @@ namespace Runtime.Customers {
         public UnityAction onOrder;
         public UnityAction<DrinkContents> onServeDrink;
         public UnityAction onEnterBar;
+
+        public CustomerEventHandler customerEventHandler;
         
         [Tooltip("The mesh renderer used for the customers model")]
         public MeshFilter customerMeshFilter;

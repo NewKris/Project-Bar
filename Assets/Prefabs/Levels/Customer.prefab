@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 2101066868742215084}
   - component: {fileID: 8125268833614215940}
   - component: {fileID: 6724041939489228476}
+  - component: {fileID: 6134851697160141953}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -269,36 +270,6 @@ MonoBehaviour:
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
   customerEventPort: {fileID: 11400000, guid: dff084a8993e2af4bacb99c66f229fe5, type: 2}
   loseSatisfactionWhenKickedOut: 1
-  onServe:
-    m_PersistentCalls:
-      m_Calls: []
-  onCorrectDrink:
-    m_PersistentCalls:
-      m_Calls: []
-  onWrongDrink:
-    m_PersistentCalls:
-      m_Calls: []
-  onPatienceTimeOut:
-    m_PersistentCalls:
-      m_Calls: []
-  onPoisoned:
-    m_PersistentCalls:
-      m_Calls: []
-  onOrder:
-    m_PersistentCalls:
-      m_Calls: []
-  onRepeatOrder:
-    m_PersistentCalls:
-      m_Calls: []
-  onKickedOut:
-    m_PersistentCalls:
-      m_Calls: []
-  onEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  onExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4818803729512919718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,8 +347,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5158c7c643aa4418bdc104b0ea7c6549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customerEventHandler: {fileID: 11400000, guid: 78af8b95b0e406041831bcf6f0a65d24, type: 2}
   customerMeshFilter: {fileID: 938531690922387485}
   isLeaving: 0
+--- !u!114 &6134851697160141953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645739159592134876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27042a03e83425d85bb2c0ca5cd3f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerEventHandler: {fileID: 11400000, guid: 78af8b95b0e406041831bcf6f0a65d24, type: 2}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onOrder:
+    m_PersistentCalls:
+      m_Calls: []
+  onRepeatOrder:
+    m_PersistentCalls:
+      m_Calls: []
+  onServe:
+    m_PersistentCalls:
+      m_Calls: []
+  onCorrectDrink:
+    m_PersistentCalls:
+      m_Calls: []
+  onWrongDrink:
+    m_PersistentCalls:
+      m_Calls: []
+  onPoisoned:
+    m_PersistentCalls:
+      m_Calls: []
+  onPatienceTimeOut:
+    m_PersistentCalls:
+      m_Calls: []
+  onKickedOut:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8899945735447072317
 GameObject:
   m_ObjectHideFlags: 0
