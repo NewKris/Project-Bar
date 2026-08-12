@@ -9,23 +9,18 @@ namespace Runtime.Animations {
 
         private bool _shaking;
         private float _lastShake;
-        private Vector3 _origin;
 
         public bool Shaking {
             get => _shaking;
             set{
                 _shaking = value;
-                if (!_shaking) transform.position = _origin;
+                if (!_shaking) transform.localPosition = Vector3.zero;
             }
-        }
-
-        private void Awake() {
-            _origin = transform.position;
         }
 
         private void Update() {
             if (Shaking && Time.time - _lastShake > frequency) {
-                transform.position = _origin + Random.insideUnitSphere * amplitude;
+                transform.localPosition = Random.insideUnitSphere * amplitude;
                 _lastShake = Time.time;
             }
         }
