@@ -13,7 +13,8 @@ namespace Runtime.Audio {
         private static SfxManager Instance;
         private static readonly Dictionary<string, EventInstance> ActiveAudio = new  Dictionary<string, EventInstance>();
 
-        public EventReference jingleEvent;
+        public EventReference successJingle;
+        public EventReference failureJingle;
 
         public static string CreateUniqueKey(MonoBehaviour instance, EventReference audio, int id = 0) {
             return instance.GetInstanceID() + audio.ToString() + id;
@@ -38,35 +39,20 @@ namespace Runtime.Audio {
         }
 
         public static void PlayGreatSuccess() {
-            if (!Instance.jingleEvent.IsNull) {
-                PlayOneShot(new OneShotConfig() {
-                    eventReference = Instance.jingleEvent,
-                    parameters = new [] {
-                        new FmodParameter() { parameterName = "Jingle", value = "Great Success" },
-                    }
-                });
+            if (!Instance.successJingle.IsNull) {
+                PlayOneShot(Instance.successJingle);
             }
         }
         
         public static void PlaySuccess() {
-            if (!Instance.jingleEvent.IsNull) {
-                PlayOneShot(new OneShotConfig() {
-                    eventReference = Instance.jingleEvent,
-                    parameters = new [] {
-                        new FmodParameter() { parameterName = "Jingle", value = "Success" },
-                    }
-                });
+            if (!Instance.successJingle.IsNull) {
+                PlayOneShot(Instance.successJingle);
             }
         }
         
         public static void PlayFailure() {
-            if (!Instance.jingleEvent.IsNull) {
-                PlayOneShot(new OneShotConfig() {
-                    eventReference = Instance.jingleEvent,
-                    parameters = new [] {
-                        new FmodParameter() { parameterName = "Jingle", value = "Failure" },
-                    }
-                });
+            if (!Instance.failureJingle.IsNull) {
+                PlayOneShot(Instance.failureJingle);
             }
         }
         
