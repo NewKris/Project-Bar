@@ -25,4 +25,4 @@ MonoBehaviour:
     - YolandaTest
   - buttonText: Koffe Test
     scenes:
-    - Koffe Test
+    - MainMenu
