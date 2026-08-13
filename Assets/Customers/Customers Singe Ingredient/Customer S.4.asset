@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
+  m_Name: Customer S.4
+  m_EditorClassIdentifier: 
+  customerName: Vodka
+  mesh: {fileID: 0}
+  isTarget: 0
+  acceptableDrinks:
+  - {fileID: 11400000, guid: 739808914d1ffe747bfc1b9bee3d70b9, type: 2}
+  - {fileID: 11400000, guid: 7843ec0354f87d1429b17e87c389523f, type: 2}
+  timePenaltyRepeatOrder: 10
+  patienceTimer: 60
+  patienceTickTime: 30
+  satisfactionSuccess: 10
+  satisfactionFailure: 5
+  satisfactionMissedOrder: 7
+  satisfactionRepeatOrder: 2
+  satisfactionKickedOut: 0
+  attentionDialogue: Hello! Barkeep!?
+  orderDialogue: I could really go for some soda!, like a <color=blue>Cola</color>
+    or <color=blue>Ginger Beer</color>!
+  repeatOrderDialogue: Have you already forgotten such a simple order as a <color=blue>Cola
+    or Ginger Beer</color>? :|
+  successDialogue: Yay!! A soda!!! :D
+  failureDialogue: This is not a soda. :(
+  patienceTimerTickDialogue: I might as well leave if this is the service I get.
+  patienceTimeOutDialogue: Ugh! This place stinks!
+  kickedOutDialogue: Couldn't handle this many customers at once huh?

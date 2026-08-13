@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
+  m_Name: Customer S.6
+  m_EditorClassIdentifier: 
+  customerName: Triple Sec
+  mesh: {fileID: 0}
+  isTarget: 0
+  acceptableDrinks:
+  - {fileID: 11400000, guid: 1680a6ac861a7a84a8233a70a8277b9b, type: 2}
+  - {fileID: 11400000, guid: e87b748bee1db4342b3d185146fcbb9f, type: 2}
+  - {fileID: 11400000, guid: abde46b3331a7ba4481f7737691107b9, type: 2}
+  timePenaltyRepeatOrder: 0.7
+  patienceTimer: 60
+  patienceTickTime: 30
+  satisfactionSuccess: 27
+  satisfactionFailure: 17
+  satisfactionMissedOrder: 17
+  satisfactionRepeatOrder: 7
+  satisfactionKickedOut: 0
+  attentionDialogue: Soon may the Wellerman come!
+  orderDialogue: "Fifteen men on the dead man's chest\u2014 Yo ho ho and a <color=blue>Lowball
+    of Rum</color>!"
+  repeatOrderDialogue: "Drink and the devil had done for the rest\u2014 Yo ho ho
+    and a <color=blue>Lowball of Rum</color>!"
+  successDialogue: What would you do with a drunken sailor!
+  failureDialogue: She's called the Flying Dutchman and it's rage that fills her
+    sails.
+  patienceTimerTickDialogue: Turn that ship around me boys
+  patienceTimeOutDialogue: Farewell and adieu to you, spanish ladies.
+  kickedOutDialogue: Couldn't handle this many customers at once huh?

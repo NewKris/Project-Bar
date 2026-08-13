@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &441148784369416176
+--- !u!1 &4185663089138313365
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6194278371560973105}
-  - component: {fileID: 4906204281810856201}
-  - component: {fileID: 3619944466995745357}
+  - component: {fileID: 6212453115234957561}
+  - component: {fileID: 8391855904482921312}
+  - component: {fileID: 6820766334679408395}
   m_Layer: 6
-  m_Name: copper cup
+  m_Name: whiskey glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6194278371560973105
+--- !u!4 &6212453115234957561
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441148784369416176}
+  m_GameObject: {fileID: 4185663089138313365}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 4991579136713568339}
+  m_Father: {fileID: 4302785816330675145}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4906204281810856201
+--- !u!33 &8391855904482921312
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441148784369416176}
-  m_Mesh: {fileID: 3805400676242804164, guid: e343c12c7caa08a42bac559fdbf3d37a, type: 3}
---- !u!23 &3619944466995745357
+  m_GameObject: {fileID: 4185663089138313365}
+  m_Mesh: {fileID: -6873653282590003643, guid: e343c12c7caa08a42bac559fdbf3d37a, type: 3}
+--- !u!23 &6820766334679408395
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441148784369416176}
+  m_GameObject: {fileID: 4185663089138313365}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1945074907053095707
+--- !u!1 &8730349569718318527
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,42 +94,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4991579136713568339}
-  - component: {fileID: 2908278454008923627}
-  - component: {fileID: 3964332406925107018}
-  - component: {fileID: 4359454611248930342}
-  - component: {fileID: 857628283528088344}
-  - component: {fileID: -1016234374407061195}
+  - component: {fileID: 4302785816330675145}
+  - component: {fileID: 2602512950388638732}
+  - component: {fileID: 6123301386581263254}
+  - component: {fileID: 6079459009122228705}
+  - component: {fileID: 3389550173544130152}
+  - component: {fileID: 1070929371429201032}
   m_Layer: 0
-  m_Name: Copper Cup
+  m_Name: OLD Whiskey Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4991579136713568339
+--- !u!4 &4302785816330675145
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945074907053095707}
+  m_GameObject: {fileID: 8730349569718318527}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.62026024, y: 0, z: 7.1950793}
+  m_LocalPosition: {x: 4.6202602, y: 0, z: 7.1950793}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 6194278371560973105}
+  - {fileID: 6212453115234957561}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &2908278454008923627
+--- !u!136 &2602512950388638732
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945074907053095707}
+  m_GameObject: {fileID: 8730349569718318527}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -142,17 +142,17 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.13026324
-  m_Height: 0.3507316
+  m_Radius: 0.109308355
+  m_Height: 0.2514168
   m_Direction: 1
-  m_Center: {x: 0, y: 0.1325277, z: 0}
---- !u!114 &3964332406925107018
+  m_Center: {x: 0, y: 0.103796914, z: 0}
+--- !u!114 &6123301386581263254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945074907053095707}
+  m_GameObject: {fileID: 8730349569718318527}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04a529bfec7b48c0916b896bce616407, type: 3}
@@ -181,26 +181,26 @@ MonoBehaviour:
       Data3: -1179025483
       Data4: 515156706
     Path: event:/Sound/Bar/Glass Crash
-  glassMaterialLabel: Copper
---- !u!114 &4359454611248930342
+  glassMaterialLabel: Whisky
+--- !u!114 &6079459009122228705
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945074907053095707}
+  m_GameObject: {fileID: 8730349569718318527}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e909c1af90844a49b6d0fb29c1fb69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &857628283528088344
+--- !u!114 &3389550173544130152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945074907053095707}
+  m_GameObject: {fileID: 8730349569718318527}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83e9067a39834fe68531cc085b291e64, type: 3}
@@ -209,7 +209,7 @@ MonoBehaviour:
   isDirty: 0
   currentContents:
     mixType: 0
-    drinkContainer: {fileID: 11400000, guid: 5b5504ee234550a4188bc5b7645eb9f0, type: 2}
+    drinkContainer: {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
     ingredients: []
     isDestroyed: 0
   pourAudio:
@@ -221,13 +221,13 @@ MonoBehaviour:
     Path: event:/Sound/Bar/Pouring liquid
   maxIngredients: 6
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
---- !u!54 &-1016234374407061195
+--- !u!54 &1070929371429201032
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945074907053095707}
+  m_GameObject: {fileID: 8730349569718318527}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0

@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
-  m_Name: Customer 1.2
+  m_Name: Gimlet Customer
   m_EditorClassIdentifier: 
-  customerName: Ayn Rand (2)
+  customerName: Gimlet
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
-  - {fileID: 11400000, guid: 891292d9444f7f24babfcf215ad3b597, type: 2}
-  - {fileID: 11400000, guid: b31c23e538f0640489f5a9abff408355, type: 2}
+  - {fileID: 11400000, guid: 9bf0ed89f7dc76f46a373d1414666a62, type: 2}
   timePenaltyRepeatOrder: 10
   patienceTimer: 60
   patienceTickTime: 30
@@ -27,7 +26,8 @@ MonoBehaviour:
   satisfactionRepeatOrder: 2
   satisfactionKickedOut: 0
   attentionDialogue: Hey! Yeah, you.
-  orderDialogue: <color=blue>Cuba Libre on the Rocks</color>, dude.
+  orderDialogue: <color=blue>Cuba Libre on the Rocks</color>, dude. Hit me with <color=blue>Lime</color>
+    if you want, bro.
   repeatOrderDialogue: <color=blue>Cuba. Libre.</color> Freedom!
   successDialogue: Yes, capitalism babyyy!
   failureDialogue: You prefer communism, huh?

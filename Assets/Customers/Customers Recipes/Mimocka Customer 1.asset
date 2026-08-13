@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
+  m_Name: Mimocka Customer 1
+  m_EditorClassIdentifier: 
+  customerName: Mimocka
+  mesh: {fileID: 0}
+  isTarget: 0
+  acceptableDrinks:
+  - {fileID: 11400000, guid: a8e27e2c41e31af449844ae291bb2910, type: 2}
+  timePenaltyRepeatOrder: 0.7
+  patienceTimer: 60
+  patienceTickTime: 30
+  satisfactionSuccess: 27
+  satisfactionFailure: 17
+  satisfactionMissedOrder: 17
+  satisfactionRepeatOrder: 7
+  satisfactionKickedOut: 0
+  attentionDialogue: Enough with the riffraff!!
+  orderDialogue: And hand me a <color=blue>Shandygaff</color>!
+  repeatOrderDialogue: <color=blue>Shandygaff</color>, girl!
+  successDialogue: Yes! The Shandy has been gaffed!
+  failureDialogue: There's certaintly no gaff in this shandy
+  patienceTimerTickDialogue: Shhh....
+  patienceTimeOutDialogue: I deserve better than you.
+  kickedOutDialogue: Couldn't handle this many customers at once huh?

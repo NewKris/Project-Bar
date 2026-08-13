@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 250910469939608800}
   - component: {fileID: 4690228044948762325}
   m_Layer: 0
-  m_Name: Shaker
+  m_Name: OLD Shaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
