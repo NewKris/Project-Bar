@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5158c7c643aa4418bdc104b0ea7c6549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customerEventHandler: {fileID: 11400000, guid: 78af8b95b0e406041831bcf6f0a65d24, type: 2}
   customerMeshFilter: {fileID: 7256620274058946089}
   isLeaving: 0
 --- !u!114 &6672725777763676241

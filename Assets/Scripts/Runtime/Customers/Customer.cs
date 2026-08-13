@@ -17,6 +17,7 @@ namespace Runtime.Customers
     [RequireComponent(typeof(CustomerDialogue))]
     [RequireComponent(typeof(CustomerPatience))]
     [RequireComponent(typeof(Interactable))]
+    [RequireComponent(typeof(CustomerActionEvents))]
     public class Customer : MonoBehaviour
     {
         [Tooltip("The scriptable object satisfaction port")]
@@ -27,17 +28,6 @@ namespace Runtime.Customers
         
         [Tooltip("Determines whether the player should lose satisfaction when the customer gets kicked out")]
         [SerializeField] private bool loseSatisfactionWhenKickedOut;
-
-        public UnityEvent onServe;
-        public UnityEvent onCorrectDrink;
-        public UnityEvent onWrongDrink;
-        public UnityEvent onPatienceTimeOut;
-        public UnityEvent onPoisoned;
-        public UnityEvent onOrder;
-        public UnityEvent onRepeatOrder;
-        public UnityEvent onKickedOut;
-        public UnityEvent onEnter;
-        public UnityEvent onExit;
         
         private List<Recipe> _acceptableDrinks;
         
@@ -83,7 +73,7 @@ namespace Runtime.Customers
 
         private void HandlePatienceTimeOut()
         {
-            onPatienceTimeOut?.Invoke();
+            _customerBase.customerEventHandler.TimeOutPatience(gameObject);
             _customerDialogue.PatienceTimeOut();
             satisfactionPort.DecreaseSatisfaction(_satisfactionMissedOrder);
             LeaveBar();
@@ -123,22 +113,22 @@ namespace Runtime.Customers
         {
             // Compare contents with accepted drinks
             Debug.Log("Serving 💅");
-            onServe?.Invoke();
+            _customerBase.customerEventHandler.Serve(gameObject);
 
             if (drink.DrinkIsAccepted(_acceptableDrinks))
             {
-                onCorrectDrink?.Invoke();
+                _customerBase.customerEventHandler.CorrectDrinkServed(gameObject);
                 Debug.Log("Drink accepted!");
                 _customerDialogue.Success();
                 satisfactionPort.IncreaseSatisfaction(_satisfactionSuccess);
                 
                 if (drink.ContainsPoison()) {
                     customerEventPort.RaiseCustomerDiedEvent(_isTarget);
-                    onPoisoned.Invoke();
+                    _customerBase.customerEventHandler.PoisonServed(gameObject);
                 }
             }
             else {
-                onWrongDrink?.Invoke();
+                _customerBase.customerEventHandler.WrongDrinkServed(gameObject);
                 Debug.Log("Drink rejected");
                 _customerDialogue.Failure();
                 satisfactionPort.DecreaseSatisfaction(_satisfactionFailure);
@@ -150,12 +140,12 @@ namespace Runtime.Customers
         private void OnOrder()
         {
             if (!_hasOrdered) {
-                onOrder?.Invoke();
+                _customerBase.customerEventHandler.Order(gameObject);
                 _hasOrdered = true;
                 _customerDialogue.Order();
             }
             else {
-                onRepeatOrder?.Invoke();
+                _customerBase.customerEventHandler.RepeatOrder(gameObject);
                 _customerDialogue.RepeatOrder();
                 satisfactionPort.DecreaseSatisfaction(_satisfactionRepeatOrder);
                 _customerPatience.AddTime(-_timePenaltyRepeatOrder);
@@ -164,7 +154,7 @@ namespace Runtime.Customers
         }
 
         public void KickOut() {
-            onKickedOut?.Invoke();
+            _customerBase.customerEventHandler.KickOut(gameObject);
             _customerDialogue.KickOut();
 
             if (loseSatisfactionWhenKickedOut)
@@ -176,13 +166,13 @@ namespace Runtime.Customers
         }
 
         private void LeaveBar() {
-            onExit?.Invoke();
+            _customerBase.customerEventHandler.Exit(gameObject);
             _customerBase.LeaveBar();
         }
 
         private void OnEnterBar()
         {
-            onEnter?.Invoke();
+            _customerBase.customerEventHandler.Enter(gameObject);
             _customerDialogue.Attention();
         }
     }
