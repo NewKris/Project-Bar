@@ -4,6 +4,8 @@ namespace Runtime.Audio {
     public struct FmodParameter {
         public string parameterName;
         public object value;
+        
+        public static FmodParameter NoLooping => new () { parameterName = "Looping", value = 0 };
 
         public void AddParameterToInstance(EventInstance instance) {
             switch (value) {

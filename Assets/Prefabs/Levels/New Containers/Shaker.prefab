@@ -208,7 +208,7 @@ MonoBehaviour:
       Data3: -1179025483
       Data4: 515156706
     Path: event:/Sound/Bar/Glass Crash
-  glassMaterialLabel: Shaker
+  glassMaterialLabel: 5
 --- !u!114 &250910469939608800
 MonoBehaviour:
   m_ObjectHideFlags: 0

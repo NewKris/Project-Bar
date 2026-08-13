@@ -1,11 +1,12 @@
 ﻿using System;
+using Runtime.Audio;
 using Runtime.Utility;
 using UnityEngine;
 
 namespace Runtime.Items {
     public class ItemDock : MonoBehaviour {
         public Transform itemPivot;
-        public string surfaceLabel;
+        public SurfaceMaterialType surfaceLabel;
 
         public ItemPickup HeldItem { get; private set; }
 
@@ -16,7 +17,7 @@ namespace Runtime.Items {
         public void PlaceItem(ItemPickup item) {
             item.Pin(itemPivot);
             HeldItem = item;
-            HeldItem.PlayPutDownSound(surfaceLabel);
+            HeldItem.PlayPutDownSound(surfaceLabel.ToString());
             HeldItem.OnPinned += RemoveItem;
         }
 

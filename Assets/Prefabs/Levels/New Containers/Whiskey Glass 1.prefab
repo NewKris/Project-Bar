@@ -95,7 +95,7 @@ MonoBehaviour:
       Data3: -1179025483
       Data4: 515156706
     Path: event:/Sound/Bar/Glass Crash
-  glassMaterialLabel: Whisky
+  glassMaterialLabel: 3
 --- !u!114 &6079459009122228705
 MonoBehaviour:
   m_ObjectHideFlags: 0

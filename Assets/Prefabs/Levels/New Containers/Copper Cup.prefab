@@ -95,7 +95,7 @@ MonoBehaviour:
       Data3: -1179025483
       Data4: 515156706
     Path: event:/Sound/Bar/Glass Crash
-  glassMaterialLabel: Copper
+  glassMaterialLabel: 4
 --- !u!114 &4359454611248930342
 MonoBehaviour:
   m_ObjectHideFlags: 0

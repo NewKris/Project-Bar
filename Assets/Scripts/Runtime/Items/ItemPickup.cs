@@ -14,7 +14,7 @@ namespace Runtime.Items {
         public EventReference pickUpAudio;
         public EventReference putDownAudio;
         public EventReference breakAudio;
-        public string glassMaterialLabel;
+        public ContainerMaterialType glassMaterialLabel;
         
         public event Action OnPinned;
 
@@ -91,7 +91,7 @@ namespace Runtime.Items {
         }
 
         private void Awake() {
-            _containerMaterial = new FmodParameter() { parameterName = "GlassMaterial", value = glassMaterialLabel };
+            _containerMaterial = new FmodParameter() { parameterName = "GlassMaterial", value = glassMaterialLabel.ToString() };
         }
 
         private void Update() {

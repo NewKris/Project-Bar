@@ -30,7 +30,10 @@ namespace Runtime.Drink {
             if (currentContents.ContainsLiquid()) {
                 SfxManager.PlayOneShot(new OneShotConfig() {
                     eventReference = pourAudio,
-                    attachedGameObject = gameObject
+                    attachedGameObject = gameObject,
+                    parameters = new [] {
+                        FmodParameter.NoLooping
+                    }
                 });
             }
             
@@ -68,7 +71,7 @@ namespace Runtime.Drink {
                     eventReference = ingredient.ingredientSound,
                     attachedGameObject = gameObject,
                     parameters = new [] {
-                        new FmodParameter() { parameterName = "Looping", value = 0 }
+                        FmodParameter.NoLooping
                     }
                 });
             }
