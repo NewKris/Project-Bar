@@ -13,7 +13,7 @@ namespace Editor {
         private static SceneShortcutsWindow Instance;
         private const string SCENE_EXTENSION = ".unity";
         
-        [MenuItem("Window/Scene Shortcuts")]
+        [MenuItem("Bar Stuff/Scene Shortcuts")]
         public static void OpenWindow() {
             Instance = GetWindow<SceneShortcutsWindow>("Scene Shortcuts");
         }
@@ -36,45 +36,47 @@ namespace Editor {
             toolBar.style.justifyContent = Justify.Center;
             toolBar.SetPadding(5, 5, 5, 5);
             
-            toolBar.Add(CreateRefreshButton());
+            toolBar.Add(CreateNavButton("refresh@2x", "Refresh buttons", DrawContents));
+            toolBar.Add(CreateNavButton("editicon.sml", "Edit shortcuts", SelectDatabase));
             
             return toolBar;
         }
 
-        private VisualElement CreateRefreshButton() {
+        private VisualElement CreateNavButton(string icon, string tooltip, Action callback) {
             Button refreshButton = new Button {
                 style = {
                     width = 20,
                     height = 20,
                     alignItems = Align.Center,
                     justifyContent = Justify.Center
-                }
+                },
+                tooltip = tooltip
             };
             
-            refreshButton.SetPadding(0, 0, 0, 0);
-
             refreshButton.Add(new Image() {
-                image = EditorGUIUtility.IconContent("refresh@2x").image,
+                image = EditorGUIUtility.IconContent(icon).image,
                 style = {
                     width = 15,
                     height = 15
                 }
             });
 
-            refreshButton.clicked += DrawContents;
+            refreshButton.clicked += callback;
             
             return refreshButton;
+        }
+
+        private void SelectDatabase() {
+            if (TryGetDatabase(out SceneShortcutDatabase database)) {
+                Selection.activeObject = database;
+            }
         }
 
         private VisualElement CreateButtonList() {
             VisualElement buttonList = new VisualElement();
 
-            string[] dbGuids = AssetDatabase.FindAssets($"t:{nameof(SceneShortcutDatabase)}");
-
-            if (dbGuids.Length > 0) {
-                SceneShortcutDatabase db = AssetDatabase.LoadAssetAtPath<SceneShortcutDatabase>(AssetDatabase.GUIDToAssetPath(dbGuids.First()));
-            
-                foreach (Shortcut dbShortcut in db.shortcuts) {
+            if (TryGetDatabase(out SceneShortcutDatabase database)) {
+                foreach (Shortcut dbShortcut in database.shortcuts) {
                     buttonList.Add(CreateSceneButton(dbShortcut.buttonText, dbShortcut.scenes));
                 }
             }
@@ -83,8 +85,6 @@ namespace Editor {
         }
 
         private VisualElement CreateSceneButton(string text, params string[] targetScenes) {
-            
-            
             Button sceneButton = new Button(() => {
                 for (int i = 0; i < targetScenes.Length; i++) {
                     OpenSceneMode mode = i == 0 ? OpenSceneMode.Single : OpenSceneMode.Additive;
@@ -100,6 +100,18 @@ namespace Editor {
         private string ToFullPath(string shortName) {
             shortName += SCENE_EXTENSION;
             return EditorBuildSettings.scenes.First(x => string.Equals(Path.GetFileName(x.path), shortName)).path;
+        }
+
+        private bool TryGetDatabase(out SceneShortcutDatabase database) {
+            string[] dbGuids = AssetDatabase.FindAssets($"t:{nameof(SceneShortcutDatabase)}");
+            bool foundAsset = dbGuids.Length > 0;
+            database = foundAsset ? GetDatabaseFromGuid(dbGuids.First()) : null;
+
+            return foundAsset;
+        }
+
+        private SceneShortcutDatabase GetDatabaseFromGuid(string guid) {
+            return AssetDatabase.LoadAssetAtPath<SceneShortcutDatabase>(AssetDatabase.GUIDToAssetPath(guid));
         }
     }
 }
