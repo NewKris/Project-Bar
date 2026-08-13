@@ -17,23 +17,29 @@ namespace Runtime.Items {
         public string glassMaterialLabel;
         
         public event Action OnPinned;
-        
-        private FmodParameter[] _parameters;
+
+        private FmodParameter _containerMaterial;
         private Transform _pin;
 
         public void PlayPickupSound() {
             SfxManager.PlayOneShot(new OneShotConfig() {
                 eventReference = pickUpAudio,
                 attachedGameObject = gameObject,
-                parameters = _parameters
+                parameters = new [] {
+                    _containerMaterial,
+                    
+                }
             });
         }
 
-        public void PlayPutDownSound() {
+        public void PlayPutDownSound(string surfaceLabel) {
             SfxManager.PlayOneShot(new OneShotConfig() {
                 eventReference = putDownAudio,
                 attachedGameObject = gameObject,
-                parameters = _parameters
+                parameters = new [] {
+                    _containerMaterial,
+                    new FmodParameter() { parameterName = "SurfaceMaterial",  value = surfaceLabel },
+                }
             });
         }
         
@@ -41,7 +47,9 @@ namespace Runtime.Items {
             SfxManager.PlayOneShot(new OneShotConfig() {
                 eventReference = breakAudio, 
                 position = transform.position,
-                parameters = _parameters
+                parameters = new [] {
+                    _containerMaterial
+                }
             });
             
             satisfactionPort.DecreaseSatisfaction(satisfactionPort.dropPenalty);
@@ -83,9 +91,7 @@ namespace Runtime.Items {
         }
 
         private void Awake() {
-            _parameters = new[] {
-                new FmodParameter() { parameterName = "GlassMaterial", value = glassMaterialLabel },
-            };
+            _containerMaterial = new FmodParameter() { parameterName = "GlassMaterial", value = glassMaterialLabel };
         }
 
         private void Update() {
