@@ -6,6 +6,7 @@ using Runtime.Dialogue;
 using Runtime.Drink;
 using Runtime.Interact;
 using Runtime.Satisfaction;
+using Runtime.UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -28,6 +29,8 @@ namespace Runtime.Customers
         
         [Tooltip("Determines whether the player should lose satisfaction when the customer gets kicked out")]
         [SerializeField] private bool loseSatisfactionWhenKickedOut;
+
+        public Transform barkSpawn;
         
         private List<Recipe> _acceptableDrinks;
         
@@ -115,7 +118,7 @@ namespace Runtime.Customers
             Debug.Log("Serving 💅");
             _customerBase.customerEventHandler.Serve(gameObject);
 
-            if (drink.DrinkIsAccepted(_acceptableDrinks))
+            if (drink.DrinkIsAccepted(_acceptableDrinks, BarkComplaint))
             {
                 _customerBase.customerEventHandler.CorrectDrinkServed(gameObject);
                 Debug.Log("Drink accepted!");
@@ -136,7 +139,7 @@ namespace Runtime.Customers
             
             LeaveBar();
         }
-
+        
         private void OnOrder()
         {
             if (!_hasOrdered) {
@@ -165,6 +168,10 @@ namespace Runtime.Customers
             LeaveBar();
         }
 
+        private void BarkComplaint(string complaint) {
+            WorldSpaceCanvas.SpawnBarkText(complaint, barkSpawn.position, barkSpawn.rotation);
+        }
+        
         private void LeaveBar() {
             _customerBase.customerEventHandler.Exit(gameObject);
             _customerBase.LeaveBar();

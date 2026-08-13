@@ -26,9 +26,10 @@ namespace Runtime.Drink {
             return ingredients.Any(x => x.type is IngredientType.prep or IngredientType.garnish);
         }
         
-        public bool DrinkIsAccepted(List<Recipe> acceptedRecipes) {
+        public bool DrinkIsAccepted(List<Recipe> acceptedRecipes, Action<string> onFailCallback = null) {
             if (isDestroyed) {
                 Debug.Log("Drink mismatch: Contains destroyed ingredients");
+                onFailCallback?.Invoke("Sloppy preparation");
                 return false;
             }
             
@@ -38,6 +39,7 @@ namespace Runtime.Drink {
             if (possibleRecipes.Count == 0)
             {
                 Debug.Log("Drink mismatch: Container");
+                onFailCallback?.Invoke("Wrong glass");
                 return false;
             }
             
@@ -45,6 +47,7 @@ namespace Runtime.Drink {
             if (possibleRecipes.Count == 0)
             {
                 Debug.Log("Drink mismatch: MixType");
+                onFailCallback?.Invoke("Wrong mix");
                 return false;
             }
             
@@ -52,6 +55,7 @@ namespace Runtime.Drink {
             if (possibleRecipes.Count == 0)
             {
                 Debug.Log("Drink mismatch: Ingredients");
+                onFailCallback?.Invoke("Wrong ingredients");
                 return false;
             }
 

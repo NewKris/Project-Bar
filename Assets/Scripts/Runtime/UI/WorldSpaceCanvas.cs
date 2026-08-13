@@ -1,4 +1,6 @@
-﻿using Runtime.Looking;
+﻿using System;
+using Runtime.Looking;
+using TMPro;
 using UnityEngine;
 
 namespace Runtime.UI {
@@ -7,7 +9,13 @@ namespace Runtime.UI {
         
         public GameObject promptTextPrefab;
         public GameObject fillCirclePrefab;
+        public GameObject barkPrefab;
 
+        public static void SpawnBarkText(string text, Vector3 position, Quaternion rotation) {
+            TMP_Text bark = Instance.InstantiatePrefab<TMP_Text>(Instance.barkPrefab, position, rotation);
+            bark.text = text;
+        }
+        
         public PromptText CreatePromptText(string text, Vector3 position, Quaternion rotation) {
             PromptText promptText = InstantiatePrefab<PromptText>(promptTextPrefab, position, rotation);
             promptText.Initialize(text, position, rotation);
@@ -20,6 +28,10 @@ namespace Runtime.UI {
             fillCircle.Fill = startAmount;
             
             return fillCircle;
+        }
+
+        private void Awake() {
+            Instance = this;
         }
 
         private T InstantiatePrefab<T>(GameObject prefab, Vector3 position, Quaternion rotation) where T : Component {
