@@ -95,7 +95,7 @@ MonoBehaviour:
       Data3: -1179025483
       Data4: 515156706
     Path: event:/Sound/Bar/Glass Crash
-  glassMaterialLabel: Wine
+  glassMaterialLabel: 0
 --- !u!114 &3868421222215899668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
       Data2: 1122002480
       Data3: 1065574306
       Data4: -508254091
-    Path: event:/Sound/Bar/Pouring liquid
+    Path: event:/Pouring liquid (not used)
   maxIngredients: 6
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
 --- !u!54 &8680260167358092759

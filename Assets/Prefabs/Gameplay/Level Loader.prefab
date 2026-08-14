@@ -44,6 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67989eb11498496699f78982a6d8e9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevelIndex: 0
   levelScenes:
   - {fileID: 11400000, guid: 000627af78a992c4795775666e7bc09e, type: 2}
