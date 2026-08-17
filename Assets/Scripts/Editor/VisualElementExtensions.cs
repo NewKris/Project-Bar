@@ -1,4 +1,5 @@
-﻿using UnityEngine.UIElements;
+﻿using UnityEditor;
+using UnityEngine.UIElements;
 
 namespace Editor {
     public static class VisualElementExtensions {
@@ -7,6 +8,18 @@ namespace Editor {
             element.style.paddingLeft = left;
             element.style.paddingRight = right;
             element.style.paddingTop = top;
+        }
+        
+        public static void AddStyleClass(this VisualElement element, params string[] styles) {
+            foreach (string style in styles)
+                element.AddToClassList(style);
+        }
+
+        public static void LoadStyleSheet(this VisualElement element, params string[] styleSheets) {
+            foreach (string styleSheetName in styleSheets) {
+                StyleSheet styleSheet = EditorGUIUtility.Load(styleSheetName) as StyleSheet;
+                element.styleSheets.Add(styleSheet);
+            }
         }
     }
 }
