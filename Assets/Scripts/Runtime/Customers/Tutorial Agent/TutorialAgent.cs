@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Runtime.Drink;
 using Runtime.Highlighting;
-using Runtime.Interact;
+using Runtime.Old_Systems.Drink;
 using Runtime.Player.Hand;
 using UnityEngine;
 

@@ -1,7 +1,6 @@
 ﻿using NaughtyAttributes;
-using Runtime.Interact;
-using Runtime.Looking;
-using Runtime.Stations;
+using Runtime.Old_Systems.Looking;
+using Runtime.Old_Systems.Stations;
 using Runtime.Utility.Extensions;
 using UnityEngine;
 

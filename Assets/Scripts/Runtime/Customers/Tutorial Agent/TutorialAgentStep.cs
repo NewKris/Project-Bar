@@ -1,7 +1,7 @@
 ﻿using System;
 using NaughtyAttributes;
-using Runtime.Drink;
 using Runtime.Highlighting;
+using Runtime.Old_Systems.Drink;
 using UnityEngine;
 using UnityEngine.Events;
 // HideNestedArrayAttribute from https://github.com/dbrizov/NaughtyAttributes/issues/142#issuecomment-1993967793

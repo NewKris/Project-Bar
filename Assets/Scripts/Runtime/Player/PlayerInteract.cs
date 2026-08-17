@@ -1,7 +1,7 @@
 using Runtime.Customers;
 using Runtime.Dialogue;
 using Runtime.Highlighting;
-using Runtime.Interact;
+using Runtime.Old_Systems.Interact;
 using UnityEngine;
 
 namespace Runtime.Player
