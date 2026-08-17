@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e38e5cf50f845f0b7dd6e3f243991ec, type: 3}
+  m_Name: Level 1 Tutorial NEW
+  m_EditorClassIdentifier: 
+  sceneName: OutdoorsScene
+  startSatisfaction: 25
+  customerUnlocks: 000000004b000000
+  targetSatisfaction: 75
+  maximumSatisfaction: 100
+  availableCustomers:
+  - {fileID: 11400000, guid: 3b6f9e2ec64e8064ea8c4e6e52f94a07, type: 2}
+  - {fileID: 11400000, guid: 026563b6565592548bb83c023093644c, type: 2}
+  - {fileID: 11400000, guid: 656a7b110d238f74592f24144454db3d, type: 2}
+  - {fileID: 11400000, guid: 33dc037f4566fb443a91899d04125f0e, type: 2}
+  - {fileID: 11400000, guid: e9219315d66660a4ab04bb32f8e89024, type: 2}
+  - {fileID: 11400000, guid: 181c89190a62baf4ebb7e3b660fa013a, type: 2}
+  - {fileID: 11400000, guid: b7c9f70a29679d345a86358f73b854c1, type: 2}
+  - {fileID: 11400000, guid: 16421ca3caf2ba740be7c02fb65368da, type: 2}
+  - {fileID: 11400000, guid: 8b6776010839b2749b73c7ce3d5be918, type: 2}
+  - {fileID: 11400000, guid: 513f9c32cc028cf44b79f076751b681c, type: 2}
+  - {fileID: 11400000, guid: dc7ed60ff89589f448ca5f5858456ea4, type: 2}
+  - {fileID: 11400000, guid: cc45b3c684d40f54eace1a20cccefe8e, type: 2}
+  - {fileID: 11400000, guid: 9e914df47be0f5f408b4612dc5b5997f, type: 2}
+  - {fileID: 11400000, guid: dcb7d943ec2b9aa4b89f1f6259efc7bf, type: 2}
+  - {fileID: 11400000, guid: 930a189bca34d634bb829178efeadb74, type: 2}
+  target:
+    customerData: {fileID: 11400000, guid: 3acedc09a5f0bbd4c83da1593b02bdc8, type: 2}
+    baseChance: 10
+    chanceIncrease: 10
+    shouldSpawnChanceReset: 1

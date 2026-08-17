@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
-  m_Name: Customer S.8
+  m_Name: Vodka Customer
   m_EditorClassIdentifier: 
-  customerName: Ginger Beer
+  customerName: Vodka
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
-  - {fileID: 11400000, guid: 7a34116ef1047dc44a83247920ce6d54, type: 2}
-  - {fileID: 11400000, guid: 81a76a6348adddd4ba8c6ffdb0b73489, type: 2}
-  - {fileID: 11400000, guid: 72899971f8ab3c14fb0bf4a799f18760, type: 2}
-  - {fileID: 11400000, guid: 6950afd47ce659b469d99f9c83fdbb92, type: 2}
+  - {fileID: 11400000, guid: 739808914d1ffe747bfc1b9bee3d70b9, type: 2}
+  - {fileID: 11400000, guid: 7843ec0354f87d1429b17e87c389523f, type: 2}
   timePenaltyRepeatOrder: 10
   patienceTimer: 60
   patienceTickTime: 30
