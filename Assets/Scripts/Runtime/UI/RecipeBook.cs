@@ -75,7 +75,7 @@ namespace Runtime.UI
             recipeText.text = recipeText.text.Replace(containerKey, recipe.contents.drinkContainer.DisplayName);
             
             string ingredients = "";
-            foreach (Ingredient ingredient in recipe.contents.ingredients) {
+            foreach (Ingredient ingredient in recipe.contents.AllIngredients) {
                 ingredients += ingredient.DisplayName + ingredientSeparator;
             }
             ingredients = ingredients.Substring(0, ingredients.Length - ingredientSeparator.Length);

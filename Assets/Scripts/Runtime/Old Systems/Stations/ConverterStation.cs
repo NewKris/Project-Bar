@@ -8,16 +8,13 @@ namespace Runtime.Old_Systems.Stations {
     [Serializable]
     [Obsolete]
     public struct Conversion {
-        public Ingredient startState;
-        public Ingredient middleState;
-        public Ingredient endState;
+        public Ingredient from;
+        public Ingredient to;
     }
     
     [Obsolete]
     public class ConverterStation : Station {
-        public float  middleStateDuration;
-        public float  endStateDuration;
-        
+        public float  conversionTime;
         public Conversion[] conversions;
 
         public override void StartStation() {
@@ -35,19 +32,15 @@ namespace Runtime.Old_Systems.Stations {
         }
         
         private bool IsDone() {
-            return currentItem.GetStationTime(stationKey) >= endStateDuration;
+            return currentItem.GetStationTime(stationKey) >= conversionTime;
         }
 
         protected override float MaxFill() {
-            return endStateDuration;
+            return conversionTime;
         }
 
         protected override void Update() {
             base.Update();
-            
-            if (currentItem.GetStationTime(stationKey) >= middleStateDuration) {
-                ConvertToMiddleStates();
-            }
 
             if (IsDone()) {
                 ConvertToEndStates();
@@ -55,15 +48,9 @@ namespace Runtime.Old_Systems.Stations {
             }
         }
 
-        private void ConvertToMiddleStates() {
-            foreach (Conversion conversion in conversions) {
-                TryConvertIngredients(currentItem, conversion.startState, conversion.middleState);
-            }
-        }
-
         private void ConvertToEndStates() {
             foreach (Conversion conversion in conversions) {
-                if (conversion.startState is DrinkContainer container) {
+                if (conversion.from is DrinkContainer container) {
                     TryConvertContainer(
                         currentItem, 
                         container, 
@@ -73,8 +60,8 @@ namespace Runtime.Old_Systems.Stations {
                 else {
                     TryConvertIngredients(
                         currentItem, 
-                        conversion.middleState, 
-                        conversion.endState
+                        conversion.from, 
+                        conversion.to
                     );
                 }
             }
@@ -83,12 +70,12 @@ namespace Runtime.Old_Systems.Stations {
         }
 
         private void TryConvertIngredients(DrinkObject drink, Ingredient from, Ingredient to) {
-            if (!drink.currentContents.ingredients.Contains(from)) return;
-            
-            int convertCount = drink.currentContents.ingredients.Count(x => x == from);
-            
-            drink.currentContents.ingredients.RemoveAll(x => x == from);
-            drink.currentContents.ingredients.AddAmount(to, convertCount);
+            foreach (IngredientGroup group in drink.currentContents.ingredientGroups) {
+                int addAmount = group.ingredients.Count(x => x == from);
+                
+                group.ingredients.RemoveAll(x => x == from);
+                group.ingredients.AddAmount(to, addAmount);
+            }
         }
 
         private void TryConvertContainer(DrinkObject drink, DrinkContainer from, DrinkContainer to) {

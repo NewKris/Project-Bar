@@ -32,11 +32,14 @@ namespace Runtime.Gameplay {
             
             if (_playerHand?.HeldItem?.TryGetComponent(out DrinkObject drink) ?? false) {
                 GUILayout.Label($"Container: {drink.currentContents.drinkContainer?.name ?? "NONE"}", textStyle);
-                GUILayout.Label($"Mix: {drink.currentContents.mixType}", textStyle);
 
                 textStyle.fontSize -= 4;
-                foreach (Ingredient ingredient in drink.currentContents.ingredients) {
-                    GUILayout.Label(ingredient.name, textStyle);
+                foreach (IngredientGroup group in drink.currentContents.ingredientGroups) {
+                    foreach (Ingredient ingredient in group.ingredients) {
+                        GUILayout.Label(ingredient.name, textStyle);
+                    }
+
+                    GUILayout.Space(5);
                 }
                 
             }

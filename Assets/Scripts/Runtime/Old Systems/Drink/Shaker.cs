@@ -9,16 +9,12 @@ namespace Runtime.Old_Systems.Drink {
         public void TickShake() {
             ShakeDuration += Time.deltaTime;
             if (ShakeDuration >= shakeDuration) {
-                currentContents.mixType = MixType.Shaken;
+                GroupIngredients();
             }
-            
-            TryDestroyDrink();
         }
 
-        private void TryDestroyDrink() {
-            if (currentContents.isDestroyed || !currentContents.ContainsPrepOrGarnish()) return;
-
-            currentContents.isDestroyed = true;
+        private void GroupIngredients() {
+            
         }
     }
 }
