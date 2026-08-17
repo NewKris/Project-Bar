@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Editor {
-    [CustomEditor(typeof(Recipe))]
+    //[CustomEditor(typeof(Recipe))]
     public class RecipeEditor : UnityEditor.Editor {
         private static readonly string[] StyleSheets = new[] {
             "recipe_style.uss"
