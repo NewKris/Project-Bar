@@ -14,5 +14,10 @@ namespace Runtime.Utility.Extensions {
                 collection.Add(item);
             }
         }
+        
+        public static List<T> Sorted<T>(this List<T> collection, Comparison<T> comparison) {
+            collection.Sort(comparison);
+            return collection;
+        }
     }
 }
