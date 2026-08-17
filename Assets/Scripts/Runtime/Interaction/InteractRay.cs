@@ -11,21 +11,16 @@ namespace Runtime.Interaction {
         public LayerMask interactMask;
         public int bufferSize = 10;
 
+        private int _hitCount;
         private RaycastHit[] _hitBuffer;
 
-        public T GetFirstOfType<T>() where T : IInteraction {
-            return _hitBuffer
-                .ToList()
-                .Sorted(CompareDistance)
-                .First(x => x.collider.TryGetComponent(out T _))
-                .collider.GetComponent<T>();
+        public bool TryGetFirstOfType<T>(out T hit) where T : IInteraction {
+            hit = default(T);
+            return false;
         }
 
-        public List<T> GetAllOfType<T>() where T : IInteraction {
-            return _hitBuffer
-                .Where(x => x.collider.TryGetComponent(out T _))
-                .Select(x => x.collider.GetComponent<T>())
-                .ToList();
+        public int GetAllOfTypeNonAlloc<T>(T[] buffer) where T : IInteraction {
+            return 0;
         }
         
         private void Awake() {
@@ -34,21 +29,14 @@ namespace Runtime.Interaction {
 
         private void Update() {
             Ray ray = new Ray(transform.position, transform.forward);
-            Physics.RaycastNonAlloc(ray, _hitBuffer, interactDistance, interactMask);
+            _hitCount = Physics.RaycastNonAlloc(ray, _hitBuffer, interactDistance, interactMask);
         }
 
         private void OnDrawGizmos() {
             HandlesProxy.DrawLine(transform.position, transform.position + transform.forward * interactDistance, 3, true, Color.magenta);
         }
-
-        private int CompareDistance(RaycastHit a, RaycastHit b) {
-            float d1 = (a.transform.position - transform.position).sqrMagnitude;
-            float d2 = (b.transform.position - transform.position).sqrMagnitude;
-            
-            return d1  < d2 ? -1 : 1;
-        }
         
-        private int CompareDistance(IInteraction a, IInteraction b) {
+        private int CompareDistance<T>(T a, T b) where T : IInteraction {
             float d1 = (a.GetPosition() - transform.position).sqrMagnitude;
             float d2 = (b.GetPosition() - transform.position).sqrMagnitude;
             
