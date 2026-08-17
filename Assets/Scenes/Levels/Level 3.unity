@@ -27713,7 +27713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: skipTutorial
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: characterName
@@ -27725,9 +27725,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialCompletedDialogue
-      value: "<color=red>Go make a killing, kid</color>. I\u2019ll be back for your
-        next mission, and teach you some new tricks. <color=blue>Godspeed, Agent
-        Gumbo</color>."
+      value: <color=red>No holds barred, kid</color>. I've taught you everything
+        I know about mixology and murder. <color=blue>Godspeed, Agent Gumbo</color>.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].progressType
