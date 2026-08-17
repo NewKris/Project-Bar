@@ -1,12 +1,15 @@
-﻿using Runtime.Animations;
+﻿using System;
+using Runtime.Animations;
 using Runtime.Customers;
 using Runtime.Highlighting;
 using Runtime.Old_Systems.Drink;
 using Runtime.Old_Systems.Items;
+using Runtime.Player;
 using Runtime.Satisfaction;
 using UnityEngine;
 
-namespace Runtime.Player.Hand {
+namespace Runtime.Old_Systems.Player.Hand {
+    [Obsolete]
     public class PlayerHand : MonoBehaviour {
         [Header("References")]
         public SatisfactionPort satisfactionPort;

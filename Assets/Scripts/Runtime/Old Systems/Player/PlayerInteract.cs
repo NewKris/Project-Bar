@@ -1,11 +1,13 @@
+using System;
 using Runtime.Customers;
 using Runtime.Dialogue;
 using Runtime.Highlighting;
 using Runtime.Old_Systems.Interact;
 using UnityEngine;
 
-namespace Runtime.Player
+namespace Runtime.Old_Systems.Player
 {
+    [Obsolete]
     public class PlayerInteract : MonoBehaviour
     {
         public void TryInteract(Interactable interactable)
