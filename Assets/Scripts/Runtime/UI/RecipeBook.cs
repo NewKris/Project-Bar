@@ -79,7 +79,10 @@ namespace Runtime.UI
             foreach (Ingredient ingredient in recipe.contents.AllIngredients) {
                 ingredients += ingredient.DisplayName + ingredientSeparator;
             }
-            ingredients = ingredients.Substring(0, ingredients.Length - ingredientSeparator.Length);
+
+            if (!string.IsNullOrEmpty(ingredients)) {
+                ingredients = ingredients.Substring(0, ingredients.Length - ingredientSeparator.Length);
+            }
             
             recipeText.text = recipeText.text.Replace(recipeIngredientsKey, ingredients);
         }

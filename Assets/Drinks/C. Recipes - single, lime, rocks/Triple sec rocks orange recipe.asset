@@ -13,13 +13,8 @@ MonoBehaviour:
   m_Name: Triple sec rocks orange recipe
   m_EditorClassIdentifier: 
   contents:
-    mixType: 0
     drinkContainer: {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
-    ingredients:
-    - {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
-    - {fileID: 11400000, guid: d58c65b85205b14488d0345d6129a4bc, type: 2}
-    - {fileID: 11400000, guid: 3724baa71e46bfd4489b7bfd002b22d8, type: 2}
-    isDestroyed: 0
+    ingredientGroups: []
   icon: {fileID: 0}
   customDisplayName: 
   description: 

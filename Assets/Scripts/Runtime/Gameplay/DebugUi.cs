@@ -40,7 +40,7 @@ namespace Runtime.Gameplay {
                         GUILayout.Label(ingredient.name, textStyle);
                     }
 
-                    GUILayout.Space(5);
+                    GUILayout.Space(10);
                 }
                 
             }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Runtime.Drinks;
 using UnityEngine;
 
 namespace Runtime.Old_Systems.Drink {
@@ -14,7 +16,11 @@ namespace Runtime.Old_Systems.Drink {
         }
 
         private void GroupIngredients() {
+            IngredientGroup shakerGroup = IngredientGroup
+                .CreateNewGroup(currentContents.ingredientGroups.SelectMany(x => x.ingredients).ToArray());
             
+            currentContents.Clear();
+            currentContents.Add(shakerGroup);
         }
     }
 }

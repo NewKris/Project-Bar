@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Runtime.Drinks {
     [CreateAssetMenu(menuName = "Drink/Recipe")]
@@ -12,5 +11,9 @@ namespace Runtime.Drinks {
         [TextArea] public string description;
         
         public string DisplayName => string.IsNullOrEmpty(customDisplayName) ? name : customDisplayName;
+
+        private void OnValidate() {
+            contents.Validate();
+        }
     }
 }
