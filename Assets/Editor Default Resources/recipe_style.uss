@@ -17,3 +17,15 @@
     -unity-font-style: bold;
     -unity-text-align: middle-center;
 }
+
+.ingredient-list {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.ingredient-group {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    margin: 5px;
+}

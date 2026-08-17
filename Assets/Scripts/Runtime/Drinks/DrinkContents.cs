@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
-namespace Runtime.Old_Systems.Drink {
-    [Obsolete]
+namespace Runtime.Drinks {
     [Serializable]
     public struct DrinkContents {
         public DrinkContainer drinkContainer;

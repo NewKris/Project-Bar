@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Runtime.Old_Systems.Drink {
+namespace Runtime.Drinks {
     [Serializable]
     public struct IngredientGroup {
         public List<Ingredient> ingredients;

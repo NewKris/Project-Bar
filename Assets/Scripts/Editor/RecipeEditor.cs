@@ -1,4 +1,5 @@
-﻿using Runtime.Old_Systems.Drink;
+﻿using Runtime.Drinks;
+using Runtime.Old_Systems.Drink;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -7,14 +8,18 @@ using UnityEngine.UIElements;
 namespace Editor {
     [CustomEditor(typeof(Recipe))]
     public class RecipeEditor : UnityEditor.Editor {
+        private static readonly string[] StyleSheets = new[] {
+            "recipe_style.uss"
+        };
+        
         public override VisualElement CreateInspectorGUI() {
             Recipe recipe = (Recipe)target;
             VisualElement root = new VisualElement();
-            root.LoadStyleSheet("recipe_style.uss");
+            root.LoadStyleSheet(StyleSheets);
             root.AddStyleClass("root");
             
-            root.Add(DrawContentsFields(recipe));
             root.Add(DrawUiFields(recipe));
+            root.Add(DrawContentsFields(recipe));
             
             return root;
         }
@@ -22,9 +27,10 @@ namespace Editor {
         private VisualElement DrawContentsFields(Recipe recipe) {
             VisualElement div = new VisualElement();
             div.AddStyleClass("box");
-            div.Add(CreateBoxTitle("Ingredients"));
             
-            div.Add(CreateObjectField("Drink Container", recipe.contents.drinkContainer));
+            div.Add(CreateBoxTitle("Ingredients"));
+            div.Add(VisualElementFactory.CreateObjectField<DrinkContainer>("Drink Container", recipe.contents.drinkContainer));
+            div.Add(CreateIngredientList(recipe));
             
             return div;
         }
@@ -32,32 +38,53 @@ namespace Editor {
         private VisualElement DrawUiFields(Recipe recipe) {
             VisualElement div = new VisualElement();
             div.AddStyleClass("box");
-            div.Add(CreateBoxTitle("UI"));
-            div.Add(CreateObjectField("Icon", recipe.icon));
             
-            div.Add(CreateTextField("Display Name", recipe.customDisplayName, "Mojito"));
+            div.Add(CreateBoxTitle("UI"));
+            div.Add(VisualElementFactory.CreateObjectField<Sprite>("Icon", recipe.icon));
+            div.Add(VisualElementFactory.CreateTextField("Display Name", recipe.customDisplayName));
+            div.Add(VisualElementFactory.CreateTextArea("Description", recipe.description));
             
             return div;
         }
 
-        private VisualElement CreateTextField(string label, string value, string placeHolder) {
-            TextField textField = new TextField(label);
-            textField.value = value;
+        private VisualElement CreateIngredientList(Recipe recipe) {
+            VisualElement div = new VisualElement();
+            div.AddStyleClass("ingredient-list");
+            
+            foreach (IngredientGroup group in recipe.contents.ingredientGroups) {
+                div.Add(CreateIngredientGroup(group, recipe));
+            }
+            
+            div.Add(CreateAddGroupButton(recipe));
 
-            return textField;
+            return div;
         }
 
-        private VisualElement CreateObjectField<T>(string label, T value) where T : Object {
-            ObjectField field = new ObjectField(label);
-            field.allowSceneObjects = false;
-            field.objectType = typeof(T);
-            field.value = value;
+        private VisualElement CreateIngredientGroup(IngredientGroup group, Recipe recipe) {
+            VisualElement div = new VisualElement();
 
-            return field;
+            div.AddStyleClass("ingredient-group");
+            
+            return div;
+        }
+
+        private VisualElement CreateAddGroupButton(Recipe recipe) {
+            return VisualElementFactory.CreateButton(
+                EditorGUIUtility.IconContent("Toolbar Plus").image,
+                () => {
+                    recipe.contents.ingredientGroups.Add(new IngredientGroup());
+                    MarkDirty(recipe);
+                    Repaint();
+                }
+            );
+        }
+
+        private void MarkDirty(Object obj) {
+            EditorUtility.SetDirty(obj);
         }
         
         private VisualElement CreateBoxTitle(string text) {
-            Label label = new Label(text);
+            VisualElement label = VisualElementFactory.CreateLabel(text);
             label.AddStyleClass("box-title");
             return label;
         }

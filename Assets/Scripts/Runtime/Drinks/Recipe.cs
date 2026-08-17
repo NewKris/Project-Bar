@@ -1,8 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Runtime.Old_Systems.Drink {
-    [Obsolete]
+namespace Runtime.Drinks {
     [CreateAssetMenu(menuName = "Drink/Recipe")]
     public class Recipe : ScriptableObject {
         public DrinkContents contents;

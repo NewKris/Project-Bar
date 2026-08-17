@@ -1,4 +1,5 @@
-﻿using Runtime.Old_Systems.Drink;
+﻿using Runtime.Drinks;
+using Runtime.Old_Systems.Drink;
 using Runtime.Old_Systems.Interact;
 using UnityEngine;
 using UnityEngine.Events;
