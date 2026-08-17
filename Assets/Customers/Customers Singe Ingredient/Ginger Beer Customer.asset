@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
-  m_Name: Customer S.9
+  m_Name: Ginger Beer Customer
   m_EditorClassIdentifier: 
-  customerName: Cola
+  customerName: Ginger Beer
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
-  - {fileID: 11400000, guid: 4c15a6cdf9c5e954d8d50f1d55449cb8, type: 2}
-  - {fileID: 11400000, guid: b5557b6ab46a88247a10da39388b50b7, type: 2}
-  - {fileID: 11400000, guid: bbd05041b0b70a44f88a3529fe415635, type: 2}
-  - {fileID: 11400000, guid: 59726a084578f3846b371fa7880c34cc, type: 2}
-  - {fileID: 11400000, guid: 59726a084578f3846b371fa7880c34cc, type: 2}
+  - {fileID: 11400000, guid: 7a34116ef1047dc44a83247920ce6d54, type: 2}
+  - {fileID: 11400000, guid: 81a76a6348adddd4ba8c6ffdb0b73489, type: 2}
+  - {fileID: 11400000, guid: 72899971f8ab3c14fb0bf4a799f18760, type: 2}
+  - {fileID: 11400000, guid: 6950afd47ce659b469d99f9c83fdbb92, type: 2}
   timePenaltyRepeatOrder: 10
   patienceTimer: 60
   patienceTickTime: 30

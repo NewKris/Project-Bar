@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
-  m_Name: Shadygaff Customer
+  m_Name: White Wine Customer
   m_EditorClassIdentifier: 
-  customerName: Shandygaff
+  customerName: White Wine
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
-  - {fileID: 11400000, guid: d7c776c9fd74262408a6dc39275a2b99, type: 2}
+  - {fileID: 11400000, guid: 458eea786acc62d4dac61e5385225b00, type: 2}
   timePenaltyRepeatOrder: 0.7
   patienceTimer: 60
   patienceTickTime: 30
@@ -25,11 +25,11 @@ MonoBehaviour:
   satisfactionMissedOrder: 17
   satisfactionRepeatOrder: 7
   satisfactionKickedOut: 0
-  attentionDialogue: Enough with the riffraff!!
-  orderDialogue: And hand me a <color=blue>Shandygaff</color>!
-  repeatOrderDialogue: <color=blue>Shandygaff</color>, girl!
-  successDialogue: Yes! The Shandy has been gaffed!
-  failureDialogue: There's certaintly no gaff in this shandy
-  patienceTimerTickDialogue: Shhh....
-  patienceTimeOutDialogue: I deserve better than you.
+  attentionDialogue: What is this dump?
+  orderDialogue: Do you even have <color=blue>White Wine</color>?
+  repeatOrderDialogue: Have you never heard of <color=blue>White Wine</color>?
+  successDialogue: I'll tell ALL the dolls about you, honey!
+  failureDialogue: This is going on your permanent record.
+  patienceTimerTickDialogue: I have places to be you know!
+  patienceTimeOutDialogue: Oh, that's my cab. Well, see you never!
   kickedOutDialogue: Couldn't handle this many customers at once huh?

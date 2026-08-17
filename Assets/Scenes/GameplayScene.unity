@@ -354,6 +354,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Satisfaction Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6184039091819109290, guid: 0f1ca6562ffeb0745abbb8cc3307e1c4, type: 3}
+      propertyPath: currentLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d0caf6a413b10c4787e817a15841edf, type: 2}
     - target: {fileID: 6671384251167740203, guid: 0f1ca6562ffeb0745abbb8cc3307e1c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -449,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: timeBetweenCustomers
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: customerExitPosition.x
@@ -481,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6294701951916416029, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: timeBetweenCustomers
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7722442215785127237, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: target
@@ -581,6 +585,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: == SYSTEM ===========================
       objectReference: {fileID: 0}
+    - target: {fileID: 2420703353742179612, guid: c92d68ec6495d1b49bdcb70d6590a959, type: 3}
+      propertyPath: 'thresholds.Array.data[1]'
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5454078589528972258, guid: c92d68ec6495d1b49bdcb70d6590a959, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -642,6 +650,10 @@ PrefabInstance:
       propertyPath: levelScenes.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1240046654157838447, guid: 2a89cce878a1e4846a753f340c8f139c, type: 3}
+      propertyPath: 'levelScenes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d0caf6a413b10c4787e817a15841edf, type: 2}
     - target: {fileID: 1240046654157838447, guid: 2a89cce878a1e4846a753f340c8f139c, type: 3}
       propertyPath: 'levelScenes.Array.data[1]'
       value: 
