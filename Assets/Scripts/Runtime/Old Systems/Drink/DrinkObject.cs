@@ -93,6 +93,8 @@ namespace Runtime.Old_Systems.Drink {
             foreach (int key in keys) {
                 StationDurations[key] *= 0.5f;
             }
+
+            ShakeDuration *= 0.5f;
         }
         
         public void CreateStationTimer(int key) {

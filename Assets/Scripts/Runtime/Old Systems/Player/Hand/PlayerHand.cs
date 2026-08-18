@@ -19,8 +19,6 @@ namespace Runtime.Old_Systems.Player.Hand {
         
         public ItemPickup HeldItem { get; private set; }
 
-        public bool ShakeDrink { get; set; }
-        
         public void TryGrabItem(HandInteraction handInteraction) {
             if (handInteraction == null) {
                 return;
@@ -38,6 +36,8 @@ namespace Runtime.Old_Systems.Player.Hand {
         }
         
         public void ReleaseHeldItem(HandInteraction handInteraction) {
+            TryEndShake();
+            
             if (handInteraction == null || HeldItem == null) {
                 HeldItem?.Unpin();
                 RemoveItemFromHand();
@@ -103,16 +103,26 @@ namespace Runtime.Old_Systems.Player.Hand {
             PlayerController.OnAddIngredient -= TryAddIngredient;
         }
 
-        private void Update() {
-            TryShakeDrink();
-        }
-
         private void TryAddIngredient(string ingredientAction) {
             if (!HeldItem) return;
 
             Ingredient ingredient = IngredientList.GetIngredient(ConvertActionToKey(ingredientAction));
             if (ingredient != null && HeldItem.TryGetComponent(out DrinkObject drink)) {
                 drink.AddIngredient(ingredient);
+            }
+        }
+
+        public void TryBeginShake() {
+            if (HeldItem?.TryGetComponent(out Shaker shaker) ?? false) {
+                shaker.enabled = true;
+                handShake.Shaking = true;
+            }
+        }
+
+        public void TryEndShake() {
+            if (HeldItem?.TryGetComponent(out Shaker shaker) ?? false) {
+                shaker.enabled = false;
+                handShake.Shaking = false;
             }
         }
 
@@ -135,16 +145,6 @@ namespace Runtime.Old_Systems.Player.Hand {
             HeldItem.Pin(itemPivot);
             HeldItem.PlayPickupSound();
             
-        }
-
-        private void TryShakeDrink() {
-            if (ShakeDrink && HeldItem && HeldItem.TryGetComponent(out Shaker shaker)) {
-                shaker.TickShake();
-                handShake.Shaking = true;
-            }
-            else {
-                handShake.Shaking = false;
-            }
         }
 
         private void OnDrawGizmos() {

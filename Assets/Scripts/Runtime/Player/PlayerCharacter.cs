@@ -21,6 +21,8 @@ namespace Runtime.Player {
             PlayerController.OnEndInteract += stationInteractController.EndInteract;
             PlayerController.OnPour += handController.TryPourInteract;
             PlayerController.OnCrouch += playerCamera.ChangeCameraHeight;
+            PlayerController.OnBeginShake += playerHand.TryBeginShake;
+            PlayerController.OnEndShake += playerHand.TryEndShake;
         }
 
         private void OnDestroy() {
@@ -31,11 +33,12 @@ namespace Runtime.Player {
             PlayerController.OnEndInteract -= stationInteractController.EndInteract;
             PlayerController.OnPour -= handController.TryPourInteract;
             PlayerController.OnCrouch -= playerCamera.ChangeCameraHeight;
+            PlayerController.OnBeginShake -= playerHand.TryBeginShake;
+            PlayerController.OnEndShake -= playerHand.TryEndShake;
         }
 
         private void Update() {
             playerCamera.Look(PlayerController.DeltaMouse, Time.deltaTime);
-            playerHand.ShakeDrink = PlayerController.HoldingShake;
         }
 
         private void OnDrawGizmos() {

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using FMODUnity;
+using Runtime.Audio;
 using Runtime.Drinks;
 using UnityEngine;
 
@@ -14,8 +16,34 @@ namespace Runtime.Old_Systems.Drink {
     public class Shaker : DrinkObject {
         public float shakeDuration = 0.5f;
         public ShakerConversion[] conversions;
-        
-        public void TickShake() {
+
+        [Header("Audio")] 
+        public EventReference liquid;
+        public EventReference ice;
+        public Ingredient[] iceIngredients;
+
+        private const string _audioKey = "shaker_shake";
+
+        private void OnEnable() {
+            Debug.Log("OnEnable");
+            if (currentContents.Contains(iceIngredients)) {
+                SfxManager.StartAudio(_audioKey, ice, transform.position);
+            }
+            else {
+                SfxManager.StartAudio(_audioKey, liquid, transform.position);
+            }
+        }
+
+        private void OnDisable() {
+            Debug.Log("OnDisable");
+            SfxManager.StopAudio(_audioKey);
+        }
+
+        private void Start() {
+            enabled = false;
+        }
+
+        private void Update() {
             ShakeDuration += Time.deltaTime;
             if (ShakeDuration >= shakeDuration) {
                 GroupIngredients();

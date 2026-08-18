@@ -21,6 +21,10 @@ namespace Runtime.Drinks {
         public bool Contains(Ingredient ingredient) {
             return ingredientGroups.Any(x => x.ingredients.Contains(ingredient));
         }
+        
+        public bool Contains(Ingredient[] ingredients) {
+            return ingredientGroups.Any(x => x.ingredients.Any(ingredients.Contains));
+        }
 
         public void Add(IngredientGroup group) {
             ingredientGroups.Add(group);
