@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents:
     drinkContainer: {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
-    ingredientGroups: []
+    ingredientGroups:
+    - groupName: Tequila
+      ingredients:
+      - {fileID: 11400000, guid: 9e1273cd121876144aa1e058825eeb58, type: 2}
   icon: {fileID: 0}
   customDisplayName: 
   description: 

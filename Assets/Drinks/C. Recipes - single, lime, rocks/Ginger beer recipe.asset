@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents:
     drinkContainer: {fileID: 11400000, guid: 2a513089301673a4e96540c64bf1ad5f, type: 2}
-    ingredientGroups: []
+    ingredientGroups:
+    - groupName: Ginger Beer
+      ingredients:
+      - {fileID: 11400000, guid: eb76d2cc202a0c749b2f6c711373583b, type: 2}
   icon: {fileID: 0}
   customDisplayName: 
   description: 

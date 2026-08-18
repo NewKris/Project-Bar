@@ -14,7 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents:
     drinkContainer: {fileID: 11400000, guid: f57d1ad380521874b9c67df3fcb29b5d, type: 2}
-    ingredientGroups: []
+    ingredientGroups:
+    - groupName: Ice
+      ingredients:
+      - {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
+    - groupName: Rum
+      ingredients:
+      - {fileID: 11400000, guid: 6d7b2b67ce2ab2a43b2bd40ab895e48c, type: 2}
+    - groupName: Lime
+      ingredients:
+      - {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
+    - groupName: Mint
+      ingredients:
+      - {fileID: 11400000, guid: d7f6d4154cdce69479f717ceec7eb2a2, type: 2}
   icon: {fileID: 21300000, guid: fc9c7bdfe4c5a074cbf3ac71ae8f84ac, type: 3}
   customDisplayName: 
   description: 

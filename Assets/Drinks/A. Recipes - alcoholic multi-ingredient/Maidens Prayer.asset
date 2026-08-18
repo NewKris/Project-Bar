@@ -14,7 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents:
     drinkContainer: {fileID: 11400000, guid: 33d6fef90f57f6040937e4c527f6b05d, type: 2}
-    ingredientGroups: []
+    ingredientGroups:
+    - groupName: Ice
+      ingredients:
+      - {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
+    - groupName: Gin, Triple Sec, Lime Juice, Orange Juice
+      ingredients:
+      - {fileID: 11400000, guid: c6af82835fe54274d95b90f2213111e2, type: 2}
+      - {fileID: 11400000, guid: d58c65b85205b14488d0345d6129a4bc, type: 2}
+      - {fileID: 11400000, guid: 83372f6676758ed4f8db957330747a2d, type: 2}
+      - {fileID: 11400000, guid: 0cc7e2dbb46a6b6418e1013dbe6abc12, type: 2}
   icon: {fileID: 0}
   customDisplayName: 
   description: 

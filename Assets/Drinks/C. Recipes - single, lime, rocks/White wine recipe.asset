@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents:
     drinkContainer: {fileID: 11400000, guid: 890f66a1b32bbfd4eaca6bbc01cc0e66, type: 2}
-    ingredientGroups: []
+    ingredientGroups:
+    - groupName: White Wine
+      ingredients:
+      - {fileID: 11400000, guid: 0bed7c78e6483fd4ab4d271e0e3a211f, type: 2}
   icon: {fileID: 0}
   customDisplayName: 
   description: 

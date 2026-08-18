@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents:
     drinkContainer: {fileID: 11400000, guid: 2a513089301673a4e96540c64bf1ad5f, type: 2}
-    ingredientGroups: []
+    ingredientGroups:
+    - groupName: Cola
+      ingredients:
+      - {fileID: 11400000, guid: 646a39d00f0ffb240b97ea6d9ac1ae7a, type: 2}
   icon: {fileID: 0}
   customDisplayName: 
   description: 

@@ -14,7 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents:
     drinkContainer: {fileID: 11400000, guid: f57d1ad380521874b9c67df3fcb29b5d, type: 2}
-    ingredientGroups: []
+    ingredientGroups:
+    - groupName: Gin
+      ingredients:
+      - {fileID: 11400000, guid: c6af82835fe54274d95b90f2213111e2, type: 2}
+    - groupName: Lime Juice
+      ingredients:
+      - {fileID: 11400000, guid: 83372f6676758ed4f8db957330747a2d, type: 2}
+    - groupName: Lime
+      ingredients:
+      - {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
   icon: {fileID: 0}
   customDisplayName: 
   description: 

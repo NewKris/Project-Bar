@@ -14,7 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents:
     drinkContainer: {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
-    ingredientGroups: []
+    ingredientGroups:
+    - groupName: Caramelized Sugar
+      ingredients:
+      - {fileID: 11400000, guid: 4cfbbac680c812841a86d8cfb1aad9f0, type: 2}
+    - groupName: Beer
+      ingredients:
+      - {fileID: 11400000, guid: 46f92cdf33d232d45b71292bedc3f93f, type: 2}
+    - groupName: Rum
+      ingredients:
+      - {fileID: 11400000, guid: 6d7b2b67ce2ab2a43b2bd40ab895e48c, type: 2}
+    - groupName: Orange Juice
+      ingredients:
+      - {fileID: 11400000, guid: 0cc7e2dbb46a6b6418e1013dbe6abc12, type: 2}
+    - groupName: Fire
+      ingredients:
+      - {fileID: 11400000, guid: 583a56a023c9f13439e2fbdd9de3bc92, type: 2}
   icon: {fileID: 21300000, guid: 7831402ff7d2a8744b3a583a87972f61, type: 3}
   customDisplayName: 
   description: 

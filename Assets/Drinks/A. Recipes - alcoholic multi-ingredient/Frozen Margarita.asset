@@ -14,7 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents:
     drinkContainer: {fileID: 11400000, guid: f57d1ad380521874b9c67df3fcb29b5d, type: 2}
-    ingredientGroups: []
+    ingredientGroups:
+    - groupName: Salt
+      ingredients:
+      - {fileID: 11400000, guid: a41a6714d1db28d4280a7317372e1a8f, type: 2}
+    - groupName: Slush, Tequila, Triple Sec, Lime
+      ingredients:
+      - {fileID: 11400000, guid: f01548fa33dbfe44b93926747c68a4cd, type: 2}
+      - {fileID: 11400000, guid: 9e1273cd121876144aa1e058825eeb58, type: 2}
+      - {fileID: 11400000, guid: d58c65b85205b14488d0345d6129a4bc, type: 2}
+      - {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
+    - groupName: Lime
+      ingredients:
+      - {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
   icon: {fileID: 0}
   customDisplayName: 
   description: 

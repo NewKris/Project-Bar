@@ -6,5 +6,6 @@ namespace Runtime.Drinks {
         prep,
         liquid,
         garnish,
+        porperty
     }
 }
