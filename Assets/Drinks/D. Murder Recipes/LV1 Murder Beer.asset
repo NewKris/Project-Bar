@@ -15,6 +15,8 @@ MonoBehaviour:
   contents:
     mixType: 0
     drinkContainer: {fileID: 11400000, guid: 2a513089301673a4e96540c64bf1ad5f, type: 2}
-    ingredients:
-    - {fileID: 11400000, guid: 46f92cdf33d232d45b71292bedc3f93f, type: 2}
-    - {fileID: 11400000, guid: 05052150def31da4784591cecc7480d3, type: 2}
+    ingredients: []
+    isDestroyed: 0
+  icon: {fileID: 0}
+  customDisplayName: 
+  description: 

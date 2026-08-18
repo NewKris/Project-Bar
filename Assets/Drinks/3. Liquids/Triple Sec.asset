@@ -17,8 +17,8 @@ MonoBehaviour:
   customDisplayName: 
   ingredientSound:
     Guid:
-      Data1: 206663481
-      Data2: 1122002480
-      Data3: 1065574306
-      Data4: -508254091
-    Path: event:/Sound/Bar/Pouring liquid
+      Data1: 905900580
+      Data2: 1214722068
+      Data3: 667567033
+      Data4: 1064418930
+    Path: event:/Sound/Bar/Pouring liquid Clear Liquid
