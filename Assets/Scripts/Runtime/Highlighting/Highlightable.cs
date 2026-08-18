@@ -8,24 +8,24 @@ namespace Runtime.Highlighting {
         private bool _lookedAt;
         public UnityAction onClicked;
         
-        [SerializeField] private GameObject meshGameObject;
-
-        [SerializeField] [Layer] private int defaultLayer;
-        [SerializeField] [Layer] private int tutorialHighlightLayer;
-        [SerializeField] [Layer] private int lookHighlightLayer;
+        // [SerializeField] private GameObject meshGameObject;
+        //
+        // [SerializeField] [Layer] private int defaultLayer;
+        // [SerializeField] [Layer] private int tutorialHighlightLayer;
+        // [SerializeField] [Layer] private int lookHighlightLayer;
         
         private void UpdateState(bool tutorialClickable, bool lookedAt) {
             _tutorialClickable = tutorialClickable;
             _lookedAt = lookedAt;
 
-            if (_lookedAt) {
-                meshGameObject.layer = lookHighlightLayer;
-            } else if (_tutorialClickable) {
-                meshGameObject.layer = tutorialHighlightLayer;
-            }
-            else {
-                meshGameObject.layer = defaultLayer;
-            }
+            // if (_lookedAt) {
+            //     meshGameObject.layer = lookHighlightLayer;
+            // } else if (_tutorialClickable) {
+            //     meshGameObject.layer = tutorialHighlightLayer;
+            // }
+            // else {
+            //     meshGameObject.layer = defaultLayer;
+            // }
         }
 
         public void LookAtHighlight(bool lookedAt) {

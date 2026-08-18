@@ -250,10 +250,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014d48b08b2f4bce82481d141600f4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshGameObject: {fileID: 0}
+  meshGameObject: {fileID: 6730006832339609107}
   defaultLayer: 0
-  tutorialHighlightLayer: 0
-  lookHighlightLayer: 0
+  tutorialHighlightLayer: 8
+  lookHighlightLayer: 9
 --- !u!136 &5973511632322931311
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -349,6 +349,11 @@ PrefabInstance:
 --- !u!4 &2275768396608119976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1622658206614183942, guid: dcfbf3828fde68f43b9a99d29e1d9a27, type: 3}
+  m_PrefabInstance: {fileID: 653567605390394542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6730006832339609107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6085552530500264637, guid: dcfbf3828fde68f43b9a99d29e1d9a27, type: 3}
   m_PrefabInstance: {fileID: 653567605390394542}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6291853473255591633
