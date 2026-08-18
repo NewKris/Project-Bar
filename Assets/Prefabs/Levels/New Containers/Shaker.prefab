@@ -250,3 +250,20 @@ MonoBehaviour:
   conversions:
   - from: {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
     to: {fileID: 11400000, guid: aa619fb08c089df49820a1bc1de4165f, type: 2}
+  liquid:
+    Guid:
+      Data1: -1937460435
+      Data2: 1280705268
+      Data3: -2119586136
+      Data4: -1375477770
+    Path: event:/Sound/Bar/Shaker Liquid
+  ice:
+    Guid:
+      Data1: 262118434
+      Data2: 1112287512
+      Data3: 1741600930
+      Data4: -1580543691
+    Path: event:/Sound/Bar/Shaker Ice
+  iceIngredients:
+  - {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
+  - {fileID: 11400000, guid: aa619fb08c089df49820a1bc1de4165f, type: 2}
