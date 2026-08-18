@@ -30,6 +30,8 @@ namespace Runtime.Customers
         [Tooltip("Determines whether the player should lose satisfaction when the customer gets kicked out")]
         [SerializeField] private bool loseSatisfactionWhenKickedOut;
 
+        [SerializeField] private bool disableAttentionDialogue;
+
         public Transform barkSpawn;
         
         private List<Recipe> _acceptableDrinks;
@@ -155,7 +157,7 @@ namespace Runtime.Customers
             }
             
         }
-
+ 
         public void KickOut() {
             _customerBase.customerEventHandler.KickOut(gameObject);
             _customerDialogue.KickOut();
@@ -180,7 +182,7 @@ namespace Runtime.Customers
         private void OnEnterBar()
         {
             _customerBase.customerEventHandler.Enter(gameObject);
-            _customerDialogue.Attention();
+            if (!disableAttentionDialogue) _customerDialogue.Attention();
         }
     }
 }

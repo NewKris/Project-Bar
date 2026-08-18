@@ -40,6 +40,8 @@ namespace Runtime.Customers
             _patienceTimerTickDialogue = timerTick;
             _patienceTimeOutDialogue = timeOut;
             _kickedOutDialogue = kickedOut;
+            
+            HideDialoge();
         }
         
         private void SetName()
@@ -85,6 +87,10 @@ namespace Runtime.Customers
         public void KickOut()
         {
             ShowDialogue(_kickedOutDialogue);
+        }
+
+        public void HideDialoge() {
+            dialogueDisplay.HideDialogue();
         }
         
         private void ShowDialogue(string dialogue)
