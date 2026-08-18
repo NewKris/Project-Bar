@@ -26,11 +26,13 @@ namespace Runtime.Old_Systems.Drink {
 
         private void OnEnable() {
             Debug.Log("OnEnable");
-            if (currentContents.Contains(iceIngredients)) {
-                SfxManager.StartAudio(_audioKey, ice, transform.position);
-            }
-            else {
-                SfxManager.StartAudio(_audioKey, liquid, transform.position);
+
+            if (currentContents.IngredientCount > 0) {
+                SfxManager.StartAudio(
+                    _audioKey, 
+                    currentContents.Contains(iceIngredients) ? ice : liquid,
+                    transform.position
+                );
             }
         }
 
