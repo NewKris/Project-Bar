@@ -8,7 +8,7 @@ namespace Runtime.Old_Systems.Items {
     [Obsolete]
     public class ItemPickup : MonoBehaviour {
         public SatisfactionPort satisfactionPort;
-        public ItemSource source;
+        [HideInInspector] public ItemSource source;
         
         [Header("Audio")]
         public EventReference pickUpAudio;

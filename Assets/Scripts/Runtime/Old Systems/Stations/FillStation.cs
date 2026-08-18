@@ -1,5 +1,6 @@
 ﻿using System;
 using Runtime.Audio;
+using Runtime.Drinks;
 using Runtime.Old_Systems.Drink;
 using UnityEngine;
 
@@ -49,7 +50,7 @@ namespace Runtime.Old_Systems.Stations {
         private bool AlreadyContainsIngredient() {
             return itemDock.HeldItem != null 
                    && itemDock.HeldItem.TryGetComponent(out DrinkObject drink) 
-                   && drink.currentContents.ingredients.Contains(ingredient);
+                   && drink.currentContents.Contains(ingredient);
         }
 
         private void AddIngredient() {

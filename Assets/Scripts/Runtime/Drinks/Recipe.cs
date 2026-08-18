@@ -1,8 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Runtime.Old_Systems.Drink {
-    [Obsolete]
+namespace Runtime.Drinks {
     [CreateAssetMenu(menuName = "Drink/Recipe")]
     public class Recipe : ScriptableObject {
         public DrinkContents contents;
@@ -13,5 +11,9 @@ namespace Runtime.Old_Systems.Drink {
         [TextArea] public string description;
         
         public string DisplayName => string.IsNullOrEmpty(customDisplayName) ? name : customDisplayName;
+
+        private void OnValidate() {
+            contents.Validate();
+        }
     }
 }

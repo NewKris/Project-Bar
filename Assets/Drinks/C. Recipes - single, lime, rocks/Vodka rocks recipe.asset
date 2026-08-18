@@ -13,8 +13,14 @@ MonoBehaviour:
   m_Name: Vodka rocks recipe
   m_EditorClassIdentifier: 
   contents:
-    mixType: 0
     drinkContainer: {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
-    ingredients:
-    - {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
-    - {fileID: 11400000, guid: 9fe57544060200947b2f58caf89d1385, type: 2}
+    ingredientGroups:
+    - groupName: Ice
+      ingredients:
+      - {fileID: 11400000, guid: 80eae5e2abd5f054eacc356ca482e6b9, type: 2}
+    - groupName: Vodka
+      ingredients:
+      - {fileID: 11400000, guid: 9fe57544060200947b2f58caf89d1385, type: 2}
+  icon: {fileID: 0}
+  customDisplayName: 
+  description: 

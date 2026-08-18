@@ -2,8 +2,7 @@
 using FMODUnity;
 using UnityEngine;
 
-namespace Runtime.Old_Systems.Drink {
-    [Obsolete]
+namespace Runtime.Drinks {
     [CreateAssetMenu(menuName = "Drink/Ingredient")]
     public class Ingredient : ScriptableObject {
         public bool isPoisonous;

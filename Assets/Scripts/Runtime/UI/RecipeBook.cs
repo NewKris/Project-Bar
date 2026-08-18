@@ -1,6 +1,7 @@
 using System;
 using NaughtyAttributes;
 using Runtime.Customers.Tutorial_Agent;
+using Runtime.Drinks;
 using Runtime.Old_Systems.Drink;
 using Runtime.Utility;
 using TMPro;
@@ -75,10 +76,13 @@ namespace Runtime.UI
             recipeText.text = recipeText.text.Replace(containerKey, recipe.contents.drinkContainer.DisplayName);
             
             string ingredients = "";
-            foreach (Ingredient ingredient in recipe.contents.ingredients) {
+            foreach (Ingredient ingredient in recipe.contents.AllIngredients) {
                 ingredients += ingredient.DisplayName + ingredientSeparator;
             }
-            ingredients = ingredients.Substring(0, ingredients.Length - ingredientSeparator.Length);
+
+            if (!string.IsNullOrEmpty(ingredients)) {
+                ingredients = ingredients.Substring(0, ingredients.Length - ingredientSeparator.Length);
+            }
             
             recipeText.text = recipeText.text.Replace(recipeIngredientsKey, ingredients);
         }

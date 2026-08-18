@@ -1,11 +1,11 @@
 using System;
 
-namespace Runtime.Old_Systems.Drink {
-    [Obsolete]
+namespace Runtime.Drinks {
     public enum IngredientType {
         container,
         prep,
         liquid,
         garnish,
+        porperty
     }
 }

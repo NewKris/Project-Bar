@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FMODUnity;
 using Runtime.Audio;
+using Runtime.Drinks;
 using Runtime.Satisfaction;
 using Runtime.Utility;
 using UnityEngine;
@@ -22,7 +23,7 @@ namespace Runtime.Old_Systems.Drink {
         protected float ShakeDuration { get; set; }
         private Dictionary<int, float> StationDurations { get; set; }
 
-        public bool HasContents => currentContents.ingredients.Count > 0;
+        public bool HasContents => currentContents.IngredientCount > 0;
 
         public float GetStationCompletion(int stationKey, float maxDuration) {
             return StationDurations[stationKey] / maxDuration;
@@ -39,20 +40,16 @@ namespace Runtime.Old_Systems.Drink {
                 });
             }
             
-            currentContents.ingredients.Clear();
-            currentContents.mixType = MixType.None;
-            currentContents.isDestroyed = false;
+            currentContents.Clear();
             ResetDurations();
         }
 
         public void AddContents(DrinkContents contents) {
-            if (contents.ingredients.Count > 0) {
+            if (contents.IngredientCount > 0) {
                 isDirty = true;
             }
             
-            currentContents.ingredients.AddRange(contents.ingredients);
-            currentContents.mixType = contents.mixType;
-            currentContents.isDestroyed |= contents.isDestroyed;
+            currentContents.ingredientGroups.AddRange(contents.ingredientGroups);
             ResetDurations();
         }
         
@@ -65,7 +62,7 @@ namespace Runtime.Old_Systems.Drink {
             
             VerboseDebug.Log("Adding ingredient " + ingredient.name);
             isDirty = true;
-            currentContents.ingredients.Add(ingredient);
+            currentContents.ingredientGroups.Add(IngredientGroup.CreateNewGroup(ingredient));
             DecreaseStationDurations();
             
             if (!skipSfx && !ingredient.ingredientSound.IsNull) {

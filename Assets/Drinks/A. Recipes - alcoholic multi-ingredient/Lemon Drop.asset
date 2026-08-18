@@ -13,10 +13,17 @@ MonoBehaviour:
   m_Name: Lemon Drop
   m_EditorClassIdentifier: 
   contents:
-    mixType: 1
     drinkContainer: {fileID: 11400000, guid: 33d6fef90f57f6040937e4c527f6b05d, type: 2}
-    ingredients:
-    - {fileID: 11400000, guid: 9e48ee67233ee514fa346e8fe67e15f6, type: 2}
-    - {fileID: 11400000, guid: 9fe57544060200947b2f58caf89d1385, type: 2}
-    - {fileID: 11400000, guid: d58c65b85205b14488d0345d6129a4bc, type: 2}
-    - {fileID: 11400000, guid: 83372f6676758ed4f8db957330747a2d, type: 2}
+    ingredientGroups:
+    - groupName: Sugar
+      ingredients:
+      - {fileID: 11400000, guid: 9e48ee67233ee514fa346e8fe67e15f6, type: 2}
+    - groupName: Strained, Triple Sec, Vodka, Lime Juice
+      ingredients:
+      - {fileID: 11400000, guid: aa619fb08c089df49820a1bc1de4165f, type: 2}
+      - {fileID: 11400000, guid: d58c65b85205b14488d0345d6129a4bc, type: 2}
+      - {fileID: 11400000, guid: 9fe57544060200947b2f58caf89d1385, type: 2}
+      - {fileID: 11400000, guid: 83372f6676758ed4f8db957330747a2d, type: 2}
+  icon: {fileID: 0}
+  customDisplayName: 
+  description: 
