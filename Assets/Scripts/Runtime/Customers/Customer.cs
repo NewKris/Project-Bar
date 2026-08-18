@@ -88,7 +88,7 @@ namespace Runtime.Customers
         
         public void CustomerSetup(CustomerData data, CustomerEventPort port, Vector3 barPosition, Vector3 exitPosition)
         {
-            _customerBase.Setup(data.mesh, barPosition, exitPosition, port);
+            _customerBase.Setup(data.mesh, barPosition, exitPosition, port, data);
             
             _isTarget = data.isTarget;
             _acceptableDrinks = data.acceptableDrinks;

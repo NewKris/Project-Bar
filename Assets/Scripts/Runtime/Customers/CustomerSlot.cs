@@ -52,12 +52,12 @@ namespace Runtime.Customers
 
         private void OnEnable()
         {
-            customerEventPort.OnCustomerEvent += EmptySlot;
+            customerEventPort.onCustomerEvent += EmptySlot;
         }
 
         private void OnDisable()
         {
-            customerEventPort.OnCustomerEvent -= EmptySlot;
+            customerEventPort.onCustomerEvent -= EmptySlot;
         }
 
         private void Start()
@@ -91,6 +91,7 @@ namespace Runtime.Customers
 
             if (_spawnTimer <= 0)
             {
+                Debug.Log($"{gameObject.name} started to spawn a customer at {Time.time}", gameObject);
                 _currentCustomer = customerManager.SpawnCustomer(
                     customerEventPort,
                     customerSpawnPosition, 
@@ -98,6 +99,7 @@ namespace Runtime.Customers
                     customerExitPosition
                 );
                 _spawnTimer = timeBetweenCustomers;
+                Debug.Log($"{gameObject.name} just added {_currentCustomer.name} at {Time.time}", gameObject);
             }
         }
     }

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e38e5cf50f845f0b7dd6e3f243991ec, type: 3}
+  m_Name: TiffanyTestLevel
+  m_EditorClassIdentifier: 
+  sceneName: OutdoorsScene
+  startSatisfaction: 3000
+  customerUnlocks: 0000000000000000000000000000000000000000
+  targetSatisfaction: 400
+  maximumSatisfaction: 10000
+  availableCustomers:
+  - {fileID: 11400000, guid: aec0d8e64e8c6724aae8615f555b0ae8, type: 2}
+  - {fileID: 11400000, guid: 98c21083ca15ce342a1442dc16c1d5cb, type: 2}
+  - {fileID: 11400000, guid: 391c00e6400001e47a8464539bbf46da, type: 2}
+  - {fileID: 11400000, guid: 56dbf718f70cdd54b82d243fb43e4c68, type: 2}
+  - {fileID: 11400000, guid: 5eac33750e0a05746ab1f11e3021bf19, type: 2}
+  target:
+    customerData: {fileID: 11400000, guid: 779e5fe7ee372f34a953594534a98d7c, type: 2}
+    baseChance: 100
+    chanceIncrease: 100
+    shouldSpawnChanceReset: 1

@@ -46,70 +46,60 @@ namespace Runtime.Customers {
 
         private void Enter(GameObject customer) {
             if (customer == gameObject) {
-                Debug.Log("Enter event called");
                 onEnter?.Invoke();
             }
         }
         
         private void Order(GameObject customer) {
             if (customer == gameObject) {
-                Debug.Log("Order event called");
                 onOrder?.Invoke();
             }
         }
         
         private void RepeatOrder(GameObject customer) {
             if (customer == gameObject) {
-                Debug.Log("Repeat order event called");
                 onRepeatOrder?.Invoke();
             }
         }
         
         private void Serve(GameObject customer) {
             if (customer == gameObject) {
-                Debug.Log("Serve event called");
                 onServe?.Invoke();
             }
         }
         
         private void CorrectDrinkServed(GameObject customer) {
             if (customer == gameObject) {
-                Debug.Log("Correct drink served event called");
                 onCorrectDrink?.Invoke();
             }
         }
         
         private void WrongDrinkServed(GameObject customer) {
             if (customer == gameObject) {
-                Debug.Log("Wrong drink served event called");
                 onWrongDrink?.Invoke();
             }
         }
 
         private void PoisonServed(GameObject customer) {
             if (customer == gameObject) {
-                Debug.Log("Poisoned event called");
                 onPoisoned?.Invoke();
             }
         }
         
         private void PatienceTimedOut(GameObject customer) {
             if (customer == gameObject) {
-                Debug.Log("Patience timed out event called");
                 onPatienceTimeOut?.Invoke();
             }
         }
         
         private void KickOut(GameObject customer) {
             if (customer == gameObject) {
-                Debug.Log("Kicked out event called");
                 onKickedOut?.Invoke();
             }
         }
         
         private void Exit(GameObject customer) {
             if (customer == gameObject) {
-                Debug.Log("Exit event called");
                 onExit?.Invoke();
             }
         }

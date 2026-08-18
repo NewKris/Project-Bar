@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
-  m_Name: "Stina Sjusj\xF6m\xE4n"
+  m_Name: 2
   m_EditorClassIdentifier: 
-  customerName: "Stina Sjusj\xF6m\xE4n"
+  customerName: 2
   mesh: {fileID: -6873653282590003643, guid: e343c12c7caa08a42bac559fdbf3d37a, type: 3}
   isTarget: 0
   acceptableDrinks:
   - {fileID: 11400000, guid: 6aa51b26ac345fc44b909702820c0d6f, type: 2}
   - {fileID: 11400000, guid: debf73305086a6e4c9451b6d42a137eb, type: 2}
-  timePenaltyRepeatOrder: 20
-  patienceTimer: 27
-  patienceTickTime: 17
+  timePenaltyRepeatOrder: 5
+  patienceTimer: 15
+  patienceTickTime: 7
   satisfactionSuccess: 27
   satisfactionFailure: 17
   satisfactionMissedOrder: 17

@@ -47,7 +47,7 @@ namespace Runtime.Customers
             satisfactionEvents.OnCustomerSlotLocked += LockCustomerSlot;
             satisfactionEvents.OnUpdateCustomers += UpdateCustomers;
             
-            tutorialFinishedPort.OnCustomerEvent += OnTutorialFinished;
+            tutorialFinishedPort.onCustomerEvent += OnTutorialFinished;
         }
 
         private void OnDisable()
@@ -57,10 +57,12 @@ namespace Runtime.Customers
             satisfactionEvents.OnCustomerSlotLocked -= LockCustomerSlot;
             satisfactionEvents.OnUpdateCustomers -= UpdateCustomers;
             
-            tutorialFinishedPort.OnCustomerEvent -= OnTutorialFinished;
+            tutorialFinishedPort.onCustomerEvent -= OnTutorialFinished;
         }
 
         private void Start() {
+            _activeCustomers = new HashSet<CustomerData>();
+            _servedCustomers = new HashSet<CustomerData>();
             foreach (CustomerSlot slot in customerSlots)
             {
                 slot.customerManager = this;
@@ -79,9 +81,19 @@ namespace Runtime.Customers
 
         public Customer SpawnCustomer(CustomerEventPort port, Vector3 spawnPosition, Vector3 barPosition, Vector3 exitPosition)
         {
-            Customer newCustomer = Instantiate(customerPrefab, spawnPosition, Quaternion.identity);
-
             CustomerData data = null;
+            
+            CustomerData[] customers = new CustomerData[_activeCustomers.Count];
+
+            _activeCustomers.CopyTo(customers);
+
+            if (customers.Length > 0) {
+                foreach (CustomerData customer in customers) {
+                    if (!customer) continue;
+                    Debug.Log(customer.customerName);
+                }
+            }
+            
 
             if (_targetUnlocked && !_activeCustomers.Contains(_target) && _lastCustomer != _target)
             {
@@ -121,15 +133,18 @@ namespace Runtime.Customers
 
             _activeCustomers.Add(data);
 
-            port.OnCustomerEvent += () =>
-            {
-                _activeCustomers.Remove(data);
-                _lastCustomer = data;
-            };
-            
+            port.onCustomerEventWithData += HandleCustomerLeaving;
+
+            Customer newCustomer = Instantiate(customerPrefab, spawnPosition, Quaternion.identity);
             newCustomer.CustomerSetup(data, port, barPosition, exitPosition);
+            newCustomer.gameObject.name = data.name;
             
             return newCustomer;
+        }
+
+        private void HandleCustomerLeaving(CustomerData data) {
+            _activeCustomers.Remove(data);
+            _lastCustomer = data;
         }
 
         private void UnlockCustomerSlot(int slot)

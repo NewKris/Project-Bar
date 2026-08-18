@@ -10,6 +10,7 @@ namespace Runtime.Customers
         private Vector3 _barPosition;
         private Vector3 _exitPosition;
         private CustomerEventPort _customerEventPort;
+        private CustomerData _customerData;
         
         [Tooltip("The time it takes for the customer to walk")]
         [SerializeField] [Min(0)] private float movementTime;
@@ -17,11 +18,12 @@ namespace Runtime.Customers
         [Tooltip("The time the customer will remain at the bar before leaving")]
         [SerializeField] [Min(0)] private float timeBeforeExit = 1.5f;
 
-        public void Setup(Vector3 barPosition, Vector3 exitPosition, CustomerEventPort port)
+        public void Setup(Vector3 barPosition, Vector3 exitPosition, CustomerEventPort port, CustomerData data = null)
         {
             _barPosition = barPosition;
             _exitPosition = exitPosition;
             _customerEventPort = port;
+            _customerData = data;
         }
         
         public void EnterBar()
@@ -69,7 +71,14 @@ namespace Runtime.Customers
                 yield return new WaitForFixedUpdate();
             }
             
-            if (_customerEventPort) _customerEventPort.RaiseCustomerEvent();
+            if (_customerEventPort) {
+                if (!_customerData) {
+                    _customerEventPort.RaiseCustomerEvent();
+                }
+                else {
+                    _customerEventPort.RaiseCustomerEvent(_customerData);
+                }
+            }
 
             Destroy(gameObject);
         }

@@ -21,14 +21,15 @@ namespace Runtime.Customers {
         
         public bool isLeaving;
 
-        public void NoMeshSetup(Vector3 barPosition, Vector3 exitPosition, CustomerEventPort port) {
-            _customerMovement.Setup(barPosition, exitPosition, port);
+        public void NoMeshSetup(Vector3 barPosition, Vector3 exitPosition, CustomerEventPort port, CustomerData data = null) {
+            _customerMovement.Setup(barPosition, exitPosition, port, data);
+            
         }
 
-        public void Setup(Mesh mesh, Vector3 barPosition, Vector3 exitPosition, CustomerEventPort port) {
+        public void Setup(Mesh mesh, Vector3 barPosition, Vector3 exitPosition, CustomerEventPort port, CustomerData data = null) {
             _customerMovement ??= GetComponent<CustomerMovement>();
             if (mesh) customerMeshFilter.mesh = mesh;
-            _customerMovement.Setup(barPosition, exitPosition, port);
+            _customerMovement.Setup(barPosition, exitPosition, port, data);
         }
 
         private void OnEnable()

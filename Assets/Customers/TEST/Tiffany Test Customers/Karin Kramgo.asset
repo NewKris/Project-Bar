@@ -17,7 +17,7 @@ MonoBehaviour:
   isTarget: 0
   acceptableDrinks:
   - {fileID: 11400000, guid: 4c15a6cdf9c5e954d8d50f1d55449cb8, type: 2}
-  timePenaltyRepeatOrder: 0.5
+  timePenaltyRepeatOrder: 10
   patienceTimer: 20
   patienceTickTime: 10
   satisfactionSuccess: 10

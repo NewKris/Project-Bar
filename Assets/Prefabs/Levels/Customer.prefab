@@ -302,6 +302,7 @@ MonoBehaviour:
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
   customerEventPort: {fileID: 11400000, guid: dff084a8993e2af4bacb99c66f229fe5, type: 2}
   loseSatisfactionWhenKickedOut: 1
+  disableAttentionDialogue: 0
   barkSpawn: {fileID: 7147455560226641622}
 --- !u!114 &4818803729512919718
 MonoBehaviour:
@@ -581,11 +582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2476854673661646326, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_fontSize
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2476854673661646326, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_fontSizeBase
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3123482404372508387, guid: e55d2c53f37ba6b4aa78e10bba52b48b, type: 3}
       propertyPath: m_AnchoredPosition.x
