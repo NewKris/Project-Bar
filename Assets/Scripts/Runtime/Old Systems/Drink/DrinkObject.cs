@@ -4,13 +4,15 @@ using System.Linq;
 using FMODUnity;
 using Runtime.Audio;
 using Runtime.Drinks;
+using Runtime.Drinks.Converting;
+using Runtime.Drinks.Pouring;
 using Runtime.Satisfaction;
 using Runtime.Utility;
 using UnityEngine;
 
 namespace Runtime.Old_Systems.Drink {
     [Obsolete]
-    public class DrinkObject : MonoBehaviour, IPourable, IPourReceiver {
+    public class DrinkObject : MonoBehaviour, IPourable, IPourReceiver, IConvertable {
         [HideInInspector] public bool isDirty;
         
         public DrinkContents currentContents;
@@ -27,6 +29,18 @@ namespace Runtime.Old_Systems.Drink {
 
         public float GetStationCompletion(int stationKey, float maxDuration) {
             return StationDurations[stationKey] / maxDuration;
+        }
+        
+        public void ConvertIngredients(Conversion[] conversions) {
+            Debug.Log("Converting ingredients");
+            foreach (IngredientGroup group in currentContents.ingredientGroups) {
+                foreach (Conversion conversion in conversions) {
+                    if (group.ingredients.Contains(conversion.from)) {
+                        group.ingredients.Remove(conversion.from);
+                        group.ingredients.Add(conversion.to);
+                    }
+                }
+            }
         }
         
         public void EmptyContents() {

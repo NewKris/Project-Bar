@@ -2,6 +2,8 @@
 using Runtime.Animations;
 using Runtime.Customers;
 using Runtime.Drinks;
+using Runtime.Drinks.Converting;
+using Runtime.Drinks.Pouring;
 using Runtime.Highlighting;
 using Runtime.Old_Systems.Drink;
 using Runtime.Old_Systems.Items;
@@ -80,19 +82,31 @@ namespace Runtime.Old_Systems.Player.Hand {
         }
 
         public void PourDrink(HandInteraction handInteraction) {
-            if (!HeldItem || !HeldItem.TryGetComponent(out IPourable pourable)) return;
+            if (!HeldItem) return;
 
-            if (handInteraction?.TryGetComponent(out IPourReceiver targetDrink) ?? false) {
-                pourable.GiveContent(targetDrink);
+            if (IPourable.IsPourable(HeldItem, out IPourable pourable)) {
+                TryPour(pourable, handInteraction);
+            }
+
+            if (IConverter.IsConverter(HeldItem, out IConverter converter)) {
+                TryConvert(converter, handInteraction);
+            }
+        }
+
+        private void TryConvert(IConverter converter, HandInteraction handInteraction) {
+            if (IConvertable.IsConvertable(handInteraction, out IConvertable convertable)) {
+                converter.Convert(convertable);
+            }
+        }
+
+        private void TryPour(IPourable pourable, HandInteraction interaction) {
+            if (IPourReceiver.IsReceiver(interaction, out IPourReceiver receiver)) {
+                pourable.GiveContent(receiver);
             } else if (pourable.HasContent) {
                 satisfactionPort.DecreaseSatisfaction(satisfactionPort.splashPenalty);
             }
             
             pourable.EmptyContents();
-        }
-
-        private bool InteractionIsSink(HandInteraction interaction) {
-            return interaction?.TryGetComponent(out Sink _) ?? false;
         }
 
         private void Awake() {
