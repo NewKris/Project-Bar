@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using Runtime.Satisfaction;
@@ -11,6 +11,7 @@ namespace Runtime.Customers
     {
         [SerializeField] private SatisfactionEvents satisfactionEvents;
         [SerializeField] private CustomerEventPort tutorialFinishedPort;
+        [SerializeField] private CustomerEventPort generalCustomerEventPort;
         
         [Tooltip("If true then customer slots will not be unlocked until tutorial is finished.")]
         [SerializeField] private bool waitForTutorial = true;
@@ -48,6 +49,7 @@ namespace Runtime.Customers
             satisfactionEvents.OnUpdateCustomers += UpdateCustomers;
             
             tutorialFinishedPort.onCustomerEvent += OnTutorialFinished;
+            generalCustomerEventPort.onCustomerEventWithData += HandleCustomerLeaving;
         }
 
         private void OnDisable()
@@ -66,6 +68,8 @@ namespace Runtime.Customers
             foreach (CustomerSlot slot in customerSlots)
             {
                 slot.customerManager = this;
+                slot.customerEventPort = generalCustomerEventPort;
+                slot.Setup();
             }
         }
 
@@ -131,13 +135,14 @@ namespace Runtime.Customers
                 
             }
 
-            _activeCustomers.Add(data);
+            Customer newCustomer = null;
 
-            port.onCustomerEventWithData += HandleCustomerLeaving;
-
-            Customer newCustomer = Instantiate(customerPrefab, spawnPosition, Quaternion.identity);
-            newCustomer.CustomerSetup(data, port, barPosition, exitPosition);
-            newCustomer.gameObject.name = data.name;
+            if (!_activeCustomers.Contains(data)) {
+                _activeCustomers.Add(data);
+                newCustomer = Instantiate(customerPrefab, spawnPosition, Quaternion.identity);
+                newCustomer.CustomerSetup(data, port, barPosition, exitPosition);
+                newCustomer.gameObject.name = data.name;
+            }
             
             return newCustomer;
         }
