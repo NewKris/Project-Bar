@@ -48,7 +48,7 @@ namespace Runtime.Old_Systems.Player.Hand {
 
             bool holdingDrink = HeldItem.TryGetComponent(out DrinkObject drink);
             
-            if (handInteraction.TryGetComponent(out ItemDock dock) && dock.CanPlaceItem()) {
+            if (handInteraction.TryGetComponent(out ItemDock dock) && dock.CanPlaceItem(HeldItem)) {
                 dock.PlaceItem(HeldItem);
             }
             else if (handInteraction.TryGetComponent(out MultiDock passiveStation) && passiveStation.CanPlaceItem()) {

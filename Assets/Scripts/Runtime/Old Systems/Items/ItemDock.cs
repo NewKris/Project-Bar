@@ -11,8 +11,14 @@ namespace Runtime.Old_Systems.Items {
 
         public ItemPickup HeldItem { get; private set; }
 
-        public bool CanPlaceItem() {
-            return HeldItem == null;
+        private ItemPickup _exclusiveItem;
+
+        public bool CanPlaceItem(ItemPickup item) {
+            return HeldItem == null && (_exclusiveItem == null || _exclusiveItem == item);
+        }
+
+        public void SetExclusiveItem(ItemPickup item) {
+            _exclusiveItem = item;
         }
         
         public void PlaceItem(ItemPickup item) {

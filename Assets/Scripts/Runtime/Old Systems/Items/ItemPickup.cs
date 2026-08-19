@@ -107,6 +107,7 @@ namespace Runtime.Old_Systems.Items {
         private void Start() {
             if (startDock) {
                 startDock.PlaceItem(this);
+                startDock.SetExclusiveItem(this);
             }
         }
 
