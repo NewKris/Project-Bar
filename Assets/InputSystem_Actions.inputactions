@@ -406,17 +406,6 @@
                 },
                 {
                     "name": "",
-                    "id": "565311f9-e32f-4bc0-aee9-07105338f77b",
-                    "path": "<Keyboard>/leftCtrl",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pour",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2381365c-ffa9-4ae7-b61f-9482ba3fc527",
                     "path": "<Keyboard>/shift",
                     "interactions": "",
