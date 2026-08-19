@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using Runtime.Customers;
 using UnityEditor;
+using Assets.Scripts.Runtime.Customers.Spawning;
 
 namespace Editor {
     [CustomEditor(typeof(CustomerSlot))]

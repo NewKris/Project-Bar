@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
+using Runtime.Customers;
 using Runtime.Satisfaction;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Runtime.Customers
-{
+namespace Assets.Scripts.Runtime.Customers.Spawning {
     public class CustomerManager : MonoBehaviour
     {
         [SerializeField] private SatisfactionEvents satisfactionEvents;
@@ -65,7 +65,7 @@ namespace Runtime.Customers
         private void Start() {
             _activeCustomers = new HashSet<CustomerData>();
             _servedCustomers = new HashSet<CustomerData>();
-            foreach (CustomerSlot slot in customerSlots)
+            foreach (var slot in customerSlots)
             {
                 slot.customerManager = this;
                 slot.customerEventPort = generalCustomerEventPort;
@@ -87,12 +87,12 @@ namespace Runtime.Customers
         {
             CustomerData data = null;
             
-            CustomerData[] customers = new CustomerData[_activeCustomers.Count];
+            var customers = new CustomerData[_activeCustomers.Count];
 
             _activeCustomers.CopyTo(customers);
 
             if (customers.Length > 0) {
-                foreach (CustomerData customer in customers) {
+                foreach (var customer in customers) {
                     if (!customer) continue;
                     Debug.Log(customer.customerName);
                 }
@@ -121,8 +121,8 @@ namespace Runtime.Customers
                 }
                 else
                 {
-                    int maxAttempts = 10;
-                    int attempts = 0;
+                    var maxAttempts = 10;
+                    var attempts = 0;
                     
                     data = _availableCustomers[Random.Range(0, _availableCustomers.Length)];
                     
@@ -185,7 +185,7 @@ namespace Runtime.Customers
 
         private void OnTutorialFinished() {
             _isTutorialFinished = true;
-            for (int i = 0; i < _customersToUnlockOnTutorialFinished.Length; i++) {
+            for (var i = 0; i < _customersToUnlockOnTutorialFinished.Length; i++) {
                 if (_customersToUnlockOnTutorialFinished[i]) {
                     UnlockCustomerSlot(i);
                 }

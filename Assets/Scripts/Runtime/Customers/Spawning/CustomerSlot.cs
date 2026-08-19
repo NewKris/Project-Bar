@@ -1,8 +1,9 @@
 ﻿using NaughtyAttributes;
+using Runtime;
+using Runtime.Customers;
 using UnityEngine;
 
-namespace Runtime.Customers
-{
+namespace Assets.Scripts.Runtime.Customers.Spawning {
     public class CustomerSlot : MonoBehaviour
     {
         [HideInInspector] public CustomerManager customerManager;
@@ -106,7 +107,7 @@ namespace Runtime.Customers
 
             if (_spawnTimer <= 0)
             {
-                Customer newCustomer = customerManager.SpawnCustomer(
+                var newCustomer = customerManager.SpawnCustomer(
                     customerEventPort,
                     customerSpawnPosition,
                     customerOrderPosition,
