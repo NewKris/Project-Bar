@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+﻿using NaughtyAttributes;
 using UnityEngine;
 
 namespace Runtime.Customers
@@ -6,8 +6,8 @@ namespace Runtime.Customers
     public class CustomerSlot : MonoBehaviour
     {
         [HideInInspector] public CustomerManager customerManager;
+        [HideInInspector] public CustomerEventPort customerEventPort;
 
-        [SerializeField] private CustomerEventPort customerEventPort;
         [SerializeField] private float timeBetweenCustomers = 5f;
         
         [Tooltip("Determines whether the slot will force active customer to leave when disabled")]
@@ -32,6 +32,7 @@ namespace Runtime.Customers
         private Customer _currentCustomer;
         private bool _enabled = false;
         private float _spawnTimer;
+        private bool _hasSubscribed = false;
         
         public void Enable()
         {
@@ -52,12 +53,21 @@ namespace Runtime.Customers
 
         private void OnEnable()
         {
-            customerEventPort.onCustomerEvent += EmptySlot;
+            Setup();
         }
 
         private void OnDisable()
         {
-            customerEventPort.onCustomerEvent -= EmptySlot;
+            if (customerEventPort != null && _hasSubscribed) customerEventPort.onCustomerEventWithData -= EmptySlot;
+            _hasSubscribed = false;
+        }
+
+        public void Setup() {
+            if (customerEventPort != null && !_hasSubscribed) {
+                customerEventPort.onCustomerEventWithData += EmptySlot;
+                _hasSubscribed = true;
+            }
+
         }
 
         private void Start()
@@ -65,10 +75,15 @@ namespace Runtime.Customers
             EmptySlot();
         }
 
-        private void EmptySlot()
-        {
+        private void EmptySlot() {
             _currentCustomer = null;
             _spawnTimer = timeBetweenCustomers;
+        }
+
+        private void EmptySlot(CustomerData data)
+        {
+            if (data != _currentCustomer) return;
+            EmptySlot();
         }
 
         private void Update()
@@ -91,15 +106,16 @@ namespace Runtime.Customers
 
             if (_spawnTimer <= 0)
             {
-                Debug.Log($"{gameObject.name} started to spawn a customer at {Time.time}", gameObject);
-                _currentCustomer = customerManager.SpawnCustomer(
+                Customer newCustomer = customerManager.SpawnCustomer(
                     customerEventPort,
-                    customerSpawnPosition, 
+                    customerSpawnPosition,
                     customerOrderPosition,
                     customerExitPosition
                 );
+                if (newCustomer != null) {
+                    _currentCustomer = newCustomer;
+                }
                 _spawnTimer = timeBetweenCustomers;
-                Debug.Log($"{gameObject.name} just added {_currentCustomer.name} at {Time.time}", gameObject);
             }
         }
     }

@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ad1a7db4c974473b5c4cb3894ef387f, type: 3}
-  m_Name: Slot2Port
+  m_Name: GeneralCustomerEventPort
   m_EditorClassIdentifier: 
