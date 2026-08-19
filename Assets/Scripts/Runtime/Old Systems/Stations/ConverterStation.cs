@@ -10,12 +10,14 @@ namespace Runtime.Old_Systems.Stations {
     [Obsolete]
     public struct Conversion {
         public Ingredient from;
+        public Ingredient middleState;
         public Ingredient to;
     }
     
     [Obsolete]
     public class ConverterStation : Station {
         public float  conversionTime;
+        public float middleStateTime;
         public Conversion[] conversions;
 
         public override void StartStation() {
@@ -36,6 +38,10 @@ namespace Runtime.Old_Systems.Stations {
             return currentItem.GetStationTime(stationKey) >= conversionTime;
         }
 
+        private bool ReachedMiddleState() {
+            return currentItem.GetStationTime(stationKey) >= middleStateTime;
+        }
+
         protected override float MaxFill() {
             return conversionTime;
         }
@@ -43,25 +49,48 @@ namespace Runtime.Old_Systems.Stations {
         protected override void Update() {
             base.Update();
 
+            if (ReachedMiddleState()) {
+                ConvertToMiddleStates();
+            }
+
             if (IsDone()) {
                 ConvertToEndStates();
                 TurnStationOff();
             }
         }
 
-        private void ConvertToEndStates() {
+        private void ConvertToMiddleStates() {
             foreach (Conversion conversion in conversions) {
-                if (conversion.from is DrinkContainer container) {
+                if (conversion is { from: DrinkContainer startContainer, middleState: DrinkContainer middleContainer }) {
                     TryConvertContainer(
                         currentItem, 
-                        container, 
-                        container
+                        startContainer, 
+                        middleContainer
                     );
                 }
                 else {
                     TryConvertIngredients(
                         currentItem, 
                         conversion.from, 
+                        conversion.middleState
+                    );
+                }
+            }
+        }
+        
+        private void ConvertToEndStates() {
+            foreach (Conversion conversion in conversions) {
+                if (conversion is { middleState: DrinkContainer middleContainer, to: DrinkContainer endContainer }) {
+                    TryConvertContainer(
+                        currentItem, 
+                        middleContainer, 
+                        endContainer
+                    );
+                }
+                else {
+                    TryConvertIngredients(
+                        currentItem, 
+                        conversion.middleState, 
                         conversion.to
                     );
                 }
