@@ -3,7 +3,7 @@
 namespace Runtime.Drinks.Pouring {
     public interface IPourable {
         public static bool IsPourable(Component obj, out IPourable pourable) {
-            return IsPourable(obj.gameObject, out pourable);
+            return IsPourable(obj?.gameObject, out pourable);
         }
         
         public static bool IsPourable(GameObject obj, out IPourable pourable) {

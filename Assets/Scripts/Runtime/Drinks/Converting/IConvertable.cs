@@ -3,7 +3,7 @@
 namespace Runtime.Drinks.Converting {
     public interface IConvertable {
         public static bool IsConvertable(Component obj, out IConvertable convertable) {
-            return IsConvertable(obj.gameObject, out convertable);
+            return IsConvertable(obj?.gameObject, out convertable);
         }
         
         public static bool IsConvertable(GameObject obj, out IConvertable convertable) {
