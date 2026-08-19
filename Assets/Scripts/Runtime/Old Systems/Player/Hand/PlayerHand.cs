@@ -80,15 +80,15 @@ namespace Runtime.Old_Systems.Player.Hand {
         }
 
         public void PourDrink(HandInteraction handInteraction) {
-            if (!HeldItem || !HeldItem.TryGetComponent(out DrinkObject heldDrink)) return;
+            if (!HeldItem || !HeldItem.TryGetComponent(out IPourable pourable)) return;
 
-            if (handInteraction?.TryGetComponent(out DrinkObject targetDrink) ?? false) {
-                targetDrink.AddContents(heldDrink.currentContents);
-            } else if (!InteractionIsSink(handInteraction) && heldDrink.HasContents) {
+            if (handInteraction?.TryGetComponent(out IPourReceiver targetDrink) ?? false) {
+                pourable.GiveContent(targetDrink);
+            } else if (pourable.HasContent) {
                 satisfactionPort.DecreaseSatisfaction(satisfactionPort.splashPenalty);
             }
             
-            heldDrink.EmptyContents();
+            pourable.EmptyContents();
         }
 
         private bool InteractionIsSink(HandInteraction interaction) {

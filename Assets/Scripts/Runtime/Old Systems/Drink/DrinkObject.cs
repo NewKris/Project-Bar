@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Runtime.Old_Systems.Drink {
     [Obsolete]
-    public class DrinkObject : MonoBehaviour {
+    public class DrinkObject : MonoBehaviour, IPourable, IPourReceiver {
         [HideInInspector] public bool isDirty;
         
         public DrinkContents currentContents;
@@ -23,7 +23,7 @@ namespace Runtime.Old_Systems.Drink {
         protected float ShakeDuration { get; set; }
         private Dictionary<int, float> StationDurations { get; set; }
 
-        public bool HasContents => currentContents.IngredientCount > 0;
+        public bool HasContent => currentContents.IngredientCount > 0;
 
         public float GetStationCompletion(int stationKey, float maxDuration) {
             return StationDurations[stationKey] / maxDuration;
@@ -43,6 +43,10 @@ namespace Runtime.Old_Systems.Drink {
             currentContents.Clear();
             ResetDurations();
         }
+        
+        public void GiveContent(IPourReceiver receiver) {
+            receiver.AddContents(currentContents);
+        }
 
         public void AddContents(DrinkContents contents) {
             if (contents.IngredientCount > 0) {
@@ -50,6 +54,15 @@ namespace Runtime.Old_Systems.Drink {
             }
             
             currentContents.ingredientGroups.AddRange(contents.ingredientGroups);
+            ResetDurations();
+        }
+
+        public void AddContents(IngredientGroup group) {
+            if (group.ingredients.Count > 0) {
+                isDirty = true;
+            }
+            
+            currentContents.ingredientGroups.Add(group);
             ResetDurations();
         }
         

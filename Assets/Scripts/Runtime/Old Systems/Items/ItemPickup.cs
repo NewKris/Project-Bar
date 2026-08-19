@@ -1,5 +1,6 @@
 using System;
 using FMODUnity;
+using NaughtyAttributes;
 using Runtime.Audio;
 using Runtime.Satisfaction;
 using UnityEngine;
@@ -7,8 +8,12 @@ using UnityEngine;
 namespace Runtime.Old_Systems.Items {
     [Obsolete]
     public class ItemPickup : MonoBehaviour {
-        public SatisfactionPort satisfactionPort;
+        [Required] public SatisfactionPort satisfactionPort;
         [HideInInspector] public ItemSource source;
+
+        [Header("Respawning")] 
+        public bool canRespawn;
+        public Transform respawnPoint;
         
         [Header("Audio")]
         public EventReference pickUpAudio;
@@ -57,7 +62,12 @@ namespace Runtime.Old_Systems.Items {
         }
 
         public void Despawn() {
-            Destroy(gameObject);
+            if (canRespawn) {
+                Pin(respawnPoint);
+            }
+            else {
+                Destroy(gameObject);
+            }
         }
 
         public void SetFrontRender(bool renderInFront) {
@@ -101,6 +111,14 @@ namespace Runtime.Old_Systems.Items {
         private void SnapToPin() {
             transform.position = _pin.position;
             transform.rotation = _pin.rotation;
+        }
+
+        private void OnDrawGizmos() {
+            if (respawnPoint != null) {
+                Gizmos.color = Color.cyan;
+                Gizmos.DrawSphere(respawnPoint.position, 0.01f);
+                Gizmos.DrawLine(transform.position, respawnPoint.position);
+            }
         }
     }
 }

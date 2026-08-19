@@ -203,7 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f64aa7255849d1b66951cce797ece0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pourPenalty: 5
   satisfactionPort: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
   itemPivot: {fileID: 4636003247188984305}
   handShake: {fileID: 155191795229461188}
@@ -802,7 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb9ee8575f5485db832dfa50b578f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 0.5
+  sensitivity: 0.25
   mouseSmoothing: 0.02
   crouchSmoothing: 0.1
   crouchDeadZone: 0.1
