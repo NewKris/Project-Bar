@@ -1144,11 +1144,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound:
     Guid:
-      Data1: 1110067621
-      Data2: 1294692648
-      Data3: -596035171
-      Data4: -1178988599
-    Path: event:/Sound/UI/Interact
+      Data1: 663465735
+      Data2: 1181345996
+      Data3: -705862270
+      Data4: -472778905
+    Path: event:/Sound/UI/Quit
 --- !u!114 &1265446651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,11 +1163,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginHoverSound:
     Guid:
-      Data1: -1008916189
-      Data2: 1211519846
-      Data3: -1588922748
-      Data4: -1556842122
-    Path: event:/Sound/UI/Options
+      Data1: 934991667
+      Data2: 1334059040
+      Data3: -642865259
+      Data4: 744919023
+    Path: event:/Sound/UI/Menu Scroll
   endHoverSound:
     Guid:
       Data1: 0
@@ -1396,11 +1396,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound:
     Guid:
-      Data1: 1110067621
-      Data2: 1294692648
-      Data3: -596035171
-      Data4: -1178988599
-    Path: event:/Sound/UI/Interact
+      Data1: -405136259
+      Data2: 1110906860
+      Data3: -852438398
+      Data4: -5585771
+    Path: event:/Sound/UI/Start
 --- !u!114 &1617271256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,11 +1415,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginHoverSound:
     Guid:
-      Data1: -1008916189
-      Data2: 1211519846
-      Data3: -1588922748
-      Data4: -1556842122
-    Path: event:/Sound/UI/Options
+      Data1: 934991667
+      Data2: 1334059040
+      Data3: -642865259
+      Data4: 744919023
+    Path: event:/Sound/UI/Menu Scroll
   endHoverSound:
     Guid:
       Data1: 0
@@ -1884,11 +1884,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound:
     Guid:
-      Data1: 1110067621
-      Data2: 1294692648
-      Data3: -596035171
-      Data4: -1178988599
-    Path: event:/Sound/UI/Interact
+      Data1: -1008916189
+      Data2: 1211519846
+      Data3: -1588922748
+      Data4: -1556842122
+    Path: event:/Sound/UI/Options
 --- !u!114 &2028504467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1903,11 +1903,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginHoverSound:
     Guid:
-      Data1: -1008916189
-      Data2: 1211519846
-      Data3: -1588922748
-      Data4: -1556842122
-    Path: event:/Sound/UI/Options
+      Data1: 934991667
+      Data2: 1334059040
+      Data3: -642865259
+      Data4: 744919023
+    Path: event:/Sound/UI/Menu Scroll
   endHoverSound:
     Guid:
       Data1: 0

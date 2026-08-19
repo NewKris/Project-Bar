@@ -17,8 +17,8 @@ MonoBehaviour:
   customDisplayName: 
   ingredientSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 529931441
+      Data2: 1147315084
+      Data3: 1928144819
+      Data4: 719324167
+    Path: event:/Sound/Bar/Pouring liquid Carbonated
