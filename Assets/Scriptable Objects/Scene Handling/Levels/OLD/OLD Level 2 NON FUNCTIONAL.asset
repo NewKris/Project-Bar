@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e38e5cf50f845f0b7dd6e3f243991ec, type: 3}
   m_Name: OLD Level 2 NON FUNCTIONAL
   m_EditorClassIdentifier: 
-  sceneName: OutdoorsScene
+  sceneName: Level 3
   startSatisfaction: 50
   customerUnlocks: 00000000
   targetSatisfaction: 100

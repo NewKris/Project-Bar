@@ -14,6 +14,7 @@ namespace Runtime.Scene_Handling {
         public static bool ReachedTheEnd => currentLevelIndex >= levelCount;
         
         public IEnumerator StartupTask() {
+            Debug.Log($"Loading level: {levelScenes[currentLevelIndex].name}");
             yield return SceneManager.LoadSceneAsync(levelScenes[currentLevelIndex].sceneName, LoadSceneMode.Additive);
         }
         
