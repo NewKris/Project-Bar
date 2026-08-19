@@ -2029,15 +2029,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7583470165483679579, guid: 8adaf574d1a88a04399091cd71801b1a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.163
+      value: 2.273
       objectReference: {fileID: 0}
     - target: {fileID: 7583470165483679579, guid: 8adaf574d1a88a04399091cd71801b1a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.184
+      value: 1.303
       objectReference: {fileID: 0}
     - target: {fileID: 7583470165483679579, guid: 8adaf574d1a88a04399091cd71801b1a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.009
+      value: 1.148
       objectReference: {fileID: 0}
     - target: {fileID: 7583470165483679579, guid: 8adaf574d1a88a04399091cd71801b1a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2071,6 +2071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch
       objectReference: {fileID: 0}
+    - target: {fileID: 8439954159774429334, guid: 8adaf574d1a88a04399091cd71801b1a, type: 3}
+      propertyPath: startDock
+      value: 
+      objectReference: {fileID: 6781246172722732638}
     - target: {fileID: 8439954159774429334, guid: 8adaf574d1a88a04399091cd71801b1a, type: 3}
       propertyPath: respawnPoint
       value: 
@@ -3062,6 +3066,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72fa8e2c8b47b7048acaebd188c2e4c9, type: 3}
+--- !u!114 &6781246172722732638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6583287284120380511, guid: 72fa8e2c8b47b7048acaebd188c2e4c9, type: 3}
+  m_PrefabInstance: {fileID: 6781246172722732637}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c572fffe404e492181c26f4193effe7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6938929864306374567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2625333924057132925, guid: 109d9ccb3dcfab24f9fb9fc7e6938510, type: 3}

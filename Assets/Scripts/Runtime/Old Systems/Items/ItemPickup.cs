@@ -13,7 +13,7 @@ namespace Runtime.Old_Systems.Items {
 
         [Header("Respawning")] 
         public bool canRespawn;
-        public Transform respawnPoint;
+        public ItemDock startDock;
         
         [Header("Audio")]
         public EventReference pickUpAudio;
@@ -63,7 +63,7 @@ namespace Runtime.Old_Systems.Items {
 
         public void Despawn() {
             if (canRespawn) {
-                Pin(respawnPoint);
+                startDock.PlaceItem(this);
             }
             else {
                 Destroy(gameObject);
@@ -104,6 +104,12 @@ namespace Runtime.Old_Systems.Items {
             _containerMaterial = new FmodParameter() { parameterName = "GlassMaterial", value = glassMaterialLabel.ToString() };
         }
 
+        private void Start() {
+            if (startDock) {
+                startDock.PlaceItem(this);
+            }
+        }
+
         private void Update() {
             if (_pin) SnapToPin();
         }
@@ -114,10 +120,10 @@ namespace Runtime.Old_Systems.Items {
         }
 
         private void OnDrawGizmos() {
-            if (respawnPoint != null) {
+            if (startDock != null) {
                 Gizmos.color = Color.cyan;
-                Gizmos.DrawSphere(respawnPoint.position, 0.01f);
-                Gizmos.DrawLine(transform.position, respawnPoint.position);
+                Gizmos.DrawSphere(startDock.itemPivot.position, 0.01f);
+                Gizmos.DrawLine(transform.position, startDock.itemPivot.position);
             }
         }
     }
