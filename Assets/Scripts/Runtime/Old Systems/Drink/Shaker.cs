@@ -25,8 +25,6 @@ namespace Runtime.Old_Systems.Drink {
         private const string _audioKey = "shaker_shake";
 
         private void OnEnable() {
-            Debug.Log("OnEnable");
-
             if (currentContents.IngredientCount > 0) {
                 SfxManager.StartAudio(
                     _audioKey, 
@@ -37,7 +35,6 @@ namespace Runtime.Old_Systems.Drink {
         }
 
         private void OnDisable() {
-            Debug.Log("OnDisable");
             SfxManager.StopAudio(_audioKey);
         }
 
