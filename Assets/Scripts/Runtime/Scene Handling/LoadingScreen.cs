@@ -19,7 +19,7 @@ namespace Runtime.Scene_Handling {
         }
 
         private IEnumerator Fade(Color from, Color to, float duration) {
-            for (float t = 0; t < duration; t += Time.deltaTime) {
+            for (float t = 0; t < duration; t += Time.unscaledDeltaTime) {
                 fadeImage.color = Color.Lerp(from, to, t / duration);
                 
                 yield return null;

@@ -1,5 +1,6 @@
 ﻿using System;
 using NaughtyAttributes;
+using Runtime.UI;
 using Runtime.Utility.CommonObjects;
 using UnityEngine;
 
@@ -25,6 +26,10 @@ namespace Runtime.Player {
         private Transform _pitchPivot;
         private Transform _yawPivot;
 
+        private void Awake() {
+            UIMethods.OnPauseStateChange += OnGamePaused;
+        }
+
         private void Start() {
             CreateHierarchy();
             ResetDampedAngles();
@@ -32,6 +37,7 @@ namespace Runtime.Player {
         }
 
         private void OnDestroy() {
+            UIMethods.OnPauseStateChange -= OnGamePaused;
             SetCursorLock(false);
         }
 
@@ -75,6 +81,10 @@ namespace Runtime.Player {
             
             transform.SetParent(_pitchPivot);
             transform.SetLocalPositionAndRotation(Vector2.zero, Quaternion.identity);
+        }
+
+        private void OnGamePaused(bool isPaused) {
+            SetCursorLock(!isPaused);
         }
 
         private void SetCursorLock(bool lockCursor) {

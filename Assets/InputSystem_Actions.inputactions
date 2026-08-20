@@ -203,6 +203,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Toggle Pause",
+                    "type": "Button",
+                    "id": "07fe5096-efba-459e-8a96-4d34f44102f7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -445,6 +454,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Ingredient V",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15854aa6-6ba6-4c9a-a275-261b904540f2",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c080c0cf-c940-4acd-859d-6738ab67f6b3",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

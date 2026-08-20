@@ -2,6 +2,7 @@ using System;
 using Runtime.Old_Systems.Interact;
 using Runtime.Old_Systems.Player.Hand;
 using Runtime.Old_Systems.Stations;
+using Runtime.UI;
 using Runtime.Utility;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace Runtime.Player {
         public HandController handController;
         public InteractController interactController;
         public StationInteractController stationInteractController;
+        public PauseMenu pauseMenu;
 
         private void Awake() {
             PlayerController.OnGrab += handController.TryGrabInteract;
@@ -23,6 +25,7 @@ namespace Runtime.Player {
             PlayerController.OnCrouch += playerCamera.ChangeCameraHeight;
             PlayerController.OnBeginShake += playerHand.TryBeginShake;
             PlayerController.OnEndShake += playerHand.TryEndShake;
+            PlayerController.TogglePause += pauseMenu.Toggle;
         }
 
         private void OnDestroy() {
@@ -35,9 +38,12 @@ namespace Runtime.Player {
             PlayerController.OnCrouch -= playerCamera.ChangeCameraHeight;
             PlayerController.OnBeginShake -= playerHand.TryBeginShake;
             PlayerController.OnEndShake -= playerHand.TryEndShake;
+            PlayerController.TogglePause -= pauseMenu.Toggle;
         }
 
         private void Update() {
+            if (UIMethods.IsPaused) return;
+            
             playerCamera.Look(PlayerController.DeltaMouse, Time.deltaTime);
         }
 

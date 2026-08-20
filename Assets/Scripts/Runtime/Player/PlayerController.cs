@@ -13,6 +13,7 @@ namespace Runtime.Player {
         public static event Action<float> OnCrouch;
         public static event Action OnBeginShake;
         public static event Action OnEndShake;
+        public static event Action TogglePause;
         
         public static Vector2 DeltaMouse { get; private set; }
 
@@ -33,6 +34,7 @@ namespace Runtime.Player {
             ActionMap["Crouch"].performed += ctx => OnCrouch?.Invoke(ctx.ReadValue<float>());
             ActionMap["Shake"].performed += _ => OnBeginShake?.Invoke();
             ActionMap["Shake"].canceled += _ => OnEndShake?.Invoke();
+            ActionMap["Toggle Pause"].performed += _ => TogglePause?.Invoke();
             
             // Får problem med att subscribe lambda funktioner i den här loopen
             // där de inte blir disposed och därför skulle få duplicerade anrop.
