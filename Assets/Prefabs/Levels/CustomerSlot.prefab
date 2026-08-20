@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerManager: {fileID: 0}
   customerEventPort: {fileID: 11400000, guid: 56cec7d85be9f8841abc946b87e5522f, type: 2}
+  identifier: {fileID: 11400000, guid: 66a83e93075a07649890d215cb219f46, type: 2}
   timeBetweenCustomers: 5
   kickOutCustomerWhenDisabled: 1
   customerSpawnPosition: {x: 0, y: 1, z: 11.6}

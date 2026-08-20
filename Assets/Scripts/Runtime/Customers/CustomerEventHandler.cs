@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 
 namespace Runtime.Customers {
-    [CreateAssetMenu(fileName = "Customer Event Handler", menuName = "Customers/Event Handler")]
+    [CreateAssetMenu(fileName = "Customer Event Handler", menuName = "Customers/Event Handler", order = 2)]
     public class CustomerEventHandler : ScriptableObject {
         public UnityAction<GameObject> onEnter;
 

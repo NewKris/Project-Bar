@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using NaughtyAttributes;
 using Runtime.Customers;
 using Runtime.Satisfaction;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Assets.Scripts.Runtime.Customers.Spawning {
+namespace Runtime.Customers.Spawning {
     public class CustomerManager : MonoBehaviour
     {
         [SerializeField] private SatisfactionEvents satisfactionEvents;
@@ -83,21 +84,35 @@ namespace Assets.Scripts.Runtime.Customers.Spawning {
 
         }
 
-        public Customer SpawnCustomer(CustomerEventPort port, Vector3 spawnPosition, Vector3 barPosition, Vector3 exitPosition)
+        public Customer SpawnCustomer(CustomerEventPort port, Vector3 spawnPosition, Vector3 barPosition, Vector3 exitPosition, CustomerSlotIdentifier slotIdentifier)
         {
             CustomerData data = null;
+
+            data = TrySpawnTarget(slotIdentifier);
             
-            var customers = new CustomerData[_activeCustomers.Count];
-
-            _activeCustomers.CopyTo(customers);
-
-            if (customers.Length > 0) {
-                foreach (var customer in customers) {
-                    if (!customer) continue;
-                    Debug.Log(customer.customerName);
-                }
+            if (!data)
+            {
+                data = GetCustomerToSpawn(slotIdentifier);
             }
             
+            if (!CanEnterSlot(data, slotIdentifier)) return null;
+
+            Customer newCustomer = null;
+
+            if (!_activeCustomers.Contains(data)) {
+                _activeCustomers.Add(data);
+                newCustomer = Instantiate(customerPrefab, spawnPosition, Quaternion.identity);
+                newCustomer.CustomerSetup(data, port, barPosition, exitPosition);
+                newCustomer.gameObject.name = data.name;
+            }
+            
+            return newCustomer;
+        }
+
+        private CustomerData TrySpawnTarget(CustomerSlotIdentifier slotIdentifier) {
+            if (!CanEnterSlot(_target, slotIdentifier)) return null;
+            
+            CustomerData data = null;
 
             if (_targetUnlocked && !_activeCustomers.Contains(_target) && _lastCustomer != _target)
             {
@@ -111,40 +126,56 @@ namespace Assets.Scripts.Runtime.Customers.Spawning {
                 }
 
             }
+
+            return data;
+        }
+
+        private CustomerData GetCustomerToSpawn(CustomerSlotIdentifier slotIdentifier) {
+            CustomerData data = null;
             
-            if (!data)
+            if (_servedCustomers.Count < _availableCustomers.Length)
             {
-                if (_servedCustomers.Count < _availableCustomers.Length)
-                {
-                    data = _availableCustomers[_servedCustomers.Count];
-                    _servedCustomers.Add(data);
-                }
-                else
-                {
-                    var maxAttempts = 10;
-                    var attempts = 0;
-                    
-                    data = _availableCustomers[Random.Range(0, _availableCustomers.Length)];
-                    
-                    while ((_activeCustomers.Contains(data) || data == _lastCustomer) && attempts < maxAttempts)
-                    {
-                        data = _availableCustomers[Random.Range(0, _availableCustomers.Length)];
-                        attempts++;
-                    }
-                }
+                data = GetFirstAvailableCustomer(slotIdentifier);
+                _servedCustomers.Add(data);
+            }
                 
+            if (!data) 
+            {
+                List<CustomerData> spawnableCustomers = GetSpawnableCustomers(slotIdentifier);
+                
+                data = spawnableCustomers[Random.Range(0, spawnableCustomers.Count)]; 
             }
 
-            Customer newCustomer = null;
+            return data;
+        }
 
-            if (!_activeCustomers.Contains(data)) {
-                _activeCustomers.Add(data);
-                newCustomer = Instantiate(customerPrefab, spawnPosition, Quaternion.identity);
-                newCustomer.CustomerSetup(data, port, barPosition, exitPosition);
-                newCustomer.gameObject.name = data.name;
+        private List<CustomerData> GetSpawnableCustomers(CustomerSlotIdentifier slotIdentifier) {
+            List<CustomerData> spawnableCustomers = new();
+
+            foreach (CustomerData customer in _availableCustomers) {
+                if (CanCustomerBeSpawned(customer, slotIdentifier)) spawnableCustomers.Add(customer);
             }
-            
-            return newCustomer;
+
+            return spawnableCustomers;
+        }
+
+        private bool CanCustomerBeSpawned(CustomerData data, CustomerSlotIdentifier slotIdentifier) {
+            if (!CanEnterSlot(data, slotIdentifier)) return false;
+            if (_activeCustomers.Contains(data)) return false;
+            return true;
+        }
+
+        private CustomerData GetFirstAvailableCustomer(CustomerSlotIdentifier slotIdentifier) {
+            foreach (CustomerData customer in _availableCustomers) {
+                if (!_servedCustomers.Contains(customer) && CanEnterSlot(customer, slotIdentifier)) return customer;
+            }
+            return null;
+        }
+
+        private bool CanEnterSlot(CustomerData customer, CustomerSlotIdentifier slotIdentifier) {
+            if (customer.canEnterAnySlot) return true;
+            if (customer.allowedSlots.Contains(slotIdentifier)) return true;
+            return false;
         }
 
         private void HandleCustomerLeaving(CustomerData data) {

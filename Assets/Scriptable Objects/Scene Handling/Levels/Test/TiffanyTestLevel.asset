@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: OutdoorsScene
   startSatisfaction: 3000
-  customerUnlocks: 0000000000000000000000000000000000000000
+  customerUnlocks: 000000000000000000000000
   targetSatisfaction: 400
   maximumSatisfaction: 10000
   availableCustomers:
@@ -25,6 +25,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5eac33750e0a05746ab1f11e3021bf19, type: 2}
   target:
     customerData: {fileID: 11400000, guid: 779e5fe7ee372f34a953594534a98d7c, type: 2}
-    baseChance: 100
-    chanceIncrease: 100
+    baseChance: 10
+    chanceIncrease: 5
     shouldSpawnChanceReset: 1

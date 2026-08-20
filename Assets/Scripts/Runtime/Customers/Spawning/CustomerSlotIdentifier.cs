@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Customers.Spawning {
+namespace Runtime.Customers.Spawning {
+    [CreateAssetMenu(fileName = "Customer Slot Identifier", menuName = "Customers/Slot Identifier", order = 1)]
     public class CustomerSlotIdentifier : ScriptableObject {
 
         

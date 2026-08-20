@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Runtime.Customers.Spawning;
 using NaughtyAttributes;
 using Runtime.Drinks;
 using Runtime.Old_Systems.Drink;
@@ -6,11 +7,15 @@ using UnityEngine;
 
 namespace Runtime.Customers
 {
-    [CreateAssetMenu(fileName = "Customer", menuName = "Character Data/Customer", order = 1)]
+    [CreateAssetMenu(fileName = "Customer", menuName = "Customers/Customer", order = 0)]
     public class CustomerData : ScriptableObject
     {
         [Tooltip("The name that will be displayed as the customer name")]
         public string customerName;
+
+        public bool canEnterAnySlot = true;
+
+        [HideIf("canEnterAnySlot")] public CustomerSlotIdentifier[] allowedSlots;
 
         [Tooltip("The mesh that will be used as the customers model (if left empty the mesh in the customer prefab will be used)")]
         [ShowAssetPreview(128, 128)]

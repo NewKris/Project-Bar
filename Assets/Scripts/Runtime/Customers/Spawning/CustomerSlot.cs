@@ -3,12 +3,14 @@ using Runtime;
 using Runtime.Customers;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Customers.Spawning {
+namespace Runtime.Customers.Spawning {
     public class CustomerSlot : MonoBehaviour
     {
         [HideInInspector] public CustomerManager customerManager;
         [HideInInspector] public CustomerEventPort customerEventPort;
 
+        [SerializeField] private CustomerSlotIdentifier identifier;
+        
         [SerializeField] private float timeBetweenCustomers = 5f;
         
         [Tooltip("Determines whether the slot will force active customer to leave when disabled")]
@@ -34,6 +36,12 @@ namespace Assets.Scripts.Runtime.Customers.Spawning {
         private bool _enabled = false;
         private float _spawnTimer;
         private bool _hasSubscribed = false;
+
+        private void OnValidate() {
+            if (identifier == null) {
+                Debug.LogWarning($"Customer Slot {name} has no identifier", this);
+            }
+        }
         
         public void Enable()
         {
@@ -111,7 +119,8 @@ namespace Assets.Scripts.Runtime.Customers.Spawning {
                     customerEventPort,
                     customerSpawnPosition,
                     customerOrderPosition,
-                    customerExitPosition
+                    customerExitPosition,
+                    identifier
                 );
                 if (newCustomer != null) {
                     _currentCustomer = newCustomer;
