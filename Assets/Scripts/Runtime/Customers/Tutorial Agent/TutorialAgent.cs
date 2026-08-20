@@ -41,6 +41,11 @@ namespace Runtime.Customers.Tutorial_Agent {
         // Avoids index out of range exception by using Mathf.Min
         private TutorialAgentStep CurrentStep => tutorialSteps[Mathf.Min(_currentStep, tutorialSteps.Length - 1)];
         private List<Recipe> AcceptableDrinks => CurrentStep.acceptedDrinks.Array.ToList();
+
+        private void OnValidate() {
+            if (!_base) Debug.LogError("Customer base is null!");
+            if (!tutorialFinishedPort) Debug.LogError("Tutorial finished port is missing");
+        }
         
         private void OnEnable() {
             _base = GetComponent<CustomerBase>();
@@ -57,9 +62,6 @@ namespace Runtime.Customers.Tutorial_Agent {
         }
 
         private void Start() {
-            if (!_base) Debug.LogError("Customer base is null!");
-            if (!tutorialFinishedPort) Debug.LogError("Tutorial finished port");
-            
             _base.Setup(null, transform.position, exitPosition, tutorialFinishedPort);
             NextStep();
             _dialogueRunner.SetCharacterName(characterName);
@@ -90,18 +92,18 @@ namespace Runtime.Customers.Tutorial_Agent {
             
 
             _timer = CurrentStep.reminderTimer;
-            if (CurrentStep.progressType == TutorialProgressType.ServeDrink) {
+            if (CurrentStep.ImitateCustomer) {
                 _dialogueRunner.ShowDialogueTimed(CurrentStep.stepStartedDialogue);
             }
             else {
                 _dialogueRunner.ShowDialogueNonTimed(CurrentStep.stepStartedDialogue);
             }
 
-            if (CurrentStep.progressType == TutorialProgressType.ClickAgent) {
+            if (CurrentStep.ClickAgent) {
                 _agentHighlightable.TutorialHighlight();
             }
 
-            if (CurrentStep.progressType == TutorialProgressType.ClickObjects) {
+            if (CurrentStep.ClickObjects) {
                 _objectsClicked = new HashSet<Highlightable>();
                 foreach (Highlightable obj in CurrentStep.objectsToHighlight.Array) {
                     obj.TutorialHighlight();
@@ -135,10 +137,10 @@ namespace Runtime.Customers.Tutorial_Agent {
             if (_currentStep >= tutorialSteps.Length) return;
             if (CurrentStep == null) return;
 
-            if (CurrentStep.progressType == TutorialProgressType.ClickAgent) {
+            if (CurrentStep.ClickAgent) {
                 NextStep();
             } 
-            else if (CurrentStep.progressType == TutorialProgressType.ServeDrink) {
+            else if (CurrentStep.ImitateCustomer) {
                 _dialogueRunner.ShowDialogueTimed(CurrentStep.repeatOrderDialogue);
             }
         }
@@ -146,16 +148,14 @@ namespace Runtime.Customers.Tutorial_Agent {
         private void OnServeDrink(DrinkContents drink) {
             if (CurrentStep == null) return;
             
-            if (CurrentStep.progressType != TutorialProgressType.ServeDrink) return;
+            if (!CurrentStep.ImitateCustomer && !CurrentStep.ServeDrink) return;
 
             if (drink.DrinkIsAccepted(AcceptableDrinks))
             {
-                Debug.Log("Drink accepted!");
                 NextStep();
             }
             else
             {
-                Debug.Log("Drink rejected");
                 _dialogueRunner.ShowDialogueTimed(CurrentStep.wrongDrinkDialogue);
             }
         }
@@ -164,7 +164,7 @@ namespace Runtime.Customers.Tutorial_Agent {
             _timer -= Time.deltaTime;
             _timeSinceStepChanged += Time.deltaTime;
 
-            if (CurrentStep.progressType != TutorialProgressType.ServeDrink) return;
+            if (!CurrentStep.ImitateCustomer) return;
             
             if (_timer <= 0 && !_base.isLeaving) {
                 _dialogueRunner.ShowDialogueTimed(CurrentStep.reminderDialogue);

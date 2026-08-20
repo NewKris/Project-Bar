@@ -3,6 +3,8 @@
         None,
         ClickAgent,
         ClickObjects,
+        ImitateCustomer,
         ServeDrink,
+        InteractWithMachine,
     }
 }

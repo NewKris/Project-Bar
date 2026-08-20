@@ -18,10 +18,10 @@ MonoBehaviour:
   targetSatisfaction: 400
   maximumSatisfaction: 10000
   availableCustomers:
+  - {fileID: 11400000, guid: 56dbf718f70cdd54b82d243fb43e4c68, type: 2}
   - {fileID: 11400000, guid: aec0d8e64e8c6724aae8615f555b0ae8, type: 2}
   - {fileID: 11400000, guid: 98c21083ca15ce342a1442dc16c1d5cb, type: 2}
   - {fileID: 11400000, guid: 391c00e6400001e47a8464539bbf46da, type: 2}
-  - {fileID: 11400000, guid: 56dbf718f70cdd54b82d243fb43e4c68, type: 2}
   - {fileID: 11400000, guid: 5eac33750e0a05746ab1f11e3021bf19, type: 2}
   target:
     customerData: {fileID: 11400000, guid: 779e5fe7ee372f34a953594534a98d7c, type: 2}

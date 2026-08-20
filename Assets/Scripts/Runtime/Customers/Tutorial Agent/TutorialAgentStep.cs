@@ -61,25 +61,28 @@ namespace Runtime.Customers.Tutorial_Agent {
         [Header("Progress settings")]
         public TutorialProgressType progressType;
         
+        public bool ImitateCustomer => progressType == TutorialProgressType.ImitateCustomer;
+        public bool ClickObjects => progressType == TutorialProgressType.ClickObjects;
+        public bool ClickAgent => progressType == TutorialProgressType.ClickAgent;
         public bool ServeDrink => progressType == TutorialProgressType.ServeDrink;
-        public bool ClickObject => progressType == TutorialProgressType.ClickObjects;
+        public bool InteractWithMachine => progressType == TutorialProgressType.InteractWithMachine;
         
-        [ShowIf("ServeDrink"), AllowNesting, HideNestedArray]
+        [ShowIf(EConditionOperator.Or,"ImitateCustomer", "ServeDrink"), AllowNesting, HideNestedArray]
         public NestedArray<Recipe> acceptedDrinks;
-
-        [ShowIf("ServeDrink"), AllowNesting]
+        
+        [ShowIf("ImitateCustomer"), AllowNesting]
         public string repeatOrderDialogue;
 
-        [ShowIf("ServeDrink"), AllowNesting]
+        [ShowIf(EConditionOperator.Or,"ImitateCustomer", "ServeDrink"), AllowNesting]
         public string wrongDrinkDialogue;
         
-        [ShowIf("ServeDrink"), AllowNesting]
+        [ShowIf("ImitateCustomer"), AllowNesting]
         public float reminderTimer;
         
-        [ShowIf("ServeDrink"), AllowNesting]
+        [ShowIf("ImitateCustomer"), AllowNesting]
         public string reminderDialogue;
         
-        [ShowIf("ClickObject"), AllowNesting, HideNestedArray]
+        [ShowIf("ClickObjects"), AllowNesting, HideNestedArray]
         public NestedArray<Highlightable> objectsToHighlight;
         
         [Header("Step completed settings")]
