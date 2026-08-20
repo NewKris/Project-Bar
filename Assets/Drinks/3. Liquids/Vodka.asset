@@ -22,3 +22,4 @@ MonoBehaviour:
       Data3: 667567033
       Data4: 1064418930
     Path: event:/Sound/Bar/Pouring liquid Clear Liquid
+  ingredientInteractions: []

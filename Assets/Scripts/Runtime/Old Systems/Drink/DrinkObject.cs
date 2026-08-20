@@ -32,7 +32,6 @@ namespace Runtime.Old_Systems.Drink {
         }
         
         public void ConvertIngredients(Conversion[] conversions) {
-            Debug.Log("Converting ingredients");
             foreach (IngredientGroup group in currentContents.ingredientGroups) {
                 foreach (Conversion conversion in conversions) {
                     if (group.ingredients.Contains(conversion.from)) {
@@ -80,7 +79,7 @@ namespace Runtime.Old_Systems.Drink {
             ResetDurations();
         }
         
-        public void AddIngredient(Ingredient ingredient, bool skipSfx = false) {
+        public void AddIngredient(Ingredient ingredient) {
             if (currentContents.IngredientCount >= maxIngredients) {
                 VerboseDebug.Log("Cannot add ingredient: Container is full!");
                 satisfactionPort.DecreaseSatisfaction(satisfactionPort.overflowPenalty);
@@ -91,8 +90,12 @@ namespace Runtime.Old_Systems.Drink {
             isDirty = true;
             currentContents.ingredientGroups.Add(IngredientGroup.CreateNewGroup(ingredient));
             DecreaseStationDurations();
-            
-            if (!skipSfx && !ingredient.ingredientSound.IsNull) {
+            ConvertIngredients(ingredient.ingredientInteractions);
+            PlayIngredientOneShot(ingredient);
+        }
+
+        private void PlayIngredientOneShot(Ingredient ingredient) {
+            if (!ingredient.ingredientSound.IsNull) {
                 SfxManager.PlayOneShot(new OneShotConfig() {
                     eventReference = ingredient.ingredientSound,
                     attachedGameObject = gameObject,
