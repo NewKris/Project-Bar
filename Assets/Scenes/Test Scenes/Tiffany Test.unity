@@ -34875,6 +34875,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 5228688772791884835, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5302233253166588281, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: timeBetweenCustomers
       value: 1
@@ -47206,7 +47210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8465399020216961972, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8937940842605928498, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: m_LocalScale.x

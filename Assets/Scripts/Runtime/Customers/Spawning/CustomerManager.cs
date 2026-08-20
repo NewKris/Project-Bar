@@ -22,7 +22,7 @@ namespace Runtime.Customers.Spawning {
         [Foldout("Customers")]
         [SerializeField] private Customer customerPrefab;
 
-        private bool[] _customersToUnlockOnTutorialFinished;
+        private bool[] _customerSlotsToUnlockOnTutorialFinished;
         private bool _isTutorialFinished;
         
         private CustomerData[] _availableCustomers;
@@ -33,16 +33,16 @@ namespace Runtime.Customers.Spawning {
         private bool _shouldTargetReset = true;
 
         private float _targetSpawnChance;
-        private bool _targetUnlocked = false;
-        private HashSet<CustomerData> _activeCustomers = new HashSet<CustomerData>();
-        private HashSet<CustomerData> _servedCustomers = new HashSet<CustomerData>();
+        private bool _targetUnlocked;
+        private HashSet<CustomerData> _activeCustomers = new();
+        private HashSet<CustomerData> _servedCustomers = new();
         private CustomerData _lastCustomer = null;
 
         public float TargetSpawnChance => _targetSpawnChance;
 
         private void OnEnable()
         {
-            _customersToUnlockOnTutorialFinished = new bool[customerSlots.Length];
+            _customerSlotsToUnlockOnTutorialFinished = new bool[customerSlots.Length];
             
             satisfactionEvents.OnToggleTarget += ToggleTarget;
             satisfactionEvents.OnCustomerSlotUnlocked += UnlockCustomerSlot;
@@ -186,7 +186,7 @@ namespace Runtime.Customers.Spawning {
         private void UnlockCustomerSlot(int slot)
         {
             if (waitForTutorial && !_isTutorialFinished) {
-                _customersToUnlockOnTutorialFinished[slot] = true;
+                _customerSlotsToUnlockOnTutorialFinished[slot] = true;
             }
             else {
                 customerSlots[slot].Enable();
@@ -196,7 +196,7 @@ namespace Runtime.Customers.Spawning {
         private void LockCustomerSlot(int slot)
         {
             if (waitForTutorial && !_isTutorialFinished) {
-                _customersToUnlockOnTutorialFinished[slot] = false;
+                _customerSlotsToUnlockOnTutorialFinished[slot] = false;
             }
             else {
                 customerSlots[slot].Disable();
@@ -216,8 +216,8 @@ namespace Runtime.Customers.Spawning {
 
         private void OnTutorialFinished() {
             _isTutorialFinished = true;
-            for (var i = 0; i < _customersToUnlockOnTutorialFinished.Length; i++) {
-                if (_customersToUnlockOnTutorialFinished[i]) {
+            for (var i = 0; i < _customerSlotsToUnlockOnTutorialFinished.Length; i++) {
+                if (_customerSlotsToUnlockOnTutorialFinished[i]) {
                     UnlockCustomerSlot(i);
                 }
             }

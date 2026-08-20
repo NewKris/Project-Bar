@@ -99,11 +99,7 @@ namespace Runtime.Customers.Spawning {
         {
             if (!_enabled) return;
 
-            if (_currentCustomer)
-            {
-                
-            }
-            else
+            if (!_currentCustomer)
             {
                 HandleNewCustomer();
             }

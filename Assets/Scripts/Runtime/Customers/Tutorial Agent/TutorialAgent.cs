@@ -43,8 +43,9 @@ namespace Runtime.Customers.Tutorial_Agent {
         private List<Recipe> AcceptableDrinks => CurrentStep.acceptedDrinks.Array.ToList();
 
         private void OnValidate() {
-            if (!_base) Debug.LogError("Customer base is null!");
-            if (!tutorialFinishedPort) Debug.LogError("Tutorial finished port is missing");
+            if (!gameObject.activeInHierarchy) return;
+            if (!_base) Debug.LogError("Customer base is null!", this);
+            if (!tutorialFinishedPort) Debug.LogError("Tutorial finished port is missing", this);
         }
         
         private void OnEnable() {
