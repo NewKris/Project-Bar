@@ -10,7 +10,7 @@ namespace Runtime.Player {
         private const int BUFFER_SIZE = 10;
         
         public InteractRay interactRay;
-        public ItemDock playerHand;
+        public PlayerHand playerHand;
 
         private ISpaceInteraction _currentInteraction;
         private IHoverInteraction[] _currentHovers = new IHoverInteraction[BUFFER_SIZE];
@@ -43,8 +43,13 @@ namespace Runtime.Player {
         }
 
         private void TryReleaseOnInteraction() {
+            if (!playerHand.heldItem) return;
+            
             if (interactRay.TryGetFirstOfType(out IReleaseOnInteraction<ItemObject> interaction)) {
                 interaction.ReleaseOn(playerHand.heldItem);
+            }
+            else {
+                playerHand.ReleaseItem();
             }
         }
 

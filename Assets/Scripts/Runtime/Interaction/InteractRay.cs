@@ -15,7 +15,7 @@ namespace Runtime.Interaction {
         private List<IInteraction> _interactBuffer;
 
         public bool TryGetFirstOfType<T>(out T interaction) where T : IInteraction {
-            interaction = (T)_interactBuffer.FirstOrDefault(x => x.GetType() == typeof(T));
+            interaction = (T)_interactBuffer.FirstOrDefault(x => x is T);
             return interaction != null;
         }
 
