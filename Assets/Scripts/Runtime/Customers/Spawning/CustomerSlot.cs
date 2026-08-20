@@ -112,7 +112,6 @@ namespace Runtime.Customers.Spawning {
             if (_spawnTimer <= 0)
             {
                 var newCustomer = customerManager.SpawnCustomer(
-                    customerEventPort,
                     customerSpawnPosition,
                     customerOrderPosition,
                     customerExitPosition,
