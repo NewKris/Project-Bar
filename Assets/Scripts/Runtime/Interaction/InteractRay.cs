@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Runtime.Utility;
-using Runtime.Utility.Extensions;
 using UnityEngine;
 
 namespace Runtime.Interaction {
@@ -13,23 +12,43 @@ namespace Runtime.Interaction {
 
         private int _hitCount;
         private RaycastHit[] _hitBuffer;
+        private List<IInteraction> _interactBuffer;
 
-        public bool TryGetFirstOfType<T>(out T hit) where T : IInteraction {
-            hit = default(T);
-            return false;
+        public bool TryGetFirstOfType<T>(out T interaction) where T : IInteraction {
+            interaction = (T)_interactBuffer.FirstOrDefault(x => x.GetType() == typeof(T));
+            return interaction != null;
         }
 
         public int GetAllOfTypeNonAlloc<T>(T[] buffer) where T : IInteraction {
-            return 0;
+            int findCount = 0;
+            
+            foreach (IInteraction interaction in _interactBuffer) {
+                if (interaction is T eligibleInteraction) {
+                    buffer[findCount] = eligibleInteraction;
+                    findCount++;
+                }
+            }
+            
+            return findCount;
         }
         
         private void Awake() {
             _hitBuffer =  new RaycastHit[bufferSize];
+            _interactBuffer = new List<IInteraction>(bufferSize);
         }
 
         private void Update() {
             Ray ray = new Ray(transform.position, transform.forward);
             _hitCount = Physics.RaycastNonAlloc(ray, _hitBuffer, interactDistance, interactMask);
+            _interactBuffer.Clear();
+
+            for (int i = 0; i < _hitCount; i++) {
+                if (_hitBuffer[i].collider.TryGetComponent(out IInteraction interaction)) {
+                    _interactBuffer.Add(interaction);
+                }
+            }
+            
+            _interactBuffer.Sort(CompareDistance);
         }
 
         private void OnDrawGizmos() {
