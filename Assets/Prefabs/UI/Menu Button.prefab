@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6305074054913732687}
   - component: {fileID: 2796219273378011568}
   - component: {fileID: 6944809787161089983}
+  - component: {fileID: 9119774490664061372}
+  - component: {fileID: 4377169628999715613}
   m_Layer: 5
   m_Name: Menu Button
   m_TagString: Untagged
@@ -121,6 +123,51 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &9119774490664061372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994383296411170168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1dc7619cf2e472da7c96d16506e31b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginHoverSound:
+    Guid:
+      Data1: 934991667
+      Data2: 1334059040
+      Data3: -642865259
+      Data4: 744919023
+    Path: event:/Sound/UI/Menu Scroll
+  endHoverSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+--- !u!114 &4377169628999715613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994383296411170168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8184b0a00383423b822710dccc740d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound:
+    Guid:
+      Data1: -405136259
+      Data2: 1110906860
+      Data3: -852438398
+      Data4: -5585771
+    Path: event:/Sound/UI/Start
 --- !u!1 &1993360072872254768
 GameObject:
   m_ObjectHideFlags: 0
