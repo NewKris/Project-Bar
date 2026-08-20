@@ -26,3 +26,6 @@ MonoBehaviour:
   - buttonText: Koffe Test
     scenes:
     - Koffe Test
+  - buttonText: GRAPHICS
+    scenes:
+    - Level Design
