@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using NaughtyAttributes;
 using Runtime.Drinks;
 using Runtime.Highlighting;
 using Runtime.Old_Systems.Drink;
 using Runtime.Old_Systems.Player.Hand;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Runtime.Customers.Tutorial_Agent {
     [RequireComponent(typeof(CustomerBase))]
@@ -21,6 +23,9 @@ namespace Runtime.Customers.Tutorial_Agent {
         [SerializeField] private Vector3 exitPosition;
         [SerializeField] private TutorialAgentStep[] tutorialSteps;
         [SerializeField] private string tutorialCompletedDialogue;
+
+        [Foldout("Events")] [SerializeField] private UnityEvent onAnyStepStarted;
+        [Foldout("Events")] [SerializeField] private UnityEvent onAnyStepCompleted;
         
         private CustomerBase _base;
         private TutorialDialogueRunner _dialogueRunner;
@@ -108,7 +113,8 @@ namespace Runtime.Customers.Tutorial_Agent {
         }
 
         private void HandleStepStartUpActions() {
-            CurrentStep.onStepStarted.Invoke();
+            CurrentStep.onStepStarted?.Invoke();
+            onAnyStepStarted?.Invoke();
             if (CurrentStep.recipesToUnlockAtStart.Length > 0) {
                 unlockRecipesPort.UnlockRecipes(CurrentStep.recipesToUnlockAtStart);
             }
@@ -117,13 +123,13 @@ namespace Runtime.Customers.Tutorial_Agent {
 
         private void HandleStepEndActions() {
             if (_currentStep >= 0) {
-                CurrentStep.onStepCompleted.Invoke();
+                CurrentStep.onStepCompleted?.Invoke();
+                onAnyStepCompleted?.Invoke();
                 if (CurrentStep.recipesToUnlockAtEnd.Length > 0) {
                     unlockRecipesPort.UnlockRecipes(CurrentStep.recipesToUnlockAtEnd);
                 }
             }
         }
-        
 
         private void OnOrder() {
             if (_currentStep >= tutorialSteps.Length) return;
