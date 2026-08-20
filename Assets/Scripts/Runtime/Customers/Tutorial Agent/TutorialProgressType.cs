@@ -5,6 +5,5 @@
         ClickObjects,
         ImitateCustomer,
         ServeDrink,
-        InteractWithMachine,
     }
 }

@@ -65,7 +65,6 @@ namespace Runtime.Customers.Tutorial_Agent {
         public bool ClickObjects => progressType == TutorialProgressType.ClickObjects;
         public bool ClickAgent => progressType == TutorialProgressType.ClickAgent;
         public bool ServeDrink => progressType == TutorialProgressType.ServeDrink;
-        public bool InteractWithMachine => progressType == TutorialProgressType.InteractWithMachine;
         
         [ShowIf(EConditionOperator.Or,"ImitateCustomer", "ServeDrink"), AllowNesting, HideNestedArray]
         public NestedArray<Recipe> acceptedDrinks;

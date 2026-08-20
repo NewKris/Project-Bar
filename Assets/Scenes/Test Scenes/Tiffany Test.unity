@@ -46430,7 +46430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].progressType
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[1].progressType
@@ -47027,7 +47027,7 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[0].objectsToHighlight.Array.Array.data[0]'
       value: 
-      objectReference: {fileID: 2041806145}
+      objectReference: {fileID: 435565603}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[1].objectsToHighlight.Array.Array.data[0]'
       value: 
