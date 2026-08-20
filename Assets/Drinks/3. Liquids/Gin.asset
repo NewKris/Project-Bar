@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPoisonous: 0
   type: 2
-  customDisplayName: 
   ingredientSound:
     Guid:
       Data1: 905900580
@@ -22,3 +21,7 @@ MonoBehaviour:
       Data3: 667567033
       Data4: 1064418930
     Path: event:/Sound/Bar/Pouring liquid Clear Liquid
+  ingredientInteractions: []
+  customDisplayName: 
+  description: mmmm gin
+  icon: {fileID: 21300000, guid: 1160f44640bbbe24b9881dbd632d5a62, type: 3}

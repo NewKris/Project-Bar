@@ -293,6 +293,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1275047633916835487, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275047633916835487, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275047633916835487, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275047633916835487, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2165381306993256821, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -331,6 +347,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165381306993256821, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122384416963919286, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122384416963919286, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122384416963919286, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122384416963919286, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296906807825067763, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296906807825067763, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296906807825067763, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296906807825067763, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4682697874818041328, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
@@ -380,6 +428,26 @@ PrefabInstance:
     - target: {fileID: 4682697874818041328, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684403979041520932, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684403979041520932, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684403979041520932, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684403979041520932, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983157234242431548, guid: 3be6756569efc5f4b83a5fde2f2fef88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

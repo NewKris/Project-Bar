@@ -1,6 +1,7 @@
 ﻿using System;
 using FMODUnity;
 using Runtime.Drinks.Converting;
+using Runtime.Utility;
 using UnityEngine;
 
 namespace Runtime.Drinks {
@@ -8,9 +9,13 @@ namespace Runtime.Drinks {
     public class Ingredient : ScriptableObject {
         public bool isPoisonous;
         public IngredientType type;
-        public string customDisplayName;
         public EventReference ingredientSound;
         public Conversion[] ingredientInteractions;
+
+        [Header("UI")] 
+        public string customDisplayName;
+        [TextArea] public string description;
+        [ImagePreview] public Sprite icon;
         
         public string DisplayName => string.IsNullOrEmpty(customDisplayName) ? name : customDisplayName;
 
