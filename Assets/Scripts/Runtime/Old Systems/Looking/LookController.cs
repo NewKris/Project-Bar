@@ -6,7 +6,6 @@ namespace Runtime.Old_Systems.Looking {
     [Obsolete]
     public class LookController : MonoBehaviour {
         public InteractRay interactRay;
-        public int bufferSize = 5;
         public LayerMask lookLayer;
 
         private LookObject[] _objectBuffer;
@@ -14,7 +13,7 @@ namespace Runtime.Old_Systems.Looking {
         public LookObject Current => _objectBuffer[0];
 
         private void Awake() {
-            _objectBuffer = new LookObject[bufferSize];
+            _objectBuffer = new LookObject[interactRay.bufferSize];
         }
 
         private void Update() {
