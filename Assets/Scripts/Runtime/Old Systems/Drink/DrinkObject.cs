@@ -32,6 +32,8 @@ namespace Runtime.Old_Systems.Drink {
         }
         
         public void ConvertIngredients(Conversion[] conversions) {
+            if (conversions == null) return;
+            
             foreach (IngredientGroup group in currentContents.ingredientGroups) {
                 foreach (Conversion conversion in conversions) {
                     if (group.ingredients.Contains(conversion.from)) {
