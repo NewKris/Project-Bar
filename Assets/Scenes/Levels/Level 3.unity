@@ -310,6 +310,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -6099,15 +6107,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858654427577458705, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.362
+      value: -1.147
       objectReference: {fileID: 0}
     - target: {fileID: 4858654427577458705, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.115
+      value: -1.656
       objectReference: {fileID: 0}
     - target: {fileID: 4858654427577458705, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.929
+      value: -0.713
       objectReference: {fileID: 0}
     - target: {fileID: 4858654427577458705, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7973,6 +7981,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 208743129190586673, guid: 888909f5120c7ee44ad1d178cd147df6, type: 3}
   m_PrefabInstance: {fileID: 407624494}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &409847488
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 765460735}
+    m_Modifications:
+    - target: {fileID: 334295722818395893, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Name
+      value: Not copper mug (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.344
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2337
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+--- !u!4 &409847489 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+  m_PrefabInstance: {fileID: 409847488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &409863599 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4420169647867857010, guid: 047174b01de82ce49968f5eda7fb078e, type: 3}
@@ -9191,6 +9281,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -11353,6 +11451,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2529952380349230792, guid: 95d2246cef2cd6c41aedea0c9e17d7b7, type: 3}
   m_PrefabInstance: {fileID: 1345260202}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &630844980
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 765460735}
+    m_Modifications:
+    - target: {fileID: 334295722818395893, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Name
+      value: Not copper mug (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.344
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+--- !u!4 &630844981 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+  m_PrefabInstance: {fileID: 630844980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &632900398
 Mesh:
   m_ObjectHideFlags: 0
@@ -11522,6 +11702,88 @@ Mesh:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2259270600514701831, guid: 07327ba6951a17b479770cc83c3020da, type: 3}
   m_PrefabInstance: {fileID: 1120385737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &647855667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 765460735}
+    m_Modifications:
+    - target: {fileID: 334295722818395893, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Name
+      value: Not copper mug (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.344
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3505859
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+--- !u!4 &647855668 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+  m_PrefabInstance: {fileID: 647855667}
   m_PrefabAsset: {fileID: 0}
 --- !u!23 &650737123 stripped
 MeshRenderer:
@@ -13233,6 +13495,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -13741,6 +14011,10 @@ Transform:
   m_LocalScale: {x: 5.159427, y: 4, z: 2.7027035}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 647855668}
+  - {fileID: 409847489}
+  - {fileID: 978562620}
+  - {fileID: 630844981}
   - {fileID: 591779702}
   - {fileID: 1656143456}
   - {fileID: 724609021}
@@ -14454,7 +14728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858654427577458705, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3250134
+      value: -1.356
       objectReference: {fileID: 0}
     - target: {fileID: 4858654427577458705, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14885,6 +15159,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -17943,6 +18225,88 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2470725720508268425, guid: 52ccc6ae695de0642b4517ad69197716, type: 3}
   m_PrefabInstance: {fileID: 159910206}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &978562619
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 765460735}
+    m_Modifications:
+    - target: {fileID: 334295722818395893, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Name
+      value: Not copper mug (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.344
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1128
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+--- !u!4 &978562620 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+  m_PrefabInstance: {fileID: 978562619}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &982052881 stripped
 Transform:
@@ -24870,6 +25234,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -29371,6 +29743,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -31401,6 +31781,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -31580,6 +31968,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -32299,6 +32695,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -37535,6 +37939,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -39731,6 +40143,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -41203,6 +41623,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Not copper mug (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479120830738859574, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c352bcce4ecd85940a9a8a5e5ea92f9e, type: 2}
     - target: {fileID: 5959967548904749145, guid: 16b3ce339473f8945a777bbb6aec3344, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03

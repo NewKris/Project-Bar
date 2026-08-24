@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 6184039091819109290, guid: 0f1ca6562ffeb0745abbb8cc3307e1c4, type: 3}
       propertyPath: currentLevel
       value: 
-      objectReference: {fileID: 11400000, guid: 1d0caf6a413b10c4787e817a15841edf, type: 2}
+      objectReference: {fileID: 11400000, guid: ad02e896b79694e498865565f5b72892, type: 2}
     - target: {fileID: 6671384251167740203, guid: 0f1ca6562ffeb0745abbb8cc3307e1c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -409,23 +409,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: customerExitPosition.x
-      value: -3
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerExitPosition.z
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: customerOrderPosition.x
-      value: -3
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: customerOrderPosition.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: customerSpawnPosition.x
-      value: -3
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerSpawnPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4099406708206315796, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: customerSpawnPosition.z
-      value: 11.6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5228688772791884835, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: m_Name
@@ -435,9 +443,41 @@ PrefabInstance:
       propertyPath: timeBetweenCustomers
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5302233253166588281, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerExitPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302233253166588281, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerExitPosition.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302233253166588281, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerOrderPosition.x
+      value: 2.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302233253166588281, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerOrderPosition.z
+      value: -1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302233253166588281, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerSpawnPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302233253166588281, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerSpawnPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302233253166588281, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerSpawnPosition.z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6294701951916416029, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: timeBetweenCustomers
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294701951916416029, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
+      propertyPath: customerOrderPosition.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7722442215785127237, guid: 2edfe68d3c8ac0946b9b3b4062270e36, type: 3}
       propertyPath: target
