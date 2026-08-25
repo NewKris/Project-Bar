@@ -11,6 +11,7 @@ namespace Runtime.Drinks {
         public IngredientType type;
         public EventReference ingredientSound;
         public Conversion[] ingredientInteractions;
+        public Reaction[] ingredientReactions;
 
         [Header("UI")] 
         public string customDisplayName;

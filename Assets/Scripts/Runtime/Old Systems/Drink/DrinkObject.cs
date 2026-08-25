@@ -30,6 +30,21 @@ namespace Runtime.Old_Systems.Drink {
         public float GetStationCompletion(int stationKey, float maxDuration) {
             return StationDurations[stationKey] / maxDuration;
         }
+
+        public bool ShouldReact(Reaction[] reactions, out Ingredient result) {
+            result = null;
+            
+            if (reactions == null) return false;
+            
+            foreach (Reaction reaction in reactions) {
+                if (currentContents.Contains(reaction.catalyst)) {
+                    result = reaction.result;
+                    return true;
+                }
+            }
+
+            return false;
+        }
         
         public void ConvertIngredients(Conversion[] conversions) {
             if (conversions == null) return;
@@ -89,6 +104,12 @@ namespace Runtime.Old_Systems.Drink {
             }
             
             VerboseDebug.Log("Adding ingredient " + ingredient.name);
+
+            if (ShouldReact(ingredient.ingredientReactions, out Ingredient replacement)) {
+                ingredient = replacement;
+                VerboseDebug.Log("Reaction! Adding ingredient " + ingredient.name + " instead!");
+            }
+            
             isDirty = true;
             currentContents.ingredientGroups.Add(IngredientGroup.CreateNewGroup(ingredient));
             DecreaseStationDurations();
