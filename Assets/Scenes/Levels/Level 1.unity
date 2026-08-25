@@ -3613,7 +3613,8 @@ MonoBehaviour:
   m_text: "<b><i>Remember</b></i>! Drinks served \n<b><i>Neat</i></b> or <b><i>On
     the Rocks</i></b> are served in:\n\n<b>Beer Mug</b>: Beer, Cola, Ginger Beer\n\n<b>Wine
     Glass</b>: White Wine\n\n<b>Lowball Glass</b>: Gin, Rum, Tequila, \nTriple Sec,
-    Vodka\n\n<i><b>Cocktail Glasses</b></i> are only used for mixed drinks!"
+    Vodka\n\n<i><b>Cocktail Glasses</b></i> and <i><b>Copper Mugs</b></i> are only
+    used for mixed drinks!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -27508,7 +27509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: characterName
-      value: The Handler
+      value: The Handler lvl1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.size

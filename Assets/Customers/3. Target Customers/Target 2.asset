@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
+  m_Name: Target 2
+  m_EditorClassIdentifier: 
+  customerName: Obie Frozen Margarita (T2)
+  canEnterAnySlot: 1
+  allowedSlots: []
+  mesh: {fileID: 0}
+  isTarget: 1
+  acceptableDrinks:
+  - {fileID: 11400000, guid: 3985f069ccdd92246b975576bcaa14af, type: 2}
+  - {fileID: 11400000, guid: eba697b04f2c7934d8fff5ae53811d02, type: 2}
+  - {fileID: 11400000, guid: 0e0abff0941c6a14d85533e47be67f6c, type: 2}
+  - {fileID: 11400000, guid: 17f9b77e2267e304e914fa8534cdb865, type: 2}
+  timePenaltyRepeatOrder: 10
+  patienceTimer: 40
+  patienceTickTime: 20
+  satisfactionSuccess: 10
+  satisfactionFailure: 5
+  satisfactionMissedOrder: 7
+  satisfactionRepeatOrder: 2
+  satisfactionKickedOut: 0
+  attentionDialogue: Why, hello there.
+  orderDialogue: I'm visiting from out of town. <color=blue>Vodka on the Rocks</color>,
+    please.
+  repeatOrderDialogue: You surely know how to make a <color=blue>Vodka with Ice</color>
+    in it.
+  successDialogue: Perfectly clear..I'll be back for more.
+  failureDialogue: "This\u2026 does not taste right."
+  patienceTimerTickDialogue: Soon I'll freeze over, if you know what I mean.
+  patienceTimeOutDialogue: I'll just try the other bartender.
+  kickedOutDialogue: I should've stayed out of town.

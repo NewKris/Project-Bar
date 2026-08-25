@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e38e5cf50f845f0b7dd6e3f243991ec, type: 3}
-  m_Name: Level 1 Tutorial NEW
+  m_Name: Level 0
   m_EditorClassIdentifier: 
   sceneName: OutdoorsScene
-  startSatisfaction: 25
-  customerUnlocks: 000000004b000000
+  startSatisfaction: 75
+  customerUnlocks: 0000000032000000
   targetSatisfaction: 75
   maximumSatisfaction: 100
   availableCustomers:
@@ -27,14 +27,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b7c9f70a29679d345a86358f73b854c1, type: 2}
   - {fileID: 11400000, guid: 16421ca3caf2ba740be7c02fb65368da, type: 2}
   - {fileID: 11400000, guid: 8b6776010839b2749b73c7ce3d5be918, type: 2}
-  - {fileID: 11400000, guid: 513f9c32cc028cf44b79f076751b681c, type: 2}
-  - {fileID: 11400000, guid: dc7ed60ff89589f448ca5f5858456ea4, type: 2}
-  - {fileID: 11400000, guid: cc45b3c684d40f54eace1a20cccefe8e, type: 2}
-  - {fileID: 11400000, guid: 9e914df47be0f5f408b4612dc5b5997f, type: 2}
-  - {fileID: 11400000, guid: dcb7d943ec2b9aa4b89f1f6259efc7bf, type: 2}
-  - {fileID: 11400000, guid: 930a189bca34d634bb829178efeadb74, type: 2}
   target:
-    customerData: {fileID: 11400000, guid: c02a95886b0ee2c40aafe553a46fcf03, type: 2}
+    customerData: {fileID: 11400000, guid: 6a1e93de5012b0748b5d2f36314b68d2, type: 2}
     baseChance: 10
     chanceIncrease: 10
     shouldSpawnChanceReset: 1

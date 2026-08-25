@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6019016be1194a8abd113e01e3c1127a, type: 3}
-  m_Name: Frozen Margarita
+  m_Name: LV2 Murder Frozen Margarita alt
   m_EditorClassIdentifier: 
   contents:
     drinkContainer: {fileID: 11400000, guid: f57d1ad380521874b9c67df3fcb29b5d, type: 2}
@@ -18,15 +18,18 @@ MonoBehaviour:
     - groupName: Salt
       ingredients:
       - {fileID: 11400000, guid: a41a6714d1db28d4280a7317372e1a8f, type: 2}
-    - groupName: Slush, Tequila, Triple Sec, Lime
+    - groupName: Tequila, Triple Sec, Lime Juice, Slush
       ingredients:
-      - {fileID: 11400000, guid: f01548fa33dbfe44b93926747c68a4cd, type: 2}
       - {fileID: 11400000, guid: 9e1273cd121876144aa1e058825eeb58, type: 2}
       - {fileID: 11400000, guid: d58c65b85205b14488d0345d6129a4bc, type: 2}
-      - {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
-    - groupName: Lime
+      - {fileID: 11400000, guid: 83372f6676758ed4f8db957330747a2d, type: 2}
+      - {fileID: 11400000, guid: f01548fa33dbfe44b93926747c68a4cd, type: 2}
+    - groupName: Lime Slice
       ingredients:
       - {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
+    - groupName: Poison
+      ingredients:
+      - {fileID: 11400000, guid: 05052150def31da4784591cecc7480d3, type: 2}
   icon: {fileID: 0}
   customDisplayName: 
   description: 

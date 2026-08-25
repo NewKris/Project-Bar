@@ -9,23 +9,29 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: af41a67499a281c438562717b8c0fd07
   - enabled: 1
-    path: Assets/Scenes/Levels/OutdoorsScene.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
-  - enabled: 1
     path: Assets/Scenes/CoreScene.unity
     guid: c6d1470d994a84748b1ba7f6dd62ae64
   - enabled: 1
     path: Assets/Scenes/GameplayScene.unity
     guid: 021861782a39a9e49b626f440ee62aa1
   - enabled: 1
+    path: Assets/Scenes/Levels/Level 0.unity
+    guid: 0153b222983d66543aefad5af0be782a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 1.unity
+    guid: 8124e5870f4fd4c779e7a5f994e84ad1
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 2.unity
+    guid: 539163e30f552564bb19eb6b2eab861a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 3.unity
+    guid: dc311177d77238b44a4b01dd8e640a7b
+  - enabled: 1
     path: Assets/Scenes/Victory Screen.unity
     guid: b98ca64f03d5fec44861cc1c0d1389a8
   - enabled: 1
     path: Assets/Scenes/Game Over Screen.unity
     guid: f6c24daafad178a4197c9445a5c2843d
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level 3.unity
-    guid: dc311177d77238b44a4b01dd8e640a7b
   - enabled: 1
     path: Assets/Scenes/Test Scenes/YolandaTest.unity
     guid: 3b86e020cc62a46248c94d70fb256153

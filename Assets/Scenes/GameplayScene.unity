@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 6184039091819109290, guid: 0f1ca6562ffeb0745abbb8cc3307e1c4, type: 3}
       propertyPath: currentLevel
       value: 
-      objectReference: {fileID: 11400000, guid: ad02e896b79694e498865565f5b72892, type: 2}
+      objectReference: {fileID: 11400000, guid: 552e42fcb33c50f44b7e11d00df7fcd3, type: 2}
     - target: {fileID: 6671384251167740203, guid: 0f1ca6562ffeb0745abbb8cc3307e1c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -640,14 +640,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1240046654157838447, guid: 2a89cce878a1e4846a753f340c8f139c, type: 3}
       propertyPath: levelScenes.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1240046654157838447, guid: 2a89cce878a1e4846a753f340c8f139c, type: 3}
       propertyPath: 'levelScenes.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 1d0caf6a413b10c4787e817a15841edf, type: 2}
+      objectReference: {fileID: 11400000, guid: 552e42fcb33c50f44b7e11d00df7fcd3, type: 2}
     - target: {fileID: 1240046654157838447, guid: 2a89cce878a1e4846a753f340c8f139c, type: 3}
       propertyPath: 'levelScenes.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d0caf6a413b10c4787e817a15841edf, type: 2}
+    - target: {fileID: 1240046654157838447, guid: 2a89cce878a1e4846a753f340c8f139c, type: 3}
+      propertyPath: 'levelScenes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 170703be2771ad041b2585b6f5706565, type: 2}
+    - target: {fileID: 1240046654157838447, guid: 2a89cce878a1e4846a753f340c8f139c, type: 3}
+      propertyPath: 'levelScenes.Array.data[3]'
       value: 
       objectReference: {fileID: 11400000, guid: ad02e896b79694e498865565f5b72892, type: 2}
     - target: {fileID: 5146811299957749341, guid: 2a89cce878a1e4846a753f340c8f139c, type: 3}

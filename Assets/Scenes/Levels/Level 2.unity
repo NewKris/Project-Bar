@@ -8259,7 +8259,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.4
   m_Height: 1.15
@@ -8282,7 +8282,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.21, y: 1.67, z: 0.69}
   m_Center: {x: -1.18, y: -0.69, z: 0.33}
@@ -14498,6 +14498,10 @@ PrefabInstance:
     - target: {fileID: 7979032948663290913, guid: 8adaf574d1a88a04399091cd71801b1a, type: 3}
       propertyPath: m_Name
       value: Torch / Smoker
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979032948663290913, guid: 8adaf574d1a88a04399091cd71801b1a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8439954159774429334, guid: 8adaf574d1a88a04399091cd71801b1a, type: 3}
       propertyPath: startDock
@@ -22072,6 +22076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glass Dock
       objectReference: {fileID: 0}
+    - target: {fileID: 1226986466286640507, guid: 72fa8e2c8b47b7048acaebd188c2e4c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3691509139291438924, guid: 72fa8e2c8b47b7048acaebd188c2e4c9, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15
@@ -26208,7 +26216,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Height: 1
@@ -28830,7 +28838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: characterName
-      value: The Handler lvl3
+      value: The Handler lvl2
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.size
@@ -29605,7 +29613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8465399020216961972, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: m_Name
-      value: TutorialAgent - Level 3
+      value: TutorialAgent - Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 8465399020216961972, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: m_IsActive
@@ -39124,7 +39132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2677636650737403054, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2980987089131114040, guid: b5d4352dce9a5364c8a719cb06daaed1, type: 3}
       propertyPath: m_LocalPosition.x

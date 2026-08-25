@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6019016be1194a8abd113e01e3c1127a, type: 3}
+  m_Name: LV3 Murder Flaming Blow My Skull
+  m_EditorClassIdentifier: 
+  contents:
+    drinkContainer: {fileID: 11400000, guid: add2706c3aa0e3b41b26a21946404839, type: 2}
+    ingredientGroups:
+    - groupName: Caramelized Sugar
+      ingredients:
+      - {fileID: 11400000, guid: 4cfbbac680c812841a86d8cfb1aad9f0, type: 2}
+    - groupName: Beer
+      ingredients:
+      - {fileID: 11400000, guid: 46f92cdf33d232d45b71292bedc3f93f, type: 2}
+    - groupName: Orange Juice
+      ingredients:
+      - {fileID: 11400000, guid: 0cc7e2dbb46a6b6418e1013dbe6abc12, type: 2}
+    - groupName: Rum
+      ingredients:
+      - {fileID: 11400000, guid: 6d7b2b67ce2ab2a43b2bd40ab895e48c, type: 2}
+    - groupName: Flaming Vodka
+      ingredients:
+      - {fileID: 11400000, guid: e168a93c3e9b5d34ba04621d93ee33eb, type: 2}
+    - groupName: Poison
+      ingredients:
+      - {fileID: 11400000, guid: 05052150def31da4784591cecc7480d3, type: 2}
+  icon: {fileID: 0}
+  customDisplayName: 
+  description: 

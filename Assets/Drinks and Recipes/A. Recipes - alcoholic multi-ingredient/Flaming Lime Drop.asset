@@ -10,20 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6019016be1194a8abd113e01e3c1127a, type: 3}
-  m_Name: Lemon Drop
+  m_Name: Flaming Lime Drop
   m_EditorClassIdentifier: 
   contents:
     drinkContainer: {fileID: 11400000, guid: 33d6fef90f57f6040937e4c527f6b05d, type: 2}
     ingredientGroups:
-    - groupName: Sugar
-      ingredients:
-      - {fileID: 11400000, guid: 9e48ee67233ee514fa346e8fe67e15f6, type: 2}
-    - groupName: Strained, Triple Sec, Vodka, Lime Juice
+    - groupName: Strained, Triple Sec, Vodka, Lime Juice, Lime Juice
       ingredients:
       - {fileID: 11400000, guid: aa619fb08c089df49820a1bc1de4165f, type: 2}
       - {fileID: 11400000, guid: d58c65b85205b14488d0345d6129a4bc, type: 2}
       - {fileID: 11400000, guid: 9fe57544060200947b2f58caf89d1385, type: 2}
       - {fileID: 11400000, guid: 83372f6676758ed4f8db957330747a2d, type: 2}
+      - {fileID: 11400000, guid: 83372f6676758ed4f8db957330747a2d, type: 2}
+    - groupName: Lime Slice, Caramelized Sugar, Flaming Rum
+      ingredients:
+      - {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
+      - {fileID: 11400000, guid: 4cfbbac680c812841a86d8cfb1aad9f0, type: 2}
+      - {fileID: 11400000, guid: 9415e1c7b07d1d645bbba406609e025d, type: 2}
   icon: {fileID: 0}
   customDisplayName: 
   description: 

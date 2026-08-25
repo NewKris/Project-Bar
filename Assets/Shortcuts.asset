@@ -16,10 +16,18 @@ MonoBehaviour:
   - buttonText: Main Menu
     scenes:
     - MainMenu
+  - buttonText: Level 0
+    scenes:
+    - GameplayScene
+    - Level 0
   - buttonText: Level 1
     scenes:
     - GameplayScene
-    - OutdoorsScene
+    - Level 1
+  - buttonText: Level 2
+    scenes:
+    - GameplayScene
+    - Level 2
   - buttonText: Level 3
     scenes:
     - GameplayScene

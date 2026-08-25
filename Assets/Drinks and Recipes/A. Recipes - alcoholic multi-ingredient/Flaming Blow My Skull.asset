@@ -27,9 +27,6 @@ MonoBehaviour:
     - groupName: Orange Juice
       ingredients:
       - {fileID: 11400000, guid: 0cc7e2dbb46a6b6418e1013dbe6abc12, type: 2}
-    - groupName: Fire
-      ingredients:
-      - {fileID: 11400000, guid: 583a56a023c9f13439e2fbdd9de3bc92, type: 2}
   icon: {fileID: 21300000, guid: 7831402ff7d2a8744b3a583a87972f61, type: 3}
   customDisplayName: 
   description: 
