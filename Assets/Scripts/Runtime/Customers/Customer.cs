@@ -172,7 +172,7 @@ namespace Runtime.Customers
         }
 
         private void BarkComplaint(string complaint) {
-            WorldSpaceCanvas.SpawnBarkText(complaint, barkSpawn.position, barkSpawn.rotation);
+            WorldSpaceCanvas.SpawnBarkText(complaint, barkSpawn.position, barkSpawn.rotation, Color.red);
         }
         
         private void LeaveBar() {

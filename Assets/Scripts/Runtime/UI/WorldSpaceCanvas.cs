@@ -10,9 +10,10 @@ namespace Runtime.UI {
         public GameObject fillCirclePrefab;
         public GameObject barkPrefab;
 
-        public static void SpawnBarkText(string text, Vector3 position, Quaternion rotation) {
+        public static void SpawnBarkText(string text, Vector3 position, Quaternion rotation, Color color) {
             TMP_Text bark = Instance.InstantiatePrefab<TMP_Text>(Instance.barkPrefab, position, rotation);
             bark.text = text;
+            bark.color = color;
         }
         
         public PromptText CreatePromptText(string text, Vector3 position, Quaternion rotation) {

@@ -21,7 +21,7 @@ namespace Runtime.Old_Systems.Items {
             _exclusiveItem = item;
         }
         
-        public void PlaceItem(ItemPickup item) {
+        public virtual void PlaceItem(ItemPickup item) {
             item.Pin(itemPivot);
             HeldItem = item;
             HeldItem.PlayPutDownSound(surfaceLabel.ToString());
