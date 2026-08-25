@@ -8,8 +8,17 @@ namespace Runtime.Drinks {
 
         private void Awake() {
             if (gameObject.TryGetComponent(out LookObject lookObject)) {
-                lookObject.onBeginLook.AddListener(() => IngredientInfoPanel.SetLookedIngredient(ingredient));
+                lookObject.onBeginLook.AddListener(BeginLook);
+                lookObject.onEndLook.AddListener(StopLook);
             }
+        }
+
+        private void BeginLook() {
+            IngredientInfoPanel.BeginTriggerLook(this);
+        }
+
+        private void StopLook() {
+            IngredientInfoPanel.RemoveTriggerLook(this);
         }
     }
 }
