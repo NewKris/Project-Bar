@@ -3,6 +3,7 @@ using Runtime.Customers;
 using Runtime.Dialogue;
 using Runtime.Highlighting;
 using Runtime.Old_Systems.Interact;
+using Runtime.UI.NewRecipeBook;
 using UnityEngine;
 
 namespace Runtime.Old_Systems.Player
@@ -25,6 +26,10 @@ namespace Runtime.Old_Systems.Player
 
             if (interactable.TryGetComponent(out DialogueDisplayProgressable dialogueBox)) {
                 dialogueBox.HideDialogue();
+            }
+
+            if (interactable.TryGetComponent(out RecipeButton button)) {
+                button.Press();
             }
         }
     }
