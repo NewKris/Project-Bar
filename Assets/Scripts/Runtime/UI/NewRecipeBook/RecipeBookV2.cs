@@ -1,29 +1,96 @@
 ﻿using System.Collections.Generic;
+using NaughtyAttributes;
 using Runtime.Drinks;
 using UnityEngine;
 
 namespace Runtime.UI.NewRecipeBook {
     public class RecipeBookV2 : MonoBehaviour {
         public Recipe[] initialRecipes;
+        public int recipesPerPage;
+        
+        [Header("Prefab")]
+        public GameObject recipeRowPrefab;
+        public Transform recipeRowParent;
+        
+        [Header("Formatting")] 
+        [TextArea] public string textFormat;
+        public string ingredientSeparator = ", ";
+        
+        [Foldout("Keys")] public string indexKey = "{id}";
+        [Foldout("Keys")] public string nameKey = "{name}";
+        [Foldout("Keys")] public string descriptionKey = "{description}";
+        [Foldout("Keys")] public string containerKey = "{container}";
+        [Foldout("Keys")] public string recipeIngredientsKey = "{ingredients}";
 
-        private HashSet<Recipe> _recipes;
+        private int _currentPage;
+        private List<Recipe> _recipes;
+        
+        private int MaxPageIndex => Mathf.FloorToInt(_recipes.Count / (float)recipesPerPage);
         
         public void AddRecipes(params Recipe[] newRecipes) {
             foreach (Recipe recipe in newRecipes) {
                 _recipes.Add(recipe);
             }
+            
+            DrawPage(_currentPage);
         }
 
         public void ShowNext() {
-            Debug.Log("ShowNext");
+            _currentPage = Mathf.Min(MaxPageIndex, _currentPage + 1);
+            DrawPage(_currentPage);
         }
         
         public void ShowPrevious() {
-            Debug.Log("ShowPrevious");
+            _currentPage = Mathf.Max(_currentPage - 1, 0);
+            DrawPage(_currentPage);
         }
 
         private void Awake() {
-            _recipes = new HashSet<Recipe>();
+            _recipes = new List<Recipe>(20);
+            _recipes.AddRange(initialRecipes);
+            
+            _currentPage = 0;
+            DrawPage(_currentPage);
+        }
+
+        private void DrawPage(int pageIndex) {
+            foreach (Transform child in recipeRowParent) {
+                Destroy(child.gameObject);
+            }
+            
+            int startRecipe = pageIndex * recipesPerPage;
+            int endRecipe = Mathf.Min(startRecipe + recipesPerPage, _recipes.Count);
+            
+            for (int i = startRecipe; i < endRecipe; i++) {
+                PrintRecipe(i, _recipes[i]);
+            }
+        }
+
+        private void PrintRecipe(int recipeIndex, Recipe recipe) {
+            RecipeRow row = Instantiate(recipeRowPrefab, recipeRowParent).GetComponent<RecipeRow>();
+            row.SetInfo(CreateRecipeText(recipeIndex, recipe), recipe.icon);
+        }
+
+        private string CreateRecipeText(int recipeIndex, Recipe recipe) {
+            string recipeText = textFormat;
+            
+            recipeText = recipeText.Replace(indexKey, (recipeIndex + 1).ToString());
+            recipeText = recipeText.Replace(nameKey, recipe.DisplayName);
+            recipeText = recipeText.Replace(descriptionKey, recipe.description);
+            recipeText = recipeText.Replace(containerKey, recipe.contents.drinkContainer.DisplayName);
+            
+            string ingredients = "";
+            recipe.contents.ForEachIngredient(x => {
+                ingredients += x.DisplayName + ingredientSeparator;
+            });
+
+            if (!string.IsNullOrEmpty(ingredients)) {
+                ingredients = ingredients.Substring(0, ingredients.Length - ingredientSeparator.Length);
+            }
+            
+            recipeText = recipeText.Replace(recipeIngredientsKey, ingredients);
+
+            return recipeText;
         }
     }
 }

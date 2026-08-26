@@ -12,6 +12,14 @@ namespace Runtime.Drinks {
         public int IngredientCount => ingredientGroups.Sum(x => x.Length);
         public List<Ingredient> AllIngredients => ingredientGroups.SelectMany(x => x.ingredients).ToList();
 
+        public void ForEachIngredient(Action<Ingredient> action) {
+            foreach (IngredientGroup group in ingredientGroups) {
+                foreach (Ingredient ingredient in group.ingredients) {
+                    action(ingredient);
+                }
+            }
+        }
+        
         public void Validate() {
             foreach (IngredientGroup group in ingredientGroups) {
                 group.Validate();
