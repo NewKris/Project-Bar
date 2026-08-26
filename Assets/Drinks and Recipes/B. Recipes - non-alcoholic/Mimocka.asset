@@ -27,6 +27,7 @@ MonoBehaviour:
     - groupName: Orange Slice
       ingredients:
       - {fileID: 11400000, guid: 3724baa71e46bfd4489b7bfd002b22d8, type: 2}
+  isAlcoholic: 0
   icon: {fileID: 0}
   customDisplayName: 
   description: 

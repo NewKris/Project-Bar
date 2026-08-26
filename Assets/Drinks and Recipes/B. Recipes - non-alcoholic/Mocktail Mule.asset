@@ -24,12 +24,13 @@ MonoBehaviour:
     - groupName: Lime Juice
       ingredients:
       - {fileID: 11400000, guid: 83372f6676758ed4f8db957330747a2d, type: 2}
-    - groupName: Lime
+    - groupName: Lime Slice
       ingredients:
       - {fileID: 11400000, guid: 7e8ecbe815f0c574ba5da9708e3c3f5f, type: 2}
     - groupName: Mint
       ingredients:
       - {fileID: 11400000, guid: d7f6d4154cdce69479f717ceec7eb2a2, type: 2}
+  isAlcoholic: 0
   icon: {fileID: 0}
   customDisplayName: 
   description: 

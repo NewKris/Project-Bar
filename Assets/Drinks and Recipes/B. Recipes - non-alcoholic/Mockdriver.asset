@@ -21,6 +21,7 @@ MonoBehaviour:
     - groupName: Orange Juice
       ingredients:
       - {fileID: 11400000, guid: 0cc7e2dbb46a6b6418e1013dbe6abc12, type: 2}
+  isAlcoholic: 0
   icon: {fileID: 0}
   customDisplayName: 
   description: 

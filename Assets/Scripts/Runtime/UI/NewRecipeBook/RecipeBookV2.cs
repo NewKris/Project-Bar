@@ -30,10 +30,29 @@ namespace Runtime.UI.NewRecipeBook {
         [Foldout("Keys")] public string recipeIngredientsKey = "{ingredients}";
 
         private int _currentPage;
+        private RecipeSortMode _currentSortMode;
         private List<Recipe> _recipes;
         
         private int MaxPageIndex => Mathf.FloorToInt(_recipes.Count / (float)recipesPerPage);
 
+        public void SortAlphabetically() {
+            TryToggleSort(RecipeSortMode.ALPHABETICAL);
+            SortList();
+            DrawPage(_currentPage);
+        }
+
+        public void SortByAlcohol() {
+            TryToggleSort(RecipeSortMode.ALCOHOLIC);
+            SortList();
+            DrawPage(_currentPage);
+        }
+
+        public void SortByContainer() {
+            TryToggleSort(RecipeSortMode.CONTAINER);
+            SortList();
+            DrawPage(_currentPage);
+        }
+        
         public void ShowNext() {
             _currentPage = Mathf.Min(MaxPageIndex, _currentPage + 1);
             DrawPage(_currentPage);
@@ -45,10 +64,13 @@ namespace Runtime.UI.NewRecipeBook {
         }
 
         private void Awake() {
+            _currentSortMode = RecipeSortMode.CONTAINER;
+            _currentPage = 0;
+            
             _recipes = new List<Recipe>(20);
             _recipes.AddRange(initialRecipes);
             
-            _currentPage = 0;
+            SortList();
             DrawPage(_currentPage);
 
             port.onRecipesUnlocked += AddRecipes;
@@ -63,7 +85,28 @@ namespace Runtime.UI.NewRecipeBook {
                 _recipes.Add(recipe);
             }
             
+            SortList();
             DrawPage(_currentPage);
+        }
+
+        private void TryToggleSort(RecipeSortMode mode) {
+            _currentSortMode = _currentSortMode == mode ? RecipeSortMode.CONTAINER : mode;
+        }
+
+        private void SortList() {
+            switch (_currentSortMode) {
+                case RecipeSortMode.ALPHABETICAL:
+                    _recipes.Sort(Recipe.CompareName);
+                    break;
+                case RecipeSortMode.CONTAINER:
+                    _recipes.Sort(Recipe.CompareContainer);
+                    break;
+                case RecipeSortMode.ALCOHOLIC:
+                    _recipes.Sort(Recipe.CompareAlcohol);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         private void DrawPage(int pageIndex) {
