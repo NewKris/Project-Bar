@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using Runtime.Customers.Tutorial_Agent;
 using Runtime.Drinks;
+using TMPro;
 using UnityEngine;
 
 namespace Runtime.UI.NewRecipeBook {
@@ -10,6 +11,9 @@ namespace Runtime.UI.NewRecipeBook {
         [Required] public UnlockRecipesEventPort port;
         public Recipe[] initialRecipes;
         public int recipesPerPage;
+        
+        [Header("UI")]
+        public TMP_Text pageNumberText;
         
         [Header("Prefab")]
         public GameObject recipeRowPrefab;
@@ -73,6 +77,8 @@ namespace Runtime.UI.NewRecipeBook {
             for (int i = startRecipe; i < endRecipe; i++) {
                 PrintRecipe(i, _recipes[i]);
             }
+
+            pageNumberText.text = $"{pageIndex + 1}/{MaxPageIndex + 1}";
         }
 
         private void PrintRecipe(int recipeIndex, Recipe recipe) {
