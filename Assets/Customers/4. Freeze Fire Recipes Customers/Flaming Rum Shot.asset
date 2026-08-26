@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc1b06fc2074ffda96366dae8ee9e26, type: 3}
-  m_Name: Flaming Lemon Drop Customer
+  m_Name: Flaming Rum Shot
   m_EditorClassIdentifier: 
-  customerName: Lemon Drop
+  customerName: Flaming Rum Shot
+  canEnterAnySlot: 1
+  allowedSlots: []
   mesh: {fileID: 0}
   isTarget: 0
   acceptableDrinks:
-  - {fileID: 11400000, guid: df67418702f192b4cb6218c18aa2e084, type: 2}
+  - {fileID: 11400000, guid: 6ed77390dcd47754dbd00332ada11825, type: 2}
   timePenaltyRepeatOrder: 10
   patienceTimer: 60
   patienceTickTime: 30

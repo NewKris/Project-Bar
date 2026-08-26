@@ -21,7 +21,11 @@ MonoBehaviour:
       Data3: 667567033
       Data4: 1064418930
     Path: event:/Sound/Bar/Pouring liquid Clear Liquid
-  ingredientInteractions: []
+  ingredientInteractions:
+  - name: Candle -> Ruined candle
+    from: {fileID: 11400000, guid: 2160f0299b98243469670cf496224b68, type: 2}
+    to: {fileID: 11400000, guid: 3ded9009d5698b1448b6fddb623f60e6, type: 2}
+  ingredientReactions: []
   customDisplayName: 
   description: mmmm gin
   icon: {fileID: 21300000, guid: 1160f44640bbbe24b9881dbd632d5a62, type: 3}

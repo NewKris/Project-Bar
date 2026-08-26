@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e38e5cf50f845f0b7dd6e3f243991ec, type: 3}
   m_Name: Level 0
   m_EditorClassIdentifier: 
-  sceneName: OutdoorsScene
+  sceneName: MainMenu
   startSatisfaction: 75
   customerUnlocks: 0000000032000000
   targetSatisfaction: 75

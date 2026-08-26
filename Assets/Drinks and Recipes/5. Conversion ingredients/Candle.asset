@@ -10,22 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 765f618e78934992860ec1650ddb41fb, type: 3}
-  m_Name: Rum
+  m_Name: Candle
   m_EditorClassIdentifier: 
   isPoisonous: 0
-  type: 2
+  type: 4
   ingredientSound:
     Guid:
-      Data1: 905900580
-      Data2: 1214722068
-      Data3: 667567033
-      Data4: 1064418930
-    Path: event:/Sound/Bar/Pouring liquid Clear Liquid
-  ingredientInteractions:
-  - name: Candle -> Ruined candle
-    from: {fileID: 11400000, guid: 2160f0299b98243469670cf496224b68, type: 2}
-    to: {fileID: 11400000, guid: 3ded9009d5698b1448b6fddb623f60e6, type: 2}
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ingredientInteractions: []
   ingredientReactions: []
   customDisplayName: 
   description: 
-  icon: {fileID: 21300000, guid: 7e78f43500114ed47aac3d411100852f, type: 3}
+  icon: {fileID: 0}

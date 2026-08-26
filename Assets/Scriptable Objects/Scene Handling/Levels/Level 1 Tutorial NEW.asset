@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e38e5cf50f845f0b7dd6e3f243991ec, type: 3}
   m_Name: Level 1 Tutorial NEW
   m_EditorClassIdentifier: 
-  sceneName: OutdoorsScene
+  sceneName: MainMenu
   startSatisfaction: 25
   customerUnlocks: 000000004b000000
   targetSatisfaction: 75
@@ -32,6 +32,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc45b3c684d40f54eace1a20cccefe8e, type: 2}
   - {fileID: 11400000, guid: 9e914df47be0f5f408b4612dc5b5997f, type: 2}
   - {fileID: 11400000, guid: dcb7d943ec2b9aa4b89f1f6259efc7bf, type: 2}
+  - {fileID: 11400000, guid: 94d847485e3e9ac44b666a330c76c369, type: 2}
   - {fileID: 11400000, guid: 930a189bca34d634bb829178efeadb74, type: 2}
   target:
     customerData: {fileID: 11400000, guid: c02a95886b0ee2c40aafe553a46fcf03, type: 2}

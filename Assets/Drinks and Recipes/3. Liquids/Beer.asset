@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPoisonous: 0
   type: 2
-  customDisplayName: 
   ingredientSound:
     Guid:
       Data1: 529931441
@@ -22,3 +21,11 @@ MonoBehaviour:
       Data3: 1928144819
       Data4: 719324167
     Path: event:/Sound/Bar/Pouring liquid Carbonated
+  ingredientInteractions:
+  - name: Beer -> Ruined candle
+    from: {fileID: 11400000}
+    to: {fileID: 11400000, guid: 3ded9009d5698b1448b6fddb623f60e6, type: 2}
+  ingredientReactions: []
+  customDisplayName: 
+  description: 
+  icon: {fileID: 0}
