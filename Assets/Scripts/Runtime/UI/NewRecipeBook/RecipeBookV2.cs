@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using NaughtyAttributes;
+using Runtime.Customers.Tutorial_Agent;
 using Runtime.Drinks;
 using UnityEngine;
 
 namespace Runtime.UI.NewRecipeBook {
     public class RecipeBookV2 : MonoBehaviour {
+        [Required] public UnlockRecipesEventPort port;
         public Recipe[] initialRecipes;
         public int recipesPerPage;
         
@@ -26,14 +29,6 @@ namespace Runtime.UI.NewRecipeBook {
         private List<Recipe> _recipes;
         
         private int MaxPageIndex => Mathf.FloorToInt(_recipes.Count / (float)recipesPerPage);
-        
-        public void AddRecipes(params Recipe[] newRecipes) {
-            foreach (Recipe recipe in newRecipes) {
-                _recipes.Add(recipe);
-            }
-            
-            DrawPage(_currentPage);
-        }
 
         public void ShowNext() {
             _currentPage = Mathf.Min(MaxPageIndex, _currentPage + 1);
@@ -50,6 +45,20 @@ namespace Runtime.UI.NewRecipeBook {
             _recipes.AddRange(initialRecipes);
             
             _currentPage = 0;
+            DrawPage(_currentPage);
+
+            port.onRecipesUnlocked += AddRecipes;
+        }
+
+        private void OnDestroy() {
+            port.onRecipesUnlocked -= AddRecipes;
+        }
+
+        private void AddRecipes(Recipe[] newRecipes) {
+            foreach (Recipe recipe in newRecipes) {
+                _recipes.Add(recipe);
+            }
+            
             DrawPage(_currentPage);
         }
 
