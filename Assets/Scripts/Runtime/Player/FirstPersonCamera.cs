@@ -1,12 +1,14 @@
 ﻿using System;
 using NaughtyAttributes;
+using Runtime.Settings;
 using Runtime.UI;
 using Runtime.Utility.CommonObjects;
 using UnityEngine;
 
 namespace Runtime.Player {
     public class FirstPersonCamera : MonoBehaviour {
-        public float sensitivity = 1;
+        public float maxSensitivity = 1;
+        public float minSensitivity = 0.1f;
         public float mouseSmoothing = 0;
         public float crouchSmoothing = 0;
         
@@ -48,6 +50,7 @@ namespace Runtime.Player {
         }
 
         public void Look(Vector2 deltaMouse, float dt) {
+            float sensitivity = Mathf.Lerp(minSensitivity, maxSensitivity, SettingBlackBoard.CameraSensitivity);
             Vector2 lookVel = Vector2.Scale(deltaMouse, axisScaling) * sensitivity;
             
             _yaw.Target += lookVel.x;
