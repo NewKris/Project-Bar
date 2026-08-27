@@ -31,6 +31,10 @@ namespace Runtime.Old_Systems.Player
             if (interactable.TryGetComponent(out RecipeButton button)) {
                 button.Press();
             }
+
+            if (interactable.TryGetComponent(out RecipeRow recipeRow)) {
+                recipeRow.HighlightRecipe();
+            }
         }
     }
 }

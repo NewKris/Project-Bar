@@ -126,7 +126,7 @@ namespace Runtime.UI.NewRecipeBook {
 
         private void PrintRecipe(int recipeIndex, Recipe recipe) {
             RecipeRow row = Instantiate(recipeRowPrefab, recipeRowParent).GetComponent<RecipeRow>();
-            row.SetInfo(CreateRecipeText(recipeIndex, recipe), recipe.icon);
+            row.SetInfo(CreateRecipeText(recipeIndex, recipe), recipe.icon, recipe);
         }
 
         private string CreateRecipeText(int recipeIndex, Recipe recipe) {
