@@ -5976,6 +5976,79 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &287865040
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 294367835}
+    m_Modifications:
+    - target: {fileID: 8085909653411585561, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.8430986
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085909653411585561, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.2692423
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085909653411585561, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5250587
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085909653411585561, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085909653411585561, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085909653411585561, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085909653411585561, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085909653411585561, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085909653411585561, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085909653411585561, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059887540979098600, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+      propertyPath: m_Name
+      value: Flash Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+--- !u!114 &287865041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 368603672257441022, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+  m_PrefabInstance: {fileID: 287865040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a88956c8b5149bcbc57f917afc719f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &287865042 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8085909653411585561, guid: 4123edb38eb4bf743a98d18d78993227, type: 3}
+  m_PrefabInstance: {fileID: 287865040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &288986818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2470725720508268425, guid: 52ccc6ae695de0642b4517ad69197716, type: 3}
@@ -6014,6 +6087,7 @@ Transform:
   - {fileID: 1734144183}
   - {fileID: 1991830380}
   - {fileID: 1142798562}
+  - {fileID: 287865042}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296826901
@@ -14927,17 +15001,6 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3003070934299214486, guid: 4a0ac5b8eabb2c74581de1d8566f9c39, type: 3}
   m_PrefabInstance: {fileID: 822620995}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &827858937 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4588095614209289110, guid: 9cd22da40e9c84a49a73616bdc8e82f1, type: 3}
-  m_PrefabInstance: {fileID: 5367174935587238927}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361985934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014d48b08b2f4bce82481d141600f4e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &831918727
 Mesh:
   m_ObjectHideFlags: 0
@@ -19557,6 +19620,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4219609454546513697, guid: 888909f5120c7ee44ad1d178cd147df6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1227707906}
+    - targetCorrespondingSourceObject: {fileID: 4219609454546513697, guid: 888909f5120c7ee44ad1d178cd147df6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1227707907}
   m_SourcePrefab: {fileID: 100100000, guid: 888909f5120c7ee44ad1d178cd147df6, type: 3}
 --- !u!4 &1095250229 stripped
 Transform:
@@ -21866,6 +21932,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717a7ff1475047dc9f71178ad5b3bb28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1227707907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227707896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de6d94371c6645768fb0c5cd88daa508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredients:
+  - {fileID: 11400000, guid: 46f92cdf33d232d45b71292bedc3f93f, type: 2}
 --- !u!1001 &1233428340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28842,7 +28922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.size
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialCompletedDialogue
@@ -28875,11 +28955,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[6].progressType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[7].progressType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[8].progressType
@@ -28887,7 +28967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].progressType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[0].reminderTimer
@@ -28895,15 +28975,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].progressType
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[11].progressType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[12].progressType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].progressType
@@ -28999,12 +29079,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[6].reminderDialogue
-      value: Click on the Screen to continue
+      value: Click me to continue.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[7].reminderDialogue
-      value: <color=blue>Beer and Rum in a Lowball Glass</color>, makes my head go
-        boom.
+      value: Click me to continue.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[8].reminderDialogue
@@ -29012,20 +29091,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].reminderDialogue
-      value: Click me to continue.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
-      propertyPath: tutorialSteps.Array.data[10].reminderDialogue
-      value: Click me to continue.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
-      propertyPath: tutorialSteps.Array.data[11].reminderDialogue
       value: Click the Poison Ampoule to Continue, kid.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
-      propertyPath: tutorialSteps.Array.data[12].reminderDialogue
+      propertyPath: tutorialSteps.Array.data[10].reminderDialogue
       value: Look at the <color=red>Poison Ampoule to see its Shortcut</color>, and
         serve me a <color=blue>Blow My Skull with Poison</color>.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[11].reminderDialogue
+      value: Click me so we can wrap this up, and you can start working.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].reminderDialogue
+      value: Click me so we can wrap this up, and you can start working.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].reminderDialogue
@@ -29070,15 +29149,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[10].wrongDrinkDialogue
-      value: That's not what I asked for. Again.
+      value: I know you. Do better.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[11].wrongDrinkDialogue
-      value: That's not what I asked for. Again.
+      value: You're not making a killing. Again.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[12].wrongDrinkDialogue
-      value: I know you. Do better.
+      value: You're not making a killing. Again.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].wrongDrinkDialogue
@@ -29137,18 +29216,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[6].stepStartedDialogue
-      value: "Perfect. Now, let\u2019s <color=red>Mix a Drink</color>. We\u2019ll
-        start easy with <color=red>\u201CBlow My Skull\u201D.</color>  You can see
-        the recipe on the Menu to the right. <color=blue>Click it to continue</color>."
+      value: 'Excellent. And the final lesson of the day: <color=red>Murder</color>.
+        Your Target will reveal themself if you <color=blue>impress the Customers</color>.'
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[7].repeatOrderDialogue
-      value: <color=blue>Beer, Rum, Lowball Glass</color>. I believe in you.
+      value: Beer and Rum in a Whiskey Glass. I believe in you.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[7].stepStartedDialogue
-      value: Take a <color=red>Lowball glass, fill it with Rum and Beer</color>,
-        and <color=blue>Serve it me</color>.
+      value: Do this by serving them and raising their <color=red>Satisfaction</color>.
+        As you do, the odds of your <color=red>Target</color> approaching your bar
+        increases.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[8].repeatOrderDialogue
@@ -29156,8 +29235,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[8].stepStartedDialogue
-      value: 'Excellent. And the final lesson of the day: <color=red>Murder</color>.
-        Your Target will reveal themself if you <color=blue>impress the Customers</color>.'
+      value: When you find your Target, give them the right drink, and put <color=red>Poison
+        in it</color>.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].repeatOrderDialogue
@@ -29165,36 +29244,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[9].stepStartedDialogue
-      value: Do this by serving them and raising their <color=red>Satisfaction</color>.
-        As you do, the odds of your <color=red>Target</color> approaching your bar
-        increases.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
-      propertyPath: tutorialSteps.Array.data[10].repeatOrderDialogue
-      value: Beer and Rum in a Whiskey Glass. I believe in you.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
-      propertyPath: tutorialSteps.Array.data[10].stepStartedDialogue
-      value: When you find your Target, give them the right drink, and put <color=red>Poison
-        in it</color>.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
-      propertyPath: tutorialSteps.Array.data[11].repeatOrderDialogue
-      value: Beer and Rum in a Whiskey Glass. I believe in you.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
-      propertyPath: tutorialSteps.Array.data[11].stepStartedDialogue
       value: Crouch with [SCROLL] and look under the desk to your right. See the
         <color=red>Poison Ampoule</color>? <color=blue>Click it to continue</color>.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
-      propertyPath: tutorialSteps.Array.data[12].repeatOrderDialogue
+      propertyPath: tutorialSteps.Array.data[10].repeatOrderDialogue
       value: <color=blue>Beer and Rum in a Lowball Glass. Top it off with Poison</color>.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
-      propertyPath: tutorialSteps.Array.data[12].stepStartedDialogue
+      propertyPath: tutorialSteps.Array.data[10].stepStartedDialogue
       value: And finally, serve me a <color=red>Poisonous Blow My Skull</color> to
         <color=blue>finish your lesson</color>.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[11].repeatOrderDialogue
+      value: Beer and Rum in a Whiskey Glass. Top it off with Poison.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[11].stepStartedDialogue
+      value: "Good job, kid. Imperceptible sleight of hand. Though I\u2019m not going
+        to drink it. Now, <color=blue>time to start your mission</color>."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].repeatOrderDialogue
+      value: Beer and Rum in a Whiskey Glass. Top it off with Poison.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].stepStartedDialogue
+      value: I've updated your <color=red>Menu</color> with the <color=red>Drink
+        Recipes</color> you'll need to start out. <color=blue>Your target is Obie
+        Trice</color>, there's a discrete reminder on the menu.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].repeatOrderDialogue
@@ -29202,8 +29281,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].stepStartedDialogue
-      value: "Good job, kid. Imperceptible sleight of hand. Though I\u2019m not going
-        to drink it. Now, <color=blue>time to start your mission</color>."
+      value: I've updated your <color=red>Menu</color> with the <color=red>Drink
+        Recipes</color> you'll need to start out. <color=blue>Your target is Obie
+        Trice</color>, there's a discrete reminder on the menu.
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[14].repeatOrderDialogue
@@ -29269,11 +29349,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[6].recipesToUnlockAtStart.Array.size
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].recipesToUnlockAtStart.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].recipesToUnlockAtStart.Array.size
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[14].recipesToUnlockAtStart.Array.size
@@ -29294,7 +29378,7 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[6].acceptedDrinks.Array.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 6aa51b26ac345fc44b909702820c0d6f, type: 2}
+      objectReference: {fileID: 11400000, guid: 00d2c5154ee41e34497f1e62105eef55, type: 2}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[7].acceptedDrinks.Array.Array.data[0]'
       value: 
@@ -29314,11 +29398,11 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[10].acceptedDrinks.Array.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 00d2c5154ee41e34497f1e62105eef55, type: 2}
+      objectReference: {fileID: 11400000, guid: 5c9971b7eb5a84a4faedd46f32765271, type: 2}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[11].acceptedDrinks.Array.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 00d2c5154ee41e34497f1e62105eef55, type: 2}
+      objectReference: {fileID: 11400000, guid: 5c9971b7eb5a84a4faedd46f32765271, type: 2}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[12].acceptedDrinks.Array.Array.data[0]'
       value: 
@@ -29396,6 +29480,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 00d2c5154ee41e34497f1e62105eef55, type: 2}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: 'tutorialSteps.Array.data[12].recipesToUnlockAtStart.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 891292d9444f7f24babfcf215ad3b597, type: 2}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: 'tutorialSteps.Array.data[12].recipesToUnlockAtStart.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ef4bf2abeb309440bc018d24e44bf96, type: 2}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: 'tutorialSteps.Array.data[12].recipesToUnlockAtStart.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8818ce4c18e8a8b4099a7d6a44986d46, type: 2}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: 'tutorialSteps.Array.data[12].recipesToUnlockAtStart.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 264d85f0256fa074ebc6135265186336, type: 2}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: 'tutorialSteps.Array.data[12].recipesToUnlockAtStart.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d7c776c9fd74262408a6dc39275a2b99, type: 2}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[13].recipesToUnlockAtStart.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 891292d9444f7f24babfcf215ad3b597, type: 2}
@@ -29462,7 +29566,7 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[6].objectsToHighlight.Array.Array.data[0]'
       value: 
-      objectReference: {fileID: 827858937}
+      objectReference: {fileID: 2009796654}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[7].objectsToHighlight.Array.Array.data[0]'
       value: 
@@ -29474,7 +29578,7 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[9].objectsToHighlight.Array.Array.data[0]'
       value: 
-      objectReference: {fileID: 2009796654}
+      objectReference: {fileID: 1352028983}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[10].objectsToHighlight.Array.Array.data[0]'
       value: 
@@ -29482,7 +29586,7 @@ PrefabInstance:
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[11].objectsToHighlight.Array.Array.data[0]'
       value: 
-      objectReference: {fileID: 1352028983}
+      objectReference: {fileID: 2009796654}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: 'tutorialSteps.Array.data[12].objectsToHighlight.Array.Array.data[0]'
       value: 
@@ -29496,25 +29600,69 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2009796654}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[2].onStepStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[14].onStepStarted.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepCompleted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[14].onStepCompleted.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[2].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[14].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[2].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 287865041}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1194512749}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1194512749}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[14].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
@@ -29524,6 +29672,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1194512749}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
@@ -29532,12 +29684,40 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: bb4f2152cda53fc458b3407c52786e6f, type: 2}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[2].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[14].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[2].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FlashRecipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[14].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -29548,6 +29728,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSatisfaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetSatisfaction
       objectReference: {fileID: 0}
@@ -29556,12 +29740,36 @@ PrefabInstance:
       value: SetSatisfaction
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[2].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Runtime.Old_Systems.Looking.FlashManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[14].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Runtime.Satisfaction.SatisfactionPort, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Runtime.Satisfaction.SatisfactionPort, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[14].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -29572,6 +29780,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[13].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 50
       objectReference: {fileID: 0}
@@ -29580,7 +29792,27 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[2].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: d31a95397ed7b8348898f55f0eb6410a, type: 2}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[2].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Runtime.Drinks.Recipe, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[13].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
       propertyPath: tutorialSteps.Array.data[14].onStepStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
+      propertyPath: tutorialSteps.Array.data[12].onStepCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6672725777763676241, guid: e49708223bec4b342b3f53e2652642b5, type: 3}
